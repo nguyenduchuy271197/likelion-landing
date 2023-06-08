@@ -1,0 +1,127 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet--svg-animation {
+  width: 30px;
+  height: 30px;
+  margin: 0 6px !important;
+  display: inline-block;
+}
+.swiper-pagination-bullet--svg-animation svg {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.swiper-pagination-bullet--svg-animation .svg__circle-inner {
+  stroke: hsl(var(--primary));
+  fill: transparent;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.swiper-pagination-bullet-active .svg__circle {
+  --duration: 10s;
+  stroke: hsl(var(--primary));
+  stroke-dasharray: 75;
+  stroke-dashoffset: 0;
+  -webkit-animation: progress var(--duration) ease-in-out 1 forwards;
+  -moz-animation: progress var(--duration) ease-in-out 1 forwards;
+  -ms-animation: progress var(--duration) ease-in-out 1 forwards;
+  animation: progress var(--duration) ease-in-out 1 forwards;
+}
+.swiper-pagination-bullet-active .svg__circle-inner {
+  fill: hsl(var(--primary));
+}
+
+@-webkit-keyframes progress {
+  0% {
+    stroke-dashoffset: 75;
+    opacity: 1;
+  }
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+@-moz-keyframes progress {
+  0% {
+    stroke-dashoffset: 75;
+    opacity: 1;
+  }
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes progress {
+  0% {
+    stroke-dashoffset: 75;
+    opacity: 1;
+  }
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 75;
+    opacity: 1;
+  }
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Gallery thumbs */
+.gallery-thumbs .swiper-slide img {
+  filter: contrast(0.5) blur(1px);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.gallery-thumbs .swiper-slide-active img {
+  filter: contrast(1) blur(0px) !important;
+}
