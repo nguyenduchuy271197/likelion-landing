@@ -8,9 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/Dialog";
 import { useRouter } from "next/navigation";
-import { RegisterForm, registerFormSchema } from "./RegisterForm";
-import { useState } from "react";
-import { z } from "zod";
+import { RegisterForm } from "./RegisterForm";
 import useRegisterUser from "@/hooks/useRegisterUser";
 
 export function RegisterDialog() {

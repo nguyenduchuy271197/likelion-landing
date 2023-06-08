@@ -1,5 +1,5 @@
 import { RegisterDialog } from "@/components/common/register/RegisterDialog";
 
-export default function page() {
+export default function Register() {
   return <RegisterDialog />;
 }

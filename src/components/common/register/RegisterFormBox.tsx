@@ -1,8 +1,10 @@
+"use client";
+
 import useRegisterUser from "@/hooks/useRegisterUser";
 import { RegisterForm } from "./RegisterForm";
 
 export default function RegisterFormBox() {
-  const { user, onRegisterUser } = useRegisterUser();
+  const { onRegisterUser } = useRegisterUser();
 
   return (
     <div>
