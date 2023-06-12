@@ -48,6 +48,7 @@ export default function Banner() {
                 alt="ABC"
                 width={1000}
                 height={500}
+                priority
               />
             </div>
           </SwiperSlide>

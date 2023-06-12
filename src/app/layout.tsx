@@ -11,6 +11,7 @@ import siteConfig from "@/config/siteConfig";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 // Load body font
 const bodyFont = Roboto({
@@ -40,6 +41,7 @@ export default function RootLayout({
             <main className="grow">
               {children}
               {dialog}
+              <Analytics />
             </main>
             <Footer />
           </Providers>

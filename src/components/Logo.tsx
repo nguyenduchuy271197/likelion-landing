@@ -12,6 +12,7 @@ export default function Logo() {
           height={26}
           width={130}
           className="object-contain w-full h-full"
+          priority
         />
       </Link>
     </div>
