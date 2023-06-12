@@ -4,7 +4,12 @@ import CourseObjectives from "@/components/courses/CourseObjectives";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import { getCourseBySlug } from "@/services/courseService";
 
-export const revalidate = 0;
+export async function generateStaticParams() {
+  const slugs = ["fullstack-web-development-bootcamp"];
+  return slugs.map((slug) => ({
+    courseSlug: slug,
+  }));
+}
 
 export default async function CourseDetail({
   params,

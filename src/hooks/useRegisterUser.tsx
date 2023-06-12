@@ -1,6 +1,6 @@
 "use client";
 
-import { registerFormSchema } from "@/components/common/register/RegisterForm";
+import registerFormSchema from "@/validations/registerFormSchema";
 import { useState } from "react";
 import { z } from "zod";
 

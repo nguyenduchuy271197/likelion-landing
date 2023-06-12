@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: BlogParams) {
 
 export async function generateStaticParams() {
   const slugs = await getBlogSlugsFromGithubRepo();
+  console.log(slugs);
   return slugs.map((slug) => ({
     blogSlug: slug,
   }));
