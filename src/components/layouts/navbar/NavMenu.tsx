@@ -113,16 +113,13 @@ export default function NavMenu() {
               </li>
 
               {courses.map((course) => (
-                <Link
-                  href={course.href}
+                <ListItem
+                  title={course.title}
                   key={course.slug}
-                  legacyBehavior
-                  passHref
+                  href={course.href}
                 >
-                  <ListItem title={course.title} key={course.slug}>
-                    {course.subtitle}
-                  </ListItem>
-                </Link>
+                  {course.subtitle}
+                </ListItem>
               ))}
             </NavMenuContentCard>
           </NavigationMenuContent>
@@ -152,49 +149,39 @@ export default function NavMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/blogs" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(
-                navigationMenuTriggerStyle(),
-                pathname.startsWith("/blogs")
-                  ? "bg-accent text-accent-foreground"
-                  : ""
-              )}
-            >
-              Blogs
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/about" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(
-                navigationMenuTriggerStyle(),
-                pathname == "/about" ? "bg-accent text-accent-foreground" : ""
-              )}
-            >
-              Về chúng tôi
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link
-            href="/contact"
-            legacyBehavior
-            passHref
-            className={
-              pathname == "/contact" ? "bg-accent text-accent-foreground" : ""
-            }
+          <NavigationMenuLink
+            className={cn(
+              navigationMenuTriggerStyle(),
+              pathname.startsWith("/blogs")
+                ? "bg-accent text-accent-foreground"
+                : ""
+            )}
+            asChild
           >
-            <NavigationMenuLink
-              className={cn(
-                navigationMenuTriggerStyle(),
-                pathname == "/contact" ? "bg-accent text-accent-foreground" : ""
-              )}
-            >
-              Liên hệ
-            </NavigationMenuLink>
-          </Link>
+            <Link href="/blogs">Blogs</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(
+              navigationMenuTriggerStyle(),
+              pathname == "/about" ? "bg-accent text-accent-foreground" : ""
+            )}
+            asChild
+          >
+            <Link href="/about">Về chúng tôi</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(
+              navigationMenuTriggerStyle(),
+              pathname == "/contact" ? "bg-accent text-accent-foreground" : ""
+            )}
+            asChild
+          >
+            <Link href="/contact">Liên hệ</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -204,23 +191,24 @@ export default function NavMenu() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
+          href={href || "/"}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="text-sm leading-snug line-clamp-2 text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );

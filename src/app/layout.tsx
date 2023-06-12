@@ -10,8 +10,9 @@ import { Roboto } from "next/font/google";
 import siteConfig from "@/config/siteConfig";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import GlobalLoading from "./loading";
 
 // Load body font
 const bodyFont = Roboto({
