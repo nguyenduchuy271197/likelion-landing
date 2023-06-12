@@ -4,22 +4,20 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/Accordion";
-import { Daum, Daum2 } from "@/services/courseService";
+import { IModule } from "@/types";
 import { FileText } from "lucide-react";
 
 function CourseModule({
+  id,
   name,
   lessons,
   index,
-}: {
-  name: string;
-  lessons: Daum2[];
-  index: number;
-}) {
+}: IModule & { index: number }) {
   return (
     <AccordionItem
       className="px-8 py-2 [&[data-state='open']]:bg-[#fafafa] border"
       value={name}
+      key={id}
     >
       <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left font-bold uppercase">
         {index}. {name}
@@ -27,12 +25,9 @@ function CourseModule({
       <AccordionContent>
         <ul className="flex flex-col gap-4 py-2 text-sm">
           {lessons.map((lesson) => (
-            <li
-              className="flex items-center gap-4"
-              key={lesson.attributes.name}
-            >
+            <li className="flex items-center gap-4" key={lesson}>
               <FileText size={16} />
-              {lesson.attributes.name}
+              {lesson}
             </li>
           ))}
         </ul>
@@ -41,7 +36,7 @@ function CourseModule({
   );
 }
 
-export function CourseContent({ modules }: { modules: Daum[] }) {
+export function CourseContent({ modules }: { modules: IModule[] }) {
   return (
     <div className="my-12">
       <h2 className="mb-6 text-2xl font-medium tracking-tight scroll-m-20">
@@ -50,9 +45,10 @@ export function CourseContent({ modules }: { modules: Daum[] }) {
       <Accordion type="single" collapsible className="w-full bg-white">
         {modules.map((module, i) => (
           <CourseModule
-            name={module.attributes.name}
-            lessons={module.attributes.lessons.data}
-            key={module.attributes.name}
+            id={module.id}
+            name={module.name}
+            lessons={module.lessons}
+            key={module.id}
             index={i + 1}
           />
         ))}

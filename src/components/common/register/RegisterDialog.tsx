@@ -10,13 +10,21 @@ import {
 import { useRouter } from "next/navigation";
 import { RegisterForm } from "./RegisterForm";
 import useRegisterUser from "@/hooks/useRegisterUser";
+import { useContext } from "react";
+import { RegisterContext } from "@/context/RegisterProvider";
 
 export function RegisterDialog() {
   const router = useRouter();
   const { user, onRegisterUser } = useRegisterUser();
+  const { onResetCourse } = useContext(RegisterContext);
+
+  function handleCloseDialog() {
+    onResetCourse();
+    router.back();
+  }
 
   const formRegisterDialog = (
-    <DialogContent onCloseAutoFocus={() => router.back()}>
+    <DialogContent onCloseAutoFocus={handleCloseDialog}>
       {/* Header */}
       <DialogHeader>
         <DialogTitle className="uppercase">Đăng ký nhận tư vấn!</DialogTitle>

@@ -4,17 +4,23 @@ import CourseObjectives from "@/components/courses/CourseObjectives";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import { getCourseBySlug } from "@/services/courseService";
 
+export const revalidate = 0;
+
 export default async function CourseDetail({
   params,
 }: {
   params: { courseSlug: string };
 }) {
   const { courseSlug } = params;
-  const data = await getCourseBySlug(courseSlug);
-
-  const { title, subtitle } = data.data.attributes;
-  const objectives = data.data.attributes.objectives.data;
-  const modules = data.data.attributes.modules.data;
+  const {
+    title,
+    subtitle,
+    objectives,
+    features,
+    price,
+    discountedPrice,
+    modules,
+  } = await getCourseBySlug(courseSlug);
 
   return (
     <div className="mt-12">
@@ -43,7 +49,12 @@ export default async function CourseDetail({
           </div>
 
           {/* Info Card */}
-          <CourseInfoCard />
+          <CourseInfoCard
+            title={title}
+            price={price}
+            discountedPrice={discountedPrice}
+            features={features}
+          />
         </div>
       </div>
     </div>

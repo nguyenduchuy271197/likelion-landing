@@ -1,9 +1,21 @@
 import Image from "next/image";
-import { Button } from "../ui/Button";
 import CourseFeatureItem from "./CourseFeatureItem";
 import { Airplay } from "lucide-react";
+import { ICourse } from "@/types";
+import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
+import RegisterButton from "../common/register/RegisterButton";
 
-export default function CourseInfoCard() {
+type CourseInfoCardProps = Pick<
+  ICourse,
+  "title" | "price" | "discountedPrice" | "features"
+>;
+
+export default function CourseInfoCard({
+  title,
+  price,
+  discountedPrice,
+  features,
+}: CourseInfoCardProps) {
   return (
     <div className="hidden lg:block">
       <div className="sticky top-[var(--navbar-height)] shadow-xl">
@@ -20,18 +32,19 @@ export default function CourseInfoCard() {
           <div>
             <div className="flex items-center gap-4 mb-1">
               <div className="flex items-center gap-1 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
-                <u className="text-3xl">đ</u>
-                349,000
+                {formatVNDCurrency(discountedPrice)}
               </div>
               <div className="flex items-center gap-1 line-through text-muted-foreground">
-                <u>đ</u>
-                1,999,000
+                {formatVNDCurrency(price)}
               </div>
             </div>
-            <div className="text-muted-foreground">83% off</div>
-            <Button className="w-full my-4" size="lg">
-              Đăng ký ngay
-            </Button>
+            <div className="text-muted-foreground">
+              {calcDiscountedPercent(price, discountedPrice)}% off
+            </div>
+
+            <div className="my-4">
+              <RegisterButton course={title} />
+            </div>
           </div>
 
           {/* Features */}
@@ -40,19 +53,13 @@ export default function CourseInfoCard() {
               Khoá học bao gồm:
             </h4>
             <ul className="flex flex-col gap-4 mt-4 text-sm">
-              <CourseFeatureItem
-                icon={Airplay}
-                name="28.5 hours on-demand video"
-              />
-              <CourseFeatureItem icon={Airplay} name="14 articles" />
-              <CourseFeatureItem
-                icon={Airplay}
-                name="66 downloadable resources"
-              />
-              <CourseFeatureItem
-                icon={Airplay}
-                name="28.5 hours on-demand video"
-              />
+              {features.map((feature) => (
+                <CourseFeatureItem
+                  key={feature}
+                  icon={Airplay}
+                  name={feature}
+                />
+              ))}
             </ul>
           </div>
         </div>

@@ -1,14 +1,25 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "../../ui/Button";
+import { useContext } from "react";
+import { useRouter } from "next/navigation";
+import { RegisterContext } from "@/context/RegisterProvider";
+import { Course } from "@/validations/registerFormSchema";
+import { Button } from "@/components/ui/Button";
 
-export default function RegisterButton() {
+export default function RegisterButton({ course }: { course?: Course }) {
+  const router = useRouter();
+  const { onUpdateCourse } = useContext(RegisterContext);
+
+  function handleRegister() {
+    if (course) {
+      onUpdateCourse(course);
+    }
+    router.push("/register");
+  }
+
   return (
-    <Button asChild>
-      <Link href="/register" className="hidden sm:block">
-        Đăng ký ngay
-      </Link>
+    <Button className="w-full" onClick={handleRegister}>
+      Đăng ký ngay
     </Button>
   );
 }

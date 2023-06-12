@@ -21,42 +21,26 @@ import {
   SelectValue,
 } from "@/components/ui/Select";
 import { useForm } from "react-hook-form";
-import { Dispatch, SetStateAction } from "react";
-
-export const registerFormSchema = z.object({
-  fullName: z.string().nonempty("Họ và tên không được để trống"),
-  email: z.string().email("Email không hợp lệ"),
-  phoneNumber: z
-    .string({ required_error: "Số điện thoại không được để trống" })
-    .min(10, "Số điện thoại phải có ít nhất 10 ký tự")
-    .max(15, "Số điện thoại không được vượt quá 15 ký tự")
-    .regex(/^\+?\d+$/, "Số điện thoại không hợp lệ"),
-  course: z.enum(
-    [
-      "Fullstack Web Development Bootcamp",
-      "Khoá học Java",
-      "Khoá học Data Science - Python",
-    ],
-    { required_error: "Chọn khoá học" }
-  ),
-});
+import { useContext } from "react";
+import { RegisterContext } from "@/context/RegisterProvider";
+import registerFormSchema, {
+  RegisterForm,
+} from "@/validations/registerFormSchema";
 
 interface RegisterFormProps {
-  onSubmitUser: (user: z.infer<typeof registerFormSchema>) => void;
+  onSubmitUser: (user: RegisterForm) => void;
 }
 
 export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
-  const form = useForm<z.infer<typeof registerFormSchema>>({
+  const { register } = useContext(RegisterContext);
+
+  const form = useForm<RegisterForm>({
     resolver: zodResolver(registerFormSchema),
-    defaultValues: {
-      fullName: "",
-      email: "",
-    },
+    defaultValues: register,
   });
 
   function onSubmit(values: z.infer<typeof registerFormSchema>) {
     onSubmitUser(values);
-    console.log(values);
   }
 
   return (
@@ -64,7 +48,7 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
-          name="fullName"
+          name="name"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Họ và tên</FormLabel>

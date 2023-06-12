@@ -1,4 +1,3 @@
-import { Daum3 } from "@/services/courseService";
 import { Check } from "lucide-react";
 
 function ObjectivesItem({ name }: { name: string }) {
@@ -13,7 +12,7 @@ function ObjectivesItem({ name }: { name: string }) {
 export default function CourseObjectives({
   objectives,
 }: {
-  objectives: Daum3[];
+  objectives: string[];
 }) {
   return (
     <div className="p-8 my-12 border">
@@ -22,7 +21,7 @@ export default function CourseObjectives({
       </h2>
       <ul className="grid gap-4 text-sm md:gap-6 md:grid-cols-2">
         {objectives.map((obj) => (
-          <ObjectivesItem key={obj.id} name={obj.attributes.name} />
+          <ObjectivesItem key={obj} name={obj} />
         ))}
       </ul>
     </div>

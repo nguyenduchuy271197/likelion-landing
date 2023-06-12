@@ -17,7 +17,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/Accordion";
 import Logo from "../../Logo";
-import RegisterButton from "./RegisterButton";
+import RegisterButton from "@/components/common/register/RegisterButton";
 
 export default function Navbar() {
   return (
