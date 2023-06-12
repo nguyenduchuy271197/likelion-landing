@@ -2,8 +2,7 @@ import { IBlog } from "@/types";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-const GITHUB_TOKEN =
-  "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";
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 const GITHUB_OWNER = "nguyenduchuy271197";
 const GITHUB_REPO = "likelion-blogs";
 const PUBLISHED_FOLDER_PATH = "published";
@@ -25,7 +24,6 @@ export async function getBlogSlugsFromGithubRepo(
   });
 
   const fileLists = await res.json();
-  console.log(fileLists);
 
   const slugs = fileLists.map(
     (file: any) => file.name.split(".")[0]
