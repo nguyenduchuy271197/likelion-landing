@@ -1,6 +1,7 @@
 const fetchConfig = {
   course: {
-    baseUrl: "http://localhost:3000",
+    baseUrl:
+      process.env.NODE_ENV !== "production" ? "http://localhost:3000" : "",
   },
 };
 
