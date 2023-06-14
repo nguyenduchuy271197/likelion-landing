@@ -1,8 +1,14 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Button } from "@/components/ui/Button";
+
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { RegisterContext } from "@/context/RegisterProvider";
+import registerFormSchema, {
+  RegisterForm,
+} from "@/validations/registerFormSchema";
+import { addUser } from "@/services/userService";
 import {
   Form,
   FormControl,
@@ -11,7 +17,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/Form";
-
 import { Input } from "@/components/ui/Input";
 import {
   Select,
@@ -20,16 +25,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/Select";
-import { useForm } from "react-hook-form";
-import { useContext } from "react";
-import { RegisterContext } from "@/context/RegisterProvider";
-import registerFormSchema, {
-  RegisterForm,
-} from "@/validations/registerFormSchema";
+import { Button } from "@/components/ui/Button";
 
 interface RegisterFormProps {
   onSubmitUser: (user: RegisterForm) => void;
 }
+
+const courses = [
+  {
+    id: "6482a08d232bf6c1513a1111",
+    title: "Fullstack Web Development Bootcamp",
+  },
+  {
+    id: "64883a8ab6a3fddba741f55e",
+    title: "Khoá học Java",
+  },
+  {
+    id: "64883aacb6a3fddba741f55f",
+    title: "Khoá học Data Science - Python",
+  },
+];
 
 export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
   const { register } = useContext(RegisterContext);
@@ -39,8 +54,9 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
     defaultValues: register,
   });
 
-  function onSubmit(values: z.infer<typeof registerFormSchema>) {
+  async function onSubmit(values: RegisterForm) {
     onSubmitUser(values);
+    await addUser(values);
   }
 
   return (
@@ -74,7 +90,7 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
         />
         <FormField
           control={form.control}
-          name="phoneNumber"
+          name="phone"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Số điện thoại</FormLabel>
@@ -87,7 +103,7 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
         />
         <FormField
           control={form.control}
-          name="course"
+          name="courseId"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Khoá học bạn đang quan tâm?</FormLabel>
@@ -98,13 +114,11 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="Fullstack Web Development Bootcamp">
-                    Fullstack Web Development Bootcamp
-                  </SelectItem>
-                  <SelectItem value="Khoá học Java">Khoá học Java</SelectItem>
-                  <SelectItem value="Khoá học Data Science - Python">
-                    Khoá học Data Science - Python
-                  </SelectItem>
+                  {courses.map((course) => (
+                    <SelectItem value={course.id} key={course.id}>
+                      {course.title}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
               <FormMessage />

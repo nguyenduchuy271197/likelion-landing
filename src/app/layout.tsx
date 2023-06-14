@@ -35,9 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={bodyFont.className}>
-        <div className="flex flex-col min-h-full pt-body-top">
-          <Providers>
+      <body className={bodyFont.className} suppressHydrationWarning={true}>
+        <Providers>
+          <div className="flex flex-col min-h-full pt-body-top">
             <Navbar />
             <main className="grow">
               {children}
@@ -45,8 +45,8 @@ export default function RootLayout({
               <Analytics />
             </main>
             <Footer />
-          </Providers>
-        </div>
+          </div>
+        </Providers>
       </body>
     </html>
   );

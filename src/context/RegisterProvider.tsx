@@ -1,6 +1,5 @@
 "use client";
 
-import { IUser } from "@/types";
 import { Course, RegisterForm } from "@/validations/registerFormSchema";
 import { ReactNode, createContext, useState } from "react";
 
@@ -15,7 +14,8 @@ export const RegisterContext = createContext<RegisterContext>({
   register: {
     name: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
+    courseId: "",
   },
   onUpdateCourse: () => {},
   onResetCourse: () => {},
@@ -26,15 +26,16 @@ export default function UserProvider({ children }: { children: ReactNode }) {
   const [register, setRegister] = useState<RegisterForm>({
     name: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
+    courseId: "",
   });
 
-  function handleUpdateCourse(course: Course) {
-    setRegister({ ...register, course: course });
+  function handleUpdateCourse(courseId: Course) {
+    setRegister({ ...register, courseId: courseId });
   }
 
   function handleResetCourse() {
-    setRegister({ ...register, course: undefined });
+    setRegister({ ...register, courseId: "" });
   }
 
   function handleRegisterForm(_register: RegisterForm) {

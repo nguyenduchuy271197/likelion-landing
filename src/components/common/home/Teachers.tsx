@@ -58,9 +58,15 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
               {tech.map(({ title, image }) => (
                 <div
                   key={title}
-                  className="flex items-center justify-center w-[70px] h-[70px] rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500"
+                  className="flex items-center justify-center transition duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 h-[70px] w-[70px]"
                 >
-                  <Image src={image} width={30} height={30} alt={title} />
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={30}
+                    height={30}
+                    className="w-auto h-auto"
+                  />
                 </div>
               ))}
             </div>

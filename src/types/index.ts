@@ -1,4 +1,5 @@
 import { Course } from "@/validations/registerFormSchema";
+import { PrismaClient } from "@prisma/client";
 
 declare global {
   namespace NodeJS {
