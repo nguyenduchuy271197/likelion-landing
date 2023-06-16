@@ -1,11 +1,11 @@
 "use client";
 
-import { Course, RegisterForm } from "@/validations/registerFormSchema";
+import { RegisterForm } from "@/schema/registerFormSchema";
 import { ReactNode, createContext, useState } from "react";
 
 interface RegisterContext {
   register: RegisterForm;
-  onUpdateCourse: (course: Course) => void;
+  onUpdateCourse: (course: RegisterForm["courseId"]) => void;
   onResetCourse: () => void;
   onRegisterForm: (_register: RegisterForm) => void;
 }
@@ -30,7 +30,7 @@ export default function UserProvider({ children }: { children: ReactNode }) {
     courseId: "",
   });
 
-  function handleUpdateCourse(courseId: Course) {
+  function handleUpdateCourse(courseId: RegisterForm["courseId"]) {
     setRegister({ ...register, courseId: courseId });
   }
 

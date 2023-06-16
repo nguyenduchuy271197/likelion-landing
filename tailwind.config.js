@@ -75,6 +75,9 @@ module.exports = {
       padding: {
         "body-top": "var(--navbar-height)",
       },
+      backgroundImage: {
+        contact: "url('/img/banners/contact.png')",
+      },
     },
   },
   plugins: [

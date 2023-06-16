@@ -5,7 +5,11 @@ import CourseRequirements from "@/components/courses/CourseRequirements";
 import { getCourseBySlug } from "@/services/courseService";
 
 export async function generateStaticParams() {
-  const slugs = ["fullstack-web-development-bootcamp"];
+  const slugs = [
+    "fullstack-web-development-bootcamp",
+    "khoa-hoc-java",
+    "khoa-hoc-data-science-python",
+  ];
   return slugs.map((slug) => ({
     courseSlug: slug,
   }));
@@ -18,6 +22,7 @@ export default async function CourseDetail({
 }) {
   const { courseSlug } = params;
   const {
+    id,
     title,
     subtitle,
     objectives,
@@ -55,7 +60,7 @@ export default async function CourseDetail({
 
           {/* Info Card */}
           <CourseInfoCard
-            title={title}
+            id={id}
             price={price}
             discountedPrice={discountedPrice}
             features={features}

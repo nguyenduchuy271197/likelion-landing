@@ -1,6 +1,3 @@
-import { Course } from "@/validations/registerFormSchema";
-import { PrismaClient } from "@prisma/client";
-
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -24,7 +21,7 @@ export interface IBlog {
 export interface ICourse {
   id: string;
   slug: string;
-  title: Course;
+  title: string;
   subtitle: string;
   price: number;
   discountedPrice: number;
@@ -38,13 +35,6 @@ export interface IModule {
   name: string;
   lessons: string[];
   courseId?: string;
-}
-
-export interface IUser {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  course?: string;
 }
 
 export interface ICourse {}

@@ -8,11 +8,9 @@ const registerFormSchema = z.object({
     .min(10, "Số điện thoại phải có ít nhất 10 ký tự")
     .max(15, "Số điện thoại không được vượt quá 15 ký tự")
     .regex(/^\+?\d+$/, "Số điện thoại không hợp lệ"),
-  courseId: z.string(),
+  courseId: z.string().optional(),
 });
 
 export type RegisterForm = z.infer<typeof registerFormSchema>;
-export type User = z.infer<typeof registerFormSchema>;
-export type Course = z.infer<typeof registerFormSchema>["courseId"];
 
 export default registerFormSchema;

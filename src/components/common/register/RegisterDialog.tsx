@@ -10,8 +10,9 @@ import {
 import { useRouter } from "next/navigation";
 import { RegisterForm } from "./RegisterForm";
 import useRegisterUser from "@/hooks/useRegisterUser";
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 
 export function RegisterDialog() {
   const router = useRouter();
@@ -25,17 +26,19 @@ export function RegisterDialog() {
 
   const formRegisterDialog = (
     <DialogContent onCloseAutoFocus={handleCloseDialog}>
-      {/* Header */}
-      <DialogHeader>
-        <DialogTitle className="uppercase">Đăng ký nhận tư vấn!</DialogTitle>
-        <DialogDescription>
-          Nhận tư vấn cá nhân, giúp các bạn khám phá các khóa học lập trình chất
-          lượng và thú vị.
-        </DialogDescription>
-      </DialogHeader>
+      <Suspense fallback={<LoadingSkeleton />}>
+        {/* Header */}
+        <DialogHeader>
+          <DialogTitle className="uppercase">Đăng ký nhận tư vấn!</DialogTitle>
+          <DialogDescription>
+            Nhận tư vấn cá nhân, giúp các bạn khám phá các khóa học lập trình
+            chất lượng và thú vị.
+          </DialogDescription>
+        </DialogHeader>
 
-      {/* Form */}
-      <RegisterForm onSubmitUser={onRegisterUser} />
+        {/* Form */}
+        <RegisterForm onSubmitUser={onRegisterUser} />
+      </Suspense>
     </DialogContent>
   );
 

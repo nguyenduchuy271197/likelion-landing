@@ -5,9 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
-import registerFormSchema, {
-  RegisterForm,
-} from "@/validations/registerFormSchema";
+import registerFormSchema, { RegisterForm } from "@/schema/registerFormSchema";
 import { addUser } from "@/services/userService";
 import {
   Form,
@@ -107,7 +105,10 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Khoá học bạn đang quan tâm?</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value || undefined}
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Chọn khoá học lập trình" />

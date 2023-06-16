@@ -7,11 +7,11 @@ import RegisterButton from "../common/register/RegisterButton";
 
 type CourseInfoCardProps = Pick<
   ICourse,
-  "title" | "price" | "discountedPrice" | "features"
+  "id" | "price" | "discountedPrice" | "features"
 >;
 
 export default function CourseInfoCard({
-  title,
+  id,
   price,
   discountedPrice,
   features,
@@ -43,7 +43,7 @@ export default function CourseInfoCard({
             </div>
 
             <div className="my-4">
-              <RegisterButton course={title} />
+              <RegisterButton courseId={id} />
             </div>
           </div>
 

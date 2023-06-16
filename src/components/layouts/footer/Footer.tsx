@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
 import Logo from "../../Logo";
 import { Mail, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
