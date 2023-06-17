@@ -5,14 +5,16 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <div>
-      <Link href="/" className="flex items-center w-[160px]">
+      <Link
+        href="/"
+        className="relative flex items-center h-5 sm:h-6 aspect-[8/1]"
+      >
         <Image
           src="/logo.png"
           alt={siteConfig.title}
-          height={26}
-          width={130}
-          className="object-contain w-full h-full"
+          fill
           priority
+          className="object-contain"
         />
       </Link>
     </div>
