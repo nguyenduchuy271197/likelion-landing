@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NavMenu from "./NavMenu";
-import { Button } from "../../ui/Button";
+import { Button, buttonVariants } from "../../ui/Button";
 import Icons from "../../Icons";
 import {
   Sheet,
@@ -21,11 +21,11 @@ import RegisterButton from "@/components/common/register/RegisterButton";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 shadow-navbar bg-background/90 min-h-navbar backdrop-blur-sm">
+    <nav className="fixed inset-x-0 top-0 z-10 shadow-navbar bg-background/90 min-h-navbar backdrop-blur-sm h-fit">
       <div className="container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center">
             <Logo />
           </div>
 
@@ -35,7 +35,9 @@ export default function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <RegisterButton />
+              <Button className="w-full" asChild>
+                <Link href="/register">Đăng ký ngay</Link>
+              </Button>
             </div>
             <Sheet>
               <SheetTrigger asChild>

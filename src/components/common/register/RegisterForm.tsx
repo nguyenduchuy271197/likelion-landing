@@ -25,27 +25,28 @@ import {
 } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 
-interface RegisterFormProps {
-  onSubmitUser: (user: RegisterForm) => void;
-}
-
 const courses = [
   {
     id: "6482a08d232bf6c1513a1111",
+    slug: "fullstack-web-development-bootcamp",
     title: "Fullstack Web Development Bootcamp",
   },
   {
     id: "64883a8ab6a3fddba741f55e",
+    slug: "khoa-hoc-java",
     title: "Khoá học Java",
   },
   {
     id: "64883aacb6a3fddba741f55f",
+    slug: "khoa-hoc-data-science-python",
     title: "Khoá học Data Science - Python",
   },
 ];
 
-export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
-  const { register } = useContext(RegisterContext);
+export function RegisterForm({ course }: { course: string }) {
+  const { register, onRegisterForm } = useContext(RegisterContext);
+
+  const courseId = courses.find((_course) => course === _course.slug)?.id;
 
   const form = useForm<RegisterForm>({
     resolver: zodResolver(registerFormSchema),
@@ -53,7 +54,7 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
   });
 
   async function onSubmit(values: RegisterForm) {
-    onSubmitUser(values);
+    onRegisterForm(values);
     await addUser(values);
   }
 
@@ -107,7 +108,7 @@ export function RegisterForm({ onSubmitUser }: RegisterFormProps) {
               <FormLabel>Khoá học bạn đang quan tâm?</FormLabel>
               <Select
                 onValueChange={field.onChange}
-                defaultValue={field.value || undefined}
+                defaultValue={courseId || undefined}
               >
                 <FormControl>
                   <SelectTrigger>

@@ -12,10 +12,11 @@ import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { cn } from "@/lib/utils";
 
 // Load body font
 const bodyFont = Roboto({
-  subsets: ["latin"],
+  subsets: ["vietnamese"],
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
@@ -33,10 +34,13 @@ export default function RootLayout({
   dialog: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={bodyFont.className} suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      className={cn("bg-white antialiased light", bodyFont.className)}
+    >
+      <body suppressHydrationWarning={true}>
         <Providers>
-          <div className="flex flex-col min-h-full pt-body-top">
+          <div className="flex flex-col min-h-screen antialiased pt-body-top">
             <Navbar />
             <main className="grow">
               {children}

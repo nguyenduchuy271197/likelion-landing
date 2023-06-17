@@ -1,11 +1,6 @@
-import Banner from "@/components/common/home/Banner";
-// import Achievement from "@/components/common/home/Achievement";
-// import FAQ from "@/components/common/home/FAQ";
-// import Reviews from "@/components/common/home/Reviews";
-// import Teachers from "@/components/common/home/Teachers";
-// import TechStack from "@/components/common/home/TechStack";
 import dynamic from "next/dynamic";
 
+const Banner = dynamic(() => import("@/components/common/home/Banner"));
 const TechStack = dynamic(() => import("@/components/common/home/TechStack"));
 const Achievement = dynamic(
   () => import("@/components/common/home/Achievement")

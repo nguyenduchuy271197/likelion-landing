@@ -1,7 +1,12 @@
 import RegisterFormBox from "@/components/common/register/RegisterFormBox";
 import Image from "next/image";
 
-export default function Register() {
+export default function Register({
+  searchParams,
+}: {
+  searchParams: { course: string };
+}) {
+  const { course = "fullstack-web-development-bootcamp" } = searchParams;
   return (
     <div>
       <div className="container">
@@ -18,7 +23,7 @@ export default function Register() {
             </div>
 
             {/* Form Box */}
-            <RegisterFormBox />
+            <RegisterFormBox course={course} />
           </div>
         </div>
       </div>

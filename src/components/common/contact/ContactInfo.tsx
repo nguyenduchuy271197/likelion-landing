@@ -49,7 +49,7 @@ export default function ContactInfo() {
   return (
     <div>
       <div className="container">
-        <div className="py-10 sm:py-20">
+        <div className="py-10 sm:pb-20">
           {/* Heading */}
           {/* <div className="max-w-xl py-10 mx-auto mb-10 text-center">
             <h2 className="mb-6 text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
@@ -59,6 +59,10 @@ export default function ContactInfo() {
               Chúng tôi muốn lắng nghe từ bạn để hiểu nhau hơn
             </p>
           </div> */}
+          <h2 className="pb-2 mb-10 text-3xl font-medium text-center transition-colors scroll-m-20 first:mt-0">
+            Hoặc bạn có thể tìm chúng tôi tại
+          </h2>
+
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {contacts.map((contact) => (
               <ContactInfoCard {...contact} key={contact.label} />

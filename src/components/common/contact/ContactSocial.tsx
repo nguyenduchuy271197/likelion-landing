@@ -61,6 +61,9 @@ export default function ContactSocial() {
           <h5 className="mb-12 text-3xl font-medium scroll-m-20 lg:text-4xl">
             Nhấn theo dõi LIKELION qua các kênh
           </h5>
+          {/* <h2 className="pb-2 mb-12 text-3xl font-medium transition-colors scroll-m-20 first:mt-0">
+            Nhấn theo dõi LIKELION qua các kênh
+          </h2> */}
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {socialIcons.map((icon) => (

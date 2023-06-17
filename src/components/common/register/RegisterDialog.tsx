@@ -9,15 +9,22 @@ import {
 } from "@/components/ui/Dialog";
 import { useRouter } from "next/navigation";
 import { RegisterForm } from "./RegisterForm";
-import useRegisterUser from "@/hooks/useRegisterUser";
-import { Suspense, useContext } from "react";
+import { useContext, useState } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
-import LoadingSkeleton from "@/components/LoadingSkeleton";
+import { useMutation } from "@tanstack/react-query";
+import { addUser } from "@/services/userService";
 
-export function RegisterDialog() {
+export function RegisterDialog({ course }: { course: string }) {
   const router = useRouter();
-  const { user, onRegisterUser } = useRegisterUser();
   const { onResetCourse } = useContext(RegisterContext);
+  const {
+    isLoading: isRegisterLoading,
+    isError: isRegisterError,
+    isSuccess: isRegisterSuccess,
+    mutate: registerMutate,
+  } = useMutation({
+    mutationFn: addUser,
+  });
 
   function handleCloseDialog() {
     onResetCourse();
@@ -26,19 +33,17 @@ export function RegisterDialog() {
 
   const formRegisterDialog = (
     <DialogContent onCloseAutoFocus={handleCloseDialog}>
-      <Suspense fallback={<LoadingSkeleton />}>
-        {/* Header */}
-        <DialogHeader>
-          <DialogTitle className="uppercase">Đăng ký nhận tư vấn!</DialogTitle>
-          <DialogDescription>
-            Nhận tư vấn cá nhân, giúp các bạn khám phá các khóa học lập trình
-            chất lượng và thú vị.
-          </DialogDescription>
-        </DialogHeader>
+      {/* Header */}
+      <DialogHeader>
+        <DialogTitle className="uppercase">Đăng ký nhận tư vấn!</DialogTitle>
+        <DialogDescription>
+          Nhận tư vấn cá nhân, giúp các bạn khám phá các khóa học lập trình chất
+          lượng và thú vị.
+        </DialogDescription>
+      </DialogHeader>
 
-        {/* Form */}
-        <RegisterForm onSubmitUser={onRegisterUser} />
-      </Suspense>
+      {/* Form */}
+      <RegisterForm course={course} />
     </DialogContent>
   );
 
@@ -56,9 +61,23 @@ export function RegisterDialog() {
     </DialogContent>
   );
 
+  const failRegisterDialog = (
+    <DialogContent onCloseAutoFocus={() => router.back()}>
+      {/* Header */}
+      <DialogHeader>
+        <DialogTitle className="uppercase">Đăng ký thất bại!</DialogTitle>
+        <DialogDescription>Đăng ký lại lần nữa!</DialogDescription>
+      </DialogHeader>
+    </DialogContent>
+  );
+
   return (
     <Dialog defaultOpen={true}>
-      {user ? successRegisterDialog : formRegisterDialog}
+      {isRegisterError
+        ? failRegisterDialog
+        : isRegisterSuccess
+        ? successRegisterDialog
+        : formRegisterDialog}
     </Dialog>
   );
 }

@@ -64,6 +64,7 @@ export default async function CourseDetail({
             price={price}
             discountedPrice={discountedPrice}
             features={features}
+            slug={courseSlug}
           />
         </div>
       </div>

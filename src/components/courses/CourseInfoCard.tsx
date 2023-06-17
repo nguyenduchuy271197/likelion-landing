@@ -4,10 +4,12 @@ import { Airplay } from "lucide-react";
 import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import RegisterButton from "../common/register/RegisterButton";
+import { Button } from "../ui/Button";
+import Link from "next/link";
 
 type CourseInfoCardProps = Pick<
   ICourse,
-  "id" | "price" | "discountedPrice" | "features"
+  "id" | "price" | "discountedPrice" | "features" | "slug"
 >;
 
 export default function CourseInfoCard({
@@ -15,6 +17,7 @@ export default function CourseInfoCard({
   price,
   discountedPrice,
   features,
+  slug,
 }: CourseInfoCardProps) {
   return (
     <div className="hidden lg:block">
@@ -43,7 +46,17 @@ export default function CourseInfoCard({
             </div>
 
             <div className="my-4">
-              <RegisterButton courseId={id} />
+              {/* <RegisterButton courseId={id} /> */}
+              <Button className="w-full" asChild>
+                <Link
+                  href={{
+                    pathname: "/register",
+                    query: { course: slug },
+                  }}
+                >
+                  Đăng ký ngay
+                </Link>
+              </Button>
             </div>
           </div>
 

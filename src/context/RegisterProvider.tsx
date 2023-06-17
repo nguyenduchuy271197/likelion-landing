@@ -15,7 +15,7 @@ export const RegisterContext = createContext<RegisterContext>({
     name: "",
     email: "",
     phone: "",
-    courseId: "",
+    // courseId: "",
   },
   onUpdateCourse: () => {},
   onResetCourse: () => {},
@@ -27,7 +27,7 @@ export default function UserProvider({ children }: { children: ReactNode }) {
     name: "",
     email: "",
     phone: "",
-    courseId: "",
+    // courseId: "",
   });
 
   function handleUpdateCourse(courseId: RegisterForm["courseId"]) {

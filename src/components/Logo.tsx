@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <div>
-      <Link href="/" className="block w-[160px]">
+      <Link href="/" className="flex items-center w-[160px]">
         <Image
           src="/logo.png"
           alt={siteConfig.title}

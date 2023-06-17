@@ -47,10 +47,10 @@ export default function ContactForm() {
   return (
     <div>
       <div className="container">
-        <div className="grid gap-8 py-14 sm:py-28 md:grid-cols-2">
-          <div>
-            <div className="max-w-md mb-8">
-              <h2 className="max-w-sm pb-2 mb-2 text-3xl font-medium transition-colors scroll-m-20 first:mt-0">
+        <div className="grid gap-8 py-14 sm:py-20 md:grid-cols-2">
+          <div className="max-w-md">
+            <div>
+              <h2 className="pb-2 mb-2 text-3xl font-medium transition-colors scroll-m-20 first:mt-0">
                 Bạn cần tìm khoá học lập trình?
               </h2>
               <p className="text-muted-foreground">
@@ -58,11 +58,12 @@ export default function ContactForm() {
                 bạn nhanh nhất có thể.
               </p>
             </div>
-            <div className="hidden md:block relative aspect-[4/3]">
+            <div className="relative hidden md:block aspect-[1/1]">
               <Image
-                src="/img/illustrations/register/1.svg"
+                src="/img/contact/form-2.png"
                 fill
                 alt="Kanban"
+                className="object-contain"
               />
             </div>
           </div>
