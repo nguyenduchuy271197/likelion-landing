@@ -3,13 +3,13 @@
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
 import { RegisterContext } from "@/context/RegisterProvider";
-import { RegisterForm } from "@/schema/registerFormSchema";
+import { RegisterFormType } from "@/schema/registerFormSchema";
 import { Button } from "@/components/ui/Button";
 
 export default function RegisterButton({
   courseId,
 }: {
-  courseId?: RegisterForm["courseId"];
+  courseId?: RegisterFormType["courseId"];
 }) {
   const router = useRouter();
   const { onUpdateCourse } = useContext(RegisterContext);

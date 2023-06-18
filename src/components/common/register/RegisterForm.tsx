@@ -5,8 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
-import registerFormSchema, { RegisterForm } from "@/schema/registerFormSchema";
-import { addUser } from "@/services/userService";
+import registerFormSchema, {
+  RegisterFormType,
+} from "@/schema/registerFormSchema";
 import {
   Form,
   FormControl,
@@ -24,6 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
+import { UseMutateFunction } from "@tanstack/react-query";
 
 const courses = [
   {
@@ -43,19 +45,29 @@ const courses = [
   },
 ];
 
-export function RegisterForm({ course }: { course: string }) {
+interface RegisterFormProps {
+  initialCourse: string;
+  registerUser: UseMutateFunction<void, unknown, RegisterFormType, unknown>;
+  isSubmitting: boolean;
+}
+
+export function RegisterForm({
+  initialCourse,
+  registerUser,
+  isSubmitting,
+}: RegisterFormProps) {
   const { register, onRegisterForm } = useContext(RegisterContext);
 
-  const courseId = courses.find((_course) => course === _course.slug)?.id;
+  const courseId = courses.find((course) => initialCourse === course.slug)?.id;
 
-  const form = useForm<RegisterForm>({
+  const form = useForm<RegisterFormType>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: register,
   });
 
-  async function onSubmit(values: RegisterForm) {
+  function onSubmit(values: RegisterFormType) {
     onRegisterForm(values);
-    await addUser(values);
+    registerUser(values);
   }
 
   return (
@@ -68,7 +80,11 @@ export function RegisterForm({ course }: { course: string }) {
             <FormItem>
               <FormLabel>Họ và tên</FormLabel>
               <FormControl>
-                <Input placeholder="Nguyễn Văn A" {...field} />
+                <Input
+                  placeholder="Nguyễn Văn A"
+                  {...field}
+                  disabled={isSubmitting}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -81,7 +97,11 @@ export function RegisterForm({ course }: { course: string }) {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="nguyenvana@gmail.com" {...field} />
+                <Input
+                  placeholder="nguyenvana@gmail.com"
+                  disabled={isSubmitting}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -94,7 +114,11 @@ export function RegisterForm({ course }: { course: string }) {
             <FormItem>
               <FormLabel>Số điện thoại</FormLabel>
               <FormControl>
-                <Input placeholder="+084 111 111 111" {...field} />
+                <Input
+                  placeholder="+084 111 111 111"
+                  disabled={isSubmitting}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -109,6 +133,7 @@ export function RegisterForm({ course }: { course: string }) {
               <Select
                 onValueChange={field.onChange}
                 defaultValue={courseId || undefined}
+                disabled={isSubmitting}
               >
                 <FormControl>
                   <SelectTrigger>
@@ -127,7 +152,7 @@ export function RegisterForm({ course }: { course: string }) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full" disabled={isSubmitting}>
           Đăng ký tư vấn
         </Button>
       </form>

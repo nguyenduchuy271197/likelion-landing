@@ -1,44 +1,41 @@
 "use client";
 
-import { RegisterForm } from "@/schema/registerFormSchema";
+import { RegisterFormType } from "@/schema/registerFormSchema";
 import { ReactNode, createContext, useState } from "react";
 
 interface RegisterContext {
-  register: RegisterForm;
-  onUpdateCourse: (course: RegisterForm["courseId"]) => void;
+  register: RegisterFormType;
+  onUpdateCourse: (course: RegisterFormType["courseId"]) => void;
   onResetCourse: () => void;
-  onRegisterForm: (_register: RegisterForm) => void;
+  onRegisterForm: (_register: RegisterFormType) => void;
 }
 
+const initialRegister = {
+  name: "",
+  email: "",
+  phone: "",
+  // courseId: "",
+};
+
 export const RegisterContext = createContext<RegisterContext>({
-  register: {
-    name: "",
-    email: "",
-    phone: "",
-    // courseId: "",
-  },
+  register: initialRegister,
   onUpdateCourse: () => {},
   onResetCourse: () => {},
   onRegisterForm: () => {},
 });
 
 export default function UserProvider({ children }: { children: ReactNode }) {
-  const [register, setRegister] = useState<RegisterForm>({
-    name: "",
-    email: "",
-    phone: "",
-    // courseId: "",
-  });
+  const [register, setRegister] = useState<RegisterFormType>(initialRegister);
 
-  function handleUpdateCourse(courseId: RegisterForm["courseId"]) {
+  function handleUpdateCourse(courseId: RegisterFormType["courseId"]) {
     setRegister({ ...register, courseId: courseId });
   }
 
   function handleResetCourse() {
-    setRegister({ ...register, courseId: "" });
+    setRegister(initialRegister);
   }
 
-  function handleRegisterForm(_register: RegisterForm) {
+  function handleRegisterForm(_register: RegisterFormType) {
     setRegister(_register);
   }
 

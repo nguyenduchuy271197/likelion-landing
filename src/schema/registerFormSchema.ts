@@ -11,6 +11,6 @@ const registerFormSchema = z.object({
   courseId: z.string().optional(),
 });
 
-export type RegisterForm = z.infer<typeof registerFormSchema>;
+export type RegisterFormType = z.infer<typeof registerFormSchema>;
 
 export default registerFormSchema;

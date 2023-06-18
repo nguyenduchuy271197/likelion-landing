@@ -13,6 +13,7 @@ import Providers from "@/context/Providers";
 import { ReactNode, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/Toaster";
 
 // Load body font
 const bodyFont = Roboto({
@@ -49,6 +50,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <Toaster />
         </Providers>
       </body>
     </html>

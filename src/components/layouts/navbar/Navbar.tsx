@@ -25,9 +25,7 @@ export default function Navbar() {
       <div className="container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center">
-            <Logo />
-          </div>
+          <Logo />
 
           {/* Nav */}
           <NavMenu />

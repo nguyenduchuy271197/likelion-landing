@@ -15,14 +15,24 @@ import {
 import { Input } from "@/components/ui/Input";
 
 import { Button } from "@/components/ui/Button";
-import { ContactForm } from "@/schema/contactFormSchema";
+import contactFormSchema, { ContactFormType } from "@/schema/contactFormSchema";
 import { Textarea } from "@/components/ui/Textarea";
 import Image from "next/image";
-import { addUser } from "@/services/userService";
+import useRegisterUser from "../register/useRegisterUser";
+import { useToast } from "@/hooks/useToast";
 
 export default function ContactForm() {
-  const form = useForm<ContactForm>({
-    resolver: zodResolver(registerFormSchema),
+  const {
+    isRegisterLoading,
+    isRegisterError,
+    isRegisterSuccess,
+    registerUser,
+  } = useRegisterUser();
+
+  const { toast } = useToast();
+
+  const form = useForm<ContactFormType>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -32,17 +42,28 @@ export default function ContactForm() {
     },
   });
 
-  async function onSubmit(values: ContactForm) {
+  async function onSubmit(values: ContactFormType) {
     const { firstName, lastName, email, phone, content } = values;
 
     const newUser = {
       name: firstName + " " + lastName,
       email,
       phone,
-      content,
+      // content,
     };
 
-    await addUser(newUser);
+    console.log(newUser);
+
+    registerUser(newUser, {
+      onSuccess: () => {
+        toast({
+          title: "Registration Success",
+          description: "Your registration has been registered!",
+        });
+
+        form.reset();
+      },
+    });
   }
   return (
     <div>
@@ -81,7 +102,11 @@ export default function ContactForm() {
                       <FormItem>
                         <FormLabel>Họ</FormLabel>
                         <FormControl>
-                          <Input placeholder="Nguyễn" {...field} />
+                          <Input
+                            placeholder="Nguyễn"
+                            disabled={isRegisterLoading}
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -94,7 +119,11 @@ export default function ContactForm() {
                       <FormItem>
                         <FormLabel>Tên</FormLabel>
                         <FormControl>
-                          <Input placeholder="Văn A" {...field} />
+                          <Input
+                            placeholder="Văn A"
+                            disabled={isRegisterLoading}
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -109,7 +138,11 @@ export default function ContactForm() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="nguyenvana@gmail.com" {...field} />
+                        <Input
+                          placeholder="nguyenvana@gmail.com"
+                          disabled={isRegisterLoading}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -122,7 +155,11 @@ export default function ContactForm() {
                     <FormItem>
                       <FormLabel>Số điện thoại</FormLabel>
                       <FormControl>
-                        <Input placeholder="+084 111 111 111" {...field} />
+                        <Input
+                          placeholder="+084 111 111 111"
+                          disabled={isRegisterLoading}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -139,6 +176,7 @@ export default function ContactForm() {
                           placeholder="Nội dung cần tư vấn..."
                           className="resize-none"
                           rows={8}
+                          disabled={isRegisterLoading}
                           {...field}
                         />
                       </FormControl>

@@ -1,10 +1,10 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { RegisterForm } from "@/schema/registerFormSchema";
+import { RegisterFormType } from "@/schema/registerFormSchema";
 import moment from "moment";
 
-export async function addUser(user: RegisterForm) {
+export async function addUser(user: RegisterFormType) {
   try {
     await prisma.user.create({
       data: {

@@ -1,12 +1,12 @@
 import { addUser } from "@/services/userService";
 import { useMutation } from "@tanstack/react-query";
 
-export default function useRegister() {
+export default function useRegisterUser() {
   const {
     isLoading: isRegisterLoading,
     isError: isRegisterError,
     isSuccess: isRegisterSuccess,
-    mutate: registerMutate,
+    mutate: registerUser,
   } = useMutation({
     mutationFn: addUser,
   });
@@ -15,6 +15,6 @@ export default function useRegister() {
     isRegisterLoading,
     isRegisterError,
     isRegisterSuccess,
-    registerMutate,
+    registerUser,
   };
 }

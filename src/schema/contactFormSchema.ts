@@ -9,9 +9,9 @@ const contactFormSchema = z.object({
     .min(10, "Số điện thoại phải có ít nhất 10 ký tự")
     .max(15, "Số điện thoại không được vượt quá 15 ký tự")
     .regex(/^\+?\d+$/, "Số điện thoại không hợp lệ"),
-  content: z.string(),
+  content: z.string().optional(),
 });
 
-export type ContactForm = z.infer<typeof contactFormSchema>;
+export type ContactFormType = z.infer<typeof contactFormSchema>;
 
 export default contactFormSchema;

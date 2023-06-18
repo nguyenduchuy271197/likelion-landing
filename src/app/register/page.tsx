@@ -13,7 +13,7 @@ export default function Register({
         <div className="py-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Illustration */}
-            <div className="relative hidden md:block">
+            <div className="relative hidden lg:block aspect-[3/2]">
               <Image
                 src="/img/illustrations/register/1.svg"
                 alt="Đăng ký tư vấn"
@@ -23,7 +23,7 @@ export default function Register({
             </div>
 
             {/* Form Box */}
-            <RegisterFormBox course={course} />
+            <RegisterFormBox initialCourse={course} />
           </div>
         </div>
       </div>
