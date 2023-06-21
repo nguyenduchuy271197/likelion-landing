@@ -6,8 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePagination } from "@mantine/hooks";
 import { Pagination } from "../ui/Pagination";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { useCallback, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 function BlogCard({
   slug,

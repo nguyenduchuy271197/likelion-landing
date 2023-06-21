@@ -3,10 +3,6 @@
   height: 100%;
 }
 
-.swiper-slide {
-  text-align: center;
-}
-
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -14,17 +10,22 @@
   object-fit: cover;
 }
 
+.swiper-pagination-bullets {
+  display: none;
+}
+
 .swiper-pagination-bullet {
   background-color: transparent;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .swiper-pagination-bullet--svg-animation {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   margin: 0 6px !important;
   display: inline-block;
 }
+
 .swiper-pagination-bullet--svg-animation svg {
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -34,7 +35,7 @@
 }
 
 .swiper-pagination-bullet--svg-animation .svg__circle-inner {
-  stroke: hsl(var(--primary));
+  stroke: #fff;
   fill: transparent;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
@@ -45,7 +46,7 @@
 
 .swiper-pagination-bullet-active .svg__circle {
   --duration: 10s;
-  stroke: hsl(var(--primary));
+  stroke: #fff;
   stroke-dasharray: 75;
   stroke-dashoffset: 0;
   -webkit-animation: progress var(--duration) ease-in-out 1 forwards;
@@ -54,7 +55,7 @@
   animation: progress var(--duration) ease-in-out 1 forwards;
 }
 .swiper-pagination-bullet-active .svg__circle-inner {
-  fill: hsl(var(--primary));
+  fill: #fff;
 }
 
 @-webkit-keyframes progress {
@@ -124,4 +125,38 @@
 }
 .gallery-thumbs .swiper-slide-active img {
   filter: contrast(1) blur(0px) !important;
+}
+
+/* Animated Arrow Icon */
+
+.arrow-icon {
+  position: relative;
+  top: -1px;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+.arrow-icon--circle {
+  transition: stroke-dashoffset 0.3s ease;
+  stroke-dasharray: 95;
+  stroke-dashoffset: 95;
+}
+
+.home-banner:hover .arrow-icon {
+  transform: translate3d(5px, 0, 0);
+}
+.home-banner:hover .arrow-icon--circle {
+  stroke-dashoffset: 0;
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination-bullets {
+    display: block;
+    bottom: var(--swiper-pagination-bottom, 140px) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination-bullets {
+    bottom: var(--swiper-pagination-bottom, 100px) !important;
+  }
 }

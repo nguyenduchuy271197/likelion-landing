@@ -59,7 +59,7 @@ const item = {
 
 export default function FAQ() {
   return (
-    <section className="bg-[url('/img/illustrations/faq/questioning.jpg')] bg-[length:600px] bg-no-repeat bg-right-bottom">
+    <section>
       <div className="container">
         <div className="py-20">
           <SectionHeading
@@ -72,6 +72,7 @@ export default function FAQ() {
             variants={container}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
           >
             <Accordion
               type="single"

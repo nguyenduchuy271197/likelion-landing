@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
-import registerFormSchema from "@/schema/registerFormSchema";
 import {
   Form,
   FormControl,
@@ -51,8 +50,6 @@ export default function ContactForm() {
       phone,
       // content,
     };
-
-    console.log(newUser);
 
     registerUser(newUser, {
       onSuccess: () => {

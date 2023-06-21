@@ -6,6 +6,73 @@ import { TechStackOptions } from "./TechStack";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 
+const teachers = [
+  {
+    title: "Full-stack Developer/Giảng viên",
+    description:
+      "Hơn 4 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy bootcamp. Được học viên yêu mến bởi cách truyền đạt kiến thức khoa học và sự hỗ trợ tận tâm. Mục tiêu là giúp học viên trang bị đầy đủ kiến thức và kỹ năng vững chắc để theo đuổi ngành lập trình. 📍",
+    avatar: "/img/teachers/huy.png",
+    tech: [
+      {
+        title: "HTML",
+        image: "/img/tech/html.svg",
+      },
+      {
+        title: "CSS",
+        image: "/img/tech/css.svg",
+      },
+      {
+        title: "Javascript",
+        image: "/img/tech/js.svg",
+      },
+      {
+        title: "React",
+        image: "/img/tech/react.svg",
+      },
+      {
+        title: "NodeJS",
+        image: "/img/tech/nodejs.svg",
+      },
+      {
+        title: "Python",
+        image: "/img/tech/python.svg",
+      },
+    ],
+  },
+  {
+    title: "Java Developer/Giảng viên",
+    description:
+      "Mong muốn lan toả sự thú vị của lập trình và truyền động lực thử thách bản thân đến mọi người. Sử dụng 4 năm kinh nghiệm lập trình Back-end Java giúp học viên xây dựng nền tảng kiên cố cho sự phát triển sau này. 📍",
+    avatar: "/img/teachers/minh.png",
+    tech: [
+      {
+        title: "HTML",
+        image: "/img/tech/html.svg",
+      },
+      {
+        title: "CSS",
+        image: "/img/tech/css.svg",
+      },
+      {
+        title: "Javascript",
+        image: "/img/tech/js.svg",
+      },
+      {
+        title: "Java",
+        image: "/img/tech/java.svg",
+      },
+      {
+        title: "Docker",
+        image: "/img/tech/docker.svg",
+      },
+      {
+        title: "Spring Boot",
+        image: "/img/tech/springboot.svg",
+      },
+    ],
+  },
+];
+
 type TeacherInfo = {
   title: string;
   description: string;
@@ -25,7 +92,7 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
     <div className="max-w-screen-lg px-8 mx-auto">
       <div
         className={cn(
-          "flex flex-col gap-16 [&>*]:basis-full",
+          "flex flex-col-reverse lg:flex-col gap-4 lg:gap-16",
           reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         )}
       >
@@ -33,24 +100,18 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
+          viewport={{ once: true }}
+          className="flex-1"
         >
           <div>
-            <h3 className="text-3xl font-extrabold lg:max-w-sm scroll-m-20 lg:text-4xl">
-              {title}
-              <Image
-                src="/img/icons/waving.png"
-                width={50}
-                height={50}
-                alt="Waving"
-                className="inline-block ml-4"
-              />
-            </h3>
-            <p className="mt-6 text-lg leading-7 text-muted-foreground">
+            <h3 className="text-2xl font-medium lg:text-3xl">{title}</h3>
+
+            <p className="mt-2 leading-7 text-muted-foreground lg:mt-4">
               {description}
             </p>
           </div>
 
-          <div className="flex gap-8 mt-8">
+          <div className="flex gap-8 mt-6">
             <div className="pt-6 text-lg leading-7 whitespace-nowrap">
               Tech Stack |
             </div>
@@ -60,27 +121,29 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
                   key={title}
                   className="flex items-center justify-center transition duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 h-[70px] w-[70px]"
                 >
-                  <Image
-                    src={image}
-                    alt={title}
-                    width={30}
-                    height={30}
-                    className="w-auto h-auto"
-                  />
+                  <div className="relative w-[40px] h-[40px]">
+                    <Image
+                      src={image}
+                      alt={title}
+                      fill
+                      className="object-contain object-center"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </motion.div>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center flex-1">
           <motion.div
-            className="shadow-2xl avatar-morph"
             initial={{ opacity: 0, x: reverse ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
+            viewport={{ once: true }}
+            className="relative w-[400px] aspect-[1/1]"
           >
-            <Image src={avatar} width={350} height={350} alt={title} />
+            <Image src={avatar} fill alt={title} className="object-contain" />
           </motion.div>
         </div>
       </div>
@@ -90,74 +153,19 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
 
 export default function Teachers() {
   return (
-    <section className="py-20">
+    <section className="py-20 md:mb-16">
       <SectionHeading
         title="Đội ngũ giảng viên"
         subtitle="Những người sẵn sàng truyền cảm hứng và chia sẻ kiến thức để hỗ trợ các bạn trở thành những lập trình viên tài năng"
       />
       <div className="flex flex-col gap-20">
-        <TeacherPortfolio
-          info={{
-            title: "Front-End Developer/Teacher",
-            description:
-              "Mình là một frontend developer và giảng viên đầy nhiệt huyết, có hơn 4 năm kinh nghiệm trong lĩnh vực phát triển trang web. Mục tiêu của mình là giúp các học viên trở thành những chuyên gia frontend thành công và phát triển cộng đồng lập trình viên. 📍",
-            avatar: "/img/teachers/huy.jpg",
-            tech: [
-              {
-                title: "HTML",
-                image: "/img/tech/html.png",
-              },
-              {
-                title: "CSS",
-                image: "/img/tech/css.png",
-              },
-              {
-                title: "Javascript",
-                image: "/img/tech/js.png",
-              },
-              {
-                title: "Java",
-                image: "/img/tech/java.png",
-              },
-              {
-                title: "NodeJS",
-                image: "/img/tech/nodejs.png",
-              },
-            ],
-          }}
-        />
-
-        <TeacherPortfolio
-          info={{
-            title: "Front-End React Developer",
-            description:
-              "Mình là một frontend developer và giảng viên đầy nhiệt huyết, có hơn 4 năm kinh nghiệm trong lĩnh vực phát triển trang web. Mục tiêu của mình là giúp các học viên trở thành những chuyên gia frontend thành công và phát triển cộng đồng lập trình viên. 📍",
-            avatar: "/img/teachers/huy.jpg",
-            tech: [
-              {
-                title: "HTML",
-                image: "/img/tech/html.png",
-              },
-              {
-                title: "CSS",
-                image: "/img/tech/css.png",
-              },
-              {
-                title: "Javascript",
-                image: "/img/tech/js.png",
-              },
-              {
-                title: "Java",
-                image: "/img/tech/java.png",
-              },
-              {
-                title: "NodeJS",
-                image: "/img/tech/nodejs.png",
-              },
-            ],
-          }}
-          reverse={true}
-        />
+        {teachers.map((teacher, index) => (
+          <TeacherPortfolio
+            info={teacher}
+            key={teacher.title}
+            reverse={index % 2 !== 0}
+          />
+        ))}
       </div>
     </section>
   );

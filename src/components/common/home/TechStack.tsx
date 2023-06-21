@@ -24,31 +24,43 @@ export type TechStackOptions = TechStackOption[];
 const techStackOptions: TechStackOptions = [
   {
     title: "HTML",
-    image: "/img/tech/html.png",
+    image: "/img/tech/html.svg",
   },
   {
     title: "CSS",
-    image: "/img/tech/css.png",
+    image: "/img/tech/css.svg",
   },
   {
     title: "Javascript",
-    image: "/img/tech/js.png",
+    image: "/img/tech/js.svg",
   },
   {
     title: "Java",
-    image: "/img/tech/java.png",
+    image: "/img/tech/java.svg",
   },
   {
     title: "NodeJS",
-    image: "/img/tech/nodejs.png",
+    image: "/img/tech/nodejs.svg",
   },
   {
     title: "Python",
-    image: "/img/tech/python.png",
+    image: "/img/tech/python.svg",
   },
   {
     title: "React",
-    image: "/img/tech/react.png",
+    image: "/img/tech/react.svg",
+  },
+  {
+    title: "Docker",
+    image: "/img/tech/docker.svg",
+  },
+  {
+    title: "Java",
+    image: "/img/tech/java.svg",
+  },
+  {
+    title: "Spring Boot",
+    image: "/img/tech/springboot.svg",
   },
 ];
 
@@ -119,13 +131,13 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export default function TechStack() {
   return (
-    <section className="py-20">
+    <section className="py-20 md:mb-16">
       <SectionHeading
         title="Công nghệ đa dạng"
         subtitle="Sử dụng những công nghệ mới nhất để mang đến trải nghiệm tuyệt vời cho người dùng."
       />
       <motion.div
-        className="flex flex-col gap-4 my-10 tech-stack-row"
+        className="flex flex-col gap-4 mt-24 tech-stack-row"
         initial={{
           opacity: 0,
           y: 40,
@@ -138,15 +150,18 @@ export default function TechStack() {
           duration: 0.4,
           delay: 0.3,
         }}
+        viewport={{ once: true }}
       >
         <ParallaxText baseVelocity={-2}>
           {techStackOptions.map((item) => (
-            <div key={item.title} className="w-[100px]">
+            <div
+              key={item.title}
+              className="relative w-[90px] lg:w-[120px] aspect-[1/1]"
+            >
               <Image
                 src={item.image}
                 alt={item.title}
-                width={250}
-                height={100}
+                fill
                 className="object-contain w-full h-full"
               />
             </div>
