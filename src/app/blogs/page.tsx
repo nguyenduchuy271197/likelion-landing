@@ -1,3 +1,4 @@
+import Wrapper from "@/components/Wrapper";
 import BlogListing from "@/components/blogs/BlogListing";
 import LatestBlog from "@/components/blogs/LatestBlog";
 import siteConfig from "@/config/siteConfig";

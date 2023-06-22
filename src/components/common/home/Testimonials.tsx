@@ -61,6 +61,7 @@ function TestimonialCard({ saying, name, avatar, course }: Testimonial) {
   return (
     <div className="relative flex flex-col justify-center h-full p-4 rounded-lg shadow-lg sm:p-8">
       <Icons.quote className="absolute w-28 right-6 opacity-30 top-4" />
+
       <div className="grow">
         <blockquote className="pl-4 mt-6 italic border-[#FFE3CB] border-l-2">
           &quot;{saying}&quot;

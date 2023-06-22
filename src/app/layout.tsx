@@ -10,10 +10,11 @@ import { Roboto } from "next/font/google";
 import siteConfig from "@/config/siteConfig";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
-import { ReactNode, Suspense } from "react";
+import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/Toaster";
+import Wrapper from "@/components/Wrapper";
 
 // Load body font
 const bodyFont = Roboto({
@@ -44,7 +45,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen antialiased pt-body-top">
             <Navbar />
             <main className="grow">
-              {children}
+              <Wrapper>{children}</Wrapper>
               {dialog}
               <Analytics />
             </main>

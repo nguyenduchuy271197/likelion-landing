@@ -50,12 +50,12 @@ export default function Banner() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.4,
-      }}
+      // initial={{ opacity: 0, y: 20 }}
+      // animate={{ opacity: 1, y: 0 }}
+      // viewport={{ once: true }}
+      // transition={{
+      //   duration: 0.4,
+      // }}
       className="relative mb-20"
     >
       {/* Banner */}
