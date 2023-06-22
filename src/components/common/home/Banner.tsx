@@ -16,7 +16,7 @@ const banners = [
     href: "/courses/fullstack-web-development-bootcamp",
     src: {
       sm: "/img/banners/fullstack-mb.png",
-      lg: "/img/banners/fullstack.png",
+      lg: "/img/banners/fullstack.webp",
     },
     title: "Fullstack Web Developer Bootcamp",
     description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 5 ngày",

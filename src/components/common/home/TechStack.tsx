@@ -133,8 +133,8 @@ export default function TechStack() {
   return (
     <section className="py-20 md:mb-16">
       <SectionHeading
-        title="Công nghệ đa dạng"
-        subtitle="Sử dụng những công nghệ mới nhất để mang đến trải nghiệm tuyệt vời cho người dùng."
+        title="Ngôn ngữ đào tạo"
+        subtitle="Kiến thức và công nghệ mới nhất sẽ luôn được cập nhật trong lộ trình giảng dạy giúp học viên đáp ứng yêu cầu của thị trường."
       />
       <motion.div
         className="flex flex-col gap-4 mt-24 tech-stack-row"

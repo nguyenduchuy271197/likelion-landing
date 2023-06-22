@@ -43,7 +43,7 @@ const testimonials = [
   },
   {
     saying:
-      "Các thầy trong khoá thật sự dạy rất nhiệt tình luôn ấy ạ. Mọi người lúc đầu vào đa phần chưa có một chút kiến thức gì về lập trình nên hỏi cũng nhiều lắm. Các thầy không phàn nàn gì mà luôn giải đáp theo thực tế với ví dụ nên dễ hiểu á. Lộ trình dạy cũng rõ ràng, dễ nắm cho người mới như em nữa.",
+      "Các thầy trong khoá thật sự dạy rất nhiệt tình luôn ấy ạ. Mọi người lúc đầu vào đa phần chưa có một chút kiến thức gì về lập trình nên hỏi cũng nhiều lắm.",
     name: "Hoàng Long",
     course: "Khóa Full-stack Web Developer Bootcamp 3",
     avatar: "/img/avatar/lo.png",
@@ -106,7 +106,7 @@ export default function Testimonials() {
             spaceBetween={32}
             modules={[Navigation]}
             style={{
-              height: lgMatches ? 600 : 500,
+              height: lgMatches ? 550 : 420,
               paddingInline: 16,
               paddingBlock: lgMatches ? 80 : 16,
               overflowY: "visible",

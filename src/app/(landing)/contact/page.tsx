@@ -1,4 +1,4 @@
-import ContactBanner from "@/components/common/contact/ContactBanner";
+import SectionBanner from "@/components/SectionBanner";
 import ContactForm from "@/components/common/contact/ContactForm";
 import ContactInfo from "@/components/common/contact/ContactInfo";
 import ContactMap from "@/components/common/contact/ContactMap";
@@ -13,7 +13,11 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <div>
-      <ContactBanner />
+      <SectionBanner
+        title="Liên hệ với LIKELION"
+        description="Hãy liên hệ chúng tôi nếu bạn có bất cứ thắc mắc nào về khóa học."
+        bgSrc="/img/banners/contact.png"
+      />
       <ContactForm />
       <ContactInfo />
       <ContactMap />

@@ -1,3 +1,4 @@
+import CTA from "@/components/common/home/CTA";
 import Testimonials from "@/components/common/home/Testimonials";
 import dynamic from "next/dynamic";
 
@@ -14,8 +15,9 @@ export default function Home() {
       <Courses />
       <Teachers />
       <TechStack />
-      <FAQ />
       <Testimonials />
+      <CTA />
+      <FAQ />
     </div>
   );
 }
