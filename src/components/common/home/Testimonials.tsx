@@ -59,7 +59,7 @@ interface Testimonial {
 
 function TestimonialCard({ saying, name, avatar, course }: Testimonial) {
   return (
-    <div className="relative flex flex-col justify-center h-full p-8 rounded-lg shadow-lg">
+    <div className="relative flex flex-col justify-center h-full p-4 rounded-lg shadow-lg sm:p-8">
       <Icons.quote className="absolute w-28 right-6 opacity-30 top-4" />
       <div className="grow">
         <blockquote className="pl-4 mt-6 italic border-[#FFE3CB] border-l-2">
@@ -96,17 +96,17 @@ export default function Testimonials() {
 
   return (
     <section>
-      <div className="container">
+      <div className="container px-4">
         <div className="py-10 md:py-20">
           <SectionHeading title="Học viên nói về LIKELION" />
           <Swiper
             slidesPerView={
-              lgMatches ? 3.3 : mdMatches ? 2.1 : smMatches ? 1.5 : 1.2
+              lgMatches ? 3.3 : mdMatches ? 2.1 : smMatches ? 1.5 : 1.1
             }
             spaceBetween={32}
             modules={[Navigation]}
             style={{
-              height: lgMatches ? 550 : 420,
+              height: lgMatches ? 550 : 360,
               paddingInline: 16,
               paddingBlock: lgMatches ? 80 : 16,
               overflowY: "visible",

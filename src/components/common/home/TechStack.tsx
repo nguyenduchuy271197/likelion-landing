@@ -132,10 +132,12 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 export default function TechStack() {
   return (
     <section className="py-20 md:mb-16">
-      <SectionHeading
-        title="Ngôn ngữ đào tạo"
-        subtitle="Kiến thức và công nghệ mới nhất sẽ luôn được cập nhật trong lộ trình giảng dạy giúp học viên đáp ứng yêu cầu của thị trường."
-      />
+      <div className="container">
+        <SectionHeading
+          title="Ngôn ngữ đào tạo"
+          subtitle="Kiến thức và công nghệ mới nhất sẽ luôn được cập nhật trong lộ trình giảng dạy giúp học viên đáp ứng yêu cầu của thị trường."
+        />
+      </div>
       <motion.div
         className="flex flex-col gap-4 mt-24 tech-stack-row"
         initial={{

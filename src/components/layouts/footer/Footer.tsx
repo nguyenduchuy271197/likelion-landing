@@ -9,6 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
+import Icons from "@/components/Icons";
 
 export default function Footer() {
   return (
@@ -54,24 +55,28 @@ export default function Footer() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <Link
+                {/* <Link
                   href="#"
                   className="flex items-center justify-center h-10 aspect-[1/1] rounded-lg bg-white text-black"
                 >
                   <Facebook />
+                </Link> */}
+                <Link href="#">
+                  <Icons.facebook className="w-8" />
                 </Link>
+                <Link href="#">
+                  <Icons.instagram className="w-8" />
+                </Link>
+                <Link href="#">
+                  <Icons.youtube className="w-8" />
+                </Link>
+                {/* 
                 <Link
                   href="#"
                   className="flex items-center justify-center h-10 aspect-[1/1] rounded-lg bg-white text-black"
                 >
                   <Instagram />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center justify-center h-10 aspect-[1/1] rounded-lg bg-white text-black"
-                >
-                  <Youtube />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

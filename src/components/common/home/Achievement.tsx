@@ -3,11 +3,11 @@
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import Icons from "@/components/Icons";
-import { LucideProps } from "lucide-react";
+import { Code2, LucideProps, Star, Users } from "lucide-react";
 
 const achievements: Achievement[] = [
   {
-    icon: Icons.student,
+    icon: Users,
     label: "Học viên",
     count: 24000,
     startCount: 22000,
@@ -15,7 +15,7 @@ const achievements: Achievement[] = [
     duration: 3,
   },
   {
-    icon: Icons.coding,
+    icon: Code2,
     label: "Năm kinh nghiệm giáo dục",
     count: 10,
     startCount: 0,
@@ -23,7 +23,7 @@ const achievements: Achievement[] = [
     duration: 5,
   },
   {
-    icon: Icons.star,
+    icon: Star,
     label: "Học viên hài lòng",
     count: 95,
     startCount: 50,
@@ -52,7 +52,7 @@ function AchievementCard({
   return (
     <div className="flex items-center w-full max-w-xs gap-4 md:text-center md:flex-col lg:flex-row lg:text-start">
       <div className="flex items-center justify-center w-[80px] aspect-[1/1] bg-[#fff3ea] rounded-full">
-        <Icon fill="#ff7100" className="w-[30px]" />
+        <Icon stroke="#ff7100" size={32} />
       </div>
 
       <div className="flex flex-col gap-1">

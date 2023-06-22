@@ -111,9 +111,9 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
             </p>
           </div>
 
-          <div className="flex gap-8 mt-6">
-            <div className="pt-6 text-lg leading-7 whitespace-nowrap">
-              Tech Stack |
+          <div className="flex flex-col gap-2 mt-2 sm:gap-4 sm:mt-6 sm:flex-row">
+            <div className="pt-6 font-medium leading-7 whitespace-nowrap">
+              Tech Stack <span className="hidden sm:inline">|</span>
             </div>
             <div className="flex flex-wrap items-center gap-4">
               {tech.map(({ title, image }) => (
@@ -141,7 +141,7 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             viewport={{ once: true }}
-            className="relative w-[400px] aspect-[1/1]"
+            className="relative w-full max-w-[400px] aspect-[1/1]"
           >
             <Image src={avatar} fill alt={title} className="object-contain" />
           </motion.div>
@@ -154,10 +154,13 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
 export default function Teachers() {
   return (
     <section className="py-20 md:mb-16">
-      <SectionHeading
-        title="Đội ngũ giảng viên"
-        subtitle="Những người sẵn sàng truyền cảm hứng và chia sẻ kiến thức để hỗ trợ các bạn trở thành những lập trình viên tài năng"
-      />
+      <div className="container">
+        <SectionHeading
+          title="Đội ngũ giảng viên"
+          subtitle="Những người sẵn sàng truyền cảm hứng và chia sẻ kiến thức để hỗ trợ các bạn trở thành những lập trình viên tài năng"
+        />
+      </div>
+
       <div className="flex flex-col gap-20">
         {teachers.map((teacher, index) => (
           <TeacherPortfolio
