@@ -45,7 +45,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen antialiased pt-body-top">
             <Navbar />
             <main className="grow">
-              <Wrapper>{children}</Wrapper>
+              {children}
               {dialog}
               <Analytics />
             </main>
