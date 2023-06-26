@@ -24,7 +24,7 @@ const features: Feature[] = [
 
 function FeatureCard({ src, title, description }: Feature) {
   return (
-    <div className="flex flex-col gap-8 sm:gap-12 sm:gap-16 sm:p-12 bg-gradient-to-tr from-[#ff7100]/25 from-[20%] via-[#ffe3cb]/25 to-[#ffe3cb]/25 p-8 items-start">
+    <div className="flex flex-col gap-8 sm:gap-12  sm:p-12 bg-gradient-to-tr from-[#ff7100]/25 from-[20%] via-[#ffe3cb]/25 to-[#ffe3cb]/25 p-8 items-start">
       <div className="relative h-20 sm:h-24 aspect-[1/1]">
         <Image fill alt={title} src={src} />
       </div>
