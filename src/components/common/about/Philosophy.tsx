@@ -1,5 +1,5 @@
 import SectionHeading from "../home/SectionHeading";
-import { LucideProps } from "lucide-react";
+import { LucideIcon, LucideProps } from "lucide-react";
 
 const Illustrations = {
   student: (props: LucideProps) => (
@@ -1292,23 +1292,48 @@ const Illustrations = {
   ),
 };
 
-function PhilosophyCard() {
+interface PhilosophyType {
+  illustration: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const philosophies: PhilosophyType[] = [
+  {
+    illustration: Illustrations.time,
+    title: "Tối ưu hoá thời gian học",
+    description:
+      "Cùng một khoảng thời gian, LIKELION giúp bạn tiếp thu được nhiều kiến thức hơn nhờ sự chắt lọc và sắp xếp thông tin hợp lý. Với lộ trình tinh gọn được biên soạn khoa học, bạn không còn phải tự mình loay hoay tìm kiếm hay lan man với những điều không cần thiết.",
+  },
+  {
+    illustration: Illustrations.mining,
+    title: "Môi trường tích cực",
+    description:
+      "Việc học và thực hành máy móc là không đủ để phát triển trong ngành này. Hơn cả một khoá học, LIKELION trang bị tư duy lập trình - điều giúp bạn tự tin khi gặp bất kỳ thử thách mới nào. Thay vì chỉ dạy cách sử dụng công cụ, chúng tôi tập trung phát triển tư duy trong từng buổi học.",
+  },
+  {
+    illustration: Illustrations.mining,
+    title: "Phát triển tư duy",
+    description:
+      "Ở LIKELION, bạn sẽ có đủ không gian và sự hỗ trợ cần thiết để phát triển bản thân. LIKELION tạo môi trường tích cực để kích thích sự sáng tạo và chủ động trong việc học lập trình. Từ đó, học viên có thể nghiên cứu sâu hơn và tự hoàn thiện ngay cả sau khi kết thúc khoá học.",
+  },
+];
+
+function PhilosophyCard({
+  illustration: Illustration,
+  title,
+  description,
+}: PhilosophyType) {
   return (
     <div className="relative p-8 overflow-hidden bg-white rounded-3xl group">
       <div className="group-hover:hidden">
         <div className="relative aspect-[4/3] bg-[#FF8D3F] rounded-xl">
-          <Illustrations.mining className="absolute bottom-0 w-full h-[110%]" />
+          <Illustration className="absolute bottom-0 w-full h-[110%]" />
         </div>
-        <h4 className="mt-6 text-xl font-medium text-center">
-          Tối gian hoá thời gian học
-        </h4>
+        <h4 className="mt-6 text-xl font-medium text-center">{title}</h4>
       </div>
       <div className="absolute top-0 left-0 w-full h-full p-8 text-white transition duration-300 bg-black opacity-0 pointer-events-none group-hover:opacity-100">
-        <p className="flex items-center h-full text-lg">
-          Đặt chất lượng đào tạo, lộ trình và trải nghiệm của học viên là ưu
-          tiên hàng đầu, LIKELION xây dựng môi trường học tập năng động để bạn
-          khai phá tiềm năng của mình.
-        </p>
+        <p className="flex items-center h-full text-lg">{description}</p>
       </div>
     </div>
   );
@@ -1326,9 +1351,9 @@ export default function Philosophy() {
           />
 
           <div className="grid grid-cols-3 gap-8">
-            <PhilosophyCard />
-            <PhilosophyCard />
-            <PhilosophyCard />
+            {philosophies.map((philosophy) => (
+              <PhilosophyCard {...philosophy} key={philosophy.title} />
+            ))}
           </div>
         </div>
       </div>

@@ -17,44 +17,6 @@ import {
 import Icons from "@/components/Icons";
 import NavMenuContentCard from "./NavMenuContentCard";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
-
 const courses = [
   {
     title: "Fullstack Web Development Bootcamp",
@@ -125,30 +87,6 @@ export default function NavMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger
-            className={
-              pathname.startsWith("/roadmap")
-                ? "bg-accent text-accent-foreground"
-                : ""
-            }
-          >
-            Lộ Trình
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <NavMenuContentCard>
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </NavMenuContentCard>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
               navigationMenuTriggerStyle(),
@@ -181,6 +119,17 @@ export default function NavMenu() {
             asChild
           >
             <Link href="/contact">Liên hệ</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(
+              navigationMenuTriggerStyle(),
+              pathname == "/faq" ? "bg-accent text-accent-foreground" : ""
+            )}
+            asChild
+          >
+            <Link href="/faq">FAQ</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

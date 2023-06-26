@@ -1,13 +1,5 @@
-import { Button } from "@/components/ui/Button";
 import Logo from "../../Logo";
-import {
-  Clock,
-  Facebook,
-  Instagram,
-  Mail,
-  PhoneCall,
-  Youtube,
-} from "lucide-react";
+import { Clock, Mail, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import Icons from "@/components/Icons";
 
@@ -25,17 +17,20 @@ export default function Footer() {
               </p>
 
               <div className="flex flex-col gap-2 mt-10 font-medium">
-                <div className="flex items-center gap-4">
+                <div className="flex items-start gap-4">
                   <PhoneCall />
                   <p>(+84) 86 713 3779</p>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-start gap-4">
                   <Mail />
                   <p>likelionvn@likelion.net</p>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-start gap-4">
                   <Clock />
-                  <p>Thứ 2 - Thứ 6 8:30 AM - 5:30PM</p>
+                  <p className="flex flex-col">
+                    <span>Thứ 2 - Thứ 6</span>
+                    <span>8:30 AM - 5:30 PM</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -55,12 +50,6 @@ export default function Footer() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                {/* <Link
-                  href="#"
-                  className="flex items-center justify-center h-10 aspect-[1/1] rounded-lg bg-white text-black"
-                >
-                  <Facebook />
-                </Link> */}
                 <Link href="#">
                   <Icons.facebook className="w-8" />
                 </Link>
@@ -70,13 +59,6 @@ export default function Footer() {
                 <Link href="#">
                   <Icons.youtube className="w-8" />
                 </Link>
-                {/* 
-                <Link
-                  href="#"
-                  className="flex items-center justify-center h-10 aspect-[1/1] rounded-lg bg-white text-black"
-                >
-                  <Instagram />
-                </Link> */}
               </div>
             </div>
           </div>
