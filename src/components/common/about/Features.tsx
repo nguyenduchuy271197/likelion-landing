@@ -24,8 +24,8 @@ const features: Feature[] = [
 
 function FeatureCard({ src, title, description }: Feature) {
   return (
-    <div className="flex flex-col gap-12 sm:gap-16 sm:p-12 bg-gradient-to-tr from-[#ff7100]/25 from-[20%] via-[#ffe3cb]/25 to-[#ffe3cb]/25 p-8 items-start">
-      <div className="relative h-24 aspect-[1/1]">
+    <div className="flex flex-col gap-8 sm:gap-12 sm:gap-16 sm:p-12 bg-gradient-to-tr from-[#ff7100]/25 from-[20%] via-[#ffe3cb]/25 to-[#ffe3cb]/25 p-8 items-start">
+      <div className="relative h-20 sm:h-24 aspect-[1/1]">
         <Image fill alt={title} src={src} />
       </div>
       <div className="">
@@ -40,7 +40,7 @@ export default function Features() {
   return (
     <section>
       <div className="container">
-        <div className="py-20">
+        <div className="py-10 sm:py-20">
           <div className="grid overflow-hidden md:grid-cols-2 rounded-2xl">
             {features.map((feature) => (
               <FeatureCard {...feature} key={feature.title} />

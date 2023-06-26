@@ -3,14 +3,15 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import Icons from "@/components/Icons";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { Button } from "@/components/ui/Button";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMediaQuery } from "@mantine/hooks";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -80,12 +81,12 @@ function TestimonialCard({ saying, name, avatar, course }: Testimonial) {
 
       <div className="flex items-center gap-2">
         <div className="p-1 rounded-full shadow-lg">
-          <div className="relative h-[60px] aspect-[1/1] bg-gradient-to-br from-[#FFE3CB] to-[#ff7100] rounded-full overflow-hidden shrink-0">
+          <div className="relative h-[60px] aspect-[1/1] bg-gradient-to-br from-[#FFE3CB] to-[#ff7100] rounded-full overflow-hidden shrink-0 ">
             <Image
               src={avatar}
               alt={name}
               fill
-              className="object-contain pt-1"
+              className="object-contain object-bottom"
             />
           </div>
         </div>
@@ -110,55 +111,67 @@ export default function Testimonials() {
       <div className="container px-4">
         <div className="py-10 md:py-20">
           <SectionHeading title="Học viên nói về LIKELION" />
-          <Swiper
-            slidesPerView={
-              lgMatches ? 3.3 : mdMatches ? 2.1 : smMatches ? 1.5 : 1.1
-            }
-            spaceBetween={32}
-            modules={[Navigation]}
-            style={{
-              height: lgMatches ? 550 : 360,
-              paddingInline: 16,
-              paddingBlock: lgMatches ? 80 : 16,
-              overflowY: "visible",
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.5,
             }}
-            navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              const navigation = swiper.params.navigation as NavigationOptions;
-              navigation.prevEl = navigationPrevRef.current;
-              navigation.nextEl = navigationNextRef.current;
-            }}
+            viewport={{ once: true }}
           >
-            {testimonials.map((testimonial) => (
-              <SwiperSlide key={testimonial.avatar}>
-                <TestimonialCard {...testimonial} />
-              </SwiperSlide>
-            ))}
-            <div
-              className={cn(
-                "absolute top-0 right-0 items-center gap-4",
-                lgMatches ? "flex" : "hidden"
-              )}
+            <Swiper
+              slidesPerView={
+                lgMatches ? 3.3 : mdMatches ? 2.1 : smMatches ? 1.5 : 1.1
+              }
+              spaceBetween={32}
+              modules={[Navigation]}
+              style={{
+                height: lgMatches ? 550 : 360,
+                paddingInline: 16,
+                paddingBlock: lgMatches ? 80 : 16,
+                overflowY: "visible",
+              }}
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              onBeforeInit={(swiper) => {
+                const navigation = swiper.params
+                  .navigation as NavigationOptions;
+                navigation.prevEl = navigationPrevRef.current;
+                navigation.nextEl = navigationNextRef.current;
+              }}
             >
-              <Button
-                ref={navigationPrevRef}
-                variant="outline"
-                className="h-16 rounded-full aspect-[1/1] border-2"
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.avatar}>
+                  <TestimonialCard {...testimonial} />
+                </SwiperSlide>
+              ))}
+              <div
+                className={cn(
+                  "absolute top-0 right-0 items-center gap-4",
+                  lgMatches ? "flex" : "hidden"
+                )}
               >
-                <ChevronLeft />
-              </Button>
-              <Button
-                ref={navigationNextRef}
-                variant="outline"
-                className="h-16 rounded-full aspect-[1/1] border-2"
-              >
-                <ChevronRight />
-              </Button>
-            </div>
-          </Swiper>
+                <Button
+                  ref={navigationPrevRef}
+                  variant="outline"
+                  className="h-16 rounded-full aspect-[1/1] border-2"
+                >
+                  <ChevronLeft />
+                </Button>
+                <Button
+                  ref={navigationNextRef}
+                  variant="outline"
+                  className="h-16 rounded-full aspect-[1/1] border-2"
+                >
+                  <ChevronRight />
+                </Button>
+              </div>
+            </Swiper>
+          </motion.div>
         </div>
       </div>
     </section>

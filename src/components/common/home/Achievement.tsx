@@ -2,7 +2,6 @@
 
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import Icons from "@/components/Icons";
 import { Code2, LucideProps, Star, Users } from "lucide-react";
 
 const achievements: Achievement[] = [

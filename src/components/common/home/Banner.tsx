@@ -15,7 +15,7 @@ const banners = [
   {
     href: "/courses/fullstack-web-development-bootcamp",
     src: {
-      sm: "/img/banners/fullstack-mb.png",
+      sm: "/img/banners/fullstack-mb.webp",
       lg: "/img/banners/fullstack.webp",
     },
     title: "Fullstack Web Developer Bootcamp",
@@ -24,21 +24,21 @@ const banners = [
   {
     href: "/about",
     src: {
-      sm: "/img/banners/hyl-mb.png",
-      lg: "/img/banners/fullstack.png",
+      sm: "/img/banners/hyl-mb.webp",
+      lg: "/img/banners/hyl.webp",
     },
     title: "Hack Your Life",
     description: "Từ con số 0 đến thành thạo các kĩ năng",
   },
-  {
-    href: "/contact",
-    src: {
-      sm: "/img/banners/contact.png",
-      lg: "/img/banners/fullstack.png",
-    },
-    title: "Về Chúng tôi",
-    description: "Tìm hiểu về văn hoá và môi trường học tập của LIKELION",
-  },
+  // {
+  //   href: "/contact",
+  //   src: {
+  //     sm: "/img/banners/contact.png",
+  //     lg: "/img/banners/fullstack.png",
+  //   },
+  //   title: "Về Chúng tôi",
+  //   description: "Tìm hiểu về văn hoá và môi trường học tập của LIKELION",
+  // },
 ];
 
 const bannerConfig = {
@@ -50,12 +50,12 @@ export default function Banner() {
 
   return (
     <motion.section
-      // initial={{ opacity: 0, y: 20 }}
-      // animate={{ opacity: 1, y: 0 }}
-      // viewport={{ once: true }}
-      // transition={{
-      //   duration: 0.4,
-      // }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.4,
+      }}
       className="relative mb-20"
     >
       {/* Banner */}

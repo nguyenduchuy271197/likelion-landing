@@ -38,25 +38,34 @@ export default function Footer() {
               <h5 className="mb-4 text-xl font-bold uppercase ">Công ty</h5>
               <ul className="flex flex-col gap-2">
                 <li>
-                  <Link href="#">Về chúng tôi</Link>
+                  <Link href="/about">Về chúng tôi</Link>
                 </li>
                 <li>
-                  <Link href="#">Blogs</Link>
+                  <Link href="/blogs">Blogs</Link>
                 </li>
                 <li>
-                  <Link href="#">Liên hệ</Link>
+                  <Link href="/contact">Liên hệ</Link>
                 </li>
               </ul>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <Link href="#">
+                <Link
+                  href="https://www.facebook.com/likelionvietnam"
+                  target="_blank"
+                >
                   <Icons.facebook className="w-8" />
                 </Link>
-                <Link href="#">
+                <Link
+                  href="https://www.instagram.com/likelionvn/"
+                  target="_blank"
+                >
                   <Icons.instagram className="w-8" />
                 </Link>
-                <Link href="#">
+                <Link
+                  href="https://www.youtube.com/@likelionvietnam"
+                  target="_blank"
+                >
                   <Icons.youtube className="w-8" />
                 </Link>
               </div>

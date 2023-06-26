@@ -42,6 +42,7 @@
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "framer-motion": "^10.12.11",
+    "fslightbox-react": "^1.7.6",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.8.0",
     "lucide-react": "^0.214.0",
@@ -71,6 +72,6 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/react-slick": "^0.23.10"
+    "@types/fslightbox-react": "^1.7.3"
   }
 }

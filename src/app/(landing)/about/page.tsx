@@ -1,5 +1,6 @@
 import SectionBanner from "@/components/SectionBanner";
 import Features from "@/components/common/about/Features";
+import Gallery from "@/components/common/about/Gallery";
 import Intro from "@/components/common/about/Intro";
 import Members from "@/components/common/about/Members";
 import Philosophy from "@/components/common/about/Philosophy";
@@ -26,6 +27,7 @@ export default function About() {
       <Philosophy />
       <Members />
       <Reasons />
+      <Gallery />
     </div>
   );
 }

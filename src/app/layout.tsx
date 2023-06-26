@@ -14,7 +14,6 @@ import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/Toaster";
-import Wrapper from "@/components/Wrapper";
 
 // Load body font
 const bodyFont = Roboto({

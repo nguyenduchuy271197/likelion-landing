@@ -1,11 +1,12 @@
 import Image from "next/image";
+import SectionHeading from "../home/SectionHeading";
 
 export default function Intro() {
   return (
     <section>
       <div className="container">
-        <div className="grid items-center gap-8 py-20 md:grid-cols-2">
-          <div className="grid grid-cols-2 gap-6">
+        <div className="grid items-center gap-16 py-10 md:gap-8 sm:py-20 md:grid-cols-2 place-items-center">
+          <div className="grid grid-cols-2 gap-6 max-w-[420px] w-full">
             <div className="relative aspect-[1/1] w-full rounded-3xl overflow-hidden">
               <Image src="/img/about/intro/pic1.png" alt="LIKELION" fill />
             </div>
@@ -19,10 +20,13 @@ export default function Intro() {
               <Image src="/img/about/intro/pic4.png" alt="LIKELION" fill />
             </div>
           </div>
-          <div className="place-self-center">
-            <div className="max-w-[420px]">
-              <h2 className="mb-6 text-4xl font-medium">LIKELION là ai?</h2>
-              <p className="text-lg text-muted-foreground">
+          <div>
+            <div className="md:max-w-[420px]">
+              <SectionHeading
+                title="LIKELION là ai?"
+                className="mb-6 text-left max-w-none"
+              />
+              <p className="sm:text-lg text-muted-foreground">
                 LIKELION là trung tâm đào tạo lập trình chất lượng tại Việt Nam.
                 Chúng tôi không gò bó bản thân trong phương pháp giáo dục truyền
                 thống. Bạn sẽ được học từ những chuyên gia trong ngành, tiếp cận

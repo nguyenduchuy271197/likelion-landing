@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionHeading from "../home/SectionHeading";
 import {
   Briefcase,
@@ -43,13 +42,13 @@ const reasons: Reason[] = [
 
 function ReasonCard({ icon: Icon, title, description }: Reason) {
   return (
-    <div className="max-w-md">
+    <div className="h-full p-8 bg-white sm:p-12 rounded-2xl">
       <div className="flex items-center gap-6 mb-4">
-        <Icon size={72} stroke="#FE6F00" strokeWidth={1} />
+        <Icon size={72} stroke="#FE6F00" strokeWidth={1} className="shrink-0" />
         <h4 className="text-2xl font-medium">{title}</h4>
       </div>
       <div>
-        <p className="text-lg leading-normal text-muted-foreground">
+        <p className="leading-relaxed sm:text-lg text-muted-foreground">
           {description}
         </p>
       </div>
@@ -59,11 +58,11 @@ function ReasonCard({ icon: Icon, title, description }: Reason) {
 
 export default function Reasons() {
   return (
-    <section>
+    <section className="bg-[#ff8d3f]">
       <div className="container">
         <div className="py-20">
-          <SectionHeading title="Tại sao chọn LIKELION?" />
-          <div className="grid grid-cols-2 gap-x-8 gap-y-16">
+          <SectionHeading title="Tại sao chọn LIKELION?" color="white" />
+          <div className="grid gap-8 md:grid-cols-2 place-items-center">
             {reasons.map((reason) => (
               <ReasonCard key={reason.title} {...reason} />
             ))}

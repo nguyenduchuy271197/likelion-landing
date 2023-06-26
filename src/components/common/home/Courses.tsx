@@ -1,14 +1,11 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/Card";
+"use client";
+
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const courses: Course[] = [
   {
@@ -80,7 +77,7 @@ function CourseCard({ src, title, statuses, href }: Course) {
 
 export default function Courses() {
   return (
-    <section className="mb-10">
+    <section>
       <div className="container">
         <div className="py-6 md:py-20">
           <SectionHeading
@@ -88,11 +85,21 @@ export default function Courses() {
             subtitle="Người mới bắt đầu? Chưa có kinh nghiệm? Khoá học lập trình của LIKELION hỗ trợ bạn mọi lúc trên con đường học tập của mình. "
           />
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {courses.map((course) => (
-              <CourseCard key={course.title} {...course} />
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.5,
+            }}
+            viewport={{ once: true }}
+          >
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {courses.map((course) => (
+                <CourseCard key={course.title} {...course} />
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

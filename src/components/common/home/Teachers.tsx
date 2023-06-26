@@ -97,8 +97,8 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
         )}
       >
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: reverse ? 50 : -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
           viewport={{ once: true }}
           className="flex-1"
@@ -157,11 +157,11 @@ export default function Teachers() {
       <div className="container">
         <SectionHeading
           title="Đội ngũ giảng viên"
-          subtitle="Những người sẵn sàng truyền cảm hứng và chia sẻ kiến thức để hỗ trợ các bạn trở thành những lập trình viên tài năng"
+          subtitle="Giảng dạy bằng sự đam mê cống hiến cho nền giáo dục IT ở Việt Nam, mong muốn giúp học viên chinh phục lập trình thành công."
         />
       </div>
 
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-20 pt-10">
         {teachers.map((teacher, index) => (
           <TeacherPortfolio
             info={teacher}

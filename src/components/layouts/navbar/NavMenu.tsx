@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/NavigationMenu";
 import Icons from "@/components/Icons";
 import NavMenuContentCard from "./NavMenuContentCard";
+import Image from "next/image";
 
 const courses = [
   {
@@ -58,19 +59,10 @@ export default function NavMenu() {
             <NavMenuContentCard>
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <a
-                    className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-gradient-to-b from-muted/50 to-muted focus:shadow-md"
+                  <Link
+                    className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none focus:shadow-md bg-[url('/img/banners/courses.png')] bg-cover"
                     href="/"
-                  >
-                    <Icons.logo className="w-6 h-6" />
-                    <div className="mt-4 mb-2 text-lg font-medium">
-                      LIKELION
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Nơi mang lại cho các bạn các khoá học lập trình chất lượng
-                      nhất!
-                    </p>
-                  </a>
+                  ></Link>
                 </NavigationMenuLink>
               </li>
 
