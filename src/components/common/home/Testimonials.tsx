@@ -8,7 +8,7 @@ import { Navigation } from "swiper";
 import { Button } from "@/components/ui/Button";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useMediaQuery } from "@mantine/hooks";
 import { cn } from "@/lib/utils";
 
@@ -61,6 +61,16 @@ function TestimonialCard({ saying, name, avatar, course }: Testimonial) {
   return (
     <div className="relative flex flex-col justify-center h-full p-4 rounded-lg shadow-lg sm:p-8">
       <Icons.quote className="absolute w-28 right-6 opacity-30 top-4" />
+      <div className="absolute right-6 top-4">
+        <div className="relative w-28 aspect-[4/3]">
+          <Image
+            src="/img/reviews/quote.svg"
+            alt="Quote"
+            fill
+            className="opacity-30"
+          />
+        </div>
+      </div>
 
       <div className="grow">
         <blockquote className="pl-4 mt-6 italic border-[#FFE3CB] border-l-2">
