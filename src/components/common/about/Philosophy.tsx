@@ -53,19 +53,83 @@ function PhilosophyCard({ src, title, description }: PhilosophyType) {
 
 export default function Philosophy() {
   return (
-    <section className="bg-[#FF8D3F]">
+    <section className="bg-[#FF8D3F] relative">
       <div className="container">
-        <div className="py-20">
+        <div className="pt-20 pb-20 lg:pb-0">
           <SectionHeading
             title="Triết lý giáo dục"
             subtitle="Đặt chất lượng đào tạo, lộ trình và trải nghiệm của học viên là ưu tiên hàng đầu, LIKELION xây dựng môi trường học tập năng động để bạn khai phá tiềm năng của mình."
             color="white"
           />
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center md:place-items-stretch">
-            {philosophies.map((philosophy) => (
-              <PhilosophyCard {...philosophy} key={philosophy.title} />
-            ))}
+          <div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center md:place-items-stretch">
+              {philosophies.map((philosophy) => (
+                <PhilosophyCard {...philosophy} key={philosophy.title} />
+              ))}
+            </div>
+
+            <div className="relative hidden pb-36 lg:block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Layer_2"
+                data-name="Layer 2"
+                viewBox="0 0 919.14 213.25"
+                className="max-w-[70%] mx-auto mt-4"
+              >
+                <defs>
+                  <style
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        "\n      .cls-1 {\n        fill: #ff8d3f;\n      }\n\n      .cls-1, .cls-2, .cls-3 {\n        stroke: #fff;\n        stroke-miterlimit: 10;\n      }\n\n      .cls-1, .cls-3 {\n        stroke-width: 5px;\n      }\n\n      .cls-2 {\n        stroke-width: 3.18px;\n      }\n\n      .cls-2, .cls-3 {\n        fill: none;\n      }\n    ",
+                    }}
+                  />
+                </defs>
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <g>
+                    <polyline
+                      className="cls-3"
+                      points="13.09 24.79 13.09 189.12 460.33 189.12 460.33 24.91"
+                    />
+                    <circle className="cls-2" cx="13.25" cy="13.25" r="11.66" />
+                    <circle
+                      className="cls-2"
+                      cx="460.29"
+                      cy="13.25"
+                      r="11.66"
+                    />
+                    <circle
+                      className="cls-2"
+                      cx="905.89"
+                      cy="13.25"
+                      r="11.66"
+                    />
+                    <polyline
+                      className="cls-3"
+                      points="905.89 24.91 905.89 189.12 462.03 189.12"
+                    />
+                    <circle
+                      className="cls-1"
+                      cx="460.29"
+                      cy="189.12"
+                      r="21.63"
+                    />
+                  </g>
+                </g>
+              </svg>
+              <div className="absolute text-3xl font-bold text-white bottom-12 right-1/2">
+                Học viên <br />
+                là trung tâm
+              </div>
+              <div className="absolute bottom-0 left-[calc(50%-2rem)]">
+                <Image
+                  src="/img/about/philosophy/student.svg"
+                  alt="Student"
+                  width={250}
+                  height={300}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
