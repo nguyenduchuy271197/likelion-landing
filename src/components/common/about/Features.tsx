@@ -7,7 +7,6 @@ interface Feature {
   description: string;
 }
 
-      xmlns="http://www.w3.org/2000/svg"
 const features: Feature[] = [
   {
     src: "/img/about/features/target.svg",
