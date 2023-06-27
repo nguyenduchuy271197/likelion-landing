@@ -28,6 +28,7 @@ export interface ICourse {
   objectives: string[];
   features: string[];
   modules: IModule[];
+  requirements: string[];
 }
 
 export interface IModule {
@@ -36,5 +37,3 @@ export interface IModule {
   lessons: string[];
   courseId?: string;
 }
-
-export interface ICourse {}

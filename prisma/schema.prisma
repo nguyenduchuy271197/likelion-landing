@@ -17,6 +17,7 @@ model Course {
   subtitle        String?
   price           Int?
   discountedPrice Int?
+  requirements    String[]
   objectives      String[]
   modules         Module[]
   features        String[]

@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   const slugs = [
     "fullstack-web-development-bootcamp",
     "khoa-hoc-java",
-    "khoa-hoc-data-science-python",
+    "data-science-co-ban-voi-python",
   ];
   return slugs.map((slug) => ({
     courseSlug: slug,
@@ -30,6 +30,7 @@ export default async function CourseDetail({
     price,
     discountedPrice,
     modules,
+    requirements,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -52,10 +53,12 @@ export default async function CourseDetail({
             {/* Top companies */}
 
             {/* Requirements */}
-            <CourseRequirements />
+            <CourseRequirements requirements={requirements} />
 
             {/* Course content */}
             <CourseContent modules={modules} />
+
+            {/* Projects */}
           </div>
 
           {/* Info Card */}
