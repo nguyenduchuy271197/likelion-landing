@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "swiper/css/thumbs";
+import "react-modal-video/scss/modal-video.scss";
 import "@/styles/swiper.css";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import { Roboto } from "next/font/google";

@@ -1,10 +1,4 @@
-import { Calendar, Clock2, LucideIcon, MapPin, WifiOff } from "lucide-react";
-
-interface CalendarType {
-  icon: LucideIcon;
-  label: string;
-  value: string;
-}
+import { Calendar, Clock2, MapPin, School } from "lucide-react";
 
 const calendar = {
   date: "Thứ 2, 4, 6 | 18:00 - 21:00",
@@ -15,21 +9,6 @@ const calendar = {
     address: "232/6 Võ Thị Sáu, Võ Thị Sáu, Quận 3",
   },
 };
-
-function CourseCalendarRow({ icon: Icon, label, value }: CalendarType) {
-  return (
-    <div className="flex items-start text-lg">
-      <div className="flex items-center">
-        <span className="min-w-[40px]">
-          <Icon />
-        </span>
-      </div>
-
-      <span className="min-w-[120px] font-medium">{label}:</span>
-      <span>{value}</span>
-    </div>
-  );
-}
 
 export default function CourseCalendar() {
   return (
@@ -63,7 +42,7 @@ export default function CourseCalendar() {
         <div className="flex items-start text-lg">
           <div className="flex items-center">
             <span className="min-w-[40px]">
-              <WifiOff />
+              <School />
             </span>
           </div>
 

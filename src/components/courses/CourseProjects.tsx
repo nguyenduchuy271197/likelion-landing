@@ -10,32 +10,32 @@ interface CourseProjectType {
 const projects = [
   {
     src: "/img/projects/dwelling.png",
-    title: "",
+    title: "Dwelling - Apartment Rental Company Website",
     tags: ["HTML", "CSS", "Javascript"],
   },
   {
     src: "/img/projects/portfolio.png",
-    title: "",
+    title: "John Doe - Artist Portfolio Website",
     tags: ["HTML", "CSS", "Javascript"],
   },
   {
     src: "/img/projects/phloko.png",
-    title: "",
+    title: "Floko - Design Agency Website",
     tags: ["Javascript", "React", "Tailwindcss"],
   },
   {
     src: "/img/projects/travel.png",
-    title: "",
+    title: "TrapTip - Traveling Agency Website",
     tags: ["Javascript", "React", "Tailwindcss"],
   },
   {
     src: "/img/projects/florist.png",
-    title: "",
+    title: "Florist - Flower Shop Website",
     tags: ["Javascript", "React", "Supabase", "PostgreSQL"],
   },
   {
     src: "/img/projects/greeny.png",
-    title: "",
+    title: "Greenery - Fruit eCommerce Website",
     tags: ["Javascript", "React", "Node", "MongoDB"],
   },
 ];

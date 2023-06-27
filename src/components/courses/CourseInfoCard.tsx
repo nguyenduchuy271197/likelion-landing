@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import CourseFeatureItem from "./CourseFeatureItem";
-import { Airplay } from "lucide-react";
+import { Airplay, PlayIcon } from "lucide-react";
 import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
 import Link from "next/link";
+import { useState } from "react";
+import ModalVideo from "react-modal-video";
 
 type CourseInfoCardProps = Pick<
   ICourse,
@@ -18,16 +22,27 @@ export default function CourseInfoCard({
   features,
   slug,
 }: CourseInfoCardProps) {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <div className="hidden lg:block">
       <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden">
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
-            src="/img/blogs/blog-1.avif"
+            src="/img/courses/front-end.png"
             alt=""
             fill
-            className="w-full h-full"
+            className="w-full h-full brightness-75"
           />
+          <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <Button
+              className="w-12 h-12 rounded-full"
+              variant="secondary"
+              onClick={() => setOpen(true)}
+            >
+              <PlayIcon fill="#000" />
+            </Button>
+          </div>
         </div>
         <div className="p-6">
           {/* Price */}
@@ -75,6 +90,13 @@ export default function CourseInfoCard({
             </ul>
           </div>
         </div>
+        <ModalVideo
+          channel="youtube"
+          isOpen={isOpen}
+          videoId="duAOTul9UNs"
+          onClose={() => setOpen(false)}
+          youtube={{ autoplay: 1, mute: 1 }}
+        />
       </div>
     </div>
   );
