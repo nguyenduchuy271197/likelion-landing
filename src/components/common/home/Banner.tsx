@@ -19,7 +19,7 @@ const banners = [
       lg: "/img/banners/fullstack.webp",
     },
     title: "Fullstack Web Developer Bootcamp",
-    description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 5 ngày",
+    description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 5 tháng",
   },
   {
     href: "/about",

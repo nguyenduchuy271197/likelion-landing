@@ -2,22 +2,38 @@ import Link from "next/link";
 import NavMenu from "./NavMenu";
 import { Button } from "../../ui/Button";
 import Icons from "../../Icons";
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/Sheet";
+import { Sheet, SheetTrigger } from "@/components/ui/Sheet";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/Accordion";
 import Logo from "../../Logo";
-import RegisterButton from "@/components/common/register/RegisterButton";
+import NavMenuMobile from "./NavMenuMobile";
+
+export interface CourseType {
+  title: string;
+  slug: string;
+  subtitle: string;
+  href: string;
+}
+
+export const courses: CourseType[] = [
+  {
+    title: "Fullstack Web Development Bootcamp",
+    slug: "fullstack-web-development-bootcamp",
+    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
+    href: "/courses/fullstack-web-development-bootcamp",
+  },
+  {
+    title: "Khoá học Java",
+    slug: "khoa-hoc-java",
+    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
+    href: "/courses/fullstack-web-development-bootcamp",
+  },
+  {
+    title: "Data Science cơ bản với Python",
+    slug: "data-science-co-ban-voi-python",
+    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
+    href: "/courses/data-science-co-ban-voi-python",
+  },
+];
 
 export default function Navbar() {
   return (
@@ -28,7 +44,7 @@ export default function Navbar() {
           <Logo />
 
           {/* Nav */}
-          <NavMenu />
+          <NavMenu courses={courses} />
 
           {/* Actions */}
           <div className="flex items-center gap-2">
@@ -37,76 +53,8 @@ export default function Navbar() {
                 <Link href="/register">Đăng ký ngay</Link>
               </Button>
             </div>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" className="lg:hidden">
-                  <Icons.menu />
-                </Button>
-              </SheetTrigger>
 
-              {/* Mobile Nav */}
-              <SheetContent
-                position="left"
-                size="lg"
-                className="max-w-[400px] w-full flex flex-col py-10"
-              >
-                <SheetHeader>
-                  <div className="h-[100px] w-full flex items-center justify-center">
-                    <Logo />
-                  </div>
-                </SheetHeader>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>Khoá học</AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="flex flex-col gap-3 py-2 pl-4 ml-2 text-base font-normal border-l border-border text-muted-foreground">
-                        <li>
-                          <Link
-                            href="#"
-                            className="block w-full p-2 hover:text-accent-foreground"
-                          >
-                            Frontend
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block w-full p-2 hover:text-accent-foreground"
-                          >
-                            Backend
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block w-full p-2 hover:text-accent-foreground"
-                          >
-                            Python
-                          </Link>
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>Roadmap</AccordionTrigger>
-                    <AccordionContent>
-                      Yes. It comes with default styles that matches the other
-                      components aesthetic.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger>Blogs</AccordionTrigger>
-                    <AccordionContent>
-                      Yes. Its animated by default, but you can disable it if
-                      you prefer.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-                <SheetFooter className="mx-auto mt-6">
-                  <RegisterButton />
-                </SheetFooter>
-              </SheetContent>
-            </Sheet>
+            <NavMenuMobile courses={courses} />
           </div>
         </div>
       </div>

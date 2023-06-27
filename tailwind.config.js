@@ -78,6 +78,9 @@ module.exports = {
       backgroundImage: {
         contact: "url('/img/banners/contact.png')",
       },
+      transitionDuration: {
+        6000: "6000ms",
+      },
     },
   },
   plugins: [

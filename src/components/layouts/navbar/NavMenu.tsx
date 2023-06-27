@@ -14,32 +14,10 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu";
-import Icons from "@/components/Icons";
 import NavMenuContentCard from "./NavMenuContentCard";
-import Image from "next/image";
+import { CourseType } from "./Navbar";
 
-const courses = [
-  {
-    title: "Fullstack Web Development Bootcamp",
-    slug: "fullstack-web-development-bootcamp",
-    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
-    href: "/courses/fullstack-web-development-bootcamp",
-  },
-  {
-    title: "Khoá học Java",
-    slug: "khoa-hoc-java",
-    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
-    href: "/courses/fullstack-web-development-bootcamp",
-  },
-  {
-    title: "Khoá học Data Science - Python",
-    slug: "khoa-hoc-data-science-python",
-    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
-    href: "/courses/khoa-hoc-data-science-python",
-  },
-];
-
-export default function NavMenu() {
+export default function NavMenu({ courses }: { courses: CourseType[] }) {
   const pathname = usePathname();
 
   return (

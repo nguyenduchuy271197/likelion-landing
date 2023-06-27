@@ -78,7 +78,7 @@ export default function ContactForm() {
             </div>
             <div className="relative hidden md:block aspect-[1/1]">
               <Image
-                src="/img/contact/form-2.png"
+                src="/img/contact/form-3.png"
                 fill
                 alt="Kanban"
                 className="object-contain"

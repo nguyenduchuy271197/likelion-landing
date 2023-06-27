@@ -3,7 +3,6 @@ import CourseFeatureItem from "./CourseFeatureItem";
 import { Airplay } from "lucide-react";
 import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
-import RegisterButton from "../common/register/RegisterButton";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 
@@ -21,7 +20,7 @@ export default function CourseInfoCard({
 }: CourseInfoCardProps) {
   return (
     <div className="hidden lg:block">
-      <div className="sticky top-[var(--navbar-height)] shadow-xl">
+      <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden">
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
             src="/img/blogs/blog-1.avif"
@@ -66,7 +65,7 @@ export default function CourseInfoCard({
               Khoá học bao gồm:
             </h4>
             <ul className="flex flex-col gap-4 mt-4 text-sm">
-              {features.map((feature) => (
+              {features?.map((feature) => (
                 <CourseFeatureItem
                   key={feature}
                   icon={Airplay}

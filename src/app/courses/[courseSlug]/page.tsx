@@ -1,6 +1,8 @@
+import CourseCalendar from "@/components/courses/CourseCalendar";
 import { CourseContent } from "@/components/courses/CourseContent";
 import CourseInfoCard from "@/components/courses/CourseInfoCard";
 import CourseObjectives from "@/components/courses/CourseObjectives";
+import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import { getCourseBySlug } from "@/services/courseService";
 
@@ -47,6 +49,8 @@ export default async function CourseDetail({
               <p>{subtitle}</p>
             </div>
 
+            <CourseCalendar />
+
             {/* What you'll learn */}
             <CourseObjectives objectives={objectives} />
 
@@ -58,7 +62,8 @@ export default async function CourseDetail({
             {/* Course content */}
             <CourseContent modules={modules} />
 
-            {/* Projects */}
+            {/* Showcase */}
+            <CourseProjects />
           </div>
 
           {/* Info Card */}

@@ -19,8 +19,8 @@ model Course {
   discountedPrice Int?
   requirements    String[]
   objectives      String[]
-  modules         Module[]
   features        String[]
+  modules         Module[]
   User            User[]
 }
 
