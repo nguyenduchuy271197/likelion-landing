@@ -52,7 +52,7 @@ function CourseProject({ src, title, tags }: CourseProjectType) {
         />
       </div>
       <div className="flex flex-col gap-2 py-4">
-        <h4 className="font-medium">Landing Page</h4>
+        <h4 className="font-medium">{title}</h4>
         <div className="flex items-center gap-1">
           {tags.map((tech) => (
             <Badge key={tech}>{tech}</Badge>
