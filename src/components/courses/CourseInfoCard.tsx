@@ -29,7 +29,7 @@ export default function CourseInfoCard({
       <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden">
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
-            src="/img/courses/front-end.png"
+            src="/img/thumbnails/fullstack.webp"
             alt=""
             fill
             className="w-full h-full brightness-75"
