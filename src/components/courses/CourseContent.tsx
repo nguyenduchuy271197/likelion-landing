@@ -39,9 +39,7 @@ function CourseModule({
 export function CourseContent({ modules }: { modules: IModule[] }) {
   return (
     <div className="my-12">
-      <h2 className="mb-6 text-2xl font-medium tracking-tight scroll-m-20">
-        Nội dung khoá học
-      </h2>
+      <h2 className="mb-6 text-2xl font-medium">Nội dung khoá học</h2>
       <Accordion type="single" collapsible className="w-full bg-white">
         {modules.map((module, i) => (
           <CourseModule

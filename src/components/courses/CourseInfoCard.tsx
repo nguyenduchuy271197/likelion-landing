@@ -9,6 +9,7 @@ import { Button } from "../ui/Button";
 import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
+import PlayButton from "../PlayButton";
 
 type CourseInfoCardProps = Pick<
   ICourse,
@@ -22,7 +23,7 @@ export default function CourseInfoCard({
   features,
   slug,
 }: CourseInfoCardProps) {
-  const [isOpen, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="hidden lg:block">
@@ -35,13 +36,7 @@ export default function CourseInfoCard({
             className="w-full h-full brightness-75"
           />
           <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-            <Button
-              className="w-12 h-12 rounded-full"
-              variant="secondary"
-              onClick={() => setOpen(true)}
-            >
-              <PlayIcon fill="#000" />
-            </Button>
+            <PlayButton />
           </div>
         </div>
         <div className="p-6">
@@ -92,7 +87,7 @@ export default function CourseInfoCard({
         </div>
         <ModalVideo
           channel="youtube"
-          isOpen={isOpen}
+          isOpen={open}
           videoId="duAOTul9UNs"
           onClose={() => setOpen(false)}
           youtube={{ autoplay: 1, mute: 1 }}

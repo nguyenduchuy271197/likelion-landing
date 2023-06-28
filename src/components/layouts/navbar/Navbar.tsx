@@ -1,37 +1,43 @@
 import Link from "next/link";
 import NavMenu from "./NavMenu";
 import { Button } from "../../ui/Button";
-import Icons from "../../Icons";
-import { Sheet, SheetTrigger } from "@/components/ui/Sheet";
 
 import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
 
 export interface CourseType {
+  src: string;
   title: string;
   slug: string;
   subtitle: string;
   href: string;
+  statuses: string[];
 }
 
 export const courses: CourseType[] = [
   {
+    src: "/img/courses/fullstack.png",
     title: "Fullstack Web Development Bootcamp",
     slug: "fullstack-web-development-bootcamp",
     subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
     href: "/courses/fullstack-web-development-bootcamp",
+    statuses: ["Part-time", "Offline"],
   },
   {
+    src: "/img/courses/fullstack.png",
     title: "Khoá học Java",
     slug: "khoa-hoc-java",
     subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
     href: "/courses/fullstack-web-development-bootcamp",
+    statuses: ["Part-time", "Offline"],
   },
   {
+    src: "/img/courses/fullstack.png",
     title: "Data Science cơ bản với Python",
     slug: "data-science-co-ban-voi-python",
     subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
     href: "/courses/data-science-co-ban-voi-python",
+    statuses: ["Part-time", "Offline"],
   },
 ];
 

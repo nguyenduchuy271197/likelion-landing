@@ -4,6 +4,7 @@ import CourseInfoCard from "@/components/courses/CourseInfoCard";
 import CourseObjectives from "@/components/courses/CourseObjectives";
 import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
+import CourseReviews from "@/components/courses/CourseReviews";
 import { getCourseBySlug } from "@/services/courseService";
 
 export async function generateStaticParams() {
@@ -64,6 +65,9 @@ export default async function CourseDetail({
 
             {/* Showcase */}
             <CourseProjects />
+
+            {/* Reviews */}
+            <CourseReviews />
           </div>
 
           {/* Info Card */}

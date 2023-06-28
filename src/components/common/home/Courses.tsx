@@ -6,40 +6,13 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CourseType, courses } from "@/components/layouts/navbar/Navbar";
 
-const courses: Course[] = [
-  {
-    src: "/img/courses/fullstack.png",
-    title: "Fullstack Web Developer Bootcamp",
-    statuses: ["Part-time", "Offline"],
-    href: "#",
-  },
-  {
-    src: "/img/courses/front-end.png",
-    title: "Front-end Night Class",
-    statuses: ["Part-time", "Offline"],
-    href: "#",
-  },
-  {
-    src: "/img/courses/python.png",
-    title: "Basic Data Science With Python",
-    statuses: ["Part-time ", "Online"],
-    href: "#",
-  },
-];
-
-interface Course {
-  src: string;
-  title: string;
-  statuses: string[];
-  href: string;
-}
-
-function CourseCard({ src, title, statuses, href }: Course) {
+function CourseCard({ src, title, statuses, href }: CourseType) {
   return (
     <div className="flex flex-col overflow-hidden transition duration-300 group hover:-translate-y-2">
       <Link
-        href="#"
+        href={href}
         className="relative overflow-hidden aspect-[4/3] rounded-2xl hover:shadow"
       >
         <Image
@@ -55,7 +28,7 @@ function CourseCard({ src, title, statuses, href }: Course) {
         </div>
       </Link>
       <div className="pt-4 grow">
-        <Link href="#" className="mb-2 text-xl font-semibold transition">
+        <Link href={href} className="mb-2 text-xl font-semibold transition">
           {title}
         </Link>
 
