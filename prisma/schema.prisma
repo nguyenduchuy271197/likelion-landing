@@ -28,6 +28,7 @@ model Module {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   lessons  String[]
+  projects String[]
   Course   Course   @relation(fields: [courseId], references: [id])
   courseId String   @db.ObjectId
 }

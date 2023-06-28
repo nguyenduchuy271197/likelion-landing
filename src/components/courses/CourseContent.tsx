@@ -11,6 +11,7 @@ function CourseModule({
   id,
   name,
   lessons,
+  projects,
   index,
 }: IModule & { index: number }) {
   return (
@@ -30,6 +31,17 @@ function CourseModule({
               {lesson}
             </li>
           ))}
+
+          {projects &&
+            projects?.map((project, i) => (
+              <li className="flex items-center gap-4" key={project}>
+                <FileText size={16} />
+                <span className="font-medium">
+                  Project{projects.length > 1 && ` ${i + 1}`}:
+                </span>
+                {project}
+              </li>
+            ))}
         </ul>
       </AccordionContent>
     </AccordionItem>
@@ -48,6 +60,7 @@ export function CourseContent({ modules }: { modules: IModule[] }) {
             lessons={module.lessons}
             key={module.id}
             index={i + 1}
+            projects={module.projects}
           />
         ))}
       </Accordion>

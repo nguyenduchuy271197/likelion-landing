@@ -35,5 +35,6 @@ export interface IModule {
   id: string;
   name: string;
   lessons: string[];
+  projects?: string[];
   courseId?: string;
 }

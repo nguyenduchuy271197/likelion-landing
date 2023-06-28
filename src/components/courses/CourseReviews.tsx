@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "../ui/Button";
 import { useState } from "react";
-import { PlayIcon } from "lucide-react";
 import ModalVideo from "react-modal-video";
 import PlayButton from "../PlayButton";
 
@@ -23,7 +21,7 @@ export default function CourseReviews() {
           className="w-full h-full brightness-75"
         />
         <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-          <PlayButton size="lg" />
+          <PlayButton size="lg" onClick={() => setOpen(true)} />
         </div>
       </div>
 

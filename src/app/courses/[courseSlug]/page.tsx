@@ -44,9 +44,7 @@ export default async function CourseDetail({
           <div>
             {/* Title */}
             <div className="mb-12">
-              <h1 className="mb-4 text-2xl font-medium tracking-tight scroll-m-20 lg:text-3xl">
-                {title}
-              </h1>
+              <h1 className="mb-4 text-3xl font-medium lg:text-4xl">{title}</h1>
               <p>{subtitle}</p>
             </div>
 

@@ -36,7 +36,7 @@ export default function CourseInfoCard({
             className="w-full h-full brightness-75"
           />
           <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-            <PlayButton />
+            <PlayButton onClick={() => setOpen(true)} />
           </div>
         </div>
         <div className="p-6">
