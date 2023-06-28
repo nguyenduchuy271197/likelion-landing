@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/Accordion";
 import { IModule } from "@/types";
-import { FileText } from "lucide-react";
+import { FileText, GitFork } from "lucide-react";
 
 function CourseModule({
   id,
@@ -35,11 +35,13 @@ function CourseModule({
           {projects &&
             projects?.map((project, i) => (
               <li className="flex items-center gap-4" key={project}>
-                <FileText size={16} />
-                <span className="font-medium">
-                  Project{projects.length > 1 && ` ${i + 1}`}:
-                </span>
-                {project}
+                <GitFork size={16} />
+                <p>
+                  <span className="font-medium">
+                    Project{projects.length > 1 && ` ${i + 1}`}:
+                  </span>{" "}
+                  <span>{project}</span>
+                </p>
               </li>
             ))}
         </ul>
