@@ -18,11 +18,11 @@ export interface CourseType {
 export const courses: CourseType[] = [
   {
     src: "/img/courses/fullstack.png",
-    title: "Fullstack Web Development Bootcamp",
-    slug: "fullstack-web-development-bootcamp",
+    title: "Bootcamp lập trình web Fullstack",
+    slug: "bootcamp-lap-trinh-web-fullstack",
     subtitle:
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
-    href: "/courses/fullstack-web-development-bootcamp",
+    href: "/courses/bootcamp-lap-trinh-web-fullstack",
     statuses: ["Part-time", "Offline"],
     published: true,
   },
