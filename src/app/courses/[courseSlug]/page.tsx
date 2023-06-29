@@ -36,9 +36,9 @@ export default async function CourseDetail({
   } = await getCourseBySlug(courseSlug);
 
   return (
-    <div className="pt-12 ">
+    <div className="pt-12">
       <div className="container">
-        <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none">
+        <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none mb-12">
           {/* Content */}
           <div>
             {/* Title */}
@@ -65,9 +65,6 @@ export default async function CourseDetail({
 
             {/* Reviews */}
             <CourseReviews />
-
-            {/* CTA */}
-            <CourseCTA />
           </div>
 
           {/* Info Card */}
@@ -79,6 +76,8 @@ export default async function CourseDetail({
             slug={courseSlug}
           />
         </div>
+        {/* CTA */}
+        <CourseCTA />
       </div>
     </div>
   );

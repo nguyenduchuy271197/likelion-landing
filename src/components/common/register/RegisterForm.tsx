@@ -26,24 +26,7 @@ import {
 } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 import { UseMutateFunction } from "@tanstack/react-query";
-
-const courses = [
-  {
-    id: "6482a08d232bf6c1513a1111",
-    slug: "fullstack-web-development-bootcamp",
-    title: "Fullstack Web Development Bootcamp",
-  },
-  {
-    id: "64883a8ab6a3fddba741f55e",
-    slug: "khoa-hoc-java",
-    title: "Khoá học Java",
-  },
-  {
-    id: "64883aacb6a3fddba741f55f",
-    slug: "khoa-hoc-data-science-python",
-    title: "Khoá học Data Science - Python",
-  },
-];
+import { courses } from "@/components/layouts/navbar/Navbar";
 
 interface RegisterFormProps {
   initialCourse: string;

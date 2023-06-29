@@ -65,7 +65,7 @@ function CourseCard({ src, title, statuses, href, published }: CourseType) {
 
 export default function Courses() {
   return (
-    <section>
+    <section id="courses" className="scroll-mt-4">
       <div className="container">
         <div className="py-6 md:py-20">
           <SectionHeading

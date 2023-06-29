@@ -6,6 +6,7 @@ import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
 
 export interface CourseType {
+  id: string;
   src: string;
   title: string;
   slug: string;
@@ -18,6 +19,7 @@ export interface CourseType {
 
 export const courses: CourseType[] = [
   {
+    id: "6482a08d232bf6c1513a1111",
     src: "/img/courses/fullstack.png",
     title: "Bootcamp lập trình web Fullstack",
     slug: "bootcamp-lap-trinh-web-fullstack",
@@ -29,6 +31,7 @@ export const courses: CourseType[] = [
     published: true,
   },
   {
+    id: "64883aacb6a3fddba741f55f",
     src: "/img/courses/python.png",
     title: "Data Science cơ bản với Python",
     slug: "data-science-co-ban-voi-python",
@@ -40,6 +43,7 @@ export const courses: CourseType[] = [
     published: true,
   },
   {
+    id: "64883a8ab6a3fddba741f55e",
     src: "/img/courses/front-end.png",
     title: "Front-end Night Class",
     slug: "front-end-night-class",
@@ -62,7 +66,6 @@ export default function Navbar() {
 
           {/* Nav */}
           <NavMenu courses={courses} />
-
           {/* Actions */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">

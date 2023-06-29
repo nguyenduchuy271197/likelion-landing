@@ -61,8 +61,7 @@ interface Testimonial {
 function TestimonialCard({ saying, name, avatar, course }: Testimonial) {
   return (
     <div className="relative flex flex-col justify-center h-full p-4 rounded-lg shadow-lg sm:p-8">
-      <Icons.quote className="absolute w-28 right-6 opacity-30 top-4" />
-      <div className="absolute right-6 top-4">
+      <div className="absolute right-6 top-4 -z-10">
         <div className="relative w-28 aspect-[4/3]">
           <Image
             src="/img/reviews/quote.svg"

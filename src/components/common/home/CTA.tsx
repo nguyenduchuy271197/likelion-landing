@@ -1325,17 +1325,18 @@ export default function CTA() {
               <Button
                 variant="secondary"
                 className="sm:px-12 sm:py-8 sm:text-lg text-[#FF7100] rounded-xl px-6 py-6"
+                asChild
               >
-                Liên hệ tư vấn 1 : 1
+                <Link href="/contact">Liên hệ tư vấn 1 : 1</Link>
               </Button>
               <p>
                 Hoặc{" "}
-                <Link
-                  href="#"
+                <a
+                  href="#courses"
                   className="inline underline transition underline-offset-4 hover:opacity-80"
                 >
                   xem chi tiết lộ trình{" "}
-                </Link>
+                </a>
               </p>
             </div>
           </div>

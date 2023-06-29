@@ -108,7 +108,7 @@ export default function NavMenu({ courses }: { courses: CourseType[] }) {
             )}
             asChild
           >
-            <Link href="/faq">FAQ</Link>
+            <Link href="/faq">FAQs</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

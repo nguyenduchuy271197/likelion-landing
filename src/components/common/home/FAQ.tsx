@@ -13,27 +13,26 @@ import { motion } from "framer-motion";
 const faqList = [
   {
     question:
-      "Tôi không có kinh nghiệm lập trình, liệu tôi có thể học lập trình không?",
+      "Tôi chưa từng tiếp xúc với code, liệu tôi có thể học lập trình không?",
     answer:
-      "Tất nhiên bạn có thể học lập trình dù không có kinh nghiệm trước đó. Điều quan trọng là bạn phải có đam mê và sẵn sàng tìm hiểu. Bạn có thể bắt đầu với các khóa học lập trình cơ bản hoặc tài liệu miễn phí trên internet.",
+      "Chắc chắn là có thể. LIKELION mở đa dạng các khoá học lập trình phù hợp với nhiều đối tượng khác nhau, kể cả người mới. Chúng tôi giúp bạn gia nhập ngành lập trình từ con số 0.",
   },
   {
     question:
-      "Tôi đã học một số ngôn ngữ lập trình, nhưng tôi không thể giải quyết các vấn đề lập trình phức tạp. Làm thế nào để cải thiện kỹ năng lập trình của tôi?",
+      "Vì sao tôi luôn gặp khó khăn với việc tự học và nghiên cứu các tài liệu về lập trình?",
     answer:
-      "Cách tốt nhất để cải thiện kỹ năng lập trình là thực hành nhiều. Hãy tìm các dự án lập trình có tính thực tế để thực hiện và tham gia các cuộc thi lập trình. Đồng thời, bạn có thể học hỏi kinh nghiệm từ những người giỏi hơn bạn trong cộng đồng lập trình.",
+      "Việc này có thể bởi vì bạn không đang theo một lộ trình không khoa học. Với khoá học lập trình tại LIKELION, chúng tôi cam kết một chương trình học đi từ căn bản, dễ hiểu và đầy đủ kiến thức. Sau đó, bạn có thể tự học hoặc nghiêm cứu thêm để hoàn thiện bản thân.",
   },
   {
     question:
-      "Tôi thấy khó hiểu khi đọc các tài liệu lập trình và hướng dẫn trên mạng. Làm thế nào để tôi có thể hiểu được các khái niệm và thuật ngữ lập trình?",
+      "LIKELION có hỗ trợ gì khi tôi gặp khó khăn trong việc thanh toán học phí?",
     answer:
-      " Có thể bạn cần tìm hiểu từng khái niệm và thuật ngữ lập trình một cách chi tiết hơn. Bạn có thể đọc các tài liệu cơ bản hơn hoặc tìm kiếm các video hướng dẫn trên mạng. Ngoài ra, bạn có thể tìm một người giỏi trong lập trình để hỏi thêm và giải đáp các thắc mắc của mình.",
+      "Ngoài các đợt giảm giá khoá học, LIKELION có hỗ trợ chia thành nhiều đợt thanh toán. Để biết chính xác các gói thanh toán và ưu đãi hiện tại, hãy liên hệ với LIKELION (link đến trang liên hệ) để nhận tự vấn.",
   },
   {
-    question:
-      "Làm thế nào để tôi có thể tránh bị mắc kẹt khi giải quyết các vấn đề lập trình?",
+    question: "LIKELION có hỗ trợ tìm kiếm việc làm không?",
     answer:
-      "Khi gặp phải vấn đề khó giải quyết, đừng nản lòng và đừng bỏ cuộc. Thay vào đó, hãy thử tìm kiếm các giải pháp khác nhau và nghĩ đến các phương pháp giải quyết vấn đề khác nhau. Bạn có thể hỏi đồng nghiệp hoặc cộng đồng lập trình để được giúp đỡ.",
+      "Có. Chúng tôi hỗ trợ bạn ngay từ bước chuẩn bị CV và portfolio để thành công ứng tuyển trong môi trường việc làm cạnh tranh ngày nay. Ngoài ra, chúng tôi liên kết giới thiệu bạn ứng tuyển tại các công ty lập trình hàng đầu trong mạng lưới đối tác của LIKELION.",
   },
 ];
 
@@ -62,10 +61,7 @@ export default function FAQ() {
     <section>
       <div className="container">
         <div className="py-20">
-          <SectionHeading
-            title="Các câu hỏi thường gặp"
-            subtitle="Các thông tin cơ bản về việc học lập trình để trở thành một học viên thành công."
-          />
+          <SectionHeading title="Các câu hỏi thường gặp" />
 
           <motion.div
             className="max-w-3xl mx-auto"

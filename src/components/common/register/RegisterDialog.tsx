@@ -52,13 +52,13 @@ export function RegisterDialog({ course }: { course: string }) {
           <>
             {/* Header */}
             <DialogHeader>
-              <DialogTitle className="uppercase">
-                Đăng ký nhận tư vấn!
+              <DialogTitle className="text-2xl uppercase">
+                Hãy để LIKELION tư vấn cho bạn!
               </DialogTitle>
-              <DialogDescription>
+              {/* <DialogDescription>
                 Nhận tư vấn cá nhân, giúp các bạn khám phá các khóa học lập
                 trình chất lượng và thú vị.
-              </DialogDescription>
+              </DialogDescription> */}
             </DialogHeader>
 
             {/* Form */}

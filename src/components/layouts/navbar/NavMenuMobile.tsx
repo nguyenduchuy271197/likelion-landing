@@ -101,7 +101,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
                 href="/faq"
                 className="py-4 font-medium transition-all hover:underline"
               >
-                FAQ
+                FAQs
               </Link>
             </SheetClose>
           </AccordionItem>

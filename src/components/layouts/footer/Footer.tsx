@@ -5,15 +5,16 @@ import Icons from "@/components/Icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-muted">
+    <footer className="bg-[#1c1b1a] text-muted">
       <div className="container">
         <div className="py-24">
           <div className="flex flex-col justify-between gap-12 md:flex-row">
             <div className="max-w-sm">
               <Logo variant="white" />
               <p className="mt-6 leading-7">
-                Từ người mới bắt đầu đến chuyên gia, bạn đều có thể tìm được
-                khóa học phù hợp để nâng cao kỹ năng lập trình của mình.
+                Từ người mới bắt đầu đến người đã có kiến thức, bạn đều có thể
+                tìm được khoá học phù hợp để nâng cao kỹ năng lập trình của
+                mình.
               </p>
 
               <div className="flex flex-col gap-2 mt-10 font-medium">
@@ -23,7 +24,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail />
-                  <p>likelionvn@likelion.net</p>
+                  <p>likelion.vn@likelion.net</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock />
@@ -43,6 +44,9 @@ export default function Footer() {
                 <li>
                   <Link href="/blogs">Blogs</Link>
                 </li>
+                <li>
+                  <Link href="/faq">FAQs</Link>
+                </li>k
                 <li>
                   <Link href="/contact">Liên hệ</Link>
                 </li>

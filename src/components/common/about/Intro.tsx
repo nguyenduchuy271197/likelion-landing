@@ -31,7 +31,7 @@ export default function Intro() {
                 Chúng tôi không gò bó bản thân trong phương pháp giáo dục truyền
                 thống. Bạn sẽ được học từ những chuyên gia trong ngành, tiếp cận
                 mô hình học hiện đại và chương trình đào tạo chuyên sâu đáp ứng
-                nhu cầu thực thế của thị trường công nghệ.
+                nhu cầu thực tế của thị trường công nghệ.
                 <br />
                 <br />
                 Dù xuất phát điểm ở đâu, bạn đều có thể chinh phục lập trình
