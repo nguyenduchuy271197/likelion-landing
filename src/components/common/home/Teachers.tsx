@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const teachers = [
   {
-    title: "Full-stack Developer/Giảng viên",
+    title: "Fullstack Developer/Giảng viên",
     description:
       "Hơn 4 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy bootcamp. Được học viên yêu mến bởi cách truyền đạt kiến thức khoa học và sự hỗ trợ tận tâm. Mục tiêu là giúp học viên trang bị đầy đủ kiến thức và kỹ năng vững chắc để theo đuổi ngành lập trình. 📍",
     avatar: "/img/teachers/huy.png",

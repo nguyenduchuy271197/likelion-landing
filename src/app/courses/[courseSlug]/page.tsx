@@ -1,3 +1,4 @@
+import CourseCTA from "@/components/courses/CourseCTA";
 import CourseCalendar from "@/components/courses/CourseCalendar";
 import { CourseContent } from "@/components/courses/CourseContent";
 import CourseInfoCard from "@/components/courses/CourseInfoCard";
@@ -64,6 +65,9 @@ export default async function CourseDetail({
 
             {/* Reviews */}
             <CourseReviews />
+
+            {/* CTA */}
+            <CourseCTA />
           </div>
 
           {/* Info Card */}

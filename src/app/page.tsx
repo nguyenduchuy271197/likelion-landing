@@ -1,5 +1,6 @@
 import CTA from "@/components/common/home/CTA";
 import Testimonials from "@/components/common/home/Testimonials";
+import CourseCTA from "@/components/courses/CourseCTA";
 import dynamic from "next/dynamic";
 
 const Banner = dynamic(() => import("@/components/common/home/Banner"));
@@ -17,6 +18,9 @@ export default function Home() {
       <TechStack />
       <Testimonials />
       <CTA />
+      <div className="w-full max-w-screen-md mx-auto">
+        <CourseCTA />
+      </div>
       <FAQ />
     </div>
   );
