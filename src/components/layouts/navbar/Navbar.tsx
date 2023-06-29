@@ -9,6 +9,7 @@ export interface CourseType {
   src: string;
   title: string;
   slug: string;
+  excerpt: string;
   subtitle: string;
   href: string;
   statuses: string[];
@@ -20,6 +21,7 @@ export const courses: CourseType[] = [
     src: "/img/courses/fullstack.png",
     title: "Bootcamp lập trình web Fullstack",
     slug: "bootcamp-lap-trinh-web-fullstack",
+    excerpt: "Trở thành lập trình viên Fullstack Bootcamp sau 5 tháng.",
     subtitle:
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/bootcamp-lap-trinh-web-fullstack",
@@ -30,6 +32,7 @@ export const courses: CourseType[] = [
     src: "/img/courses/python.png",
     title: "Data Science cơ bản với Python",
     slug: "data-science-co-ban-voi-python",
+    excerpt: "Khoá học online làm quen với khoa học dữ liệu.",
     subtitle:
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/data-science-co-ban-voi-python",
@@ -40,6 +43,7 @@ export const courses: CourseType[] = [
     src: "/img/courses/front-end.png",
     title: "Front-end Night Class",
     slug: "front-end-night-class",
+    excerpt: "Thành thạo lập trình web Front-end ",
     subtitle:
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/front-end-night-class",

@@ -11,32 +11,32 @@ const projects = [
   {
     src: "/img/projects/dwelling.png",
     title: "Dwelling - Apartment Rental Company Website",
-    tags: ["HTML", "CSS", "Javascript"],
+    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     src: "/img/projects/portfolio.png",
     title: "John Doe - Artist Portfolio Website",
-    tags: ["HTML", "CSS", "Javascript"],
+    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     src: "/img/projects/phloko.png",
     title: "Floko - Design Agency Website",
-    tags: ["Javascript", "React", "Tailwindcss"],
+    tags: ["JavaScript", "ReactJS", "Tailwind CSS"],
   },
   {
     src: "/img/projects/travel.png",
     title: "TrapTip - Traveling Agency Website",
-    tags: ["Javascript", "React", "Tailwindcss"],
+    tags: ["JavaScript", "ReactJS", "Tailwind CSS"],
   },
   {
     src: "/img/projects/florist.png",
     title: "Florist - Flower Shop Website",
-    tags: ["Javascript", "React", "Supabase", "PostgreSQL"],
+    tags: ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"],
   },
   {
     src: "/img/projects/greeny.png",
     title: "Greenery - Fruit eCommerce Website",
-    tags: ["Javascript", "React", "Node", "MongoDB"],
+    tags: ["JavaScript", "ReactJS", "NodeJS", "MongoDB"],
   },
 ];
 

@@ -4,7 +4,8 @@ const contacts: Contact[] = [
   {
     icon: "/img/contact/icons/office-building.png",
     label: "Office",
-    value: "76 Lê Lai, phường Bến Thành, Quận 1, TP.HCM",
+    value:
+      "Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường Bến Nghé, Quận 1, TP. HCM",
   },
   {
     icon: "/img/contact/icons/call.png",
@@ -50,15 +51,6 @@ export default function ContactInfo() {
     <div>
       <div className="container">
         <div className="py-10 sm:pb-20">
-          {/* Heading */}
-          {/* <div className="max-w-xl py-10 mx-auto mb-10 text-center">
-            <h2 className="mb-6 text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
-              Liên hệ
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Chúng tôi muốn lắng nghe từ bạn để hiểu nhau hơn
-            </p>
-          </div> */}
           <h2 className="pb-2 mb-10 text-3xl font-medium text-center transition-colors scroll-m-20 first:mt-0">
             Hoặc bạn có thể tìm chúng tôi tại
           </h2>

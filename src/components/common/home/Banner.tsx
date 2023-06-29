@@ -13,7 +13,7 @@ const Achievement = dynamic(
 
 const banners = [
   {
-    href: "/courses/fullstack-web-development-bootcamp",
+    href: "/courses/bootcamp-lap-trinh-web-fullstack",
     src: {
       sm: "/img/banners/fullstack-mb.png",
       lg: "/img/banners/fullstack.png",

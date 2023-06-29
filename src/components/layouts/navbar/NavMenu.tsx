@@ -54,7 +54,7 @@ export default function NavMenu({ courses }: { courses: CourseType[] }) {
                   )}
                 >
                   {course.published ? (
-                    course.subtitle
+                    course.excerpt
                   ) : (
                     <span className={cn(!course.published && "text-primary")}>
                       Coming soon...
