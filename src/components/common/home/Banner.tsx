@@ -84,6 +84,7 @@ export default function Banner() {
                 className="absolute top-0 left-0 object-center w-full h-full -z-10"
                 fill
                 priority
+                unoptimized={true}
               />
               <div className="container">
                 <div className="h-[75vh] flex items-end md:items-center py-12">

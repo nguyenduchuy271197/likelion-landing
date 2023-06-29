@@ -1,13 +1,12 @@
-import { Icon } from "lucide-react";
-import { ReactNode } from "react";
+import { Code, LucideIcon } from "lucide-react";
 
 interface CourseFeatureItemProps {
-  icon: Icon;
+  icon?: LucideIcon;
   name: string;
 }
 
 export default function CourseFeatureItem({
-  icon: Icon,
+  icon: Icon = Code,
   name,
 }: CourseFeatureItemProps) {
   return (

@@ -76,11 +76,7 @@ export default function CourseInfoCard({
             </h4>
             <ul className="flex flex-col gap-4 mt-4 text-sm">
               {features?.map((feature) => (
-                <CourseFeatureItem
-                  key={feature}
-                  icon={Airplay}
-                  name={feature}
-                />
+                <CourseFeatureItem key={feature} name={feature} />
               ))}
             </ul>
           </div>
