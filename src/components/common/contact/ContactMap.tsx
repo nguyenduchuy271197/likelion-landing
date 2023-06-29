@@ -10,6 +10,7 @@ export default function ContactMap() {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        className="w-full border-0"
       />
     </div>
   );
