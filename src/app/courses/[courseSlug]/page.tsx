@@ -35,14 +35,16 @@ export default async function CourseDetail({
   } = await getCourseBySlug(courseSlug);
 
   return (
-    <div className="mt-12">
+    <div className="pt-12 ">
       <div className="container">
         <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none">
           {/* Content */}
           <div>
             {/* Title */}
             <div className="mb-12">
-              <h1 className="mb-4 text-3xl font-medium lg:text-4xl">{title}</h1>
+              <h1 className="mb-4 text-2xl font-medium sm:text-3xl lg:text-4xl">
+                {title}
+              </h1>
               <p>{subtitle}</p>
             </div>
 
@@ -50,8 +52,6 @@ export default async function CourseDetail({
 
             {/* What you'll learn */}
             <CourseObjectives objectives={objectives} />
-
-            {/* Top companies */}
 
             {/* Requirements */}
             <CourseRequirements requirements={requirements} />

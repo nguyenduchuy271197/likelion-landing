@@ -1,4 +1,5 @@
-import { Calendar, Clock2, MapPin, School } from "lucide-react";
+import { Calendar, Clock2, LucideIcon, MapPin, School } from "lucide-react";
+import { ReactNode } from "react";
 
 const calendar = {
   date: "Thứ 2, 4, 6 | 18:00 - 21:00",
@@ -10,60 +11,48 @@ const calendar = {
   },
 };
 
+function CourseCalendarRow({
+  label,
+  icon: Icon,
+  children,
+}: {
+  label: string;
+  icon: LucideIcon;
+  children: ReactNode;
+}) {
+  return (
+    <div className="flex flex-col items-start gap-2 sm:text-lg sm:flex-row">
+      <div className="flex items-center">
+        <span className="min-w-[40px]">
+          <Icon />
+        </span>
+        <span className="min-w-[120px] font-medium">{label}</span>
+      </div>
+
+      <div className="ml-[40px] lg:ml-0">{children}</div>
+    </div>
+  );
+}
+
 export default function CourseCalendar() {
   return (
-    <div className="px-8 py-12 rounded-xl text-muted bg-primary">
-      <div className="flex flex-col gap-6">
-        {/* Date */}
-        <div className="flex items-start text-lg">
-          <div className="flex items-center">
-            <span className="min-w-[40px]">
-              <Calendar />
-            </span>
-          </div>
-
-          <span className="min-w-[120px] font-medium">Lịch học</span>
-          <span>{calendar.date}</span>
-        </div>
-
-        {/* Start */}
-        <div className="flex items-start text-lg">
-          <div className="flex items-center">
-            <span className="min-w-[40px]">
-              <Clock2 />
-            </span>
-          </div>
-
-          <span className="min-w-[120px] font-medium">Khai giảng</span>
-          <span>{calendar.start}</span>
-        </div>
-
-        {/* Mode */}
-        <div className="flex items-start text-lg">
-          <div className="flex items-center">
-            <span className="min-w-[40px]">
-              <School />
-            </span>
-          </div>
-
-          <span className="min-w-[120px] font-medium">Hình thức</span>
-          <span>{calendar.mode}</span>
-        </div>
-
-        {/* Date */}
-        <div className="flex items-start text-lg">
-          <div className="flex items-center">
-            <span className="min-w-[40px]">
-              <MapPin />
-            </span>
-          </div>
-
-          <span className="min-w-[120px] font-medium">Địa điểm</span>
+    <div className="px-4 py-6 sm:py-12 sm:px-8 rounded-xl text-muted bg-primary">
+      <div className="flex flex-col gap-6 sm:text-lg">
+        <CourseCalendarRow label="Lịch học" icon={Calendar}>
+          {calendar.date}
+        </CourseCalendarRow>
+        <CourseCalendarRow label="Khai giảng" icon={Clock2}>
+          {calendar.start}
+        </CourseCalendarRow>
+        <CourseCalendarRow label="Hình thức" icon={School}>
+          {calendar.mode}
+        </CourseCalendarRow>
+        <CourseCalendarRow label="Địa điểm" icon={MapPin}>
           <div className="flex flex-col gap-2">
             <span>{calendar.place.name}</span>
             <span>{calendar.place.address}</span>
           </div>
-        </div>
+        </CourseCalendarRow>
       </div>
     </div>
   );

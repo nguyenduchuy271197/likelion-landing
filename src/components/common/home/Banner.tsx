@@ -15,8 +15,8 @@ const banners = [
   {
     href: "/courses/fullstack-web-development-bootcamp",
     src: {
-      sm: "/img/banners/fullstack-mb.webp",
-      lg: "/img/banners/fullstack.webp",
+      sm: "/img/banners/fullstack-mb.png",
+      lg: "/img/banners/fullstack.png",
     },
     title: "Fullstack Web Developer Bootcamp",
     description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 5 tháng",
@@ -24,21 +24,12 @@ const banners = [
   {
     href: "/about",
     src: {
-      sm: "/img/banners/hyl-mb.webp",
-      lg: "/img/banners/hyl.webp",
+      sm: "/img/banners/hyl-mb.png",
+      lg: "/img/banners/hyl.png",
     },
     title: "Hack Your Life",
     description: "Từ con số 0 đến thành thạo các kĩ năng",
   },
-  // {
-  //   href: "/contact",
-  //   src: {
-  //     sm: "/img/banners/contact.png",
-  //     lg: "/img/banners/fullstack.png",
-  //   },
-  //   title: "Về Chúng tôi",
-  //   description: "Tìm hiểu về văn hoá và môi trường học tập của LIKELION",
-  // },
 ];
 
 const bannerConfig = {

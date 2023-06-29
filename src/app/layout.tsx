@@ -1,5 +1,5 @@
-import "highlight.js/styles/atom-one-dark.css";
 import "@/styles/globals.css";
+import "highlight.js/styles/atom-one-dark.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
