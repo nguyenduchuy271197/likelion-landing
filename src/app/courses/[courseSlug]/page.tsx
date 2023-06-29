@@ -5,17 +5,15 @@ import CourseObjectives from "@/components/courses/CourseObjectives";
 import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import CourseReviews from "@/components/courses/CourseReviews";
+import { courses } from "@/components/layouts/navbar/Navbar";
 import { getCourseBySlug } from "@/services/courseService";
 
 export async function generateStaticParams() {
-  const slugs = [
-    "fullstack-web-development-bootcamp",
-    "khoa-hoc-java",
-    "data-science-co-ban-voi-python",
-  ];
-  return slugs.map((slug) => ({
-    courseSlug: slug,
-  }));
+  return courses
+    .filter((course) => course.published)
+    .map((course) => ({
+      courseSlug: course.slug,
+    }));
 }
 
 export default async function CourseDetail({

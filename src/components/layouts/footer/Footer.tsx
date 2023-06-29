@@ -5,7 +5,7 @@ import Icons from "@/components/Icons";
 
 export default function Footer() {
   return (
-    <footer className="text-white bg-black">
+    <footer className="bg-primary text-muted">
       <div className="container">
         <div className="py-24">
           <div className="flex flex-col justify-between gap-12 md:flex-row">

@@ -19,6 +19,7 @@ import { CourseType } from "./Navbar";
 import Icons from "@/components/Icons";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
   return (
@@ -50,9 +51,13 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
                     <SheetClose asChild>
                       <Link
                         href={course.href}
-                        className="block w-full p-2 hover:text-accent-foreground"
+                        className={cn(
+                          "block w-full p-2 hover:text-accent-foreground",
+                          !course.published &&
+                            "pointer-events-none opacity-30 text-primary"
+                        )}
                       >
-                        {course.title}
+                        {course.title} {!course.published && "(Coming soon...)"}
                       </Link>
                     </SheetClose>
                   </li>

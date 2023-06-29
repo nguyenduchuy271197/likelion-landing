@@ -49,8 +49,17 @@ export default function NavMenu({ courses }: { courses: CourseType[] }) {
                   title={course.title}
                   key={course.slug}
                   href={course.href}
+                  className={cn(
+                    !course.published && "pointer-events-none opacity-40"
+                  )}
                 >
-                  {course.subtitle}
+                  {course.published ? (
+                    course.subtitle
+                  ) : (
+                    <span className={cn(!course.published && "text-primary")}>
+                      Coming soon...
+                    </span>
+                  )}
                 </ListItem>
               ))}
             </NavMenuContentCard>

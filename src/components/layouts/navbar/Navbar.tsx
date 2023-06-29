@@ -12,6 +12,7 @@ export interface CourseType {
   subtitle: string;
   href: string;
   statuses: string[];
+  published: boolean;
 }
 
 export const courses: CourseType[] = [
@@ -19,25 +20,31 @@ export const courses: CourseType[] = [
     src: "/img/courses/fullstack.png",
     title: "Fullstack Web Development Bootcamp",
     slug: "fullstack-web-development-bootcamp",
-    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
+    subtitle:
+      "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/fullstack-web-development-bootcamp",
     statuses: ["Part-time", "Offline"],
+    published: true,
   },
   {
-    src: "/img/courses/fullstack.png",
-    title: "Khoá học Java",
-    slug: "khoa-hoc-java",
-    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
-    href: "/courses/fullstack-web-development-bootcamp",
-    statuses: ["Part-time", "Offline"],
-  },
-  {
-    src: "/img/courses/fullstack.png",
+    src: "/img/courses/python.png",
     title: "Data Science cơ bản với Python",
     slug: "data-science-co-ban-voi-python",
-    subtitle: "Re-usable components built using Radix UI and Tailwind CSS.",
+    subtitle:
+      "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/data-science-co-ban-voi-python",
+    statuses: ["Part-time", "Online"],
+    published: true,
+  },
+  {
+    src: "/img/courses/front-end.png",
+    title: "Front-end Night Class",
+    slug: "front-end-night-class",
+    subtitle:
+      "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
+    href: "/courses/front-end-night-class",
     statuses: ["Part-time", "Offline"],
+    published: false,
   },
 ];
 
