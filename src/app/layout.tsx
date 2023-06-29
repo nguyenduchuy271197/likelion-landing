@@ -38,7 +38,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("bg-white antialiased light", bodyFont.className)}
+      className={cn(
+        "bg-white antialiased light scroll-smooth",
+        bodyFont.className
+      )}
     >
       <body suppressHydrationWarning={true}>
         <Providers>
