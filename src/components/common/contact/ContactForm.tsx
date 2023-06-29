@@ -153,7 +153,7 @@ export default function ContactForm() {
                       <FormLabel>Số điện thoại</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="+084 111 111 111"
+                          placeholder="+84 111 111 111"
                           disabled={isRegisterLoading}
                           {...field}
                         />

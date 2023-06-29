@@ -8,7 +8,7 @@ import PlayButton from "../PlayButton";
 export default function CourseReviews() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="my-12">
+    <div>
       <h2 className="mb-6 text-2xl font-medium">
         Học viên nói gì sau khoá học?
       </h2>
