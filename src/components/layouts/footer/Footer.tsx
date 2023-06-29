@@ -46,7 +46,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/faq">FAQs</Link>
-                </li>k
+                </li>
                 <li>
                   <Link href="/contact">Liên hệ</Link>
                 </li>

@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 const teachers = [
   {
     title: "Fullstack Developer/Giảng viên",
+    name: "Nguyễn Đức Huy",
     description:
       "Hơn 4 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy bootcamp. Được học viên yêu mến bởi cách truyền đạt kiến thức khoa học và sự hỗ trợ tận tâm. Mục tiêu là giúp học viên trang bị đầy đủ kiến thức và kỹ năng vững chắc để theo đuổi ngành lập trình. 📍",
     avatar: "/img/teachers/huy.png",
@@ -41,6 +42,7 @@ const teachers = [
   },
   {
     title: "Java Developer/Giảng viên",
+    name: "Nguyễn Văn Minh",
     description:
       "Mong muốn lan toả sự thú vị của lập trình và truyền động lực thử thách bản thân đến mọi người. Sử dụng 4 năm kinh nghiệm lập trình Back-end Java giúp học viên xây dựng nền tảng kiên cố cho sự phát triển sau này. 📍",
     avatar: "/img/teachers/minh.png",
@@ -75,6 +77,7 @@ const teachers = [
 
 type TeacherInfo = {
   title: string;
+  name: string;
   description: string;
   avatar: string;
   tech: TechStackOptions;
@@ -86,7 +89,7 @@ type TeacherPortfolioProps = {
 };
 
 function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
-  const { title, description, avatar, tech = [] } = info;
+  const { title, description, avatar, tech = [], name } = info;
 
   return (
     <div className="max-w-screen-lg px-8 mx-auto">
@@ -104,7 +107,8 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
           className="flex-1"
         >
           <div>
-            <h3 className="text-2xl font-medium lg:text-3xl">{title}</h3>
+            <h3 className="mb-1 text-2xl font-bold">{name}</h3>
+            <p className="text-lg font-medium text-muted-foreground">{title}</p>
 
             <p className="mt-2 leading-7 text-muted-foreground lg:mt-4">
               {description}
