@@ -18,9 +18,9 @@ export default function Home() {
       <TechStack />
       <Testimonials />
       <CTA />
-      <div className="w-full max-w-screen-md mx-auto">
+      {/* <div className="w-full max-w-screen-md mx-auto">
         <CourseCTA />
-      </div>
+      </div> */}
       <FAQ />
     </div>
   );
