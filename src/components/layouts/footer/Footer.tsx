@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="border-t border-white/30">
         <div className="container">
           <div className="py-4 text-sm text-center text-white/80">
-            Copyright @ 2023, LIKELION, Co. Ltd
+            Copyright @ 2023, LIKELION Co., Ltd
           </div>
         </div>
       </div>

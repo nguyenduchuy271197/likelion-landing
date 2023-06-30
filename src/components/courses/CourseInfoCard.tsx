@@ -7,9 +7,10 @@ import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ModalVideo from "react-modal-video";
 import PlayButton from "../PlayButton";
+import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 
 type CourseInfoCardProps = Pick<
   ICourse,
@@ -24,6 +25,7 @@ export default function CourseInfoCard({
   slug,
 }: CourseInfoCardProps) {
   const [open, setOpen] = useState(false);
+  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
   return (
     <div className="hidden lg:block">
@@ -56,7 +58,11 @@ export default function CourseInfoCard({
 
             <div className="my-4">
               {/* <RegisterButton courseId={id} /> */}
-              <Button className="w-full" asChild>
+              <Button
+                className="w-full"
+                asChild
+                onClick={() => setDialogOpen(true)}
+              >
                 <Link
                   href={{
                     pathname: "/register",

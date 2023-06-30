@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useMediaQuery } from "@mantine/hooks";
 import dynamic from "next/dynamic";
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 const Achievement = dynamic(
   () => import("@/components/common/home/Achievement")
 );
@@ -78,14 +79,18 @@ export default function Banner() {
               href={banner.href}
               className="relative bg-center bg-cover home-banner"
             >
-              <Image
-                src={matches ? banner.src.lg : banner.src.sm}
-                alt={banner.title}
-                className="absolute top-0 left-0 object-center w-full h-full -z-10"
-                fill
-                priority
-                unoptimized={true}
-              />
+              {matches === undefined ? (
+                <LoadingSkeleton />
+              ) : (
+                <Image
+                  src={matches ? banner.src.lg : banner.src.sm}
+                  alt={banner.title}
+                  className="absolute top-0 left-0 object-center w-full h-full -z-10"
+                  fill
+                  priority
+                  unoptimized={true}
+                />
+              )}
               <div className="container">
                 <div className="h-[65vh] md:h-[75vh] flex items-end md:items-center py-12">
                   <div className="max-w-lg text-left text-white lg:max-w-xl">
