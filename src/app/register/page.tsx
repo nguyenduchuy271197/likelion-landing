@@ -11,19 +11,23 @@ export default function Register({
     <div>
       <div className="container">
         <div className="py-20">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid h-full grid-cols-1 gap-8 md:grid-cols-2 place-items-center">
             {/* Illustration */}
-            <div className="relative hidden lg:block aspect-[3/2]">
-              <Image
-                src="/img/illustrations/register/1.svg"
-                alt="Đăng ký tư vấn"
-                fill
-                className="w-full h-full"
-              />
+            <div className="w-full">
+              <div className="relative hidden lg:block aspect-[3/2] w-full h-full">
+                <Image
+                  src="/img/contact/form.png"
+                  alt="Đăng ký tư vấn"
+                  fill
+                  className="object-contain w-full h-full"
+                />
+              </div>
             </div>
 
             {/* Form Box */}
-            <RegisterFormBox initialCourse={course} />
+            <div className="w-full min-h-[70vh] flex items-center">
+              <RegisterFormBox initialCourse={course} />
+            </div>
           </div>
         </div>
       </div>

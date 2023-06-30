@@ -22,6 +22,7 @@ export interface ICourse {
   id: string;
   slug: string;
   title: string;
+  abbr: string;
   subtitle: string;
   price: number;
   discountedPrice: number;

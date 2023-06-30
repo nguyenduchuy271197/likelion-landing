@@ -23,7 +23,7 @@ export default function RegisterFormBox({
   const { onResetCourse } = useContext(RegisterContext);
 
   return (
-    <div>
+    <div className="w-full">
       {isRegisterSuccess ? (
         <RegisterSuccess>
           <Button asChild onClick={onResetCourse}>

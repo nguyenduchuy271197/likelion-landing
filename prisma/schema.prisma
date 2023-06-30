@@ -13,6 +13,7 @@ datasource db {
 model Course {
   id              String   @id @default(auto()) @map("_id") @db.ObjectId
   slug            String   @unique
+  abbr            String
   title           String
   subtitle        String?
   price           Int?

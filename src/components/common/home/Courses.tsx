@@ -26,7 +26,10 @@ function CourseCard({ src, title, statuses, href, published }: CourseType) {
           alt={title}
           width={400}
           height={200}
-          className="object-cover object-center w-full h-full transition duration-300"
+          className={cn(
+            "object-cover object-center w-full h-full transition duration-300",
+            !published && "opacity-50"
+          )}
         />
 
         <div className="absolute top-0 left-0 w-full h-full transition opacity-0 bg-black/50 z-[1] group-hover:opacity-100 duration-300"></div>
@@ -34,13 +37,13 @@ function CourseCard({ src, title, statuses, href, published }: CourseType) {
           <Button variant="secondary">Xem khoá học</Button>
         </div>
 
-        {!published && (
+        {/* {!published && (
           <div className="absolute top-0 left-0 w-full h-full transition bg-gray-300/50 z-[1] opacity-100 duration-300 flex items-center">
             <h3 className="w-full p-4 text-2xl text-center bg-primary/80 text-muted">
               Comming soon...
             </h3>
           </div>
-        )}
+        )} */}
       </Link>
       <div className="pt-4 grow">
         <Link href={href} className="mb-2 text-xl font-semibold transition">

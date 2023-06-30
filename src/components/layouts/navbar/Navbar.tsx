@@ -53,7 +53,7 @@ export const courses: CourseType[] = [
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/front-end-night-class",
     statuses: ["Part-time", "Offline"],
-    published: false,
+    published: true,
   },
 ];
 

@@ -33,6 +33,7 @@ export default async function CourseDetail({
     discountedPrice,
     modules,
     requirements,
+    abbr,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -77,7 +78,7 @@ export default async function CourseDetail({
           />
         </div>
         {/* CTA */}
-        <CourseCTA />
+        <CourseCTA name={abbr} />
       </div>
     </div>
   );

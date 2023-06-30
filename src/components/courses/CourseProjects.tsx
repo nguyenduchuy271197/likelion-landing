@@ -65,7 +65,7 @@ function CourseProject({ src, title, tags }: CourseProjectType) {
 
 export default function CourseProjects() {
   return (
-    <div>
+    <div className="mt-12">
       <h2 className="mb-6 text-2xl font-medium">Dự án của học viên</h2>
       <div className="grid gap-8 sm:grid-cols-2">
         {projects.map((project) => (
