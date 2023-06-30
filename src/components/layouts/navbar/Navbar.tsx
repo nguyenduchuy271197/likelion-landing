@@ -32,6 +32,19 @@ export const courses: CourseType[] = [
     published: true,
   },
   {
+    id: "64883a8ab6a3fddba741f55e",
+    src: "/img/courses/front-end.png",
+    title: "Thành thạo lập trình web Frond-end",
+    slug: "thanh-thao-lap-trinh-web-frond-end",
+    excerpt:
+      "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
+    subtitle:
+      "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
+    href: "/courses/thanh-thao-lap-trinh-web-frond-end",
+    statuses: ["Part-time", "Offline"],
+    published: true,
+  },
+  {
     id: "64883aacb6a3fddba741f55f",
     src: "/img/courses/python.png",
     title: "Data Science cơ bản với Python",
@@ -41,18 +54,6 @@ export const courses: CourseType[] = [
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
     href: "/courses/data-science-co-ban-voi-python",
     statuses: ["Part-time", "Online"],
-    published: true,
-  },
-  {
-    id: "64883a8ab6a3fddba741f55e",
-    src: "/img/courses/front-end.png",
-    title: "Front-end Night Class",
-    slug: "front-end-night-class",
-    excerpt: "Thành thạo lập trình web Front-end ",
-    subtitle:
-      "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
-    href: "/courses/front-end-night-class",
-    statuses: ["Part-time", "Offline"],
     published: true,
   },
 ];
