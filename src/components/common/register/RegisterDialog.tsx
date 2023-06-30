@@ -29,20 +29,6 @@ export function RegisterDialog({ course }: { course: string }) {
     router.back();
   }
 
-  // const successRegisterDialog = (
-  //   <>
-  //     {/* Header */}
-  //     <DialogHeader>
-  //       <DialogTitle className="uppercase">Đăng ký thành công!</DialogTitle>
-  //       <DialogDescription>
-  //         Cảm ơn bạn đã quan tâm đến khóa học lập trình. Chúng tôi sẽ liên hệ
-  //         với bạn sớm nhất để cung cấp thông tin chi tiết về khóa học và giúp
-  //         bạn có một trải nghiệm học tập tốt nhất.
-  //       </DialogDescription>
-  //     </DialogHeader>
-  //   </>
-  // );
-
   return (
     <Dialog defaultOpen={true}>
       <DialogContent onCloseAutoFocus={handleCloseDialog}>
@@ -55,10 +41,6 @@ export function RegisterDialog({ course }: { course: string }) {
               <DialogTitle className="text-2xl uppercase">
                 Hãy để LIKELION tư vấn cho bạn!
               </DialogTitle>
-              {/* <DialogDescription>
-                Nhận tư vấn cá nhân, giúp các bạn khám phá các khóa học lập
-                trình chất lượng và thú vị.
-              </DialogDescription> */}
             </DialogHeader>
 
             {/* Form */}

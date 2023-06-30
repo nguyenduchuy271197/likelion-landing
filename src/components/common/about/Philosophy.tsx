@@ -58,7 +58,7 @@ export default function Philosophy() {
         <div className="pt-20 pb-20 lg:pb-0">
           <SectionHeading
             title="Triết lý giáo dục"
-            subtitle="Luôn đặt chất lượng đào tạo, lộ trình và trải nghiệm của học viên là ưu tiên hàng đầu, LIKELION xây dựng môi trường học tập năng động để bạn khai phá tiềm năng của mình."
+            subtitle="Luôn đặt chất lượng đào tạo, lộ trình và trải nghiệm của học viên lên làm ưu tiên hàng đầu, LIKELION xây dựng môi trường học tập năng động để bạn khai phá tiềm năng của mình."
             color="white"
           />
 

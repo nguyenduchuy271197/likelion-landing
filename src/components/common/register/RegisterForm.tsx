@@ -98,7 +98,7 @@ export function RegisterForm({
               <FormLabel>Số điện thoại</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="+84 111 111 111"
+                  placeholder="0911111111"
                   disabled={isSubmitting}
                   {...field}
                 />
