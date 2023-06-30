@@ -18,8 +18,8 @@ export default function SectionBanner({
     >
       <div className="container">
         <div className="flex items-center h-[400px]">
-          <div className="max-w-lg">
-            <h1 className="mb-6 text-4xl font-bold scroll-m-20 lg:text-5xl">
+          <div className="max-w-[260px] sm:max-w-xs lg:max-w-lg">
+            <h1 className="mb-2 text-2xl font-bold sm:mb-6 sm:text-3xl scroll-m-20 lg:text-5xl">
               {title}
             </h1>
             <p className="text-muted-foreground">{description}</p>

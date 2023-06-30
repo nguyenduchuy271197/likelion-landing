@@ -63,7 +63,7 @@ const members: Member[] = [
 
 function MemberCard({ src, name, profession }: Member) {
   return (
-    <div className="flex flex-col w-full h-full max-w-sm overflow-hidden rounded shadow">
+    <div className="flex flex-col w-full h-full xs:max-w-sm overflow-hidden rounded shadow max-w-[280px]">
       <div className="aspect-[1/1] relative bg-[#ff8d3f]">
         <Image src={src} alt={name} fill />
       </div>
@@ -84,7 +84,7 @@ export default function Members() {
             title="Đội ngũ của chúng tôi"
             subtitle="Mỗi mảnh ghép của LIKELION đều làm việc chăm chỉ, đam mê và nhiệt huyết cống hiến cho giáo dục. Chúng tôi đều nỗ lực để phục vụ cho sứ mệnh “Mang lập trình tiếp cận mọi đối tượng”. "
           />
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center">
+          <div className="grid gap-8 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center">
             {members.map((member) => (
               <MemberCard key={member.name} {...member} />
             ))}

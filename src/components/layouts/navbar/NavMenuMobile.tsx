@@ -42,7 +42,17 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
           </div>
         </SheetHeader>
         <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
+          <AccordionItem value="trang-chu">
+            <SheetClose asChild>
+              <Link
+                href="/"
+                className="py-4 font-medium transition-all hover:underline"
+              >
+                Trang chủ
+              </Link>
+            </SheetClose>
+          </AccordionItem>
+          <AccordionItem value="khoa-hoc">
             <AccordionTrigger>Khoá học</AccordionTrigger>
             <AccordionContent>
               <ul className="flex flex-col gap-3 py-2 pl-4 ml-2 text-base font-normal border-l-2 border-border text-muted-foreground">
@@ -65,7 +75,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
               </ul>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-2">
+          <AccordionItem value="blogs">
             <SheetClose asChild>
               <Link
                 href="/blogs"
@@ -75,7 +85,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
               </Link>
             </SheetClose>
           </AccordionItem>
-          <AccordionItem value="item-2">
+          <AccordionItem value="about">
             <SheetClose asChild>
               <Link
                 href="/about"
@@ -85,7 +95,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
               </Link>
             </SheetClose>
           </AccordionItem>
-          <AccordionItem value="item-3">
+          <AccordionItem value="contact">
             <SheetClose asChild>
               <Link
                 href="/contact"
@@ -95,7 +105,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
               </Link>
             </SheetClose>
           </AccordionItem>
-          <AccordionItem value="item-4">
+          <AccordionItem value="faq">
             <SheetClose asChild>
               <Link
                 href="/faq"

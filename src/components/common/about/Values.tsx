@@ -79,7 +79,7 @@ export default function Values() {
             title="Giá trị"
             subtitle="Những giá trị cốt lõi định hình tư tưởng, văn hoá và chiến lược của LIKELION."
           />
-          <div className="grid max-w-md grid-cols-2 mx-auto sm:grid-cols-4 gap-x-4 lg:gap-y-16 gap-y-6 sm:max-w-none place-items-center">
+          <div className="grid items-start max-w-md grid-cols-2 mx-auto sm:grid-cols-4 gap-x-4 lg:gap-y-16 gap-y-6 sm:max-w-none place-items-center">
             {values.map((value) => (
               <ValueCard {...value} key={value.title} />
             ))}

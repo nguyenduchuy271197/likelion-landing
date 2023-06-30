@@ -15,7 +15,7 @@ export default function Logo({
   return (
     <Link
       href="/"
-      className="relative flex items-center h-5 sm:h-6 aspect-[8/1]"
+      className="relative flex items-center h-4 sm:h-5 aspect-[8/1]"
     >
       <Image
         src={logo[variant]}

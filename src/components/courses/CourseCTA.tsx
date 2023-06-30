@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/Button";
 
 export default function CourseCTA() {
@@ -11,8 +12,9 @@ export default function CourseCTA() {
           <Button
             variant="secondary"
             className="sm:px-8 sm:py-6 sm:text-lg text-[#FF7100] rounded-xl px-6 py-6 w-full"
+            asChild
           >
-            Liên hệ tư vấn 1 : 1
+            <Link href="/contact">Liên hệ tư vấn 1 : 1</Link>
           </Button>
         </div>
       </div>

@@ -106,35 +106,41 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
           viewport={{ once: true }}
           className="flex-1"
         >
-          <div>
-            <h3 className="mb-1 text-2xl font-bold">{name}</h3>
-            <p className="text-lg font-medium text-muted-foreground">{title}</p>
+          <div className="max-w-lg mx-auto lg:max-w-none">
+            <div>
+              <div className="text-center lg:text-left">
+                <h3 className="mb-1 text-2xl font-bold ">{name}</h3>
+                <p className="text-lg font-medium text-muted-foreground">
+                  {title}
+                </p>
+              </div>
 
-            <p className="mt-2 leading-7 text-muted-foreground lg:mt-4">
-              {description}
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-2 mt-2 sm:gap-4 sm:mt-6 sm:flex-row">
-            <div className="pt-6 font-medium leading-7 whitespace-nowrap">
-              Tech Stack <span className="hidden sm:inline">|</span>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                {description}
+              </p>
             </div>
-            <div className="flex flex-wrap items-center gap-4">
-              {tech.map(({ title, image }) => (
-                <div
-                  key={title}
-                  className="flex items-center justify-center transition duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 h-[70px] w-[70px]"
-                >
-                  <div className="relative w-[40px] h-[40px]">
-                    <Image
-                      src={image}
-                      alt={title}
-                      fill
-                      className="object-contain object-center"
-                    />
+
+            <div className="flex flex-col gap-2 mt-2 sm:gap-4 sm:mt-6 sm:flex-row">
+              <div className="pt-6 font-medium leading-7 whitespace-nowrap">
+                Tech Stack <span className="hidden sm:inline">|</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-4">
+                {tech.map(({ title, image }) => (
+                  <div
+                    key={title}
+                    className="flex items-center justify-center transition duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 h-[70px] w-[70px]"
+                  >
+                    <div className="relative w-[40px] h-[40px]">
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="object-contain object-center"
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

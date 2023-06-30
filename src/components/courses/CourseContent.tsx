@@ -27,7 +27,7 @@ function CourseModule({
         <ul className="flex flex-col gap-4 py-2 text-sm">
           {lessons.map((lesson) => (
             <li className="flex items-center gap-4" key={lesson}>
-              <FileText size={16} />
+              <FileText size={16} className="shrink-0" />
               {lesson}
             </li>
           ))}
@@ -35,7 +35,7 @@ function CourseModule({
           {projects &&
             projects?.map((project, i) => (
               <li className="flex items-center gap-4" key={project}>
-                <GitFork size={16} />
+                <GitFork size={16} className="shrink-0" />
                 <p>
                   <span className="font-medium">
                     Project{projects.length > 1 && ` ${i + 1}`}:

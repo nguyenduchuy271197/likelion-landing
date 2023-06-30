@@ -71,52 +71,64 @@ export default function Philosophy() {
 
             <div className="relative hidden pb-36 lg:block">
               <svg
+                width={920}
+                height={214}
+                viewBox="0 0 920 214"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                id="Layer_2"
-                data-name="Layer 2"
-                viewBox="0 0 919.14 213.25"
                 className="max-w-[70%] mx-auto mt-4"
               >
-                <defs>
-                  <style
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        "\n      .cls-1 {\n        fill: #ff8d3f;\n      }\n\n      .cls-1, .cls-2, .cls-3 {\n        stroke: #fff;\n        stroke-miterlimit: 10;\n      }\n\n      .cls-1, .cls-3 {\n        stroke-width: 5px;\n      }\n\n      .cls-2 {\n        stroke-width: 3.18px;\n      }\n\n      .cls-2, .cls-3 {\n        fill: none;\n      }\n    ",
-                    }}
+                <g clipPath="url(#clip0_1_23)">
+                  <path
+                    d="M13 25V189H439"
+                    stroke="white"
+                    strokeWidth={5}
+                    strokeMiterlimit={10}
                   />
-                </defs>
-                <g id="Layer_1-2" data-name="Layer 1">
-                  <g>
-                    <polyline
-                      className="cls-3"
-                      points="13.09 24.79 13.09 189.12 460.33 189.12 460.33 24.91"
-                    />
-                    <circle className="cls-2" cx="13.25" cy="13.25" r="11.66" />
-                    <circle
-                      className="cls-2"
-                      cx="460.29"
-                      cy="13.25"
-                      r="11.66"
-                    />
-                    <circle
-                      className="cls-2"
-                      cx="905.89"
-                      cy="13.25"
-                      r="11.66"
-                    />
-                    <polyline
-                      className="cls-3"
-                      points="905.89 24.91 905.89 189.12 462.03 189.12"
-                    />
-                    <circle
-                      className="cls-1"
-                      cx="460.29"
-                      cy="189.12"
-                      r="21.63"
-                    />
-                  </g>
+                  <path
+                    d="M13.25 24.91C19.6897 24.91 24.91 19.6897 24.91 13.25C24.91 6.81039 19.6897 1.59003 13.25 1.59003C6.81039 1.59003 1.59003 6.81039 1.59003 13.25C1.59003 19.6897 6.81039 24.91 13.25 24.91Z"
+                    stroke="white"
+                    strokeWidth="3.18"
+                    strokeMiterlimit={10}
+                  />
+                  <path
+                    d="M460.29 24.91C466.73 24.91 471.95 19.6897 471.95 13.25C471.95 6.81039 466.73 1.59003 460.29 1.59003C453.85 1.59003 448.63 6.81039 448.63 13.25C448.63 19.6897 453.85 24.91 460.29 24.91Z"
+                    stroke="white"
+                    strokeWidth="3.18"
+                    strokeMiterlimit={10}
+                  />
+                  <path
+                    d="M905.89 24.91C912.33 24.91 917.55 19.6897 917.55 13.25C917.55 6.81039 912.33 1.59003 905.89 1.59003C899.45 1.59003 894.23 6.81039 894.23 13.25C894.23 19.6897 899.45 24.91 905.89 24.91Z"
+                    stroke="white"
+                    strokeWidth="3.18"
+                    strokeMiterlimit={10}
+                  />
+                  <path
+                    d="M906 25V189H482"
+                    stroke="white"
+                    strokeWidth={5}
+                    strokeMiterlimit={10}
+                  />
+                  <path
+                    d="M460 167L460.33 24.91"
+                    stroke="white"
+                    strokeWidth={5}
+                    strokeMiterlimit={10}
+                  />
+                  <path
+                    d="M460.29 210.75C472.236 210.75 481.92 201.066 481.92 189.12C481.92 177.174 472.236 167.49 460.29 167.49C448.344 167.49 438.66 177.174 438.66 189.12C438.66 201.066 448.344 210.75 460.29 210.75Z"
+                    stroke="white"
+                    strokeWidth={5}
+                    strokeMiterlimit={10}
+                  />
                 </g>
+                <defs>
+                  <clipPath id="clip0_1_23">
+                    <rect width="919.14" height="213.25" fill="white" />
+                  </clipPath>
+                </defs>
               </svg>
+
               <div className="absolute text-3xl font-bold text-white bottom-12 right-1/2">
                 Học viên <br />
                 là trung tâm
