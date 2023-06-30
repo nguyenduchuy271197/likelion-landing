@@ -24,7 +24,11 @@ export const RegisterContext = createContext<RegisterContext>({
   onRegisterForm: () => {},
 });
 
-export default function UserProvider({ children }: { children: ReactNode }) {
+export default function RegisterProvider({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const [register, setRegister] = useState<RegisterFormType>(initialRegister);
 
   function handleUpdateCourse(courseId: RegisterFormType["courseId"]) {

@@ -1,11 +1,14 @@
 import { ReactNode } from "react";
 import ReactQueryProvider from "./ReactQueryProvider";
-import UserProvider from "./RegisterProvider";
+import RegisterProvider from "./RegisterProvider";
+import RegisterDialogProvider from "./RegisterDialogProvider";
 
 export default function Providers({ children }: { children: ReactNode }) {
   return (
     <ReactQueryProvider>
-      <UserProvider>{children}</UserProvider>
+      <RegisterProvider>
+        <RegisterDialogProvider>{children}</RegisterDialogProvider>
+      </RegisterProvider>
     </ReactQueryProvider>
   );
 }

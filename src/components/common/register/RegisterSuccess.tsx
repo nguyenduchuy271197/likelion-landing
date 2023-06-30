@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-export default function RegisterSuccess() {
+export default function RegisterSuccess({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col items-start">
       <h2 className="mb-2 text-lg font-semibold leading-none tracking-tight uppercase">
@@ -12,9 +13,7 @@ export default function RegisterSuccess() {
         bạn sớm nhất để cung cấp thông tin chi tiết về khóa học và giúp bạn có
         một trải nghiệm học tập tốt nhất.
       </p>
-      <Button asChild>
-        <Link href="/">Trở về trang chủ</Link>
-      </Button>
+      {children}
     </div>
   );
 }

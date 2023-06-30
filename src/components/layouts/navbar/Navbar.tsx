@@ -4,6 +4,7 @@ import { Button } from "../../ui/Button";
 
 import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
+import NavRegisterButton from "./NavRegisterButton";
 
 export interface CourseType {
   id: string;
@@ -69,9 +70,7 @@ export default function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <Button className="w-full" asChild>
-                <Link href="/register">Đăng ký ngay</Link>
-              </Button>
+              <NavRegisterButton />
             </div>
 
             <NavMenuMobile courses={courses} />
