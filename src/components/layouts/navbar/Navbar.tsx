@@ -40,7 +40,7 @@ export const courses: CourseType[] = [
       "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
     subtitle:
       "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
-    href: "/courses/thanh-thao-lap-trinh-web-frond-end",
+    href: "/courses/thanh-thao-lap-trinh-web-front-end",
     statuses: ["Part-time", "Offline"],
     published: true,
   },

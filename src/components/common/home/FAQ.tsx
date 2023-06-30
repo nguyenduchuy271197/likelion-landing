@@ -21,7 +21,7 @@ const faqList = [
     question:
       "Vì sao tôi luôn gặp khó khăn với việc tự học và nghiên cứu các tài liệu về lập trình?",
     answer:
-      "Việc này có thể bởi vì bạn không đang theo một lộ trình không khoa học. Với khoá học lập trình tại LIKELION, chúng tôi cam kết một chương trình học đi từ căn bản, dễ hiểu và đầy đủ kiến thức. Sau đó, bạn có thể tự học hoặc nghiên cứu thêm để hoàn thiện bản thân.",
+      "Việc này có thể bởi vì bạn đang theo một lộ trình không khoa học. Với khoá học lập trình tại LIKELION, chúng tôi cam kết một chương trình học đi từ căn bản, dễ hiểu và đầy đủ kiến thức. Sau đó, bạn có thể tự học hoặc nghiên cứu thêm để hoàn thiện bản thân.",
   },
   {
     question:
@@ -32,7 +32,7 @@ const faqList = [
   {
     question: "LIKELION có hỗ trợ tìm kiếm việc làm không?",
     answer:
-      "Có. Chúng tôi hỗ trợ bạn ngay từ bước chuẩn bị CV và portfolio để thành công ứng tuyển trong môi trường việc làm cạnh tranh ngày nay. Ngoài ra, chúng tôi liên kết giới thiệu bạn ứng tuyển tại các công ty lập trình hàng đầu trong mạng lưới đối tác của LIKELION.",
+      "Có. Chúng tôi hỗ trợ bạn ngay từ bước chuẩn bị CV và portfolio để thành công ứng tuyển trong môi trường việc làm cạnh tranh ngày nay. Ngoài ra, chúng tôi còn liên kết giới thiệu bạn ứng tuyển tại các công ty lập trình hàng đầu trong mạng lưới đối tác của LIKELION.",
   },
 ];
 

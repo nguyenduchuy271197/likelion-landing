@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import CourseFeatureItem from "./CourseFeatureItem";
-import { Airplay, PlayIcon } from "lucide-react";
 import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
