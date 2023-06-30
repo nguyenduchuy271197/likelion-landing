@@ -50,7 +50,10 @@ export default async function CourseDetail({
               <p>{subtitle}</p>
             </div>
 
-            <CourseCalendar />
+            {[
+              "bootcamp-lap-trinh-web-fullstack",
+              "front-end-night-class",
+            ].includes(courseSlug) && <CourseCalendar />}
 
             {/* What you'll learn */}
             <CourseObjectives objectives={objectives} />
@@ -61,11 +64,15 @@ export default async function CourseDetail({
             {/* Course content */}
             <CourseContent modules={modules} />
 
-            {/* Showcase */}
-            <CourseProjects />
+            {courseSlug === "bootcamp-lap-trinh-web-fullstack" && (
+              <>
+                {/* Showcase */}
+                <CourseProjects />
 
-            {/* Reviews */}
-            <CourseReviews />
+                {/* Reviews */}
+                <CourseReviews />
+              </>
+            )}
           </div>
 
           {/* Info Card */}
