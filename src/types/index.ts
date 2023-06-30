@@ -24,6 +24,8 @@ export interface ICourse {
   title: string;
   abbr: string;
   subtitle: string;
+  thumbnail: string;
+  youtubeId: string;
   price: number;
   discountedPrice: number;
   objectives: string[];

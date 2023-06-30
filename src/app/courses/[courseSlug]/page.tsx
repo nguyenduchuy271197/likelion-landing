@@ -34,6 +34,8 @@ export default async function CourseDetail({
     modules,
     requirements,
     abbr,
+    thumbnail,
+    youtubeId,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -78,10 +80,13 @@ export default async function CourseDetail({
           {/* Info Card */}
           <CourseInfoCard
             id={id}
+            title={title}
             price={price}
             discountedPrice={discountedPrice}
             features={features}
             slug={courseSlug}
+            thumbnail={thumbnail}
+            youtubeId={youtubeId}
           />
         </div>
         {/* CTA */}

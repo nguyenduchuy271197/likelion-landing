@@ -16,6 +16,8 @@ model Course {
   abbr            String
   title           String
   subtitle        String?
+  thumbnail       String?
+  youtubeId       String?
   price           Int?
   discountedPrice Int?
   requirements    String[]

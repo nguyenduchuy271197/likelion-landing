@@ -11,18 +11,29 @@ import { useContext, useState } from "react";
 import ModalVideo from "react-modal-video";
 import PlayButton from "../PlayButton";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
+import { cn } from "@/lib/utils";
 
 type CourseInfoCardProps = Pick<
   ICourse,
-  "id" | "price" | "discountedPrice" | "features" | "slug"
+  | "id"
+  | "title"
+  | "price"
+  | "discountedPrice"
+  | "features"
+  | "slug"
+  | "thumbnail"
+  | "youtubeId"
 >;
 
 export default function CourseInfoCard({
   id,
+  title,
   price,
   discountedPrice,
   features,
   slug,
+  thumbnail,
+  youtubeId,
 }: CourseInfoCardProps) {
   const [open, setOpen] = useState(false);
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
@@ -32,14 +43,16 @@ export default function CourseInfoCard({
       <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden">
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
-            src="/img/thumbnails/fullstack.webp"
-            alt=""
+            src={thumbnail}
+            alt={title}
             fill
-            className="w-full h-full brightness-75"
+            className={cn("w-full h-full", youtubeId && "brightness-75")}
           />
-          <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-            <PlayButton onClick={() => setOpen(true)} />
-          </div>
+          {youtubeId && (
+            <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+              <PlayButton onClick={() => setOpen(true)} />
+            </div>
+          )}
         </div>
         <div className="p-6">
           {/* Price */}
@@ -87,13 +100,16 @@ export default function CourseInfoCard({
             </ul>
           </div>
         </div>
-        <ModalVideo
-          channel="youtube"
-          isOpen={open}
-          videoId="duAOTul9UNs"
-          onClose={() => setOpen(false)}
-          youtube={{ autoplay: 1, mute: 1 }}
-        />
+
+        {youtubeId && (
+          <ModalVideo
+            channel="youtube"
+            isOpen={open}
+            videoId={youtubeId}
+            onClose={() => setOpen(false)}
+            youtube={{ autoplay: 1, mute: 1 }}
+          />
+        )}
       </div>
     </div>
   );
