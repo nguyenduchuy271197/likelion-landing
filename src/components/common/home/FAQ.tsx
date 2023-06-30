@@ -21,7 +21,7 @@ const faqList = [
     question:
       "Vì sao tôi luôn gặp khó khăn với việc tự học và nghiên cứu các tài liệu về lập trình?",
     answer:
-      "Việc này có thể bởi vì bạn không đang theo một lộ trình không khoa học. Với khoá học lập trình tại LIKELION, chúng tôi cam kết một chương trình học đi từ căn bản, dễ hiểu và đầy đủ kiến thức. Sau đó, bạn có thể tự học hoặc nghiêm cứu thêm để hoàn thiện bản thân.",
+      "Việc này có thể bởi vì bạn không đang theo một lộ trình không khoa học. Với khoá học lập trình tại LIKELION, chúng tôi cam kết một chương trình học đi từ căn bản, dễ hiểu và đầy đủ kiến thức. Sau đó, bạn có thể tự học hoặc nghiên cứu thêm để hoàn thiện bản thân.",
   },
   {
     question:
