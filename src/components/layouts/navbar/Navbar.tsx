@@ -34,8 +34,8 @@ export const courses: CourseType[] = [
   {
     id: "64883a8ab6a3fddba741f55e",
     src: "/img/courses/front-end.png",
-    title: "Thành thạo lập trình web Frond-end",
-    slug: "thanh-thao-lap-trinh-web-frond-end",
+    title: "Thành thạo lập trình web Front-end",
+    slug: "thanh-thao-lap-trinh-web-front-end",
     excerpt:
       "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
     subtitle:
