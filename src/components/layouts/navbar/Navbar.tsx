@@ -71,7 +71,7 @@ export default function Navbar() {
           <NavMenu courses={courses} />
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <ImageViewer />
+            {/* <ImageViewer /> */}
             <div className="hidden sm:block">
               <NavRegisterButton />
             </div>
