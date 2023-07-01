@@ -1,11 +1,17 @@
+"use client";
+import { useIntersection } from "@mantine/hooks";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/Accordion";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { Button, buttonVariants } from "@/components/ui/Button";
 
-const faq = [
+const faq: FAQRowType[] = [
   {
     id: "tong-quan",
     label: "Tổng quan",
@@ -124,60 +130,110 @@ const faq = [
   },
 ];
 
-export default function FAQContainer() {
+interface FAQRowType {
+  label: string;
+  id: string;
+  href: string;
+  items: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+function FAQRow({
+  id,
+  label,
+  items,
+  onChangeTarget,
+}: FAQRowType & { onChangeTarget: (id: string | null) => void }) {
+  const { ref, entry } = useIntersection({
+    root: null,
+    threshold: 0,
+    rootMargin: "0% 0% -70% 0px",
+  });
+
+  useEffect(() => {
+    console.log(entry);
+    if (!entry) {
+      onChangeTarget(null);
+    } else {
+      if (entry?.isIntersecting) {
+        onChangeTarget(entry?.target.id);
+      }
+    }
+  }, [entry, onChangeTarget]);
+
   return (
-    <div className="bg-slate-50">
+    <div>
+      <h2 className="mb-4 text-3xl font-medium scroll-mt-24" ref={ref} id={id}>
+        {label}
+      </h2>
+      <Accordion type="single" collapsible className="w-full bg-white border">
+        {items.map((faq, index) => (
+          <div key={index}>
+            <AccordionItem
+              value={`item-${index}`}
+              key={index}
+              className="px-6 py-3 [&[data-state='open']]:bg-[#fafafa]"
+            >
+              <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left text-lg">
+                {index + 1}. {faq.question}
+              </AccordionTrigger>
+              <AccordionContent>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: faq.answer,
+                  }}
+                  className="[&_a]:inline [&_a]:text-blue-500 [&_a]:hover:underline text-base leading-relaxed"
+                />
+              </AccordionContent>
+            </AccordionItem>
+          </div>
+        ))}
+      </Accordion>
+    </div>
+  );
+}
+
+export default function FAQContainer() {
+  const [target, setTarget] = useState<string | null>(null);
+
+  function handleChangeTarget(id: string | null) {
+    setTarget(id);
+  }
+
+  return (
+    <div className="">
       <div className="container">
-        <div className="grid lg:grid-cols-[240px_1fr] gap-8 py-20">
+        <div className="grid lg:grid-cols-[260px_1fr] gap-8 py-20">
           <div className="hidden lg:block">
             <div className="sticky top-[var(--navbar-height)]">
-              <ul className="flex flex-col gap-2 pt-8 text-lg text-muted-foreground">
-                {faq.map((f) => (
-                  <li key={f.label}>
-                    <a href={f.href}>{f.label}</a>
-                  </li>
-                ))}
-              </ul>
+              <nav className="pt-8">
+                <ul className="flex flex-col pl-2 border-l-2 text-muted-foreground">
+                  {faq.map((f) => (
+                    <li key={f.label}>
+                      <a
+                        href={f.href}
+                        className={cn(
+                          buttonVariants({ variant: "ghost" }),
+                          target && target === f.id
+                            ? "bg-muted hover:bg-muted"
+                            : "hover:bg-transparent",
+                          "justify-start w-full text-base font-medium text-accent-foreground"
+                        )}
+                      >
+                        {f.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
 
           <div className="flex flex-col gap-12 pt-8">
             {faq.map((f) => (
-              <div key={f.label}>
-                <h2
-                  className="mb-4 text-2xl font-medium lg:text-3xl scroll-mt-24"
-                  id={f.id}
-                >
-                  {f.label}
-                </h2>
-                <Accordion
-                  type="single"
-                  collapsible
-                  className="w-full bg-white shadow"
-                >
-                  {f.items.map((faq, index) => (
-                    <div key={index}>
-                      <AccordionItem
-                        value={`item-${index}`}
-                        key={index}
-                        className="px-6 py-3 [&[data-state='open']]:bg-[#fafafa]"
-                      >
-                        <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left text-lg">
-                          {index + 1}. {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: faq.answer,
-                            }}
-                            className="[&_a]:inline [&_a]:text-blue-500 [&_a]:hover:underline text-base leading-relaxed"
-                          />
-                        </AccordionContent>
-                      </AccordionItem>
-                    </div>
-                  ))}
-                </Accordion>
-              </div>
+              <FAQRow key={f.id} {...f} onChangeTarget={handleChangeTarget} />
             ))}
           </div>
         </div>

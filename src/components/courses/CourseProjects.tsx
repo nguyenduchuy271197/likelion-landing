@@ -45,7 +45,7 @@ function CourseProject({ src, title, tags }: CourseProjectType) {
   return (
     <div className="flex flex-col">
       <CourseImageViewer title={title} imageUrl={src}>
-        <div className="relative aspect-[4/3] border rounded-xl overflow-hidden">
+        <div className="relative aspect-[4/3] border rounded-xl overflow-hidden cursor-pointer">
           <Image
             src={src}
             alt={title}
