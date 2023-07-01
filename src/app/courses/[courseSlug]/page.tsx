@@ -1,6 +1,6 @@
 import CourseCTA from "@/components/courses/CourseCTA";
 import CourseCalendar from "@/components/courses/CourseCalendar";
-import { CourseContent } from "@/components/courses/CourseContent";
+import CourseContent from "@/components/courses/CourseContent";
 import CourseInfoCard from "@/components/courses/CourseInfoCard";
 import CourseObjectives from "@/components/courses/CourseObjectives";
 import CourseProjects from "@/components/courses/CourseProjects";
