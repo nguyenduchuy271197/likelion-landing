@@ -13,10 +13,7 @@ export default function Logo({
   variant?: keyof typeof logo;
 }) {
   return (
-    <Link
-      href="/"
-      className="relative flex items-center h-4 sm:h-5 aspect-[8/1]"
-    >
+    <Link href="/" className="relative flex items-center h-5 aspect-[8/1]">
       <Image
         src={logo[variant]}
         alt={siteConfig.title}
