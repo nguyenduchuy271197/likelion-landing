@@ -5,6 +5,7 @@ import { Button } from "../../ui/Button";
 import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
 import NavRegisterButton from "./NavRegisterButton";
+import ImageViewer from "@/components/test/ImageViewer";
 
 export interface CourseType {
   id: string;
@@ -70,6 +71,7 @@ export default function Navbar() {
           <NavMenu courses={courses} />
           {/* Actions */}
           <div className="flex items-center gap-2">
+            <ImageViewer />
             <div className="hidden sm:block">
               <NavRegisterButton />
             </div>
