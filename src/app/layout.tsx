@@ -15,6 +15,7 @@ import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/Toaster";
+import Script from "next/script";
 
 // Load body font
 const bodyFont = Roboto({
@@ -43,6 +44,17 @@ export default function RootLayout({
         bodyFont.className
       )}
     >
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-78E7JPEN6M"
+      ></Script>
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-78E7JPEN6M');`}
+      </Script>
+
       <body suppressHydrationWarning={true}>
         <Providers>
           <div className="flex flex-col min-h-screen antialiased pt-body-top">
