@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "@/components/Logo";
 import {
   Accordion,
@@ -17,11 +19,13 @@ import {
 import Link from "next/link";
 import { CourseType } from "./Navbar";
 import Icons from "@/components/Icons";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 
 export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
+  const { setOpen } = useContext(RegisterDialogContext);
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -118,7 +122,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
         </Accordion>
         <SheetFooter className="mx-auto mt-6">
           <SheetClose asChild>
-            <Button className="w-full" asChild>
+            <Button className="w-full" asChild onClick={() => setOpen(true)}>
               <Link href="/register">Đăng ký ngay</Link>
             </Button>
           </SheetClose>

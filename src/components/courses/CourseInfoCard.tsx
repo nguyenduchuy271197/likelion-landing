@@ -45,7 +45,10 @@ export default function CourseInfoCard({
             src={thumbnail}
             alt={title}
             fill
-            className={cn("w-full h-full", youtubeId && "brightness-75")}
+            className={cn(
+              "w-full h-full object-cover object-top",
+              youtubeId && "brightness-75"
+            )}
           />
           {youtubeId && (
             <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -69,7 +72,6 @@ export default function CourseInfoCard({
             </div>
 
             <div className="my-4">
-              {/* <RegisterButton courseId={id} /> */}
               <Button
                 className="w-full"
                 asChild

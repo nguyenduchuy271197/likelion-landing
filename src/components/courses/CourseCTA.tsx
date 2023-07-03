@@ -1,7 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "../ui/Button";
+import { useContext } from "react";
+import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 
-export default function CourseCTA({ name }: { name: string }) {
+export default function CourseCTA({
+  name,
+  slug,
+}: {
+  name: string;
+  slug: string;
+}) {
+  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
+
   if (!name) return null;
 
   return (
@@ -16,8 +28,16 @@ export default function CourseCTA({ name }: { name: string }) {
             variant="secondary"
             className="sm:px-8 sm:py-6 sm:text-lg text-[#FF7100] rounded-xl px-6 py-6 w-full"
             asChild
+            onClick={() => setDialogOpen(true)}
           >
-            <Link href="/contact">Liên hệ tư vấn 1 : 1</Link>
+            <Link
+              href={{
+                pathname: "/register",
+                query: { course: slug },
+              }}
+            >
+              Liên hệ tư vấn 1 : 1
+            </Link>
           </Button>
         </div>
       </div>

@@ -90,7 +90,7 @@ export default async function CourseDetail({
           />
         </div>
         {/* CTA */}
-        <CourseCTA name={abbr} />
+        <CourseCTA name={abbr} slug={courseSlug} />
       </div>
     </div>
   );

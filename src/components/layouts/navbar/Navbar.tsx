@@ -1,11 +1,8 @@
-import Link from "next/link";
 import NavMenu from "./NavMenu";
-import { Button } from "../../ui/Button";
 
 import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
 import NavRegisterButton from "./NavRegisterButton";
-import ImageViewer from "@/components/test/ImageViewer";
 
 export interface CourseType {
   id: string;

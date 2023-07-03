@@ -7,7 +7,7 @@ const calendar = {
   mode: "Offline",
   place: {
     name: "Viện Đổi mới Sáng tạo UEH (UII)",
-    address: "232/6 Võ Thị Sáu, Võ Thị Sáu, Quận 3",
+    address: "232/6 Võ Thị Sáu, Quận 3",
   },
 };
 
