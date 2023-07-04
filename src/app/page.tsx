@@ -1,6 +1,3 @@
-import CTA from "@/components/common/home/CTA";
-import Testimonials from "@/components/common/home/Testimonials";
-import CourseCTA from "@/components/courses/CourseCTA";
 import dynamic from "next/dynamic";
 
 const Banner = dynamic(() => import("@/components/common/home/Banner"));
@@ -8,6 +5,10 @@ const Courses = dynamic(() => import("@/components/common/home/Courses"));
 const TechStack = dynamic(() => import("@/components/common/home/TechStack"));
 const FAQ = dynamic(() => import("@/components/common/home/FAQ"));
 const Teachers = dynamic(() => import("@/components/common/home/Teachers"));
+const CTA = dynamic(() => import("@/components/common/home/CTA"));
+const Testimonials = dynamic(
+  () => import("@/components/common/home/Testimonials")
+);
 
 export default function Home() {
   return (

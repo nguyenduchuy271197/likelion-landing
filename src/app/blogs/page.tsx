@@ -5,6 +5,8 @@ import siteConfig from "@/config/siteConfig";
 import { getAllBlogs } from "@/services/blogService";
 import { Metadata } from "next";
 
+export const fetchCache = "force-no-store";
+
 export const metadata: Metadata = {
   title: `Blogs | ${siteConfig.brand}`,
 };

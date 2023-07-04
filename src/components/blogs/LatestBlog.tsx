@@ -24,7 +24,7 @@ export default function LatestBlog({
               alt={title}
               width={600}
               height={300}
-              className="object-cover w-full h-full transition duration-500 group-hover:scale-110"
+              className="object-cover w-full h-full transition duration-500 group-hover:scale-105"
             />
           </div>
           <div className="py-2">
