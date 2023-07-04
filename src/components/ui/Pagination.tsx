@@ -50,6 +50,7 @@ export function Pagination({
           variant={activePage !== n ? "outline" : undefined}
           className="w-8 h-8 p-0"
           key={n}
+          asChild
         >
           <Link
             href={{

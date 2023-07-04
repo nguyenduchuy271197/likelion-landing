@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 export default async function Blogs() {
   const blogs = await getAllBlogs();
+  console.log(blogs);
   return (
     <div>
       <SectionBanner
