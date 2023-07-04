@@ -19,7 +19,7 @@ const Headings = ({
           <a
             href={`#${heading.id}`}
             className={cn("mt-3", {
-              "font-medium text-red-400": activeId === heading.id,
+              "font-medium text-[#ff7100]": activeId === heading.id,
             })}
             onClick={(e) => {
               e.preventDefault();
@@ -37,7 +37,7 @@ const Headings = ({
                   <a
                     href={`#${child.id}`}
                     className={cn("mt-2 ml-4", {
-                      "font-medium text-red-400": activeId === child.id,
+                      "font-medium text-[#ff7100]": activeId === child.id,
                     })}
                     onClick={(e) => {
                       e.preventDefault();
