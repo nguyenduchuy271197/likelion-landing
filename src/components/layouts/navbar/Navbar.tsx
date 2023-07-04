@@ -1,5 +1,4 @@
 import NavMenu from "./NavMenu";
-
 import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
 import NavRegisterButton from "./NavRegisterButton";

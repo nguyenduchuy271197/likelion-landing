@@ -41,7 +41,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
         className="max-w-[400px] w-full flex flex-col py-10"
       >
         <SheetHeader>
-          <div className="h-[100px] w-full flex items-center justify-center">
+          <div className="flex items-center justify-center py-6">
             <Logo />
           </div>
         </SheetHeader>
@@ -57,7 +57,7 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
             </SheetClose>
           </AccordionItem>
           <AccordionItem value="khoa-hoc">
-            <AccordionTrigger>Khoá học</AccordionTrigger>
+            <AccordionTrigger autoFocus={false}>Khoá học</AccordionTrigger>
             <AccordionContent>
               <ul className="flex flex-col gap-3 py-2 pl-4 ml-2 text-base font-normal border-l-2 border-border text-muted-foreground">
                 {courses.map((course) => (
