@@ -72,13 +72,16 @@ export default function BlogListing({ blogs }: { blogs: IBlog[] }) {
                 <BlogCard key={blog.slug} {...blog} />
               ))}
           </div>
-          <Pagination
-            activePage={pagination.active}
-            total={pagination.range.length}
-            onSetPage={pagination.setPage}
-            onPrevious={pagination.previous}
-            onNext={pagination.next}
-          />
+
+          {blogs.length > PER_PAGE && (
+            <Pagination
+              activePage={pagination.active}
+              total={pagination.range.length}
+              onSetPage={pagination.setPage}
+              onPrevious={pagination.previous}
+              onNext={pagination.next}
+            />
+          )}
         </div>
       </div>
     </div>
