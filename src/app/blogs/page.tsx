@@ -6,7 +6,7 @@ import { getAllBlogs } from "@/services/blogService";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Blogs | ${siteConfig.brand}`,
+  title: `Blogs | LIKELION`,
 };
 
 export default async function Blogs() {

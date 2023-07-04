@@ -1,5 +1,10 @@
 import SectionBanner from "@/components/SectionBanner";
 import FAQContainer from "@/components/common/faq/FAQContainer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "FAQs | LIKELION",
+};
 
 export default function FAQ() {
   return (

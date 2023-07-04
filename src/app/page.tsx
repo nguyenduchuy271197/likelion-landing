@@ -1,3 +1,5 @@
+import siteConfig from "@/config/siteConfig";
+import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 const Banner = dynamic(() => import("@/components/common/home/Banner"));
@@ -9,6 +11,11 @@ const CTA = dynamic(() => import("@/components/common/home/CTA"));
 const Testimonials = dynamic(
   () => import("@/components/common/home/Testimonials")
 );
+
+export const metadata: Metadata = {
+  title: siteConfig.title,
+  description: siteConfig.description,
+};
 
 export default function Home() {
   return (

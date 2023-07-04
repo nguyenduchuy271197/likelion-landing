@@ -8,7 +8,6 @@ import "react-modal-video/scss/modal-video.scss";
 import "@/styles/swiper.css";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import { Roboto } from "next/font/google";
-import siteConfig from "@/config/siteConfig";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode } from "react";
@@ -23,12 +22,6 @@ const bodyFont = Roboto({
   subsets: ["vietnamese"],
   weight: ["100", "300", "400", "500", "700", "900"],
 });
-
-// Add metadata
-export const metadata = {
-  title: siteConfig.title,
-  description: siteConfig.description,
-};
 
 export default function RootLayout({
   children,

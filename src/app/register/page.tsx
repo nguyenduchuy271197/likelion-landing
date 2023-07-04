@@ -1,5 +1,10 @@
 import RegisterFormBox from "@/components/common/register/RegisterFormBox";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Đăng ký tư vấn | LIKELION",
+};
 
 export default function Register({
   searchParams,
