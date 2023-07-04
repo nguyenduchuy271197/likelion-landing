@@ -50,7 +50,7 @@ function CourseProject({ src, title, tags }: CourseProjectType) {
             src={src}
             alt={title}
             fill
-            className="object-cover object-top duration-500 hover:transition-all hover:object-bottom hover:duration-6000"
+            className="object-cover object-top duration-500 hover:transition-all lg:hover:object-bottom hover:duration-6000"
           />
         </div>
       </CourseImageViewer>
