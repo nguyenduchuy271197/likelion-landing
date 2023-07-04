@@ -8,48 +8,70 @@ import { Button } from "@/components/ui/Button";
 
 const images = [
   {
-    original: "/img/about/gallery/bootcamp2_0001_DSC07070.jpg",
-    thumbnail: "/img/about/gallery/bootcamp2_0001_DSC07070.jpg",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg",
   },
   {
-    original: "/img/about/gallery/bootcamp2_0002_DSC07072.jpg",
-    thumbnail: "/img/about/gallery/bootcamp2_0002_DSC07072.jpg",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436631/gallery/LLV09662_oozkkt.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436631/gallery/LLV09662_oozkkt.jpg",
   },
   {
-    original: "/img/about/gallery/bootcamp2_0009_DSC07127.jpg",
-    thumbnail: "/img/about/gallery/bootcamp2_0009_DSC07127.jpg",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV04968_quyfml.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV04968_quyfml.jpg",
   },
   {
-    original: "/img/about/gallery/LLV04753.png",
-    thumbnail: "/img/about/gallery/LLV04753.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV04981_qf3spb.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV04981_qf3spb.jpg",
   },
   {
-    original: "/img/about/gallery/LLV04968.png",
-    thumbnail: "/img/about/gallery/LLV04968.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV09305_glox6l.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV09305_glox6l.jpg",
   },
   {
-    original: "/img/about/gallery/LLV04981.png",
-    thumbnail: "/img/about/gallery/LLV04981.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436629/gallery/bootcamp2_0002_DSC07072_bat3w5.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436629/gallery/bootcamp2_0002_DSC07072_bat3w5.jpg",
   },
   {
-    original: "/img/about/gallery/LLV05113.png",
-    thumbnail: "/img/about/gallery/LLV05113.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436629/gallery/LLV06057_lkzkrc.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436629/gallery/LLV06057_lkzkrc.jpg",
   },
   {
-    original: "/img/about/gallery/LLV06057.png",
-    thumbnail: "/img/about/gallery/LLV06057.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/bootcamp2_0009_DSC07127_e8dlpc.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/bootcamp2_0009_DSC07127_e8dlpc.jpg",
   },
   {
-    original: "/img/about/gallery/LLV06256.png",
-    thumbnail: "/img/about/gallery/LLV06256.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/LLV04753_n4m1lb.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/LLV04753_n4m1lb.jpg",
   },
   {
-    original: "/img/about/gallery/LLV09305.jpg",
-    thumbnail: "/img/about/gallery/LLV09305.jpg",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/LLV05113_pf4nic.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/LLV05113_pf4nic.jpg",
   },
   {
-    original: "/img/about/gallery/LLV09662.png",
-    thumbnail: "/img/about/gallery/LLV09662.png",
+    original:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/bootcamp2_0001_DSC07070_f7hkvv.jpg",
+    thumbnail:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436628/gallery/bootcamp2_0001_DSC07070_f7hkvv.jpg",
   },
 ];
 
