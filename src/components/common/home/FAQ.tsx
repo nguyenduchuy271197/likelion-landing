@@ -27,7 +27,7 @@ const faqList = [
     question:
       "LIKELION có hỗ trợ gì khi tôi gặp khó khăn trong việc thanh toán học phí?",
     answer:
-      "Ngoài các đợt giảm giá khoá học, LIKELION có hỗ trợ chia thành nhiều đợt thanh toán. Để biết chính xác các gói thanh toán và ưu đãi hiện tại, hãy liên hệ với LIKELION (link đến trang liên hệ) để nhận tự vấn.",
+      "Ngoài các đợt giảm giá khoá học, LIKELION có hỗ trợ chia thành nhiều đợt thanh toán. Để biết chính xác các gói thanh toán và ưu đãi hiện tại, hãy liên hệ với LIKELION để nhận tự vấn.",
   },
   {
     question: "LIKELION có hỗ trợ tìm kiếm việc làm không?",
