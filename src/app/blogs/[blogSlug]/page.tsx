@@ -2,10 +2,7 @@ import DetailHeading from "@/components/blogs/DetailHeading";
 import TableOfContent from "@/components/blogs/TableOfContent";
 import { Button } from "@/components/ui/Button";
 import mdxConfig from "@/config/mdxConfig";
-import {
-  getBlogBySlug,
-  getBlogSlugsFromGithubRepo,
-} from "@/services/blogService";
+import { getBlogBySlug, getBlogSlugs } from "@/services/blogService";
 import { IBlog } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ArrowLeft } from "lucide-react";
@@ -19,22 +16,22 @@ interface BlogParams {
 
 export async function generateMetadata({ params }: BlogParams) {
   const { blogSlug } = params;
-  const { data } = await getBlogBySlug(blogSlug);
+  const { data } = getBlogBySlug(blogSlug);
   return {
     title: `${data.title} | ${siteConfig.brand}`,
   };
 }
 
-export async function generateStaticParams() {
-  const slugs = await getBlogSlugsFromGithubRepo();
+export function generateStaticParams() {
+  const slugs = getBlogSlugs();
   return slugs.map((slug) => ({
     blogSlug: slug,
   }));
 }
 
-export default async function BlogDetail({ params }: BlogParams) {
+export default function BlogDetail({ params }: BlogParams) {
   const { blogSlug } = params;
-  const { data, content } = await getBlogBySlug(blogSlug);
+  const { data, content } = getBlogBySlug(blogSlug);
 
   return (
     <div>

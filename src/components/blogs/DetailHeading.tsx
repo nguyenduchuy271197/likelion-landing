@@ -14,21 +14,20 @@ export default function DetailHeading({
       <div className="container">
         <div className="text-center">
           <div className="mb-6">
-            <p className="mb-2 font-bold uppercase text-muted-foreground md:text-lg">
-              Day {day}
+            <p className="mb-2 font-medium uppercase text-muted-foreground md:text-lg">
+              Blog
             </p>
             <h1 className="text-3xl font-bold md:text-4xl">{title}</h1>
             <p className="mt-6 text-sm text-muted-foreground">
               {publishOn ? formatDate(publishOn) : "Now"} - {readingTime}
             </p>
           </div>
-          <div className="h-[300px] lg:h-[400px]">
+          <div className="relative aspect-[7/5] rounded-xl overflow-hidden sm:aspect-[7/3]">
             <Image
               src={imageUrl}
               alt={title}
-              height={400}
-              width={900}
-              className="object-cover object-center w-full h-full rounded-xl"
+              className="object-cover object-center"
+              fill
               priority
             />
           </div>
