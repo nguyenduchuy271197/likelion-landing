@@ -20,23 +20,22 @@ function BlogCard({
 }: IBlog) {
   return (
     <Link href={`/blogs/${slug}`} className="flex flex-col group">
-      <div className="h-[200px]">
+      <div className="relative aspect-[7/5]">
         <Image
           src={imageUrl}
           alt={title}
-          width={600}
-          height={300}
-          className="object-cover w-full h-full transition duration-300 rounded-lg group-hover:scale-105"
+          className="duration-300 rounded-lg object-covertransition group-hover:scale-105"
+          fill
         />
       </div>
       <div className="py-6">
         <p className="mb-2 text-sm text-muted-foreground">
           {formatDate(publishOn)}
         </p>
-        <h2 className="mb-2 text-xl font-medium tracking-tight scroll-m-20 lg:text-2xl line-clamp-1">
+        <h2 className="mb-2 text-xl font-medium lg:text-xl line-clamp-1">
           {title}
         </h2>
-        <p className="text-lg leading-relaxed text-muted-foreground line-clamp-3">
+        <p className="leading-relaxed text-muted-foreground line-clamp-3">
           {excerpt}
         </p>
       </div>

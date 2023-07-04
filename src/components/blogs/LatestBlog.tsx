@@ -12,11 +12,11 @@ export default function LatestBlog({
   publishOn,
 }: IBlog) {
   return (
-    <div className="mb-16">
+    <div className="hidden mb-16 sm:block">
       <div className="container">
         <Link
           href={`/blogs/${slug}`}
-          className="grid lg:grid-cols-[3fr_2fr] gap-8 group"
+          className="grid md:grid-cols-[3fr_2fr] gap-8 group"
         >
           <div className="overflow-hidden rounded-lg">
             <Image
@@ -31,8 +31,8 @@ export default function LatestBlog({
             <p className="mb-2 font-medium text-muted-foreground">
               {formatDate(publishOn)}
             </p>
-            <h2 className="mb-4 text-3xl font-medium lg:text-4xl">{title}</h2>
-            <p className="text-xl leading-relaxed text-muted-foreground line-clamp-5">
+            <h2 className="mb-4 text-2xl font-medium lg:text-3xl">{title}</h2>
+            <p className="text-lg leading-relaxed lg:text-xl text-muted-foreground line-clamp-5">
               {excerpt}
             </p>
           </div>
