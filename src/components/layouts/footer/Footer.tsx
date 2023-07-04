@@ -1,5 +1,5 @@
 import Logo from "../../Logo";
-import { Clock, Mail, PhoneCall } from "lucide-react";
+import { Clock, Mail, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import Icons from "@/components/Icons";
 
@@ -19,18 +19,28 @@ export default function Footer() {
 
               <div className="flex flex-col gap-2 mt-10 font-medium">
                 <div className="flex items-start gap-4">
-                  <PhoneCall />
+                  <PhoneCall className="shrink-0" />
                   <p>(+84) 86 713 3779</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail />
+                  <Mail className="shrink-0" />
                   <p>likelion.vn@likelion.net</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Clock />
+                  <Clock className="shrink-0" />
                   <p className="flex flex-col">
                     <span>Thứ 2 - Thứ 6</span>
                     <span>8:30 AM - 5:30 PM</span>
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <MapPin className="shrink-0" />
+                  <p className="flex flex-col">
+                    <span>
+                      Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường
+                      Bến Nghé, Quận 1, TP. HCM
+                    </span>
+                    <span></span>
                   </p>
                 </div>
               </div>
