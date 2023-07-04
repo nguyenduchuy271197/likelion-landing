@@ -153,7 +153,6 @@ function FAQRow({
   });
 
   useEffect(() => {
-    console.log(entry);
     if (!entry) {
       onChangeTarget(null);
     } else {

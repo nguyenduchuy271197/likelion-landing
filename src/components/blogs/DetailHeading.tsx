@@ -10,7 +10,7 @@ export default function DetailHeading({
   publishOn = Date.now(),
 }: IBlog) {
   return (
-    <header className="my-12">
+    <header className="mb-12">
       <div className="container">
         <div className="text-center">
           <div className="mb-6">

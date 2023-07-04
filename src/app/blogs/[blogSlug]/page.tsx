@@ -41,13 +41,13 @@ export default async function BlogDetail({ params }: BlogParams) {
       <ScrollProgressBar />
 
       {/* Blog Content */}
-      <article className="my-20">
+      <article className="py-10 md:py-20">
         <DetailHeading {...(data as IBlog)} />
 
         <main>
           <div className="container">
             <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-16">
-              <div className="overflow-auto prose max-w-none">
+              <div className="prose max-w-none">
                 {/* @ts-expect-error Async Server Component */}
                 <MDXRemote
                   source={content}
@@ -70,9 +70,9 @@ export default async function BlogDetail({ params }: BlogParams) {
       </article>
 
       {/* Back to blogs */}
-      <div>
+      <div className="my-14">
         <div className="container">
-          <Button size="lg">
+          <Button size="lg" asChild>
             <Link href="/blogs" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               Trở về Blog

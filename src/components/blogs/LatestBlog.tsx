@@ -6,6 +6,7 @@ import React from "react";
 
 export default function LatestBlog({
   slug,
+  excerpt,
   imageUrl,
   title,
   publishOn,
@@ -34,11 +35,7 @@ export default function LatestBlog({
               {title}
             </h2>
             <p className="text-xl leading-relaxed text-muted-foreground line-clamp-5">
-              Becoming a full-stack developer requires a comprehensive
-              understanding of various technologies and tools. A full-stack
-              developer is proficient in both front-end and back-end
-              development, making them versatile and capable of building
-              complete web
+              {excerpt}
             </p>
           </div>
         </Link>

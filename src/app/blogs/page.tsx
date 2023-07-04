@@ -1,10 +1,11 @@
 import SectionBanner from "@/components/SectionBanner";
-import Wrapper from "@/components/Wrapper";
 import BlogListing from "@/components/blogs/BlogListing";
 import LatestBlog from "@/components/blogs/LatestBlog";
 import siteConfig from "@/config/siteConfig";
 import { getAllBlogs } from "@/services/blogService";
 import { Metadata } from "next";
+
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: `Blogs | ${siteConfig.brand}`,
@@ -12,7 +13,6 @@ export const metadata: Metadata = {
 
 export default async function Blogs() {
   const blogs = await getAllBlogs();
-  console.log(blogs);
   return (
     <div>
       <SectionBanner

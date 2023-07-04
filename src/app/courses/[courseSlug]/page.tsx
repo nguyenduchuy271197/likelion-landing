@@ -1,7 +1,10 @@
 import CourseCTA from "@/components/courses/CourseCTA";
 import CourseCalendar from "@/components/courses/CourseCalendar";
 import CourseContent from "@/components/courses/CourseContent";
+import CourseFeaturesMobile from "@/components/courses/CourseFeaturesMobile";
+import CourseHeading from "@/components/courses/CourseHeading";
 import CourseInfoCard from "@/components/courses/CourseInfoCard";
+import CourseInfoMobile from "@/components/courses/CourseInfoMobile";
 import CourseObjectives from "@/components/courses/CourseObjectives";
 import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
@@ -45,12 +48,19 @@ export default async function CourseDetail({
           {/* Content */}
           <div>
             {/* Title */}
-            <div className="mb-12">
-              <h1 className="mb-4 text-2xl font-medium sm:text-3xl lg:text-4xl">
-                {title}
-              </h1>
-              <p>{subtitle}</p>
-            </div>
+            <CourseHeading title={title} subtitle={subtitle} />
+
+            {/* Course Info */}
+            <CourseInfoMobile
+              discountedPrice={discountedPrice}
+              price={price}
+              slug={courseSlug}
+              title={title}
+              thumbnail={thumbnail}
+              youtubeId={youtubeId}
+            />
+
+            <CourseFeaturesMobile features={features} />
 
             {[
               "bootcamp-lap-trinh-web-fullstack",

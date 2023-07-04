@@ -12,6 +12,7 @@ import { useEffect } from "react";
 function BlogCard({
   slug,
   title,
+  excerpt,
   day,
   imageUrl,
   readingTime,
@@ -36,10 +37,7 @@ function BlogCard({
           {title}
         </h2>
         <p className="text-lg leading-relaxed text-muted-foreground line-clamp-3">
-          Becoming a full-stack developer requires a comprehensive understanding
-          of various technologies and tools. A full-stack developer is
-          proficient in both front-end and back-end development, making them
-          versatile and capable of building complete web
+          {excerpt}
         </p>
       </div>
     </Link>
