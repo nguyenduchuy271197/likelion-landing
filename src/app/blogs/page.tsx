@@ -5,8 +5,6 @@ import siteConfig from "@/config/siteConfig";
 import { getAllBlogs } from "@/services/blogService";
 import { Metadata } from "next";
 
-export const revalidate = 0;
-
 export const metadata: Metadata = {
   title: `Blogs | ${siteConfig.brand}`,
 };

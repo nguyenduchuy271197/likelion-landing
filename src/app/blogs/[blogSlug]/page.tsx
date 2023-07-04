@@ -67,19 +67,18 @@ export default async function BlogDetail({ params }: BlogParams) {
             </div>
           </div>
         </main>
-      </article>
-
-      {/* Back to blogs */}
-      <div className="my-14">
-        <div className="container">
-          <Button size="lg" asChild>
-            <Link href="/blogs" className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Trở về Blog
-            </Link>
-          </Button>
+        {/* Back to blogs */}
+        <div className="mt-14">
+          <div className="container">
+            <Button size="lg" asChild>
+              <Link href="/blogs" className="flex items-center gap-2">
+                <ArrowLeft className="w-4 h-4" />
+                Trở về Blog
+              </Link>
+            </Button>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
   );
 }

@@ -31,9 +31,7 @@ export default function LatestBlog({
             <p className="mb-2 font-medium text-muted-foreground">
               {formatDate(publishOn)}
             </p>
-            <h2 className="mb-4 text-4xl font-bold tracking-tight scroll-m-20 lg:text-5xl">
-              {title}
-            </h2>
+            <h2 className="mb-4 text-3xl font-medium lg:text-4xl">{title}</h2>
             <p className="text-xl leading-relaxed text-muted-foreground line-clamp-5">
               {excerpt}
             </p>
