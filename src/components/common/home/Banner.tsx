@@ -88,7 +88,6 @@ export default function Banner() {
                   className="absolute top-0 left-0 object-center w-full h-full -z-10"
                   fill
                   priority
-                  unoptimized={true}
                 />
               )}
               <div className="container">
