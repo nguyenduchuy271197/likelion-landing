@@ -13,7 +13,6 @@ export interface IBlog {
   title: string;
   slug: string;
   excerpt: string;
-  day: number;
   imageUrl: string;
   readingTime: string;
   publishOn: number;
