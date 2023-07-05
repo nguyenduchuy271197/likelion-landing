@@ -9,16 +9,18 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ScrollProgressBar from "@/components/blogs/ScrollProgressBar";
 import siteConfig from "@/config/siteConfig";
+import { Metadata } from "next";
 
 interface BlogParams {
   params: { blogSlug: string };
 }
 
-export async function generateMetadata({ params }: BlogParams) {
+export function generateMetadata({ params }: BlogParams): Metadata {
   const { blogSlug } = params;
   const { data } = getBlogBySlug(blogSlug);
   return {
     title: `${data.title} | ${siteConfig.brand}`,
+    description: data.excerpt,
   };
 }
 

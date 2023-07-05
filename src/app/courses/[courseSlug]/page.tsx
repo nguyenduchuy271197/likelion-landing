@@ -11,6 +11,22 @@ import CourseRequirements from "@/components/courses/CourseRequirements";
 import CourseReviews from "@/components/courses/CourseReviews";
 import { courses } from "@/components/layouts/navbar/Navbar";
 import { getCourseBySlug } from "@/services/courseService";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { courseSlug: string };
+}): Promise<Metadata> {
+  const { title, subtitle, thumbnail } = await getCourseBySlug(
+    params.courseSlug
+  );
+
+  return {
+    title: `${title} | LIKELION`,
+    description: subtitle,
+  };
+}
 
 export async function generateStaticParams() {
   return courses
