@@ -1,28 +1,42 @@
+import Image from "next/image";
+
 interface SectionBannerProps {
   title: string;
   description: string;
-  bgSrc: string;
+  src: {
+    sm: string;
+    lg: string;
+  };
 }
 
 export default function SectionBanner({
   title,
   description,
-  bgSrc,
+  src,
 }: SectionBannerProps) {
   return (
-    <div
-      className="bg-center bg-cover"
-      style={{
-        backgroundImage: `url(${bgSrc})`,
-      }}
-    >
-      <div className="container">
-        <div className="flex items-center h-[400px]">
-          <div className="max-w-[260px] sm:max-w-xs lg:max-w-lg">
-            <h1 className="mb-2 text-2xl font-bold sm:mb-6 sm:text-3xl scroll-m-20 lg:text-5xl">
-              {title}
-            </h1>
-            <p className="text-muted-foreground">{description}</p>
+    <div className="relative">
+      <picture>
+        <source srcSet={src.lg} media="(min-width: 768px)" />
+        <Image
+          src={src.sm}
+          alt={title}
+          fill
+          priority
+          className="absolute top-0 left-0 object-cover object-center w-full h-full"
+        />
+      </picture>
+      <div className="relative">
+        <div className="container">
+          <div className="flex items-end md:items-center py-12 h-[50vh]">
+            <div className="max-w-lg lg:max-w-xl">
+              <h1 className="mb-2 text-2xl font-bold sm:mb-6 sm:text-3xl scroll-m-20 lg:text-5xl">
+                {title}
+              </h1>
+              <p className="md:text-muted-foreground text-primary">
+                {description}
+              </p>
+            </div>
           </div>
         </div>
       </div>

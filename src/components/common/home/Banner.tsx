@@ -5,9 +5,7 @@ import { Autoplay, Pagination, Mousewheel } from "swiper";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMediaQuery } from "@mantine/hooks";
 import dynamic from "next/dynamic";
-import LoadingSkeleton from "@/components/LoadingSkeleton";
 const Achievement = dynamic(
   () => import("@/components/common/home/Achievement")
 );
@@ -16,8 +14,8 @@ const banners = [
   {
     href: "/courses/bootcamp-lap-trinh-web-fullstack",
     src: {
-      sm: "/img/banners/fullstack-mb.webp",
-      lg: "/img/banners/fullstack.png",
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543394/home/banners/fullstack-mb.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/fullstack.png",
     },
     title: "Bootcamp lập trình web Fullstack",
     description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 5 tháng",
@@ -25,8 +23,8 @@ const banners = [
   {
     href: "/about",
     src: {
-      sm: "/img/banners/hyl-mb.png",
-      lg: "/img/banners/hyl.png",
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543393/home/banners/hyl-mb.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/hyl.png",
     },
     title: "Hack Your Life",
     description: "Từ con số 0 đến thành thạo các kĩ năng",
@@ -73,10 +71,7 @@ export default function Banner() {
       >
         {banners.map((banner) => (
           <SwiperSlide key={banner.title}>
-            <Link
-              href={banner.href}
-              className="relative bg-center bg-cover home-banner"
-            >
+            <Link href={banner.href} className="relative">
               <picture>
                 <source srcSet={banner.src.lg} media="(min-width: 768px)" />
                 <Image

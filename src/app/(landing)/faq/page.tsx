@@ -12,7 +12,10 @@ export default function FAQ() {
       <SectionBanner
         title="FAQs"
         description="Các câu hỏi thường gặp liên quan tới khoá học"
-        bgSrc="/img/banners/faq.png"
+        src={{
+          sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543368/banners/faq-mb.png",
+          lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543369/banners/faq.png",
+        }}
       />
       <FAQContainer />
     </div>

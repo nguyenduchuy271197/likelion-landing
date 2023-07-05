@@ -58,7 +58,7 @@ export default function BlogListing({ blogs }: { blogs: IBlog[] }) {
   }, [searchParams, pagination]);
 
   return (
-    <div className="mt-16">
+    <div className="md:mt-16">
       <div className="container">
         <div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

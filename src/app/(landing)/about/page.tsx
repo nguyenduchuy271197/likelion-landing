@@ -19,7 +19,10 @@ export default function About() {
       <SectionBanner
         title="Về chúng tôi"
         description="Thông qua giáo dục lập trình, trao cho người có ý chí nguồn động lực và định hướng thay đổi chính mình."
-        bgSrc="/img/banners/about.webp"
+        src={{
+          sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543367/banners/about-mb.png",
+          lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543367/banners/about.png",
+        }}
       />
       <Intro />
       <Features />

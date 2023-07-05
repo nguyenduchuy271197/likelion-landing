@@ -16,7 +16,10 @@ export default function Contact() {
       <SectionBanner
         title="Liên hệ với LIKELION"
         description="Hãy liên hệ chúng tôi nếu bạn có bất cứ thắc mắc nào về khóa học."
-        bgSrc="/img/banners/contact.png"
+        src={{
+          sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543368/banners/contact-mb.png",
+          lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688544016/banners/contact.png",
+        }}
       />
       <ContactForm />
       <ContactInfo />
