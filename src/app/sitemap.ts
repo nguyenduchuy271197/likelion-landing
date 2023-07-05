@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const courseRoutes = courses.map((c) => `/courses/${c.slug}`);
 
-  const blogRoutes = getBlogSlugs().map((slug) => "/" + slug);
+  const blogRoutes = getBlogSlugs().map((slug) => `/blogs/${slug}`);
 
   return [...staticRoutes, ...courseRoutes, ...blogRoutes].map((r) => ({
     url: `${siteConfig.url}${r}`,
