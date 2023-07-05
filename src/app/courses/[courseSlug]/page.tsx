@@ -23,7 +23,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: `${title} | LIKELION`,
+    title: `${title}`,
     description: subtitle,
   };
 }

@@ -10,7 +10,7 @@ import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Về chúng tôi | LIKELION`,
+  title: `Về chúng tôi`,
 };
 
 export default function About() {

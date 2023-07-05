@@ -7,7 +7,7 @@ import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Liên hệ | LIKELION`,
+  title: `Liên hệ`,
 };
 
 export default function Contact() {

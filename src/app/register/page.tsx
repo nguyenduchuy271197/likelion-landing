@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Đăng ký tư vấn | LIKELION",
+  title: "Đăng ký tư vấn",
 };
 
 export default function Register({

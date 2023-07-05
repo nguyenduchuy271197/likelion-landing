@@ -26,7 +26,10 @@ const bodyFont = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
+  title: {
+    template: "%s | LIKELION",
+    default: siteConfig.title,
+  },
   description: siteConfig.description,
 };
 

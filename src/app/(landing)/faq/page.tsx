@@ -3,7 +3,7 @@ import FAQContainer from "@/components/common/faq/FAQContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQs | LIKELION",
+  title: "FAQs",
 };
 
 export default function FAQ() {

@@ -2,7 +2,7 @@ import { RegisterDialog } from "@/components/common/register/RegisterDialog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Đăng ký tư vấn | LIKELION",
+  title: "Đăng ký tư vấn",
 };
 
 export default function Register({
