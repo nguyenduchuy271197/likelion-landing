@@ -1,7 +1,7 @@
 const siteConfig = {
-  title: "Khoá học lập trình offline từ con số 0",
+  title: "LIKELION | Công ty đào tạo lập trình - Đứng đầu về chất lượng",
   description:
-    "Khoá học lập trình offline từ con số 0 - LikeLion là một chương trình đào tạo chuyên sâu về lập trình, nhằm giúp bạn có thể bắt đầu từ con số 0 để trở thành một lập trình viên chuyên nghiệp. Chương trình được thiết kế bởi LikeLion - một cộng đồng lập trình viên có uy tín và kinh nghiệm trong lĩnh vực này.",
+    "Khóa học lập trình Fullstack cho người mới bắt đầu với đội ngũ giảng viên giàu kinh nghiệm và hỗ trợ kết nối việc làm.",
   brand: "LIKELION",
   url: "https://www.likelion.edu.vn",
 };
