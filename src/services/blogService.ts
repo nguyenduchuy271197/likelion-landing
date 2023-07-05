@@ -30,5 +30,7 @@ export function getBlogBySlug(slug: string) {
 export function getAllBlogs() {
   const slugs = getBlogSlugs();
   const blogs = slugs.map((slug) => getBlogBySlug(slug));
-  return blogs.map((blog) => blog.data).sort((a, b) => b.day - a.day);
+  return blogs
+    .map((blog) => blog.data)
+    .sort((a, b) => b.publishOn - a.publishOn);
 }

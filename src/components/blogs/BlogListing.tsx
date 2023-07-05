@@ -9,15 +9,7 @@ import { Pagination } from "../ui/Pagination";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-function BlogCard({
-  slug,
-  title,
-  excerpt,
-  day,
-  imageUrl,
-  readingTime,
-  publishOn,
-}: IBlog) {
+function BlogCard({ slug, title, excerpt, imageUrl, publishOn }: IBlog) {
   return (
     <Link href={`/blogs/${slug}`} className="flex flex-col group">
       <div className="relative aspect-[7/5]">

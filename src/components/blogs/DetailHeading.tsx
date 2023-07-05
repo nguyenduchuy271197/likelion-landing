@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default function DetailHeading({
   title = "Blog not found!",
-  day = 0,
   imageUrl = "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
   readingTime = "1 min",
   publishOn = Date.now(),
