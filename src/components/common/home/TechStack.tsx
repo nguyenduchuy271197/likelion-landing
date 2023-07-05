@@ -13,10 +13,12 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import { LucideIcon } from "lucide-react";
+import Icons from "@/components/Icons";
 
 type TechStackOption = {
   title: string;
-  image: string;
+  icon: LucideIcon;
 };
 
 export type TechStackOptions = TechStackOption[];
@@ -24,43 +26,43 @@ export type TechStackOptions = TechStackOption[];
 const techStackOptions: TechStackOptions = [
   {
     title: "HTML",
-    image: "/img/tech/html.svg",
+    icon: Icons.html,
   },
   {
     title: "CSS",
-    image: "/img/tech/css.svg",
+    icon: Icons.css,
   },
   {
     title: "Javascript",
-    image: "/img/tech/js.svg",
+    icon: Icons.js,
   },
   {
     title: "Java",
-    image: "/img/tech/java.svg",
+    icon: Icons.java,
   },
   {
     title: "NodeJS",
-    image: "/img/tech/nodejs.svg",
+    icon: Icons.node,
   },
   {
     title: "Python",
-    image: "/img/tech/python.svg",
+    icon: Icons.python,
   },
   {
     title: "React",
-    image: "/img/tech/react.svg",
+    icon: Icons.react,
   },
   {
     title: "Docker",
-    image: "/img/tech/docker.svg",
+    icon: Icons.docker,
   },
   {
     title: "Java",
-    image: "/img/tech/java.svg",
+    icon: Icons.java,
   },
   {
     title: "Spring Boot",
-    image: "/img/tech/springboot.svg",
+    icon: Icons.spring,
   },
 ];
 
@@ -155,17 +157,9 @@ export default function TechStack() {
         viewport={{ once: true }}
       >
         <ParallaxText baseVelocity={-2}>
-          {techStackOptions.map((item) => (
-            <div
-              key={item.title}
-              className="relative w-[90px] lg:w-[120px] aspect-[1/1]"
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-contain w-full h-full"
-              />
+          {techStackOptions.map(({ title, icon: Icon }) => (
+            <div key={title}>
+              <Icon className="w-[90px] lg:w-[120px] aspect-[1/1] object-contain" />
             </div>
           ))}
         </ParallaxText>

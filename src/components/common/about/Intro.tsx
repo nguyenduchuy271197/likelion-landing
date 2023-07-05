@@ -8,16 +8,32 @@ export default function Intro() {
         <div className="grid items-center gap-16 py-10 md:gap-8 sm:py-20 md:grid-cols-2 place-items-center">
           <div className="grid grid-cols-2 gap-6 max-w-[420px] w-full">
             <div className="relative aspect-[1/1] w-full rounded-3xl overflow-hidden">
-              <Image src="/img/about/intro/pic1.png" alt="LIKELION" fill />
+              <Image
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548439/about/intro/pic1_iglccy.png"
+                alt="LIKELION"
+                fill
+              />
             </div>
             <div className="relative aspect-[1/1] w-full rounded-full overflow-hidden">
-              <Image src="/img/about/intro/pic2.png" alt="LIKELION" fill />
+              <Image
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548439/about/intro/pic2_nynjrh.png"
+                alt="LIKELION"
+                fill
+              />
             </div>
             <div className="relative aspect-[1/1] w-full rounded-full overflow-hidden">
-              <Image src="/img/about/intro/pic3.png" alt="LIKELION" fill />
+              <Image
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548439/about/intro/pic3_lvmvau.png"
+                alt="LIKELION"
+                fill
+              />
             </div>
             <div className="relative aspect-[1/1] w-full rounded-3xl overflow-hidden">
-              <Image src="/img/about/intro/pic4.png" alt="LIKELION" fill />
+              <Image
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548440/about/intro/pic4_p2dhzb.png"
+                alt="LIKELION"
+                fill
+              />
             </div>
           </div>
           <div>

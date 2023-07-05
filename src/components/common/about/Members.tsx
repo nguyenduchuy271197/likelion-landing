@@ -9,53 +9,53 @@ interface Member {
 
 const members: Member[] = [
   {
-    src: "/img/about/members/sean.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/sean_odd85e.png",
     name: "Sean Kim",
     profession: "Director",
   },
   {
-    src: "/img/about/members/tien.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548312/about/members/tien_zckard.png",
     name: "Trần Thủy Tiên",
     profession: "Office Manager",
   },
   {
-    src: "/img/about/members/huy.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548310/about/members/huy_tzkbcl.png",
     name: "Nguyễn Đức Huy",
     profession: "Full-stack Dev/Lecturer",
   },
   {
-    src: "/img/about/members/minh.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/minh_lkf4wf.png",
     name: "Nguyễn Văn Minh",
     profession: "Java Dev/Lecturer",
   },
   {
-    src: "/img/about/members/phuc.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/phuc_eucbts.png",
     name: "Nguyễn Tuấn Phúc",
     profession: "Developer/Mentor",
   },
 
   {
-    src: "/img/about/members/nhu.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/nhu_okfmwy.png",
     name: "Võ T. Quỳnh Như",
     profession: "Marketer",
   },
   {
-    src: "/img/about/members/trang2.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548312/about/members/trang2_vczweb.png",
     name: "Ng. T. Minh Trang",
     profession: "Content Marketer",
   },
   {
-    src: "/img/about/members/trang1.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548312/about/members/trang1_pyrm6a.png",
     name: "Lê Quỳnh Trang",
     profession: "Korean Interpreter",
   },
   {
-    src: "/img/about/members/loc.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/loc_v3amar.png",
     name: "Nguyễn Phước Lộc",
     profession: "Editor",
   },
   {
-    src: "/img/about/members/nhi.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548310/about/members/nhi_gtciq0.png",
     name: "Đặng Vân Nhi ",
     profession: "Designer",
   },

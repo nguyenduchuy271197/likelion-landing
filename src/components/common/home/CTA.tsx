@@ -1,6 +1,5 @@
+import Icons from "@/components/Icons";
 import { Button } from "@/components/ui/Button";
-import { LucideProps } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function CTA() {
@@ -8,12 +7,9 @@ export default function CTA() {
     <section className="mb-16">
       <div className="container">
         <div className="relative h-80 sm:h-96 bg-gradient-to-br from-[#FF7100] to-[#FF9B52] rounded-3xl text-white text-center">
-          <div className="absolute hidden -translate-y-1/2 h-44 w-36 top-1/2 right-4 sm:block">
-            <Image src="/img/cta/computer.svg" alt="LIKELION CTA" fill />
-          </div>
-          <div className="absolute -translate-y-1/2 h-44 w-36 top-1/2 left-4">
-            <Image src="/img/cta/analytics.svg" alt="LIKELION CTA" fill />
-          </div>
+          <Icons.analytics className="absolute -translate-y-1/2 h-44 w-36 top-1/2 left-4" />
+          <Icons.computer className="absolute hidden -translate-y-1/2 h-44 w-36 top-1/2 right-4 sm:block" />
+
           <div className="relative z-10 flex flex-col items-center justify-center h-full gap-10 px-4 sm:px-8">
             <h3 className="text-2xl font-medium sm:text-4xl lg:text-5xl">
               Bạn muốn tìm khoá học cho mình?

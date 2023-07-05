@@ -1,5 +1,5 @@
+import Icons from "@/components/Icons";
 import { Button } from "@/components/ui/Button";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -25,14 +25,7 @@ export default function NotFound() {
           </div>
 
           <div className="hidden md:block">
-            <div>
-              <Image
-                src="/img/notfound/404.svg"
-                width={300}
-                height={300}
-                alt="Not found"
-              />
-            </div>
+            <Icons.notfound className="w-80" />
           </div>
         </div>
       </div>

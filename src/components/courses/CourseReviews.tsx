@@ -15,7 +15,7 @@ export default function CourseReviews() {
 
       <div className="relative aspect-[16/9] overflow-hidden">
         <Image
-          src="/img/thumbnails/fullstack-review.png"
+          src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688551439/courses/bootcamp-lap-trinh-web-fullstack/fullstack-review_iimvot.png"
           alt=""
           fill
           className="w-full h-full brightness-75"

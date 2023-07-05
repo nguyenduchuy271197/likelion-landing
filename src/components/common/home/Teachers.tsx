@@ -5,38 +5,40 @@ import Image from "next/image";
 import { TechStackOptions } from "./TechStack";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
+import Icons from "@/components/Icons";
 
-const teachers = [
+const teachers: TeacherInfo[] = [
   {
     title: "Fullstack Developer/Giảng viên",
     name: "Nguyễn Đức Huy",
     description:
       "Hơn 4 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy bootcamp. Được học viên yêu mến bởi cách truyền đạt kiến thức khoa học và sự hỗ trợ tận tâm. Mục tiêu là giúp học viên trang bị đầy đủ kiến thức và kỹ năng vững chắc để theo đuổi ngành lập trình. 📍",
-    avatar: "/img/teachers/huy.png",
+    avatar:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688545756/home/teachers/huy_dzvpij.png",
     tech: [
       {
         title: "HTML",
-        image: "/img/tech/html.svg",
+        icon: Icons.html,
       },
       {
         title: "CSS",
-        image: "/img/tech/css.svg",
+        icon: Icons.css,
       },
       {
         title: "Javascript",
-        image: "/img/tech/js.svg",
+        icon: Icons.js,
       },
       {
         title: "React",
-        image: "/img/tech/react.svg",
+        icon: Icons.react,
       },
       {
         title: "NodeJS",
-        image: "/img/tech/nodejs.svg",
+        icon: Icons.node,
       },
       {
         title: "Python",
-        image: "/img/tech/python.svg",
+        icon: Icons.python,
       },
     ],
   },
@@ -45,31 +47,32 @@ const teachers = [
     name: "Nguyễn Văn Minh",
     description:
       "Mong muốn lan toả sự thú vị của lập trình và truyền động lực thử thách bản thân đến mọi người. Sử dụng 4 năm kinh nghiệm lập trình Back-end Java giúp học viên xây dựng nền tảng kiên cố cho sự phát triển sau này. 📍",
-    avatar: "/img/teachers/minh.png",
+    avatar:
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688545757/home/teachers/minh_iiulj7.png",
     tech: [
       {
         title: "HTML",
-        image: "/img/tech/html.svg",
+        icon: Icons.html,
       },
       {
         title: "CSS",
-        image: "/img/tech/css.svg",
+        icon: Icons.css,
       },
       {
         title: "Javascript",
-        image: "/img/tech/js.svg",
+        icon: Icons.js,
       },
       {
         title: "Java",
-        image: "/img/tech/java.svg",
+        icon: Icons.java,
       },
       {
         title: "Docker",
-        image: "/img/tech/docker.svg",
+        icon: Icons.docker,
       },
       {
         title: "Spring Boot",
-        image: "/img/tech/springboot.svg",
+        icon: Icons.spring,
       },
     ],
   },
@@ -125,19 +128,12 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
                 Tech Stack <span className="hidden sm:inline">|</span>
               </div>
               <div className="flex flex-wrap items-center gap-4">
-                {tech.map(({ title, image }) => (
+                {tech.map(({ title, icon: Icon }) => (
                   <div
                     key={title}
                     className="flex items-center justify-center transition duration-500 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 h-[70px] w-[70px]"
                   >
-                    <div className="relative w-[40px] h-[40px]">
-                      <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-contain object-center"
-                      />
-                    </div>
+                    <Icon className="w-[40px] h-[40px] object-contain object-center" />
                   </div>
                 ))}
               </div>

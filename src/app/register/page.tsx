@@ -21,7 +21,7 @@ export default function Register({
             <div className="w-full">
               <div className="relative hidden lg:block aspect-[3/2] w-full h-full">
                 <Image
-                  src="/img/contact/form.png"
+                  src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688550261/contact/form_lnnhlj.png"
                   alt="Đăng ký tư vấn"
                   fill
                   className="object-contain w-full h-full"

@@ -18,7 +18,7 @@ export interface CourseType {
 export const courses: CourseType[] = [
   {
     id: "6482a08d232bf6c1513a1111",
-    src: "/img/courses/fullstack.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
     title: "Bootcamp lập trình web Fullstack",
     slug: "bootcamp-lap-trinh-web-fullstack",
     excerpt: "Trở thành lập trình viên Fullstack Bootcamp sau 5 tháng.",
@@ -30,7 +30,7 @@ export const courses: CourseType[] = [
   },
   {
     id: "64883a8ab6a3fddba741f55e",
-    src: "/img/courses/front-end.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113331/courses/thanh-thao-lap-trinh-web-frond-end/thumbnail.png",
     title: "Thành thạo lập trình web Front-end",
     slug: "thanh-thao-lap-trinh-web-front-end",
     excerpt:
@@ -43,7 +43,7 @@ export const courses: CourseType[] = [
   },
   {
     id: "64883aacb6a3fddba741f55f",
-    src: "/img/courses/python.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113853/courses/data-science-co-ban-voi-python/thumbnail.png",
     title: "Data Science cơ bản với Python",
     slug: "data-science-co-ban-voi-python",
     excerpt: "Khoá học online làm quen với khoa học dữ liệu.",

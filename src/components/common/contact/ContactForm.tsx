@@ -21,12 +21,7 @@ import useRegisterUser from "../register/useRegisterUser";
 import { useToast } from "@/hooks/useToast";
 
 export default function ContactForm() {
-  const {
-    isRegisterLoading,
-    isRegisterError,
-    isRegisterSuccess,
-    registerUser,
-  } = useRegisterUser();
+  const { isRegisterLoading, registerUser } = useRegisterUser();
 
   const { toast } = useToast();
 
@@ -78,9 +73,9 @@ export default function ContactForm() {
             </div>
             <div className="relative hidden md:block aspect-[1/1]">
               <Image
-                src="/img/contact/form.png"
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688550261/contact/form_lnnhlj.png"
                 fill
-                alt="Kanban"
+                alt="Form Tư Vấn | LIKELION"
                 className="object-contain"
               />
             </div>
