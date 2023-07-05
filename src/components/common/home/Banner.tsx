@@ -38,8 +38,6 @@ const bannerConfig = {
 };
 
 export default function Banner() {
-  const matches = useMediaQuery("(min-width: 768px)");
-
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -79,17 +77,16 @@ export default function Banner() {
               href={banner.href}
               className="relative bg-center bg-cover home-banner"
             >
-              {matches === undefined ? (
-                <LoadingSkeleton />
-              ) : (
+              <picture>
+                <source srcSet={banner.src.lg} media="(min-width: 768px)" />
                 <Image
-                  src={matches ? banner.src.lg : banner.src.sm}
+                  src={banner.src.sm}
                   alt={banner.title}
                   className="absolute top-0 left-0 object-center w-full h-full -z-10"
                   fill
                   priority
                 />
-              )}
+              </picture>
               <div className="container">
                 <div className="h-[65vh] md:h-[75vh] flex items-end md:items-center py-12">
                   <div className="max-w-lg text-left text-white lg:max-w-xl">
