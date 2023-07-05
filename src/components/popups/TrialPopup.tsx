@@ -1,7 +1,10 @@
+"use client";
+
 import { Dialog, DialogContent } from "@/components/ui/Dialog";
 import { LucideProps } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 function TrialButton(props: LucideProps) {
   return (
@@ -106,10 +109,21 @@ function TrialButton(props: LucideProps) {
 }
 
 export default function TrialPopup() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(true);
+    }, 2000);
+  }, []);
+
   return (
-    <Dialog defaultOpen={true}>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="mt-12 sm:mt-0">
-        <Link href="/blogs/buoi-hoc-thu-mien-phi-trai-nghiem-lap-trinh-web">
+        <Link
+          href="/blogs/buoi-hoc-thu-mien-phi-trai-nghiem-lap-trinh-web"
+          onClick={() => setOpen(false)}
+        >
           <Image
             src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1688553519/popup/hoc-thu/Popup_ho%CC%A3c_thu%CC%9B%CC%89_flpnwv.png"
             className="object-contain w-full"
