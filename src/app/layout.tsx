@@ -61,7 +61,6 @@ export default function RootLayout({
             <Footer />
           </div>
           <Toaster />
-          <TrialPopup />
         </Providers>
 
         {/* <!-- Meta Pixel Code --> */}
