@@ -40,11 +40,6 @@ const members: Member[] = [
     profession: "Marketer",
   },
   {
-    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548312/about/members/trang2_vczweb.png",
-    name: "Ng. T. Minh Trang",
-    profession: "Content Marketer",
-  },
-  {
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548312/about/members/trang1_pyrm6a.png",
     name: "Lê Quỳnh Trang",
     profession: "Korean Interpreter",
