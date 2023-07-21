@@ -12,9 +12,9 @@ export const contentType = "image/png";
 export default async function OpenGraphImage({
   params,
 }: {
-  params: { slug: string };
+  params: { courseSlug: string };
 }) {
-  if (params.slug === "bootcamp-lap-trinh-web-fullstack")
+  if (params.courseSlug === "bootcamp-lap-trinh-web-fullstack")
     return new ImageResponse(
       (
         <div
