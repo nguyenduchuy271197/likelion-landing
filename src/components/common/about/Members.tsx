@@ -9,7 +9,7 @@ interface Member {
 
 const members: Member[] = [
   {
-    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/sean_odd85e.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689911796/about/members/Sean_zw89ou.png",
     name: "Sean Kim",
     profession: "Director",
   },
@@ -40,7 +40,7 @@ const members: Member[] = [
     profession: "Marketer",
   },
   {
-    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548312/about/members/trang1_pyrm6a.png",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689911797/about/members/Trang_1_hmkftq.png",
     name: "Lê Quỳnh Trang",
     profession: "Korean Interpreter",
   },
@@ -50,9 +50,14 @@ const members: Member[] = [
     profession: "Editor",
   },
   {
-    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548310/about/members/nhi_gtciq0.png",
-    name: "Đặng Vân Nhi ",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689911796/about/members/Nhi_curfs7.png",
+    name: "Đặng Vân Nhi",
     profession: "Designer",
+  },
+  {
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689911796/about/members/Ha%CC%82n_nvromd.png",
+    name: "Trần Ngọc Hân",
+    profession: "Content Marketer",
   },
 ];
 
