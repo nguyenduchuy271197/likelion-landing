@@ -6,6 +6,7 @@ import CourseHeading from "@/components/courses/CourseHeading";
 import CourseInfoCard from "@/components/courses/CourseInfoCard";
 import CourseInfoMobile from "@/components/courses/CourseInfoMobile";
 import CourseObjectives from "@/components/courses/CourseObjectives";
+import CoursePartnership from "@/components/courses/CoursePartnership";
 import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import CourseReviews from "@/components/courses/CourseReviews";
@@ -99,6 +100,9 @@ export default async function CourseDetail({
 
                 {/* Reviews */}
                 <CourseReviews />
+
+                {/* Partnership */}
+                <CoursePartnership />
               </>
             )}
           </div>

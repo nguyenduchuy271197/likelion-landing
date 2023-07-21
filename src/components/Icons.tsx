@@ -3420,6 +3420,88 @@ const Icons = {
       </g>
     </svg>
   ),
+  rightArrow: (props: LucideProps) => (
+    <svg
+      width={93}
+      height={149}
+      viewBox="0 0 93 149"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M92.56 74.28L40.98 0V148.57L92.56 74.28Z"
+        fill="url(#paint0_linear_0_1)"
+      />
+      <path
+        d="M72.07 74.28L20.49 0V148.57L72.07 74.28Z"
+        fill="url(#paint1_linear_0_1)"
+      />
+      <path
+        d="M51.58 74.28L0 0V148.57L51.58 74.28Z"
+        fill="url(#paint2_linear_0_1)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_0_1"
+          x1="92.55"
+          y1="74.29"
+          x2="40.98"
+          y2="74.29"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FF7711" />
+          <stop offset="0.03" stopColor="#FF7916" stopOpacity="0.94" />
+          <stop offset="0.14" stopColor="#FF8328" stopOpacity="0.72" />
+          <stop offset="0.26" stopColor="#FF8C37" stopOpacity="0.53" />
+          <stop offset="0.37" stopColor="#FF9445" stopOpacity="0.36" />
+          <stop offset="0.49" stopColor="#FF9A4F" stopOpacity="0.23" />
+          <stop offset="0.61" stopColor="#FF9F58" stopOpacity="0.13" />
+          <stop offset="0.73" stopColor="#FFA25E" stopOpacity="0.06" />
+          <stop offset="0.86" stopColor="#FFA461" stopOpacity="0.01" />
+          <stop offset={1} stopColor="#FFA563" stopOpacity={0} />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_0_1"
+          x1="72.06"
+          y1="69.43"
+          x2="20.49"
+          y2="69.43"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FF7711" />
+          <stop offset="0.03" stopColor="#FF7916" stopOpacity="0.94" />
+          <stop offset="0.14" stopColor="#FF8328" stopOpacity="0.72" />
+          <stop offset="0.26" stopColor="#FF8C37" stopOpacity="0.53" />
+          <stop offset="0.37" stopColor="#FF9445" stopOpacity="0.36" />
+          <stop offset="0.49" stopColor="#FF9A4F" stopOpacity="0.23" />
+          <stop offset="0.61" stopColor="#FF9F58" stopOpacity="0.13" />
+          <stop offset="0.73" stopColor="#FFA25E" stopOpacity="0.06" />
+          <stop offset="0.86" stopColor="#FFA461" stopOpacity="0.01" />
+          <stop offset={1} stopColor="#FFA563" stopOpacity={0} />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_0_1"
+          x1="51.57"
+          y1="69.43"
+          x2={0}
+          y2="69.43"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FF7711" />
+          <stop offset="0.03" stopColor="#FF7916" stopOpacity="0.94" />
+          <stop offset="0.14" stopColor="#FF8328" stopOpacity="0.72" />
+          <stop offset="0.26" stopColor="#FF8C37" stopOpacity="0.53" />
+          <stop offset="0.37" stopColor="#FF9445" stopOpacity="0.36" />
+          <stop offset="0.49" stopColor="#FF9A4F" stopOpacity="0.23" />
+          <stop offset="0.61" stopColor="#FF9F58" stopOpacity="0.13" />
+          <stop offset="0.73" stopColor="#FFA25E" stopOpacity="0.06" />
+          <stop offset="0.86" stopColor="#FFA461" stopOpacity="0.01" />
+          <stop offset={1} stopColor="#FFA563" stopOpacity={0} />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
 };
 
 export default Icons;
