@@ -14,7 +14,7 @@ const teachers: TeacherInfo[] = [
     description:
       "Hơn 4 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy bootcamp. Được học viên yêu mến bởi cách truyền đạt kiến thức khoa học và sự hỗ trợ tận tâm. Mục tiêu là giúp học viên trang bị đầy đủ kiến thức và kỹ năng vững chắc để theo đuổi ngành lập trình. 📍",
     avatar:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688545756/home/teachers/huy_dzvpij.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690187947/home/teachers/Huy_pneb7i.png",
     tech: [
       {
         title: "HTML",
@@ -48,7 +48,7 @@ const teachers: TeacherInfo[] = [
     description:
       "Mong muốn lan toả sự thú vị của lập trình và truyền động lực thử thách bản thân đến mọi người. Sử dụng 4 năm kinh nghiệm lập trình Back-end Java giúp học viên xây dựng nền tảng kiên cố cho sự phát triển sau này. 📍",
     avatar:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688545757/home/teachers/minh_iiulj7.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690187947/home/teachers/Minh_1_nop8cb.png",
     tech: [
       {
         title: "HTML",
