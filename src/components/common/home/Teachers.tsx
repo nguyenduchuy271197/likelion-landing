@@ -43,7 +43,7 @@ const teachers: TeacherInfo[] = [
     ],
   },
   {
-    title: "Java Developer/Giảng viên",
+    title: "Java Engineer/Giảng viên",
     name: "Nguyễn Văn Minh",
     description:
       "Mong muốn lan toả sự thú vị của lập trình và truyền động lực thử thách bản thân đến mọi người. Sử dụng 4 năm kinh nghiệm lập trình Back-end Java giúp học viên xây dựng nền tảng kiên cố cho sự phát triển sau này. 📍",
