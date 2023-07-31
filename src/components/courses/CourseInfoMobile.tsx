@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import CourseThumbnail from "./CourseThumbnail";
+import CourseCountdown from "./CourseCountdown";
 
 interface CourseInfoMobileProps {
   discountedPrice: number;
@@ -49,6 +50,9 @@ export default function CourseInfoMobile({
           {calcDiscountedPercent(price, discountedPrice)}% off
         </div>
       </div>
+
+      <CourseCountdown />
+
       {/* Registration */}
       <div className="my-4">
         <Button className="w-full" asChild onClick={() => setDialogOpen(true)}>

@@ -1,17 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import CourseFeatureItem from "./CourseFeatureItem";
 import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 import { useContext, useState } from "react";
-import ModalVideo from "react-modal-video";
-import PlayButton from "../PlayButton";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import { cn } from "@/lib/utils";
 import CourseThumbnail from "./CourseThumbnail";
+import CourseCountdown from "./CourseCountdown";
 
 type CourseInfoCardProps = Pick<
   ICourse,
@@ -61,6 +58,8 @@ export default function CourseInfoCard({
                 {calcDiscountedPercent(price, discountedPrice)}% off
               </div>
             </div>
+
+            <CourseCountdown />
 
             {/* Registration */}
             <div className="my-4">
