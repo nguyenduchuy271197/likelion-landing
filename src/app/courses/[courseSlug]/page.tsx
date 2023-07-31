@@ -111,7 +111,7 @@ export default async function CourseDetail({
                 <CourseWorkshops />
 
                 {/* Showcase */}
-                {/* <CourseProjects /> */}
+                <CourseProjects />
 
                 {/* Reviews */}
                 <CourseReviews />
