@@ -14,6 +14,7 @@ import { courses } from "@/components/layouts/navbar/Navbar";
 import { getCourseBySlug } from "@/services/courseService";
 import { Metadata, ResolvingMetadata } from "next";
 import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules";
+import CourseWorkshops from "@/components/courses/CourseWorkshops";
 
 export async function generateMetadata(
   {
@@ -106,8 +107,11 @@ export default async function CourseDetail({
 
             {courseSlug === "bootcamp-lap-trinh-web-fullstack" && (
               <>
+                {/* Workshops */}
+                <CourseWorkshops />
+
                 {/* Showcase */}
-                <CourseProjects />
+                {/* <CourseProjects /> */}
 
                 {/* Reviews */}
                 <CourseReviews />
