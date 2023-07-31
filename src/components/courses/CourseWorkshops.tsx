@@ -37,7 +37,7 @@ interface CourseWorkshopType {
 function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
   return (
     <div>
-      <div className="relative aspect-[16/9]">
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
         <Image
           src={src}
           fill
@@ -47,7 +47,7 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
       </div>
       <div className="py-2 space-y-1">
         <h3 className="text-lg font-medium">{title}</h3>
-        <p className="text-muted-foreground">{description}</p>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </div>
   );
