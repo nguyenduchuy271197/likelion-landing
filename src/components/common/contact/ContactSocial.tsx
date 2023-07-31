@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface SocialIcon {
   href: string;
-  icon: LucideIcon;
+  icon: (props: LucideProps) => JSX.Element;
   label: string;
 }
 

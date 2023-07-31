@@ -3,6 +3,7 @@ import {
   Briefcase,
   GraduationCap,
   LucideIcon,
+  LucideProps,
   Share2,
   Swords,
 } from "lucide-react";

@@ -142,7 +142,7 @@ const contacts: Contact[] = [
 ];
 
 interface Contact {
-  icon: LucideIcon;
+  icon: (props: LucideProps) => JSX.Element;
   label: string;
   value: string;
 }

@@ -1,4 +1,11 @@
-import { Calendar, Clock2, LucideIcon, MapPin, School } from "lucide-react";
+import {
+  Calendar,
+  Clock2,
+  LucideIcon,
+  LucideProps,
+  MapPin,
+  School,
+} from "lucide-react";
 import { ReactNode } from "react";
 
 const calendar = {

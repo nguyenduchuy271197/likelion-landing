@@ -47,7 +47,6 @@ export default function BlogDetail({ params }: BlogParams) {
           <div className="container">
             <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-16">
               <div className="prose max-w-none">
-                {/* @ts-expect-error Async Server Component */}
                 <MDXRemote
                   source={content}
                   components={mdxConfig.components}

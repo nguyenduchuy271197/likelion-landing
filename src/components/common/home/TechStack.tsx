@@ -13,12 +13,12 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, LucideProps } from "lucide-react";
 import Icons from "@/components/Icons";
 
 type TechStackOption = {
   title: string;
-  icon: LucideIcon;
+  icon: (props: LucideProps) => JSX.Element;
 };
 
 export type TechStackOptions = TechStackOption[];

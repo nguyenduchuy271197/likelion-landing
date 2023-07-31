@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Mousewheel } from "swiper";
+import { Autoplay, Pagination, Mousewheel } from "swiper/modules";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";

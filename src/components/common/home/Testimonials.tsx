@@ -3,7 +3,7 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation } from "swiper/modules";
 import { Button } from "@/components/ui/Button";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";

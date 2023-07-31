@@ -1,8 +1,8 @@
 import Icons from "@/components/Icons";
-import { LucideIcon, LucideProps } from "lucide-react";
+import { LucideProps } from "lucide-react";
 
 interface Feature {
-  icon: LucideIcon;
+  icon: (props: LucideProps) => JSX.Element;
   title: string;
   description: string;
 }

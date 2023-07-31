@@ -2,7 +2,7 @@
 
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import { Code2, LucideProps, Star, Users } from "lucide-react";
+import { Code2, LucideIcon, LucideProps, Star, Users } from "lucide-react";
 
 const achievements: Achievement[] = [
   {
@@ -35,7 +35,7 @@ type Achievement = {
   count: number;
   startCount: number;
   label: string;
-  icon: (props: LucideProps) => JSX.Element;
+  icon: LucideIcon;
   suffix?: string;
   duration?: number;
 };

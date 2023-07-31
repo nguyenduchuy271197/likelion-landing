@@ -1,10 +1,10 @@
 import Image from "next/image";
 import SectionHeading from "../home/SectionHeading";
-import { LucideIcon } from "lucide-react";
+import { LucideProps } from "lucide-react";
 import Icons from "@/components/Icons";
 
 interface PhilosophyType {
-  icon: LucideIcon;
+  icon: (props: LucideProps) => JSX.Element;
   title: string;
   description: string;
 }

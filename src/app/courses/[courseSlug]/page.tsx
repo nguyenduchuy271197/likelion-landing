@@ -13,6 +13,7 @@ import CourseReviews from "@/components/courses/CourseReviews";
 import { courses } from "@/components/layouts/navbar/Navbar";
 import { getCourseBySlug } from "@/services/courseService";
 import { Metadata, ResolvingMetadata } from "next";
+import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules";
 
 export async function generateMetadata(
   {
@@ -90,10 +91,9 @@ export default async function CourseDetail({
 
             <CourseFeaturesMobile features={features} />
 
-            {[
-              "bootcamp-lap-trinh-web-fullstack",
-              "front-end-night-class",
-            ].includes(courseSlug) && <CourseCalendar />}
+            {["thanh-thao-lap-trinh-web-front-end"].includes(courseSlug) && (
+              <CourseCalendar />
+            )}
 
             {/* What you'll learn */}
             <CourseObjectives objectives={objectives} />
@@ -111,6 +111,9 @@ export default async function CourseDetail({
 
                 {/* Reviews */}
                 <CourseReviews />
+
+                {/* CourseCalen */}
+                <CourseOpeningSchedules />
 
                 {/* Partnership */}
                 <CoursePartnership />
