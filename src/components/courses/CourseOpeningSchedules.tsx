@@ -25,7 +25,7 @@ const openingSchedules: OpeningScheduleType[] = [
   {
     title: "Bootcamp 5",
     date: "Thứ 2, 4, 6 | 18:00 - 21:00",
-    start: "02/08/2023",
+    start: "16/08/2023",
     mode: "5 tháng (Offline)",
     place: {
       name: "Viện Đổi mới Sáng tạo UEH (UII)",

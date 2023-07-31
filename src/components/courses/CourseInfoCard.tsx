@@ -59,7 +59,7 @@ export default function CourseInfoCard({
               </div>
             </div>
 
-            <CourseCountdown />
+            {slug === "bootcamp-lap-trinh-web-fullstack" && <CourseCountdown />}
 
             {/* Registration */}
             <div className="my-4">
