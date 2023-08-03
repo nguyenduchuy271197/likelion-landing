@@ -13,7 +13,7 @@ export default function CourseCountdown() {
     <div className="mt-4 space-y-2">
       <h4>Khuyến mãi kết thúc sau</h4>
       <Countdown
-        date={new Date("2023-08-07")}
+        date={new Date("2023-08-08")}
         renderer={({ days, hours, minutes, seconds, completed }) => {
           return (
             <div className="flex items-center space-x-2">

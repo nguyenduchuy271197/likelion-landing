@@ -59,7 +59,10 @@ export default function CourseInfoCard({
               </div>
             </div>
 
-            {slug === "bootcamp-lap-trinh-web-fullstack" && <CourseCountdown />}
+            {[
+              "bootcamp-lap-trinh-web-fullstack",
+              "thanh-thao-lap-trinh-web-front-end",
+            ].includes(slug) && <CourseCountdown />}
 
             {/* Registration */}
             <div className="my-4">
