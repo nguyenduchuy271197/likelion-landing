@@ -5,7 +5,7 @@ import { ICourse } from "@/types";
 import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseThumbnail from "./CourseThumbnail";
 import CourseCountdown from "./CourseCountdown";

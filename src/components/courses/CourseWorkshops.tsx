@@ -12,13 +12,13 @@ const courseWorkshops: CourseWorkshopType[] = [
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690789908/courses/bootcamp-lap-trinh-web-fullstack/workshops/Workshop_Interview_ez3ufi.png",
     title: "Workshop Tuyệt kỹ phỏng vấn",
     description:
-      "Giúp các bạn học viên thành thạo các kỹ năng phỏng vấn, tạo điểm nhấn trong mắt nhà tuyển dụng, và gia tăng ctơ hội nhận được offer.",
+      "Giúp các bạn học viên thành thạo các kỹ năng phỏng vấn, tạo điểm nhấn trong mắt nhà tuyển dụng, và gia tăng cơ hội nhận được offer.",
   },
   {
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690789908/courses/bootcamp-lap-trinh-web-fullstack/workshops/Workshop_Thu%CC%9B%CC%A3c_chie%CC%82%CC%81n_wjtonm.png",
     title: "Workshop Thực chiến ngành IT",
     description:
-      "GIúp học viên hiểu về tính chất ngành lập trình và nắm rõ các level của lập trình viên để từ đó xác định hướng phát triển sự nghiệp trong ngành IT",
+      "Giúp học viên hiểu về tính chất ngành lập trình và nắm rõ các level của lập trình viên để từ đó xác định hướng phát triển sự nghiệp trong ngành IT",
   },
   {
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690789908/courses/bootcamp-lap-trinh-web-fullstack/workshops/Workshop_ChatGPT_f4f8h3.png",
