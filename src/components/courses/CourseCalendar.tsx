@@ -10,7 +10,7 @@ import { ReactNode } from "react";
 
 const calendar = {
   date: "Thứ 2, 4, 6 | 18:00 - 21:00",
-  start: "02/08/2023",
+  start: "16/08/2023",
   mode: "Offline",
   place: {
     name: "Viện Đổi mới Sáng tạo UEH (UII)",
