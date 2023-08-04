@@ -105,7 +105,7 @@ export default async function CourseDetail({
             {/* Course content */}
             <CourseContent modules={modules} />
 
-            {courseSlug === "bootcamp-lap-trinh-web-fullstack" && (
+            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
               <>
                 {/* Workshops */}
                 <CourseWorkshops />

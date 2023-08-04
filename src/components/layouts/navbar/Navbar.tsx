@@ -20,11 +20,11 @@ export const courses: CourseType[] = [
     id: "6482a08d232bf6c1513a1111",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
     title: "Bootcamp lập trình web Fullstack",
-    slug: "bootcamp-lap-trinh-web-fullstack",
+    slug: "khoa-hoc-lap-trinh-web-fullstack",
     excerpt: "Trở thành lập trình viên Fullstack Bootcamp sau 5 tháng.",
     subtitle:
       "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
-    href: "/courses/bootcamp-lap-trinh-web-fullstack",
+    href: "/courses/khoa-hoc-lap-trinh-web-fullstack",
     statuses: ["Part-time", "Offline"],
     published: true,
   },

@@ -12,7 +12,7 @@ const Achievement = dynamic(
 
 const banners = [
   {
-    href: "/courses/bootcamp-lap-trinh-web-fullstack",
+    href: "/courses/khoa-hoc-lap-trinh-web-fullstack",
     src: {
       sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543394/home/banners/fullstack-mb.png",
       lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/fullstack.png",

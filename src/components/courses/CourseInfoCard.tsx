@@ -60,7 +60,7 @@ export default function CourseInfoCard({
             </div>
 
             {[
-              "bootcamp-lap-trinh-web-fullstack",
+              "khoa-hoc-lap-trinh-web-fullstack",
               "thanh-thao-lap-trinh-web-front-end",
             ].includes(slug) && <CourseCountdown />}
 
