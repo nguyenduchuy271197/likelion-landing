@@ -1,3 +1,4 @@
+import BusinessPartners from "@/components/common/home/BusinessPartners";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
@@ -26,6 +27,7 @@ export default function Home() {
       <TechStack />
       <Testimonials />
       <CTA />
+      <BusinessPartners />
       <FAQ />
     </div>
   );
