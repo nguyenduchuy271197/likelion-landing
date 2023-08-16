@@ -125,7 +125,7 @@ export default function Testimonials() {
               style={{
                 height: lgMatches ? 550 : 360,
                 paddingInline: 16,
-                paddingBlock: lgMatches ? 80 : 16,
+                paddingTop: lgMatches ? 80 : 16,
                 overflowY: "visible",
               }}
               navigation={{

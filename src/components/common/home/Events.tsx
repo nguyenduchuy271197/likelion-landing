@@ -27,7 +27,7 @@ const events: EventProps[] = [
     description:
       "LIKELION và ShinhanDS hợp tác tổ chức các khoá đào tạo lập trình cho các bạn sinh viên, xây dựng nguồn nhân sự IT chất lượng.",
     thumbnail:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692169553/blogs/LIKELION-hop-tac-voi-ShinhanDS-khai-giang-khoa-hoc-lap-trinh/Shinhan_DS_Mobile_yb0vwb.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692169552/blogs/LIKELION-hop-tac-voi-ShinhanDS-khai-giang-khoa-hoc-lap-trinh/Shinhan_DS_Desktop_u8chz6.png",
   },
   {
     title: "LIKELION x Naver - Tổ chức khoá học lập trình",
@@ -35,7 +35,7 @@ const events: EventProps[] = [
     description:
       "LIKELION hợp tác cùng Naver, tổ chức các khoá đào tạo lập trình Front-End và Back-End cho sinh viên khoa CNTT, Trường Đại học CNTT TP.HCM",
     thumbnail:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692170555/blogs/LIKELION-cung-Naver-to-chuc-khoa-hoc-lap-trinh/Naver_Mobile_i6luth.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692170555/blogs/LIKELION-cung-Naver-to-chuc-khoa-hoc-lap-trinh/Naver_Desktop_whskih.png",
   },
   {
     title: "LIKELION x KICC - Ký kết chiến lược cung ứng nhân sự IT",
@@ -43,27 +43,36 @@ const events: EventProps[] = [
     description:
       "LIKELION cùng KICC hợp tác chiến lược trong nỗ lực đào tạo và cung ứng nhân sự IT chất lượng cao cho các Doanh nghiệp IT tại TPHCM",
     thumbnail:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692170837/blogs/LIKELION-va-KICC-ky-ket-chien-luoc-cung-ung-nhan-su-IT/KICC_Mobile_tb6i8f.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692170837/blogs/LIKELION-va-KICC-ky-ket-chien-luoc-cung-ung-nhan-su-IT/KICC_Desktop_rfggpe.png",
   },
 ];
 
 function EventCard({ title, description, thumbnail, slug }: EventProps) {
   return (
-    <div className="grid h-full rounded-lg shadow-lg lg:grid-cols-[2fr_1fr] overflow-hidden">
-      <div className="relative aspect-[2/1]">
-        <Image
-          src={thumbnail}
-          alt={title}
-          fill
-          className="object-cover w-full h-full"
-        />
+    <div className="flex flex-col h-full overflow-hidden border rounded-lg shadow-lg lg:flex-row">
+      <div className="lg:grow">
+        <div className="relative w-full h-full aspect-[7/3]">
+          <Image
+            src={thumbnail}
+            alt={title}
+            fill
+            className="object-cover w-full h-auto"
+          />
+        </div>
       </div>
-      <div className="p-4 space-y-3 sm:p-8">
-        <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="text-muted-foreground line-clamp-5">{description}</p>
-        <Button asChild>
-          <Link href={`/blogs/${slug}`}>Xem thêm</Link>
-        </Button>
+
+      <div className="w-full h-full p-6 sm:p-8 grow lg:grow-0 lg:max-w-sm">
+        <div className="flex flex-col justify-between h-full space-y-4 lg:justify-start">
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold sm:text-2xl">{title}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground line-clamp-5">
+              {description}
+            </p>
+          </div>
+          <Button asChild className="self-start w-full lg:w-auto" size="lg">
+            <Link href={`/blogs/${slug}`}>Xem thêm</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
@@ -72,13 +81,14 @@ function EventCard({ title, description, thumbnail, slug }: EventProps) {
 export default function Events() {
   const navigationPrevRef = useRef<HTMLButtonElement>(null);
   const navigationNextRef = useRef<HTMLButtonElement>(null);
+  const mdMatches = useMediaQuery("(min-width: 720px) and (max-width: 1024px)");
   const lgMatches = useMediaQuery("(min-width: 1024px)");
+
   return (
-    <section>
+    <section className="">
       <div className="container px-4">
         <div className="py-10 md:py-20">
           <SectionHeading title="Sự kiện" className="mb-10" />
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,13 +99,13 @@ export default function Events() {
             viewport={{ once: true }}
           >
             <Swiper
-              slidesPerView={1.05}
+              slidesPerView={mdMatches ? 1.5 : lgMatches ? 1 : 1.05}
               spaceBetween={32}
               modules={[Navigation]}
               style={{
-                // height: lgMatches ? 550 : 360,
+                // height: lgMatches ? 700 : 600,
                 paddingInline: 16,
-                paddingBlock: lgMatches ? 80 : 16,
+                paddingTop: lgMatches ? 80 : 16,
                 overflowY: "visible",
               }}
               navigation={{

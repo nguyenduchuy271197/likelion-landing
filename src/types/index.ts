@@ -13,8 +13,10 @@ export interface IBlog {
   title: string;
   slug: string;
   excerpt: string;
-  imageUrl: string;
-  readingTime: string;
+  thumbnail: string;
+  thumbnail_desktop: string;
+  thumbnail_mobile: string;
+  readingTime: number;
   publishOn: number;
 }
 

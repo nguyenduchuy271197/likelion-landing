@@ -9,14 +9,14 @@ import { Pagination } from "../ui/Pagination";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-function BlogCard({ slug, title, excerpt, imageUrl, publishOn }: IBlog) {
+function BlogCard({ slug, title, excerpt, thumbnail, publishOn }: IBlog) {
   return (
     <Link href={`/blogs/${slug}`} className="flex flex-col group">
       <div className="relative aspect-[7/5]">
         <Image
-          src={imageUrl}
+          src={thumbnail || ""}
           alt={title}
-          className="duration-300 rounded-lg object-covertransition group-hover:scale-105"
+          className="object-cover transition duration-300 rounded-lg group-hover:scale-105"
           fill
         />
       </div>

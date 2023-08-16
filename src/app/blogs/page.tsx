@@ -1,7 +1,6 @@
 import SectionBanner from "@/components/SectionBanner";
 import BlogListing from "@/components/blogs/BlogListing";
 import LatestBlog from "@/components/blogs/LatestBlog";
-import siteConfig from "@/config/siteConfig";
 import { getAllBlogs } from "@/services/blogService";
 import { Metadata } from "next";
 

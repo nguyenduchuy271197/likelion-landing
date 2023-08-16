@@ -4,8 +4,9 @@ import Image from "next/image";
 
 export default function DetailHeading({
   title = "Blog not found!",
-  imageUrl = "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
-  readingTime = "1 min",
+  thumbnail_desktop = "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+  thumbnail_mobile = "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+  readingTime = 0,
   publishOn = Date.now(),
 }: IBlog) {
   return (
@@ -17,18 +18,22 @@ export default function DetailHeading({
               Blog
             </p>
             <h1 className="text-3xl font-bold md:text-4xl">{title}</h1>
-            <p className="mt-6 text-sm text-muted-foreground">
-              {publishOn ? formatDate(publishOn) : "Now"} - {readingTime}
+            <p className="mt-4 text-sm text-muted-foreground">
+              {publishOn ? formatDate(publishOn) : "Gần đây"} -{" "}
+              {readingTime.toFixed()} phút đọc
             </p>
           </div>
           <div className="relative aspect-[7/5] rounded-xl overflow-hidden sm:aspect-[7/3]">
-            <Image
-              src={imageUrl}
-              alt={title}
-              className="object-cover object-center"
-              fill
-              priority
-            />
+            <picture>
+              <source srcSet={thumbnail_desktop} media="(min-width: 768px)" />
+              <Image
+                src={thumbnail_mobile}
+                alt={title}
+                fill
+                priority
+                className="object-cover"
+              />
+            </picture>
           </div>
         </div>
       </div>

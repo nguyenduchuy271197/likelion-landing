@@ -63,9 +63,9 @@ export default function TableOfContent() {
   useIntersectionObserver(setActiveId);
 
   return (
-    <div aria-label="Table of content">
+    <div aria-label="Nội dung chính">
       <h4 className="mb-4 font-medium tracking-widest uppercase">
-        Table of Contents
+        Nội dung chính
       </h4>
       <Headings headings={nestedHeadings} activeId={activeId} />
     </div>

@@ -7,7 +7,7 @@ import React from "react";
 export default function LatestBlog({
   slug,
   excerpt,
-  imageUrl,
+  thumbnail,
   title,
   publishOn,
 }: IBlog) {
@@ -20,7 +20,7 @@ export default function LatestBlog({
         >
           <div className="overflow-hidden rounded-lg">
             <Image
-              src={imageUrl}
+              src={thumbnail || ""}
               alt={title}
               width={600}
               height={300}

@@ -59,10 +59,10 @@ export default function CourseInfoCard({
               </div>
             </div>
 
-            {[
+            {/* {[
               "khoa-hoc-lap-trinh-web-fullstack",
               "thanh-thao-lap-trinh-web-front-end",
-            ].includes(slug) && <CourseCountdown />}
+            ].includes(slug) && <CourseCountdown />} */}
 
             {/* Registration */}
             <div className="my-4">

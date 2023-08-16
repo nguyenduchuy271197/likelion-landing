@@ -22,7 +22,7 @@ export function getBlogBySlug(slug: string) {
   const { data, content } = matter(source);
 
   return {
-    data: { ...(data as IBlog), readingTime: readingTime(content).text },
+    data: { ...(data as IBlog), readingTime: readingTime(content).minutes },
     content,
   };
 }

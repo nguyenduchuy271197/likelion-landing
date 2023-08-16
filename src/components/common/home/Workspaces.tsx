@@ -541,7 +541,7 @@ export default function Workspaces() {
         <ParallaxText baseVelocity={2}>
           {workspaceOptions.map(({ title, icon: Icon }) => (
             <div key={title}>
-              <Icon className="w-[90px] lg:w-[120px] aspect-[1/1] object-contain" />
+              <Icon className="w-[160px] lg:w-[200px] aspect-[2/1] object-contain" />
             </div>
           ))}
         </ParallaxText>
