@@ -1,3 +1,5 @@
+import Events from "@/components/common/home/Events";
+import Workspaces from "@/components/common/home/Workspaces";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
@@ -25,7 +27,9 @@ export default function Home() {
       <Teachers />
       <TechStack />
       <Testimonials />
+      <Workspaces />
       <CTA />
+      <Events />
       <FAQ />
     </div>
   );
