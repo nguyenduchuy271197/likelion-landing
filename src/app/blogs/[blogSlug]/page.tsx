@@ -3,13 +3,13 @@ import TableOfContent from "@/components/blogs/TableOfContent";
 import { Button } from "@/components/ui/Button";
 import mdxConfig from "@/config/mdxConfig";
 import { getBlogBySlug, getBlogSlugs } from "@/services/blogService";
-import { IBlog } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ScrollProgressBar from "@/components/blogs/ScrollProgressBar";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
+import { IBlog } from "@/types";
 
 interface BlogParams {
   params: { blogSlug: string };
@@ -46,7 +46,7 @@ export default function BlogDetail({ params }: BlogParams) {
 
       {/* Blog Content */}
       <article className="py-10 md:py-20">
-        <DetailHeading {...(data as IBlog)} />
+        <DetailHeading {...data} />
 
         <main>
           <div className="container">

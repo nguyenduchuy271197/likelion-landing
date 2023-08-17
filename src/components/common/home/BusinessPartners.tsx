@@ -1601,7 +1601,13 @@ const companiesLogo = [
   },
 ];
 
-const schoolsLogo = [
+interface PartnerProps {
+  label: string;
+  logo: (props: LucideProps) => JSX.Element;
+  href?: string;
+}
+
+const schoolsLogo: PartnerProps[] = [
   { label: "UEH", logo: logos.ueh },
   { label: "IH", logo: logos.ih },
   { label: "USSH", logo: logos.ussh },
@@ -1610,15 +1616,7 @@ const schoolsLogo = [
   { label: "HCMUNRE", logo: logos.hcmunre },
 ];
 
-const Partner = ({
-  label,
-  logo: Logo,
-  href,
-}: {
-  label: string;
-  logo: (props: LucideProps) => JSX.Element;
-  href?: string;
-}) => {
+const Partner = ({ label, logo: Logo, href }: PartnerProps) => {
   if (!href)
     return (
       <div className="p-4 border border-transparent rounded-md lg:p-6 h-[110px] lg:h-[130px]">
