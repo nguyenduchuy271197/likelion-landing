@@ -25,7 +25,7 @@ export default function DetailHeading({
           </div>
           <div className="relative aspect-[7/5] rounded-xl overflow-hidden sm:aspect-[7/3]">
             <picture>
-              <source srcSet={thumbnail_desktop} media="(min-width: 768px)" />
+              <source srcSet={thumbnail_desktop} media="(min-width: 640px)" />
               <Image
                 src={thumbnail_mobile}
                 alt={title}
