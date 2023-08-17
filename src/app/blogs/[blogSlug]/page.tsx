@@ -24,7 +24,7 @@ export function generateMetadata({ params }: BlogParams): Metadata {
     openGraph: {
       title: `${data.title} | ${siteConfig.brand}`,
       description: data.excerpt,
-      images: [data.thumbnail],
+      images: [data.thumbnail_og, data.thumbnail],
     },
   };
 }

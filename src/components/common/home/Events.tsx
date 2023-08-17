@@ -7,21 +7,29 @@ import { Navigation } from "swiper/modules";
 import { Button } from "@/components/ui/Button";
 import { useRef } from "react";
 import { NavigationOptions } from "swiper/types";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMediaQuery } from "@mantine/hooks";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { IBlog } from "@/types";
+import { formatDate } from "@/lib/date";
 
 interface EventProps {
   title: string;
   slug: string;
   description: string;
   thumbnail: string;
+  publishOn: number;
 }
 
-function EventCard({ title, description, thumbnail, slug }: EventProps) {
+function EventCard({
+  title,
+  description,
+  thumbnail,
+  slug,
+  publishOn,
+}: EventProps) {
   return (
     <div className="flex flex-col h-full overflow-hidden border rounded-lg shadow-lg lg:flex-row">
       <div className="lg:grow">
@@ -35,10 +43,14 @@ function EventCard({ title, description, thumbnail, slug }: EventProps) {
         </div>
       </div>
 
-      <div className="w-full h-full p-6 sm:p-8 grow lg:grow-0 lg:max-w-sm">
+      <div className="w-full h-full p-6 sm:p-8 grow lg:grow-0 lg:max-w-[350px]">
         <div className="flex flex-col justify-between h-full space-y-4 lg:justify-start">
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h3 className="text-xl font-bold sm:text-2xl">{title}</h3>
+            <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <Calendar size={16} />
+              <span>{formatDate(publishOn)}</span>
+            </div>
             <p className="text-sm sm:text-base text-muted-foreground line-clamp-5">
               {description}
             </p>
@@ -100,6 +112,7 @@ export default function Events({ blogs }: { blogs: IBlog[] }) {
                     description={blog.excerpt}
                     thumbnail={blog.thumbnail_desktop}
                     slug={blog.slug}
+                    publishOn={blog.publishOn}
                   />
                 </SwiperSlide>
               ))}

@@ -16,6 +16,7 @@ export interface IBlog {
   thumbnail: string;
   thumbnail_desktop: string;
   thumbnail_mobile: string;
+  thumbnail_og: string;
   readingTime: number;
   publishOn: number;
   tags: string[];

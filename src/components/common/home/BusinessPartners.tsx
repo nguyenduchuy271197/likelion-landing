@@ -1583,19 +1583,31 @@ const logos = {
 };
 
 const companiesLogo = [
-  { label: "Naver", logo: logos.naver, href: "#" },
-  { label: "Shinhan", logo: logos.shinhan, href: "#" },
-  { label: "Groundx", logo: logos.groundx, href: "#" },
-  { label: "KICC", logo: logos.kicc, href: "#" },
+  {
+    label: "Naver",
+    logo: logos.naver,
+    href: "/blogs/LIKELION-cung-Naver-to-chuc-khoa-hoc-lap-trinh",
+  },
+  {
+    label: "Shinhan",
+    logo: logos.shinhan,
+    href: "/blogs/LIKELION-hop-tac-voi-ShinhanDS-khai-giang-khoa-hoc-lap-trinh",
+  },
+  { label: "Groundx", logo: logos.groundx },
+  {
+    label: "KICC",
+    logo: logos.kicc,
+    href: "/blogs/LIKELION-va-KICC-ky-ket-chien-luoc-cung-ung-nhan-su-IT",
+  },
 ];
 
 const schoolsLogo = [
-  { label: "UEH", logo: logos.ueh, href: "#" },
-  { label: "IH", logo: logos.ih, href: "#" },
-  { label: "USSH", logo: logos.ussh, href: "#" },
-  { label: "IU", logo: logos.iu, href: "#" },
-  { label: "UIT", logo: logos.uit, href: "#" },
-  { label: "HCMUNRE", logo: logos.hcmunre, href: "#" },
+  { label: "UEH", logo: logos.ueh },
+  { label: "IH", logo: logos.ih },
+  { label: "USSH", logo: logos.ussh },
+  { label: "IU", logo: logos.iu },
+  { label: "UIT", logo: logos.uit },
+  { label: "HCMUNRE", logo: logos.hcmunre },
 ];
 
 const Partner = ({
@@ -1605,14 +1617,21 @@ const Partner = ({
 }: {
   label: string;
   logo: (props: LucideProps) => JSX.Element;
-  href: string;
+  href?: string;
 }) => {
+  if (!href)
+    return (
+      <div className="p-4 border border-transparent rounded-md lg:p-6 h-[110px] lg:h-[130px]">
+        <Logo className="object-contain w-full h-full" />
+      </div>
+    );
+
   return (
     <Link
       href={href}
       className="group relative lg:p-6 p-4 border border-transparent rounded-md hover:border-border h-[110px] lg:h-[130px] transition-all"
     >
-      <Logo className="w-full h-full object-contain" />
+      <Logo className="object-contain w-full h-full" />
       <ArrowUpRight className="absolute top-2 right-2 text-muted-foreground transition duration-500 origin-bottom-left scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]" />
     </Link>
   );
@@ -1636,7 +1655,7 @@ export default function BusinessPartners() {
           {/* Companies */}
           <div className="space-y-4">
             <h3 className="text-2xl font-medium">Đối tác doanh nghiệp</h3>
-            <div className="grid sm:grid-cols-2 gap-2 lg:gap-4">
+            <div className="grid gap-2 sm:grid-cols-2 lg:gap-4">
               {companiesLogo.map((company) => {
                 return (
                   <Partner
@@ -1653,7 +1672,7 @@ export default function BusinessPartners() {
           {/* Schools */}
           <div className="space-y-4">
             <h3 className="text-2xl font-medium">Đối tác giáo dục</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 lg:gap-4">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:gap-4">
               {schoolsLogo.map((school) => {
                 return (
                   <Partner
