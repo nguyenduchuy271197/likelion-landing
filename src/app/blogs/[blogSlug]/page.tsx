@@ -21,6 +21,9 @@ export function generateMetadata({ params }: BlogParams): Metadata {
   return {
     title: `${data.title} | ${siteConfig.brand}`,
     description: data.excerpt,
+    openGraph: {
+      images: [data.thumbnail],
+    },
   };
 }
 

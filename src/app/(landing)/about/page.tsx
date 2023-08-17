@@ -6,7 +6,6 @@ import Members from "@/components/common/about/Members";
 import Philosophy from "@/components/common/about/Philosophy";
 import Reasons from "@/components/common/about/Reasons";
 import Values from "@/components/common/about/Values";
-import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

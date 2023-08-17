@@ -35,8 +35,9 @@ export async function generateMetadata(
     description: subtitle,
     openGraph: {
       images: [
-        "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689923829/thumbnail/Thumbnail_Bootcamp_zupniw.png",
+        thumbnail,
         ...previousImages,
+        // "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689923829/thumbnail/Thumbnail_Bootcamp_zupniw.png",
       ],
     },
   };
