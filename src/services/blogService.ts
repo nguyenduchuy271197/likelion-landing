@@ -22,7 +22,11 @@ export function getBlogBySlug(slug: string) {
   const { data, content } = matter(source);
 
   return {
-    data: { ...(data as IBlog), readingTime: readingTime(content).minutes },
+    data: {
+      ...data,
+      readingTime: readingTime(content).minutes,
+      tags: data.tags?.split(", "),
+    } as IBlog,
     content,
   };
 }
@@ -31,6 +35,15 @@ export function getAllBlogs() {
   const slugs = getBlogSlugs();
   const blogs = slugs.map((slug) => getBlogBySlug(slug));
   return blogs
+    .map((blog) => blog.data)
+    .sort((a, b) => b.publishOn - a.publishOn);
+}
+
+export function getBlogsByTag(tag: string) {
+  const slugs = getBlogSlugs();
+  const blogs = slugs.map((slug) => getBlogBySlug(slug));
+  return blogs
+    .filter((blog) => blog.data.tags?.includes(tag))
     .map((blog) => blog.data)
     .sort((a, b) => b.publishOn - a.publishOn);
 }

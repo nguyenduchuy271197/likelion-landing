@@ -18,6 +18,7 @@ export interface IBlog {
   thumbnail_mobile: string;
   readingTime: number;
   publishOn: number;
+  tags: string[];
 }
 
 export interface ICourse {

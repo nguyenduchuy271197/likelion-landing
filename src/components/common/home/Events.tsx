@@ -12,6 +12,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { IBlog } from "@/types";
 
 interface EventProps {
   title: string;
@@ -19,33 +20,6 @@ interface EventProps {
   description: string;
   thumbnail: string;
 }
-
-const events: EventProps[] = [
-  {
-    title: "LIKELION hợp tác với ShinhanDS - Khai giảng lớp lập trình",
-    slug: "LIKELION-hop-tac-voi-ShinhanDS-khai-giang-khoa-hoc-lap-trinh",
-    description:
-      "LIKELION và ShinhanDS hợp tác tổ chức các khoá đào tạo lập trình cho các bạn sinh viên, xây dựng nguồn nhân sự IT chất lượng.",
-    thumbnail:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692169552/blogs/LIKELION-hop-tac-voi-ShinhanDS-khai-giang-khoa-hoc-lap-trinh/Shinhan_DS_Desktop_u8chz6.png",
-  },
-  {
-    title: "LIKELION x Naver - Tổ chức khoá học lập trình",
-    slug: "LIKELION-cung-Naver-to-chuc-khoa-hoc-lap-trinh",
-    description:
-      "LIKELION hợp tác cùng Naver, tổ chức các khoá đào tạo lập trình Front-End và Back-End cho sinh viên khoa CNTT, Trường Đại học CNTT TP.HCM",
-    thumbnail:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692170555/blogs/LIKELION-cung-Naver-to-chuc-khoa-hoc-lap-trinh/Naver_Desktop_whskih.png",
-  },
-  {
-    title: "LIKELION x KICC - Ký kết chiến lược cung ứng nhân sự IT",
-    slug: "LIKELION-va-KICC-ky-ket-chien-luoc-cung-ung-nhan-su-IT",
-    description:
-      "LIKELION cùng KICC hợp tác chiến lược trong nỗ lực đào tạo và cung ứng nhân sự IT chất lượng cao cho các Doanh nghiệp IT tại TPHCM",
-    thumbnail:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692170837/blogs/LIKELION-va-KICC-ky-ket-chien-luoc-cung-ung-nhan-su-IT/KICC_Desktop_rfggpe.png",
-  },
-];
 
 function EventCard({ title, description, thumbnail, slug }: EventProps) {
   return (
@@ -78,7 +52,7 @@ function EventCard({ title, description, thumbnail, slug }: EventProps) {
   );
 }
 
-export default function Events() {
+export default function Events({ blogs }: { blogs: IBlog[] }) {
   const navigationPrevRef = useRef<HTMLButtonElement>(null);
   const navigationNextRef = useRef<HTMLButtonElement>(null);
   const mdMatches = useMediaQuery("(min-width: 720px) and (max-width: 1024px)");
@@ -119,9 +93,14 @@ export default function Events() {
                 navigation.nextEl = navigationNextRef.current;
               }}
             >
-              {events.map((event) => (
-                <SwiperSlide key={event.title}>
-                  <EventCard {...event} />
+              {blogs.map((blog) => (
+                <SwiperSlide key={blog.title}>
+                  <EventCard
+                    title={blog.title}
+                    description={blog.excerpt}
+                    thumbnail={blog.thumbnail_desktop}
+                    slug={blog.slug}
+                  />
                 </SwiperSlide>
               ))}
               <div
