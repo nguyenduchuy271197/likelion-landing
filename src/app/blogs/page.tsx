@@ -6,6 +6,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Blogs`,
+  openGraph: {
+    title: "Blogs",
+    images: [
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692261989/og/og_blogs_t812tr.png",
+    ],
+  },
 };
 
 export default async function Blogs() {

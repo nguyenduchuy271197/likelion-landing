@@ -10,6 +10,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Về chúng tôi`,
+  openGraph: {
+    title: "Về chúng tôi",
+    images: [
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692262060/og/og_about_b4civb.png",
+    ],
+  },
 };
 
 export default function About() {

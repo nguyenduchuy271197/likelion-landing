@@ -4,6 +4,12 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Đăng ký tư vấn",
+  openGraph: {
+    title: "Đăng ký tư vấn",
+    images: [
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692261940/og/og_register_agg6cu.png",
+    ],
+  },
 };
 
 export default function Register({

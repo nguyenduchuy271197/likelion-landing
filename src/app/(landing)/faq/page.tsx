@@ -4,6 +4,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "FAQs",
+  openGraph: {
+    title: "FAQs",
+    images: [
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692262084/og/og_faq_ijektd.png",
+    ],
+  },
 };
 
 export default function FAQ() {

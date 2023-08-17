@@ -34,6 +34,8 @@ export async function generateMetadata(
     title: `${title}`,
     description: subtitle,
     openGraph: {
+      title: `${title}`,
+      description: subtitle,
       images: [
         thumbnail,
         ...previousImages,
