@@ -9,7 +9,6 @@ import Link from "next/link";
 import ScrollProgressBar from "@/components/blogs/ScrollProgressBar";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
-import { IBlog } from "@/types";
 
 interface BlogParams {
   params: { blogSlug: string };
@@ -24,7 +23,7 @@ export function generateMetadata({ params }: BlogParams): Metadata {
     openGraph: {
       title: `${data.title} | ${siteConfig.brand}`,
       description: data.excerpt,
-      images: [data.thumbnail_og, data.thumbnail],
+      images: [data.thumbnail_og || data.thumbnail],
     },
   };
 }
