@@ -15,6 +15,8 @@ import { getCourseBySlug } from "@/services/courseService";
 import { Metadata, ResolvingMetadata } from "next";
 import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules";
 import CourseWorkshops from "@/components/courses/CourseWorkshops";
+import CourseWorkspaces from "@/components/courses/CourseWorkspaces";
+import CourseFeedback from "@/components/courses/CourseFeedback";
 
 export async function generateMetadata(
   {
@@ -72,14 +74,15 @@ export default async function CourseDetail({
     abbr,
     thumbnail,
     youtubeId,
+    calendar,
   } = await getCourseBySlug(courseSlug);
 
   return (
-    <div className="pt-12">
+    <div className="py-12">
       <div className="container">
         <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none mb-12">
           {/* Content */}
-          <div>
+          <div className="overflow-hidden">
             {/* Title */}
             <CourseHeading title={title} subtitle={subtitle} />
 
@@ -94,10 +97,6 @@ export default async function CourseDetail({
             />
 
             <CourseFeaturesMobile features={features} />
-
-            {["thanh-thao-lap-trinh-web-front-end"].includes(courseSlug) && (
-              <CourseCalendar />
-            )}
 
             {/* What you'll learn */}
             <CourseObjectives objectives={objectives} />
@@ -119,13 +118,13 @@ export default async function CourseDetail({
                 {/* Reviews */}
                 <CourseReviews />
 
-                {/* CourseCalen */}
-                <CourseOpeningSchedules />
-
                 {/* Partnership */}
                 <CoursePartnership />
               </>
             )}
+
+            {/* CourseCalen */}
+            {calendar && <CourseOpeningSchedules calendars={calendar} />}
           </div>
 
           {/* Info Card */}
@@ -140,6 +139,13 @@ export default async function CourseDetail({
             youtubeId={youtubeId}
           />
         </div>
+
+        {/* Workspaces */}
+        <CourseWorkspaces />
+
+        {/* Feedback */}
+        <CourseFeedback />
+
         {/* CTA */}
         <CourseCTA name={abbr} slug={courseSlug} />
       </div>

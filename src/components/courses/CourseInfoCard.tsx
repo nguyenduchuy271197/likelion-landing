@@ -42,10 +42,10 @@ export default function CourseInfoCard({
           thumbnail={thumbnail}
           youtubeId={youtubeId}
         />
-        <div className="p-6">
+        <div className="p-6 space-y-4">
           <div>
             {/* Price */}
-            <div>
+            {/* <div>
               <div className="flex items-center gap-4 mb-1">
                 <div className="flex items-center gap-1 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
                   {formatVNDCurrency(discountedPrice)}
@@ -57,7 +57,7 @@ export default function CourseInfoCard({
               <div className="text-muted-foreground">
                 {calcDiscountedPercent(price, discountedPrice)}% off
               </div>
-            </div>
+            </div> */}
 
             {/* {[
               "khoa-hoc-lap-trinh-web-fullstack",
@@ -65,7 +65,7 @@ export default function CourseInfoCard({
             ].includes(slug) && <CourseCountdown />} */}
 
             {/* Registration */}
-            <div className="my-4">
+            <div>
               <Button
                 className="w-full"
                 asChild

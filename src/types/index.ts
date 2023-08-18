@@ -36,6 +36,7 @@ export interface ICourse {
   features: string[];
   modules: IModule[];
   requirements: string[];
+  calendar: ICalendar[];
 }
 
 export interface IModule {
@@ -44,4 +45,16 @@ export interface IModule {
   lessons: string[];
   projects?: string[];
   courseId?: string;
+}
+
+export interface ICalendar {
+  title: string;
+  start_date: string;
+  duration: string;
+  schedule: string;
+  location: string;
+  tuition: {
+    total: string;
+    monthly: string;
+  };
 }

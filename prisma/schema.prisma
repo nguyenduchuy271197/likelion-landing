@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Course {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  slug            String   @unique
+  id              String         @id @default(auto()) @map("_id") @db.ObjectId
+  slug            String         @unique
   abbr            String
   title           String
   subtitle        String?
@@ -25,6 +25,7 @@ model Course {
   features        String[]
   modules         Module[]
   User            User[]
+  calendar        CalendarType[]
 }
 
 model Module {
@@ -44,4 +45,18 @@ model User {
   registration_date DateTime @default(now())
   Course            Course?  @relation(fields: [courseId], references: [id])
   courseId          String?  @db.ObjectId
+}
+
+type CalendarType {
+  title      String
+  start_date String
+  duration   String
+  schedule   String
+  location   String
+  tuition    TuitionType
+}
+
+type TuitionType {
+  total   String
+  monthly String
 }

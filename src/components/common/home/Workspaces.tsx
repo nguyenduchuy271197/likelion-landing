@@ -480,12 +480,12 @@ const logos = {
   ),
 };
 
-type WorkspaceOptions = {
+type WorkspaceOption = {
   title: string;
   icon: (props: LucideProps) => JSX.Element;
 };
 
-const workspaceOptions: WorkspaceOptions[] = [
+export const workspaceOptions: WorkspaceOption[] = [
   {
     title: "BMS Global",
     icon: logos.bms,
@@ -516,6 +516,24 @@ const workspaceOptions: WorkspaceOptions[] = [
   },
 ];
 
+export function WorkspacesParallax({
+  options,
+  velocity,
+}: {
+  options: WorkspaceOption[];
+  velocity: number;
+}) {
+  return (
+    <ParallaxText baseVelocity={velocity}>
+      {options.map(({ title, icon: Icon }) => (
+        <div key={title}>
+          <Icon className="w-[160px] lg:w-[200px] aspect-[2/1] object-contain" />
+        </div>
+      ))}
+    </ParallaxText>
+  );
+}
+
 export default function Workspaces() {
   return (
     <section className="py-20 md:mb-16">
@@ -538,13 +556,7 @@ export default function Workspaces() {
         }}
         viewport={{ once: true }}
       >
-        <ParallaxText baseVelocity={2}>
-          {workspaceOptions.map(({ title, icon: Icon }) => (
-            <div key={title}>
-              <Icon className="w-[160px] lg:w-[200px] aspect-[2/1] object-contain" />
-            </div>
-          ))}
-        </ParallaxText>
+        <WorkspacesParallax options={workspaceOptions} velocity={2} />
       </motion.div>
     </section>
   );

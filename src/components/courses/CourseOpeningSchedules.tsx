@@ -1,50 +1,7 @@
-import {
-  Calendar,
-  Clock2,
-  DoorOpen,
-  LucideIcon,
-  MapPin,
-  Monitor,
-  PcCase,
-} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ICalendar } from "@/types";
+import { Calendar, Clock2, DoorOpen, LucideIcon, MapPin } from "lucide-react";
 import { ReactNode } from "react";
-
-interface OpeningScheduleType {
-  title: string;
-  date: string;
-  start: string;
-  mode: string;
-  place: {
-    name: string;
-    address: string;
-  };
-  hasMaterials: boolean;
-}
-
-const openingSchedules: OpeningScheduleType[] = [
-  {
-    title: "Bootcamp 5",
-    date: "Thứ 2, 4, 6 | 18:00 - 21:00",
-    start: "16/08/2023",
-    mode: "5 tháng (Offline)",
-    place: {
-      name: "Viện Đổi mới Sáng tạo UEH (UII)",
-      address: "232/6 Võ Thị Sáu, Quận 3",
-    },
-    hasMaterials: false,
-  },
-  {
-    title: "Bootcamp 6",
-    date: "Thứ 2 đến thứ 6 | 09:00 - 17:00",
-    start: "05/09/2023",
-    mode: "3 tháng (Offline)",
-    place: {
-      name: "BSSC",
-      address: "135 Hai Bà Trưng, Q1,TP. HCM",
-    },
-    hasMaterials: true,
-  },
-];
 
 function CourseCalendarRow({
   label,
@@ -68,36 +25,28 @@ function CourseCalendarRow({
   );
 }
 
-function CourseOpeningScheduleCard({
-  title,
-  date,
-  start,
-  mode,
-  place,
-  hasMaterials,
-}: OpeningScheduleType) {
+function CourseOpeningScheduleCard({ calendar }: { calendar: ICalendar }) {
   return (
     <div className="relative px-6 py-6 sm:py-8 sm:px-8 rounded-xl text-muted bg-primary">
-      <h4 className="text-[#FFB37B] font-medium text-xl mb-4">{title}</h4>
+      <h4 className="text-[#FFB37B] font-medium text-xl mb-4">
+        {calendar.title}
+      </h4>
       <div className="space-y-6">
         <CourseCalendarRow label="Khai giảng" icon={DoorOpen}>
-          {start}
+          {calendar.start_date}
         </CourseCalendarRow>
         <CourseCalendarRow label="Lộ trình học" icon={Calendar}>
-          {mode}
+          {calendar.schedule}
         </CourseCalendarRow>
         <CourseCalendarRow label="Lịch học" icon={Clock2}>
-          {date}
+          {calendar.duration}
         </CourseCalendarRow>
         <CourseCalendarRow label="Địa điểm" icon={MapPin}>
-          <div className="">
-            <p>{place.name}</p>
-            <p>{place.address}</p>
-          </div>
+          <div className="">{calendar.location}</div>
         </CourseCalendarRow>
       </div>
 
-      {hasMaterials && (
+      {/* {hasMaterials && (
         <div className="absolute top-4 right-4">
           <div className="group flex items-center px-4 text-xs bg-white text-primary rounded-xl max-w-[140px] w-full h-10">
             <div className="overflow-hidden transition-all max-w-0 group-hover:max-w-[100px]">
@@ -110,18 +59,22 @@ function CourseOpeningScheduleCard({
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
 
-export default function CourseOpeningSchedules() {
+export default function CourseOpeningSchedules({
+  calendars,
+}: {
+  calendars: ICalendar[];
+}) {
   return (
     <div className="mt-12">
       <h2 className="mb-6 text-2xl font-medium">Lịch khai giảng</h2>
       <div className="grid gap-2 sm:grid-cols-2">
-        {openingSchedules.map((openingSchedule, i) => (
-          <CourseOpeningScheduleCard key={i} {...openingSchedule} />
+        {calendars.map((calendar) => (
+          <CourseOpeningScheduleCard calendar={calendar} key={calendar.title} />
         ))}
       </div>
     </div>
