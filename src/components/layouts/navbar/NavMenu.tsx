@@ -44,24 +44,26 @@ export default function NavMenu({ courses }: { courses: CourseType[] }) {
                 </NavigationMenuLink>
               </li>
 
-              {courses.map((course) => (
-                <ListItem
-                  title={course.title}
-                  key={course.slug}
-                  href={course.href}
-                  className={cn(
-                    !course.published && "pointer-events-none opacity-40"
-                  )}
-                >
-                  {course.published ? (
-                    course.excerpt
-                  ) : (
-                    <span className={cn(!course.published && "text-primary")}>
-                      Coming soon...
-                    </span>
-                  )}
-                </ListItem>
-              ))}
+              <div className="grid grid-cols-2">
+                {courses.map((course) => (
+                  <ListItem
+                    title={course.title}
+                    key={course.slug}
+                    href={course.href}
+                    className={cn(
+                      !course.published && "pointer-events-none opacity-40"
+                    )}
+                  >
+                    {course.published ? (
+                      course.excerpt
+                    ) : (
+                      <span className={cn(!course.published && "text-primary")}>
+                        Coming soon...
+                      </span>
+                    )}
+                  </ListItem>
+                ))}
+              </div>
             </NavMenuContentCard>
           </NavigationMenuContent>
         </NavigationMenuItem>

@@ -1,5 +1,4 @@
 import CourseCTA from "@/components/courses/CourseCTA";
-import CourseCalendar from "@/components/courses/CourseCalendar";
 import CourseContent from "@/components/courses/CourseContent";
 import CourseFeaturesMobile from "@/components/courses/CourseFeaturesMobile";
 import CourseHeading from "@/components/courses/CourseHeading";
@@ -17,6 +16,7 @@ import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules"
 import CourseWorkshops from "@/components/courses/CourseWorkshops";
 import CourseWorkspaces from "@/components/courses/CourseWorkspaces";
 import CourseFeedback from "@/components/courses/CourseFeedback";
+import { prisma } from "@/lib/prisma";
 
 export async function generateMetadata(
   {
@@ -61,6 +61,7 @@ export default async function CourseDetail({
   params: { courseSlug: string };
 }) {
   const { courseSlug } = params;
+
   const {
     id,
     title,

@@ -32,18 +32,35 @@ function CourseOpeningScheduleCard({ calendar }: { calendar: ICalendar }) {
         {calendar.title}
       </h4>
       <div className="space-y-6">
-        <CourseCalendarRow label="Khai giảng" icon={DoorOpen}>
-          {calendar.start_date}
-        </CourseCalendarRow>
-        <CourseCalendarRow label="Lộ trình học" icon={Calendar}>
-          {calendar.schedule}
-        </CourseCalendarRow>
-        <CourseCalendarRow label="Lịch học" icon={Clock2}>
-          {calendar.duration}
-        </CourseCalendarRow>
-        <CourseCalendarRow label="Địa điểm" icon={MapPin}>
-          <div className="">{calendar.location}</div>
-        </CourseCalendarRow>
+        {calendar.start_date && (
+          <CourseCalendarRow label="Khai giảng" icon={DoorOpen}>
+            {calendar.start_date}
+          </CourseCalendarRow>
+        )}
+        {calendar.duration && (
+          <CourseCalendarRow label="Lộ trình học" icon={Calendar}>
+            {calendar.duration}
+          </CourseCalendarRow>
+        )}
+
+        {calendar.schedule && (
+          <CourseCalendarRow label="Lịch học" icon={Clock2}>
+            {calendar.schedule}
+          </CourseCalendarRow>
+        )}
+
+        {calendar.location && (
+          <CourseCalendarRow label="Địa điểm" icon={MapPin}>
+            {calendar.location}
+          </CourseCalendarRow>
+        )}
+
+        {calendar.tuition && (
+          <CourseCalendarRow label="Học phí" icon={MapPin}>
+            {calendar.tuition.total}/ khoá hoặc {calendar.tuition.monthly}/
+            tháng
+          </CourseCalendarRow>
+        )}
       </div>
 
       {/* {hasMaterials && (
@@ -69,10 +86,17 @@ export default function CourseOpeningSchedules({
 }: {
   calendars: ICalendar[];
 }) {
+  if (calendars.length === 0) return null;
+
   return (
     <div className="mt-12">
       <h2 className="mb-6 text-2xl font-medium">Lịch khai giảng</h2>
-      <div className="grid gap-2 sm:grid-cols-2">
+      <div
+        className={cn(
+          "grid gap-2",
+          calendars.length === 1 ? "sm:grid-cols-1" : "sm:grid-cols-2"
+        )}
+      >
         {calendars.map((calendar) => (
           <CourseOpeningScheduleCard calendar={calendar} key={calendar.title} />
         ))}

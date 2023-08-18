@@ -45,19 +45,25 @@ export default function CourseInfoCard({
         <div className="p-6 space-y-4">
           <div>
             {/* Price */}
-            {/* <div>
-              <div className="flex items-center gap-4 mb-1">
-                <div className="flex items-center gap-1 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
-                  {formatVNDCurrency(discountedPrice)}
+            {discountedPrice ? (
+              <div className="mb-2">
+                <div className="flex items-center gap-4 mb-1">
+                  <div className="flex items-center gap-1 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
+                    {formatVNDCurrency(discountedPrice)}
+                  </div>
+                  <div className="flex items-center gap-1 line-through text-muted-foreground">
+                    {formatVNDCurrency(price)}
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 line-through text-muted-foreground">
-                  {formatVNDCurrency(price)}
+                <div className="text-muted-foreground">
+                  {calcDiscountedPercent(price, discountedPrice)}% off
                 </div>
               </div>
-              <div className="text-muted-foreground">
-                {calcDiscountedPercent(price, discountedPrice)}% off
+            ) : (
+              <div className="mb-4 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
+                {formatVNDCurrency(price)}
               </div>
-            </div> */}
+            )}
 
             {/* {[
               "khoa-hoc-lap-trinh-web-fullstack",
