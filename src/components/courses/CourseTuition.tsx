@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import { Button } from "../ui/Button";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-interface CourseTuitionProps {
+interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   action: {
     label: string;
@@ -19,9 +20,21 @@ interface CourseTuitionProps {
   children: ReactNode;
 }
 
-function CourseTuitionRow({ title, action, children }: CourseTuitionProps) {
+function CourseTuitionRow({
+  title,
+  action,
+  className,
+  children,
+  ...props
+}: CourseTuitionProps) {
   return (
-    <div className="flex flex-col justify-between gap-4 px-6 py-10 border rounded-lg md:items-center md:flex-row md:gap-8 bg-muted">
+    <div
+      className={cn(
+        "flex flex-col justify-between gap-4 px-6 py-10 border rounded-lg md:items-center md:flex-row md:gap-8 bg-muted",
+        className
+      )}
+      {...props}
+    >
       <div className="space-y-1">
         <h5 className="text-lg font-medium">{title}</h5>
       </div>
@@ -50,6 +63,7 @@ export default function CourseTuition() {
             label: "Đăng ký",
             variant: "destructive",
           }}
+          className="bg-[#FFEDE1] border-[#FFEDE1]"
         >
           <div className="text-sm line-through text-muted-foreground">
             16,500,000 VNĐ
