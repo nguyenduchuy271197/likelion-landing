@@ -21,11 +21,11 @@ export const courses: CourseType[] = [
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
     title: "Bootcamp lập trình web Fullstack",
     slug: "khoa-hoc-lap-trinh-web-fullstack",
-    excerpt: "Trở thành lập trình viên Fullstack Bootcamp sau 5 tháng.",
+    excerpt: "Trở thành lập trình viên Fullstack Bootcamp sau 3 tháng.",
     subtitle:
-      "Trở thành lập trình viên Full-stack Web chỉ trong một khoá học 5 tháng. HTML, CSS, JavaScript, NodeJS, ReactJs, MongoDB.",
+      "Trở thành lập trình viên phát triển website toàn diện từ Front-end đến Back-end chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-lap-trinh-web-fullstack",
-    statuses: ["Part-time", "Offline"],
+    statuses: ["Full-time", "Offline", "Beginner"],
     published: true,
   },
   {
@@ -34,7 +34,7 @@ export const courses: CourseType[] = [
     title: "Thành thạo lập trình web Front-end",
     slug: "thanh-thao-lap-trinh-web-front-end",
     excerpt:
-      "Thanh thạo kỹ năng xây dựng giao diện web, phát triển trong lĩnh vực dev web",
+      "Thanh thạo kỹ năng xây dựng giao diện web, phát triển trong lĩnh vực dev web.",
     subtitle:
       "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
     href: "/courses/thanh-thao-lap-trinh-web-front-end",
@@ -59,7 +59,7 @@ export const courses: CourseType[] = [
     title: "Khoá học Python cho Data Analysis",
     slug: "khoa-hoc-python-cho-data-analysis",
     excerpt:
-      "Trở thành data analyst sau 3 tháng, nâng cấp kỹ năng phân tích dữ liệu",
+      "Trở thành data analyst sau 3 tháng, nâng cấp kỹ năng phân tích dữ liệu.",
     subtitle:
       "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-python-cho-data-analysis",
@@ -71,7 +71,7 @@ export const courses: CourseType[] = [
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692357749/courses/khoa-hoc-back-end-php/Thumbnail_PHP300_unxiox.png",
     title: "Khoá học Back-end PHP",
     slug: "khoa-hoc-back-end-php",
-    excerpt: "Nắm vững PHP trong 3 tháng, dễ dàng tìm việc trên thị trường",
+    excerpt: "Nắm vững PHP trong 3 tháng, dễ dàng tìm việc trên thị trường.",
     subtitle:
       "Sử dụng thành thạo PHP, MySQL, Laravel để phát triển website đa dạng và mạnh mẽ chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-back-end-php",

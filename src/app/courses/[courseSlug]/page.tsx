@@ -17,6 +17,8 @@ import CourseWorkshops from "@/components/courses/CourseWorkshops";
 import CourseWorkspaces from "@/components/courses/CourseWorkspaces";
 import CourseFeedback from "@/components/courses/CourseFeedback";
 import { prisma } from "@/lib/prisma";
+import CourseIntuition from "@/components/courses/CourseTuition";
+import CourseLecturers from "@/components/courses/CourseLecturers";
 
 export async function generateMetadata(
   {
@@ -110,6 +112,9 @@ export default async function CourseDetail({
 
             {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
               <>
+                {/* Lecturers */}
+                <CourseLecturers />
+
                 {/* Workshops */}
                 <CourseWorkshops />
 
@@ -121,6 +126,9 @@ export default async function CourseDetail({
 
                 {/* Partnership */}
                 <CoursePartnership />
+
+                {/* Tuition */}
+                <CourseIntuition />
               </>
             )}
 

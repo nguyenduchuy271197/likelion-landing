@@ -46,7 +46,10 @@ function CourseCard({ src, title, statuses, href, published }: CourseType) {
         )} */}
       </Link>
       <div className="pt-4 grow">
-        <Link href={href} className="mb-2 text-xl font-semibold transition">
+        <Link
+          href={href}
+          className="mb-2 text-xl font-semibold capitalize transition"
+        >
           {title}
         </Link>
 

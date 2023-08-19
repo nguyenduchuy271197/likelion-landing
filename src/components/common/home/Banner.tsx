@@ -18,7 +18,7 @@ const banners = [
       lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/fullstack.png",
     },
     title: "Bootcamp lập trình web Fullstack",
-    description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 5 tháng",
+    description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 3 tháng",
   },
   {
     href: "/about",
@@ -27,7 +27,7 @@ const banners = [
       lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/hyl.png",
     },
     title: "Hack Your Life",
-    description: "Từ con số 0 đến thành thạo các kĩ năng",
+    description: "Từ con số 0 đến thành thạo các kỹ năng",
   },
 ];
 

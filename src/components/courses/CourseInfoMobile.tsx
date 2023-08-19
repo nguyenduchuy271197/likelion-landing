@@ -44,7 +44,7 @@ export default function CourseInfoMobile({
         />
 
         {/* Price */}
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <div className="flex items-center gap-4 mb-1">
             <div className="text-3xl font-bold scroll-m-20 lg:text-4xl">
               {formatVNDCurrency(discountedPrice)}
@@ -61,7 +61,7 @@ export default function CourseInfoMobile({
         {[
           "khoa-hoc-lap-trinh-web-fullstack",
           "thanh-thao-lap-trinh-web-front-end",
-        ].includes(slug) && <CourseCountdown />}
+        ].includes(slug) && <CourseCountdown />} */}
 
         {/* Registration */}
         <div className="my-4">
