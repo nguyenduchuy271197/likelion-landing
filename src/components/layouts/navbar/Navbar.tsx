@@ -38,7 +38,7 @@ export const courses: CourseType[] = [
     subtitle:
       "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
     href: "/courses/thanh-thao-lap-trinh-web-front-end",
-    statuses: ["Part-time", "Offline"],
+    statuses: ["Full-time", "Part-time", "Offline", "Online"],
     published: true,
   },
   // {
@@ -84,7 +84,7 @@ export const courses: CourseType[] = [
     title: "Khoá học Back-end Java",
     slug: "khoa-hoc-back-end-java",
     excerpt:
-      "Lộ trình phát triển rõ ràng, tự tin theo đuổi đa lĩnh vực trong lập trình",
+      "Lộ trình phát triển rõ ràng, tự tin theo đuổi đa lĩnh vực trong lập trình.",
     subtitle:
       "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-back-end-java",

@@ -14,7 +14,7 @@ const lecturers: LectureType[] = [
     description:
       "Hơn 2 năm kinh nghiệm trong ngành Data Science và sau đó là 5 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy bootcamp, mình tin sẽ cho các bạn được câu trả lời làm thế nào để học lập trình hiệu quả và quan trọng nhất là học thế nào để trở thành lập trình viên! và, Huy đang ở đây để sẵn sàng “on air” cùng bạn!",
     avatar:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690187947/home/teachers/Huy_pneb7i.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548310/about/members/huy_tzkbcl.png",
   },
   {
     name: "Nguyễn Tuấn Phúc",
@@ -22,14 +22,14 @@ const lecturers: LectureType[] = [
     description:
       "Chào các bạn! Mình là Phúc, hiện là Developer tại LIKELION và đảm nhiệm vai trò mentor cho các khoá học của LIKELION. Với kinh nghiệm thực chiến dự án cũng như kinh nghiệm đồng hành với các bạn sinh viên qua nhiều khoá học, từ các bạn sinh viên CNTT đến các học viên chuyển ngành, mình hiểu được các khó khăn các bạn có thể gặp phải trong quá trình học và bản thân mình cũng mong muốn cùng các bạn từng bước chinh phục các khó khăn đó để đi đến thành công. Vì thế hãy đồng hành cùng mình nhé! ",
     avatar:
-      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1690187947/home/teachers/Huy_pneb7i.png",
+      "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688548311/about/members/phuc_eucbts.png",
   },
 ];
 
 function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
   return (
-    <div className="grid grid-cols-[100px_1fr] gap-8 bg-muted rounded-lg p-8 border">
-      <div className="relative w-full aspect-[1/1]">
+    <div className="grid sm:grid-cols-[100px_1fr] gap-2 sm:gap-8 bg-muted rounded-xl p-8 border">
+      <div className="relative sm:w-full aspect-[1/1] w-20 mx-auto rounded-full bg-gradient-to-br from-[#FFE3CB] to-[#ff7100] overflow-hidden">
         <Image
           src={lecturer.avatar}
           fill
@@ -37,12 +37,14 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
           className="object-contain"
         />
       </div>
-      <div className="space-y-2">
+      <div className="space-y-1 text-center sm:space-y-2 sm:text-left">
         <h3 className="text-lg font-medium uppercase">{lecturer.name}</h3>
         <div className="tracking-wider text-muted-foreground">
           {lecturer.profession}
         </div>
-        <p className="leading-relaxed">{lecturer.description}</p>
+        <p className="text-sm leading-relaxed sm:text-base">
+          {lecturer.description}
+        </p>
       </div>
     </div>
   );
