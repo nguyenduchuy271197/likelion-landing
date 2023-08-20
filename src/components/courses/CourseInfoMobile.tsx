@@ -30,8 +30,8 @@ export default function CourseInfoMobile({
   youtubeId,
 }: CourseInfoMobileProps) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
-  const { height } = useViewportSize();
-  const [scroll] = useWindowScroll();
+  // const { height } = useViewportSize();
+  // const [scroll] = useWindowScroll();
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function CourseInfoMobile({
         </div>
       </div>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {scroll.y >= 1.2 * height && (
           <motion.div
             className="fixed bottom-0 left-0 right-0 z-40 lg:hidden"
@@ -119,7 +119,7 @@ export default function CourseInfoMobile({
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   );
 }

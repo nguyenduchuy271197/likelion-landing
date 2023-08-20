@@ -16,10 +16,9 @@ import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules"
 import CourseWorkshops from "@/components/courses/CourseWorkshops";
 import CourseWorkspaces from "@/components/courses/CourseWorkspaces";
 import CourseFeedback from "@/components/courses/CourseFeedback";
-import { prisma } from "@/lib/prisma";
-import CourseIntuition from "@/components/courses/CourseTuition";
 import CourseLecturers from "@/components/courses/CourseLecturers";
 import CoursePromotion from "@/components/courses/CoursePromotion";
+import CoursePaymentMethods from "@/components/courses/CoursePaymentMethods";
 
 export async function generateMetadata(
   {
@@ -79,6 +78,9 @@ export default async function CourseDetail({
     thumbnail,
     youtubeId,
     calendar,
+    promotions,
+    payment_methods,
+    lecturers,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -112,13 +114,14 @@ export default async function CourseDetail({
             <CourseContent modules={modules} />
 
             {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+              <CourseWorkshops />
+            )}
+
+            {/* Lecturers */}
+            <CourseLecturers lecturers={lecturers} />
+
+            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
               <>
-                {/* Workshops */}
-                <CourseWorkshops />
-
-                {/* Lecturers */}
-                <CourseLecturers />
-
                 {/* Showcase */}
                 <CourseProjects />
 
@@ -133,15 +136,11 @@ export default async function CourseDetail({
             {/* CourseCalen */}
             {calendar && <CourseOpeningSchedules calendars={calendar} />}
 
-            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-              <>
-                {/* Tuition */}
-                <CourseIntuition />
-
-                {/* Promotion */}
-                <CoursePromotion />
-              </>
-            )}
+            <CoursePaymentMethods
+              payment_methods={payment_methods}
+              slug={courseSlug}
+            />
+            <CoursePromotion promotions={promotions} />
           </div>
 
           {/* Info Card */}

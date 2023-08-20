@@ -17,9 +17,6 @@ export async function getCourseBySlug(slug: string) {
     where: {
       slug: slug,
     },
-    include: {
-      modules: true,
-    },
   });
 
   return course as ICourse;

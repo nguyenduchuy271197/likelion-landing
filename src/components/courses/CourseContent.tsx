@@ -8,7 +8,6 @@ import { IModule } from "@/types";
 import { FileText, GitFork } from "lucide-react";
 
 function CourseModule({
-  id,
   name,
   lessons,
   projects,
@@ -18,7 +17,7 @@ function CourseModule({
     <AccordionItem
       className="px-8 py-2 [&[data-state='open']]:bg-[#fafafa] border"
       value={name}
-      key={id}
+      key={name}
     >
       <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left font-bold uppercase">
         {index}. {name}
@@ -57,10 +56,9 @@ export default function CourseContent({ modules }: { modules: IModule[] }) {
       <Accordion type="single" collapsible className="w-full bg-white">
         {modules.map((module, i) => (
           <CourseModule
-            id={module.id}
             name={module.name}
             lessons={module.lessons}
-            key={module.id}
+            key={module.name}
             index={i + 1}
             projects={module.projects}
           />

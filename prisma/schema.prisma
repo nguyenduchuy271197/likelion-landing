@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Course {
-  id              String          @id @default(auto()) @map("_id") @db.ObjectId
-  slug            String          @unique
+  id              String             @id @default(auto()) @map("_id") @db.ObjectId
+  slug            String             @unique
   abbr            String
   title           String
   subtitle        String?
@@ -23,18 +23,12 @@ model Course {
   requirements    String[]
   objectives      String[]
   features        String[]
-  modules         Module[]
+  modules         ModuleType[]
   User            User[]
   calendar        CalendarType[]
-}
-
-model Module {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  lessons  String[]
-  projects String[]
-  Course   Course   @relation(fields: [courseId], references: [id])
-  courseId String   @db.ObjectId
+  promotions      String[]
+  payment_methods PaymentMethodType?
+  lecturers       LectureType[]
 }
 
 model User {
@@ -59,4 +53,32 @@ type CalendarType {
 type TuitionType {
   total   String?
   monthly String?
+}
+
+type PaymentMethodType {
+  once    PaymentMethodOnceType
+  monthly PaymentMethodMonthlyType
+}
+
+type PaymentMethodOnceType {
+  origin     Int
+  discounted Int?
+}
+
+type PaymentMethodMonthlyType {
+  times  Int
+  origin Int
+}
+
+type LectureType {
+  name        String
+  avatar      String
+  profession  String
+  description String
+}
+
+type ModuleType {
+  name     String
+  lessons  String[]
+  projects String[]
 }
