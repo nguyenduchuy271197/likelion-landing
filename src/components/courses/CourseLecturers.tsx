@@ -20,8 +20,10 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
         />
       </div>
       <div className="space-y-1 text-center sm:space-y-2 sm:text-left">
-        <h3 className="text-lg font-medium uppercase">{lecturer.name}</h3>
-        <div className="tracking-wider text-muted-foreground">
+        <h3 className="text-lg font-bold tracking-wide uppercase">
+          {lecturer.name}
+        </h3>
+        <div className="font-medium tracking-wide capitalize text-muted-foreground">
           {lecturer.profession}
         </div>
         <p className="text-sm leading-relaxed sm:text-base">

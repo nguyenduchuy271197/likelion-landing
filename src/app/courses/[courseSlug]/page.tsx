@@ -81,6 +81,7 @@ export default async function CourseDetail({
     promotions,
     payment_methods,
     lecturers,
+    tags,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -90,7 +91,7 @@ export default async function CourseDetail({
           {/* Content */}
           <div className="overflow-hidden">
             {/* Title */}
-            <CourseHeading title={title} subtitle={subtitle} />
+            <CourseHeading title={title} subtitle={subtitle} tags={tags} />
 
             {/* Course Info */}
             <CourseInfoMobile
@@ -134,7 +135,9 @@ export default async function CourseDetail({
             )}
 
             {/* CourseCalen */}
-            {calendar && <CourseOpeningSchedules calendars={calendar} />}
+            {calendar && (
+              <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
+            )}
 
             <CoursePaymentMethods
               payment_methods={payment_methods}

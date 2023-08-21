@@ -4,7 +4,10 @@ function CoursePromotionRow({ text }: { text: string }) {
   return (
     <li className="flex items-center gap-4">
       <Star fill="#FF7711" stroke="#FF7711" size={20} />
-      <p>{text}</p>
+      <p
+        dangerouslySetInnerHTML={{ __html: text }}
+        className="[&>strong]:font-bold [&>strong]:text-[#FF7711]"
+      />
     </li>
   );
 }

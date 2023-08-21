@@ -54,6 +54,10 @@ export interface ICourse {
     avatar: string;
     description: string;
   }[];
+  tags: {
+    schedules: string[];
+    status: string[];
+  };
 }
 
 export interface IModule {
@@ -72,4 +76,5 @@ export interface ICalendar {
     total: string;
     monthly: string;
   };
+  platform?: string;
 }

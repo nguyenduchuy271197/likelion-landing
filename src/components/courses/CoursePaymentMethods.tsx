@@ -12,15 +12,6 @@ interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   priority?: boolean;
   action: {
     label: string;
-    variant?:
-      | "link"
-      | "default"
-      | "destructive"
-      | "outline"
-      | "secondary"
-      | "ghost"
-      | null
-      | undefined;
     href: string;
   };
   children: ReactNode;
@@ -48,11 +39,10 @@ function CoursePaymentMethodRow({
       <div className="space-y-1">
         <h5 className="text-lg font-medium">{title}</h5>
       </div>
-      <div className="flex flex-col gap-2 xs:flex-row xs:justify-between xs:items-center md:gap-8 md:items-start xs:shrink-0 md:w-[400px]">
+      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center md:gap-8 md:items-start sm:shrink-0 md:w-[400px]">
         <div className="space-y-1">{children}</div>
-        <div className="w-full xs:w-auto">
+        <div className="w-full xs:w-auto sm:w-full sm:max-w-[160px]">
           <Button
-            variant={action.variant}
             size="lg"
             className="w-full"
             onClick={() => setDialogOpen(true)}
@@ -83,7 +73,6 @@ export default function CoursePaymentMethods({
           title="Thanh toán một lần giảm còn"
           action={{
             label: "Đăng ký",
-            variant: "destructive",
             href: `/register?course=${slug}`,
           }}
           priority

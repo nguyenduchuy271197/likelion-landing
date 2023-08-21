@@ -25,7 +25,7 @@ export const courses: CourseType[] = [
     subtitle:
       "Trở thành lập trình viên phát triển website toàn diện từ Front-end đến Back-end chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-lap-trinh-web-fullstack",
-    statuses: ["Full-time", "Offline", "Beginner"],
+    statuses: ["3 tháng", "120 buổi", "Offline", "Beginner"],
     published: true,
   },
   {
@@ -34,11 +34,11 @@ export const courses: CourseType[] = [
     title: "Thành thạo lập trình web Front-end",
     slug: "thanh-thao-lap-trinh-web-front-end",
     excerpt:
-      "Thanh thạo kỹ năng xây dựng giao diện web, phát triển trong lĩnh vực dev web.",
+      "Thành thạo kỹ năng xây dựng giao diện web, phát triển trong lĩnh vực dev web.",
     subtitle:
       "Bắt đầu sự nghiệp lập trình web Front-end với khoá học offline 3 tháng.",
     href: "/courses/thanh-thao-lap-trinh-web-front-end",
-    statuses: ["Full-time", "Part-time", "Offline", "Online"],
+    statuses: ["3 tháng", "36 buổi", "Online/Offline", "Beginner"],
     published: true,
   },
   // {
@@ -59,11 +59,11 @@ export const courses: CourseType[] = [
     title: "Khoá học Python cho Data Analysis",
     slug: "khoa-hoc-python-cho-data-analysis",
     excerpt:
-      "Trở thành data analyst sau 3 tháng, nâng cấp kỹ năng phân tích dữ liệu.",
+      "Nắm vững Python, ứng dụng vào xử lý và trực quan hoá dữ liệu sau 3 tháng.",
     subtitle:
       "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-python-cho-data-analysis",
-    statuses: ["Part-time", "Online"],
+    statuses: ["3 tháng", "36 buổi", "Online", "Beginner"],
     published: true,
   },
   {
@@ -71,11 +71,11 @@ export const courses: CourseType[] = [
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692357749/courses/khoa-hoc-back-end-php/Thumbnail_PHP300_unxiox.png",
     title: "Khoá học Back-end PHP",
     slug: "khoa-hoc-back-end-php",
-    excerpt: "Nắm vững PHP trong 3 tháng, dễ dàng tìm việc trên thị trường.",
+    excerpt: "Nắm vững PHP trong 3 tháng cho người mới bắt đầu.",
     subtitle:
       "Sử dụng thành thạo PHP, MySQL, Laravel để phát triển website đa dạng và mạnh mẽ chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-back-end-php",
-    statuses: ["Part-time", "Online"],
+    statuses: ["3 tháng", "36 buổi", "Online", "Beginner"],
     published: true,
   },
   {
@@ -84,11 +84,11 @@ export const courses: CourseType[] = [
     title: "Khoá học Back-end Java",
     slug: "khoa-hoc-back-end-java",
     excerpt:
-      "Lộ trình phát triển rõ ràng, tự tin theo đuổi đa lĩnh vực trong lập trình.",
+      "Sử dụng thành thạo Spring Boot, dựng web nhanh chóng sau 3 tháng.",
     subtitle:
       "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
     href: "/courses/khoa-hoc-back-end-java",
-    statuses: ["Part-time", "Online"],
+    statuses: ["3 tháng", "36 buổi", "Online", "Beginner"],
     published: true,
   },
 ];

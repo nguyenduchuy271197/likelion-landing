@@ -53,7 +53,7 @@ function CourseCard({ src, title, statuses, href, published }: CourseType) {
           {title}
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {statuses.map((status) => (
             <Badge
               variant="outline"

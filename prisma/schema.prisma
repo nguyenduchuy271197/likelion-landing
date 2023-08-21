@@ -29,6 +29,7 @@ model Course {
   promotions      String[]
   payment_methods PaymentMethodType?
   lecturers       LectureType[]
+  tags            TagType?
 }
 
 model User {
@@ -48,6 +49,7 @@ type CalendarType {
   schedule   String?
   location   String?
   tuition    TuitionType?
+  platform   String?
 }
 
 type TuitionType {
@@ -81,4 +83,9 @@ type ModuleType {
   name     String
   lessons  String[]
   projects String[]
+}
+
+type TagType {
+  schedules String[]
+  status    String[]
 }
