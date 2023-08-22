@@ -101,16 +101,16 @@ function CourseOpeningScheduleCard({
             </CourseCalendarRow>
           )}
 
+          {calendar.platform && (
+            <CourseCalendarRow label="Platform" icon={PictureInPicture2}>
+              {calendar.platform}
+            </CourseCalendarRow>
+          )}
+
           {calendar.tuition && (
             <CourseCalendarRow label="Học phí" icon={DollarSign}>
               {calendar.tuition.total}/ khoá hoặc {calendar.tuition.monthly}/
               tháng
-            </CourseCalendarRow>
-          )}
-
-          {calendar.platform && (
-            <CourseCalendarRow label="Platform" icon={PictureInPicture2}>
-              {calendar.platform}
             </CourseCalendarRow>
           )}
         </div>
@@ -139,16 +139,16 @@ function CourseOpeningScheduleCard({
             </CourseCalendarSingle>
           )}
 
+          {calendar.platform && (
+            <CourseCalendarSingle label="Platform" icon={PictureInPicture2}>
+              {calendar.platform}
+            </CourseCalendarSingle>
+          )}
+
           {calendar.tuition && (
             <CourseCalendarSingle label="Học phí" icon={DollarSign}>
               {calendar.tuition.total}/ khoá hoặc {calendar.tuition.monthly}/
               tháng
-            </CourseCalendarSingle>
-          )}
-
-          {calendar.platform && (
-            <CourseCalendarSingle label="Platform" icon={PictureInPicture2}>
-              {calendar.platform}
             </CourseCalendarSingle>
           )}
         </div>
