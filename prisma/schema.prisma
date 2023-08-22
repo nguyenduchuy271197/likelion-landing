@@ -17,6 +17,7 @@ model Course {
   title           String
   subtitle        String?
   thumbnail       String?
+  thumbnail_og    String?
   youtubeId       String?
   price           Int?
   discountedPrice Int?

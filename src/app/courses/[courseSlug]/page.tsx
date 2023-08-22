@@ -28,7 +28,7 @@ export async function generateMetadata(
   },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { title, subtitle, thumbnail } = await getCourseBySlug(
+  const { title, subtitle, thumbnail_og } = await getCourseBySlug(
     params.courseSlug
   );
 
@@ -40,11 +40,7 @@ export async function generateMetadata(
     openGraph: {
       title: `${title}`,
       description: subtitle,
-      images: [
-        thumbnail,
-        ...previousImages,
-        // "https://res.cloudinary.com/dbscqlwl7/image/upload/v1689923829/thumbnail/Thumbnail_Bootcamp_zupniw.png",
-      ],
+      images: [thumbnail_og, ...previousImages],
     },
   };
 }

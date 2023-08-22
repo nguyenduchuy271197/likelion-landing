@@ -21,6 +21,47 @@ const banners = [
     description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 3 tháng",
   },
   {
+    href: "/courses/thanh-thao-lap-trinh-web-front-end",
+    src: {
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_Front-end_Mobile_a1zjb0.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_Front-end_Desktop_ta7mes.png",
+    },
+    title: "Thành Thạo Lập Trình Web Front-End",
+    description:
+      "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 2 tháng (khoá offline) hoặc 3 tháng (khoá online)",
+  },
+  {
+    href: "/courses/khoa-hoc-python-cho-data-analysis",
+    src: {
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668541/home/banners/Cover_Python_Mobile_ccrkgp.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668540/home/banners/Cover_Python_Desktop_fmmq3m.png",
+    },
+    title: "Python Cho Data Analysis",
+    description:
+      "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng",
+  },
+  {
+    href: "/courses/khoa-hoc-back-end-java",
+    src: {
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668541/home/banners/Cover_Java_Mobile_oggmec.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668541/home/banners/Cover_Java_Desktop_guhoj4.png",
+    },
+    title: "Back-End Java",
+    description:
+      "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng",
+  },
+  {
+    href: "/courses/khoa-hoc-back-end-php",
+    src: {
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668540/home/banners/Cover_PHP_Mobile_ryh5de.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_PHP_Desktop_z8jpma.png",
+    },
+    title: "Back-End PHP",
+    description:
+      "Sử dụng thành thạo PHP, MySQL, Laravel để phát triển website đa dạng và mạnh mẽ chỉ trong 3 tháng",
+  },
+
+  {
     href: "/about",
     src: {
       sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543393/home/banners/hyl-mb.png",

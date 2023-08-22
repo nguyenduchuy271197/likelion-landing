@@ -29,6 +29,7 @@ export interface ICourse {
   abbr: string;
   subtitle: string;
   thumbnail: string;
+  thumbnail_og: string;
   youtubeId: string;
   price: number;
   discountedPrice: number;
