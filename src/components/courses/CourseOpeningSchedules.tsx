@@ -162,7 +162,7 @@ function CourseOpeningScheduleCard({
             onClick={() => setDialogOpen(true)}
             asChild
           >
-            <Link href={`/register?course=${slug}`}>Đăng ký ngay</Link>
+            <Link href={`/register?course=${slug}`}>Đăng ký</Link>
           </Button>
         </div>
       )}

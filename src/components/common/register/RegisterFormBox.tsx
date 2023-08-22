@@ -32,8 +32,8 @@ export default function RegisterFormBox({
         </RegisterSuccess>
       ) : (
         <>
-          <h1 className="mb-12 text-3xl font-extrabold tracking-tight text-center scroll-m-20 lg:text-4xl">
-            Đăng ký nhận tư vấn
+          <h1 className="mb-12 text-2xl font-bold text-center">
+            HÃY ĐỂ LIKELION TƯ VẤN CHO BẠN!
           </h1>
           <RegisterForm
             initialCourse={initialCourse}
