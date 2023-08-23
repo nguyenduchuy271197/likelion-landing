@@ -15,13 +15,14 @@ export default function CourseHeading({
   return (
     <div className="max-w-xl mx-auto mb-12 space-y-4 text-center lg:text-left lg:max-w-none">
       <div className="space-y-2">
-        <ul className="flex items-center gap-1">
+        <ul className="flex items-center justify-center gap-1 lg:justify-start">
           {tags.status.map((s) => (
             <li key={s}>
               <Badge size="lg">{s}</Badge>
             </li>
           ))}
         </ul>
+
         <h1 className="mb-4 text-2xl font-bold capitalize sm:text-3xl lg:text-4xl">
           {title}
         </h1>
