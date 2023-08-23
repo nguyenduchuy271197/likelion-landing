@@ -39,20 +39,16 @@ function PhoneCallIcon(props: LucideProps) {
 export default function PhoneCall() {
   return (
     <div className="fixed z-[9999] right-6 bottom-20">
-      <Tooltip>
-        <TooltipTrigger>
-          <a
-            href="tel:+84867133779"
-            className="px-4 py-2 rounded-3xl bg-[#ff7100] text-muted flex items-center gap-2 font-bold text-lg"
-          >
-            <PhoneCallIcon />
-            Gọi
-          </a>
-        </TooltipTrigger>
-        <TooltipContent side="left">
-          <p>(+84) 86 713 3779</p>
-        </TooltipContent>
-      </Tooltip>
+      <a
+        href="tel:+84867133779"
+        className="group px-4 py-2 rounded-3xl bg-[#ff7100] text-muted flex items-center gap-2 font-bold text-lg"
+      >
+        <PhoneCallIcon />
+        Gọi
+        <span className="max-w-0 group-hover:max-w-[200px] whitespace-nowrap overflow-hidden transition-all duration-300">
+          (+84) 86 713 3779
+        </span>
+      </a>
     </div>
   );
 }
