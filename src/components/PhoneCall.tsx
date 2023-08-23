@@ -1,9 +1,4 @@
 import { LucideProps } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/Tooltip";
 
 function PhoneCallIcon(props: LucideProps) {
   return (
@@ -38,14 +33,14 @@ function PhoneCallIcon(props: LucideProps) {
 
 export default function PhoneCall() {
   return (
-    <div className="fixed z-[9999] right-6 bottom-20">
+    <div className="fixed z-[9999] left-6 sm:left-auto sm:right-[140px] bottom-6">
       <a
         href="tel:+84867133779"
         className="group px-4 py-2 rounded-3xl bg-[#ff7100] text-muted flex items-center gap-2 font-bold text-lg"
       >
         <PhoneCallIcon />
         Gọi
-        <span className="max-w-0 group-hover:max-w-[200px] whitespace-nowrap overflow-hidden transition-all duration-300">
+        <span className="hidden sm:block max-w-0 group-hover:max-w-[200px] whitespace-nowrap overflow-hidden transition-all duration-300">
           (+84) 86 713 3779
         </span>
       </a>
