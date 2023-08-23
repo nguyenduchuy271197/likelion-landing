@@ -20,11 +20,13 @@ export default function Footer() {
               <div className="flex flex-col gap-2 mt-10 font-medium">
                 <div className="flex items-start gap-4">
                   <PhoneCall className="shrink-0" />
-                  <p>(+84) 86 713 3779</p>
+                  <a href="tel:+84867133779">(+84) 86 713 3779</a>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="shrink-0" />
-                  <p>likelion.vn@likelion.net</p>
+                  <a href="mailto:likelion.vn@likelion.net">
+                    likelion.vn@likelion.net
+                  </a>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="shrink-0" />
@@ -35,13 +37,10 @@ export default function Footer() {
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="shrink-0" />
-                  <p className="flex flex-col">
-                    <span>
-                      Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường
-                      Bến Nghé, Quận 1, TP. HCM
-                    </span>
-                    <span></span>
-                  </p>
+                  <a href="https://goo.gl/maps/b3Xq5DVnbKoHoxfb6">
+                    Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường Bến
+                    Nghé, Quận 1, TP. HCM
+                  </a>
                 </div>
               </div>
             </div>
@@ -81,6 +80,12 @@ export default function Footer() {
                   target="_blank"
                 >
                   <Icons.youtube className="w-8" />
+                </Link>
+                <Link
+                  href="https://www.tiktok.com/@likelionvietnam"
+                  target="_blank"
+                >
+                  <Icons.tiktok className="w-8" />
                 </Link>
               </div>
             </div>
