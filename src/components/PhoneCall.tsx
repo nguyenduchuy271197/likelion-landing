@@ -1,5 +1,4 @@
 import { LucideProps } from "lucide-react";
-import Link from "next/link";
 import {
   Tooltip,
   TooltipContent,
@@ -42,13 +41,13 @@ export default function PhoneCall() {
     <div className="fixed z-[9999] right-6 bottom-20">
       <Tooltip>
         <TooltipTrigger>
-          <Link
+          <a
             href="tel:+84867133779"
             className="px-4 py-2 rounded-3xl bg-[#ff7100] text-muted flex items-center gap-2 font-bold text-lg"
           >
             <PhoneCallIcon />
             Gọi
-          </Link>
+          </a>
         </TooltipTrigger>
         <TooltipContent side="left">
           <p>(+84) 86 713 3779</p>
