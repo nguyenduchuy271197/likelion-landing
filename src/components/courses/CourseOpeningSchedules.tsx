@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, formatNumber } from "@/lib/utils";
 import { ICalendar } from "@/types";
 import {
   Calendar,
@@ -97,7 +97,8 @@ function CourseOpeningScheduleCard({
 
           {calendar.location && (
             <CourseCalendarRow label="Địa điểm" icon={MapPin}>
-              {calendar.location}
+              <p>{calendar.location.name}</p>
+              <p>{calendar.location.address}</p>
             </CourseCalendarRow>
           )}
 
@@ -109,8 +110,21 @@ function CourseOpeningScheduleCard({
 
           {calendar.tuition && (
             <CourseCalendarRow label="Học phí" icon={DollarSign}>
-              {calendar.tuition.total}/ khoá hoặc {calendar.tuition.monthly}/
-              tháng
+              <p>
+                <span className="font-medium">
+                  {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
+                </span>
+                <span className="text-xs">(Thanh toán trọn gói)</span>
+              </p>
+              hoặc
+              <p>
+                <span className="font-medium">
+                  {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
+                </span>
+                <span className="text-xs">
+                  (Thanh toán {calendar.tuition.monthly.times} đợi)
+                </span>{" "}
+              </p>
             </CourseCalendarRow>
           )}
         </div>
@@ -135,7 +149,8 @@ function CourseOpeningScheduleCard({
 
           {calendar.location && (
             <CourseCalendarSingle label="Địa điểm" icon={MapPin}>
-              {calendar.location}
+              <p>{calendar.location.name}</p>
+              <p>{calendar.location.address}</p>
             </CourseCalendarSingle>
           )}
 
@@ -147,8 +162,21 @@ function CourseOpeningScheduleCard({
 
           {calendar.tuition && (
             <CourseCalendarSingle label="Học phí" icon={DollarSign}>
-              {calendar.tuition.total}/ khoá hoặc {calendar.tuition.monthly}/
-              tháng
+              <p>
+                <span className="font-medium">
+                  {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
+                </span>
+                <span className="text-xs">(Thanh toán trọn gói)</span>
+              </p>
+              hoặc
+              <p>
+                <span className="font-medium">
+                  {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
+                </span>
+                <span className="text-xs">
+                  (Thanh toán {calendar.tuition.monthly.times} đợi)
+                </span>{" "}
+              </p>
             </CourseCalendarSingle>
           )}
         </div>

@@ -48,14 +48,28 @@ type CalendarType {
   start_date String?
   duration   String?
   schedule   String?
-  location   String?
+  location   CalendarLocationType?
   tuition    TuitionType?
   platform   String?
 }
 
+type CalendarLocationType {
+  name    String?
+  address String?
+}
+
 type TuitionType {
-  total   String?
-  monthly String?
+  once    TuitionOnceType?
+  monthly TuitionMonthlyType?
+}
+
+type TuitionOnceType {
+  price Int?
+}
+
+type TuitionMonthlyType {
+  price Int?
+  times Int?
 }
 
 type PaymentMethodType {

@@ -72,10 +72,13 @@ export interface ICalendar {
   start_date: string;
   duration: string;
   schedule: string;
-  location: string;
+  location: {
+    name: string;
+    address: string;
+  };
   tuition: {
-    total: string;
-    monthly: string;
+    once: { price: number };
+    monthly: { price: number; times: number };
   };
   platform?: string;
 }
