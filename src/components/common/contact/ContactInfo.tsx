@@ -91,6 +91,7 @@ const contacts: Contact[] = [
     label: "Office",
     value:
       "Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường Bến Nghé, Quận 1, TP. HCM",
+    href: "https://goo.gl/maps/b3Xq5DVnbKoHoxfb6",
   },
   {
     icon: (props: LucideProps) => (
@@ -111,6 +112,7 @@ const contacts: Contact[] = [
     ),
     label: "Call us",
     value: "(+84) 867 133 779",
+    href: "tel:+84867133779",
   },
   {
     icon: (props: LucideProps) => (
@@ -138,6 +140,7 @@ const contacts: Contact[] = [
     ),
     label: "Mail us",
     value: "likelion.vn@likelion.net",
+    href: "mailto:likelion.vn@likelion.net",
   },
 ];
 
@@ -145,20 +148,24 @@ interface Contact {
   icon: (props: LucideProps) => JSX.Element;
   label: string;
   value: string;
+  href: string;
 }
 
-function ContactInfoCard({ icon: Icon, label, value }: Contact) {
+function ContactInfoCard({ icon: Icon, label, value, href }: Contact) {
   return (
-    <div className="flex flex-col items-center p-8 text-center border rounded-xl">
+    <a
+      href={href}
+      target="_blank"
+      className="flex flex-col items-center p-8 text-center transition-all duration-300 border rounded-xl hover:scale-105"
+    >
       <Icon className="w-16 h-16 text-black" />
-
       <div className="mt-6">
         <h3 className="mb-1 text-xl font-medium tracking-wide scroll-m-20">
           {label}
         </h3>
         <p className="text-muted-foreground">{value}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
