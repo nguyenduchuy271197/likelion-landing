@@ -26,7 +26,9 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
         <div className="font-medium tracking-wide uppercase text-muted-foreground">
           {lecturer.profession}
         </div>
-        <p className="text-sm leading-relaxed">{lecturer.description}</p>
+        <p className="text-sm leading-relaxed text-justify">
+          {lecturer.description}
+        </p>
       </div>
     </div>
   );
