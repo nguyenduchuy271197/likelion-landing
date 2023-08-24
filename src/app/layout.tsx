@@ -57,7 +57,7 @@ export default function RootLayout({
         bodyFont.className
       )}
     >
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className="overflow-x-hidden">
         <Providers>
           <div className="flex flex-col min-h-screen antialiased pt-body-top">
             <Navbar />
