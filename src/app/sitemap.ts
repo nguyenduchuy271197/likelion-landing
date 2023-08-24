@@ -4,7 +4,7 @@ import { getBlogSlugs } from "@/services/blogService";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ["", "/faq", "/about", "/contact", "/blogs"];
+  const staticRoutes = ["", "/faq", "/about", "/contact", "/blogs", "/register"];
 
   const courseRoutes = courses.map((c) => `/courses/${c.slug}`);
 
