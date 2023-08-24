@@ -115,6 +115,14 @@
     height: 100%;
   }
 
+  .prose p {
+    @apply text-justify;
+  }
+
+  .prose ul {
+    @apply text-justify;
+  }
+
   /* .prose h2,
   h3 {
     scroll-margin-top: calc(var(--navbar-height) + 1.5em);
