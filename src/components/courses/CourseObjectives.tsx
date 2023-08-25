@@ -15,7 +15,7 @@ export default function CourseObjectives({
   objectives: string[];
 }) {
   return (
-    <div className="p-8 my-12 border">
+    <div className="p-8 mb-12 border">
       <h2 className="mb-6 text-2xl font-medium">Bạn sẽ học được gì?</h2>
       <ul className="grid gap-4 text-sm md:gap-6 md:grid-cols-2">
         {objectives.map((obj) => (
