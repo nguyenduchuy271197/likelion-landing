@@ -19,6 +19,7 @@ import CourseFeedback from "@/components/courses/CourseFeedback";
 import CourseLecturers from "@/components/courses/CourseLecturers";
 import CoursePromotion from "@/components/courses/CoursePromotion";
 import CoursePaymentMethods from "@/components/courses/CoursePaymentMethods";
+import CourseBenefits from "@/components/courses/CourseBenefits";
 
 export async function generateMetadata(
   {
@@ -103,6 +104,9 @@ export default async function CourseDetail({
 
             {/* What you'll learn */}
             <CourseObjectives objectives={objectives} />
+
+            {/* Benefits */}
+            <CourseBenefits />
 
             {/* Requirements */}
             <CourseRequirements requirements={requirements} />
