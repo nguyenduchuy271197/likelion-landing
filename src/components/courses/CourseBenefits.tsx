@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { parse } from "svg-parser";
 
 interface Benefit {
   title: string;
@@ -10,7 +9,7 @@ const benefits: Benefit[] = [
   {
     title: "Giảng viên và mentor hỗ trợ 24/7",
     icon: `
-    <svg width="230" height="131" viewBox="0 0 230 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 230 131" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M44.4999 89.3602L26.0899 91.2102L17.4599 92.0802L8.40994 63.8602C7.86994 62.1702 8.37994 60.3202 9.71994 59.1402L11.0299 57.9902C11.3499 57.7102 11.7099 57.4802 12.0999 57.3002C12.4199 57.1502 12.7499 57.0501 13.0899 56.9801C13.1199 56.9801 13.1299 56.9702 13.1299 56.9702C13.1399 56.9702 13.1499 56.8502 13.1599 56.8502C13.4199 56.8002 13.6899 56.6602 13.9599 56.6602H31.8699C33.8599 56.6602 35.6099 58.1001 36.1599 60.0101L44.4899 89.3602H44.4999Z" fill="url(#paint0_linear_626_2102)"/>
 <path d="M26.0802 91.21L17.4502 92.08L8.40017 63.86C7.86017 62.17 8.37017 60.32 9.71017 59.14L11.0202 57.99C11.3402 57.71 11.7002 57.48 12.0902 57.3C12.6002 57.13 12.9602 57.02 13.0802 56.98C13.1102 56.98 13.1202 56.97 13.1202 56.97C13.1302 56.97 13.1402 56.97 13.1502 56.97C17.8302 56.25 24.8202 85.75 26.0702 91.22L26.0802 91.21Z" fill="url(#paint1_linear_626_2102)"/>
 <path d="M116.13 89.3602L97.7198 91.2102L89.0898 92.0802L80.0398 63.8602C79.4998 62.1702 80.0098 60.3202 81.3498 59.1402L82.6598 57.9902C82.9798 57.7102 83.3398 57.4802 83.7298 57.3002C84.0498 57.1502 84.3798 57.0501 84.7198 56.9801C84.7498 56.9801 84.7598 56.9702 84.7598 56.9702C84.7698 56.9702 84.7798 56.8502 84.7898 56.8502C85.0498 56.8002 85.3198 56.6602 85.5898 56.6602H103.5C105.49 56.6602 107.24 58.1001 107.79 60.0101L116.12 89.3602H116.13Z" fill="url(#paint2_linear_626_2102)"/>
@@ -3058,18 +3057,19 @@ const benefits: Benefit[] = [
 ];
 
 function CourseBenefit({ title, icon }: Benefit) {
-  const parsedIcon = parse(icon);
   // TODO: Create a course benefit
   return (
-    <div>
-      <h3>{title}</h3>
-      <div className="relative aspect-[2/1]">
-        <Image
-          src={`data:image/svg+xml;utf8,${encodeURIComponent(icon)}`}
-          alt={title}
-          fill
-          className="object-contain"
-        />
+    <div className="bg-gradient-to-r from-[#FF7711] to-[#FFA563] text-white p-6">
+      <div className="flex flex-col space-y-4">
+        <h3 className="text-xl font-bold">{title}</h3>
+        <div className="relative aspect-[2/1] mt-auto">
+          <Image
+            src={`data:image/svg+xml;utf8,${encodeURIComponent(icon)}`}
+            alt={title}
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
     </div>
   );
@@ -3077,7 +3077,7 @@ function CourseBenefit({ title, icon }: Benefit) {
 
 export default function CourseBenefits() {
   return (
-    <div className="grid grid-cols-2 gap-8">
+    <div className="grid grid-cols-2 gap-4">
       {benefits.map((benefit) => (
         <CourseBenefit key={benefit.title} {...benefit} />
       ))}
