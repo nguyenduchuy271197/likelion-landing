@@ -79,13 +79,19 @@ export default async function CourseDetail({
     payment_methods,
     lecturers,
     tags,
+    highlights,
   } = await getCourseBySlug(courseSlug);
 
   return (
     <div className="pb-12">
       <div className="mb-12">
         {/* Title */}
-        <CourseHeading title={title} subtitle={subtitle} tags={tags} />
+        <CourseHeading
+          title={title}
+          subtitle={subtitle}
+          tags={tags}
+          highlights={highlights}
+        />
 
         {/* Course Navigation */}
         <CourseNavigation />

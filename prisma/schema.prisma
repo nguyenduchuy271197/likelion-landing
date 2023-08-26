@@ -31,6 +31,7 @@ model Course {
   payment_methods PaymentMethodType?
   lecturers       LectureType[]
   tags            TagType?
+  highlights      String[]
 }
 
 model User {

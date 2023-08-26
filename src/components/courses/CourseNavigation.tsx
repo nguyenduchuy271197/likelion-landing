@@ -32,9 +32,7 @@ export default function CourseNavigation() {
     <nav>
       <div className="container">
         <ul className="border-b">
-          <li>
-            <Link href=""></Link>
-          </li>
+          <li></li>
         </ul>
       </div>
     </nav>
