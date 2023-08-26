@@ -3,9 +3,9 @@ import CourseSectionHeading from "./CourseSectionHeading";
 
 export default function CourseFeedback() {
   return (
-    <div>
+    <section className="feedbacks">
       <CourseSectionHeading>Học viên nói về LIKELION</CourseSectionHeading>
       <TestimonialRow />
-    </div>
+    </section>
   );
 }

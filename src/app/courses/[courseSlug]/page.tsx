@@ -85,113 +85,113 @@ export default async function CourseDetail({
   } = await getCourseBySlug(courseSlug);
 
   return (
-    <div className="pb-12 space-y-12 lg:space-y-0">
-      <div>
-        {/* Title */}
-        <CourseHeading
-          title={title}
-          subtitle={subtitle}
-          tags={tags}
-          highlights={highlights}
-        />
+    <div className="pb-12">
+      {/* Title */}
+      <CourseHeading
+        title={title}
+        subtitle={subtitle}
+        tags={tags}
+        highlights={highlights}
+      />
 
-        {/* Course Navigation */}
-        <CourseNavigation />
-      </div>
+      {/* Course Navigation */}
+      <CourseNavigation />
 
-      <div className="container">
-        <div className="space-y-12">
-          <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none mb-12 space-y-12">
-            {/* Content */}
-            <div className="space-y-12 overflow-hidden">
-              <div className="space-y-10 lg:hidden">
-                {/* Course Info */}
-                <CourseInfoMobile
-                  discountedPrice={discountedPrice}
-                  price={price}
+      <div className="mt-12 lg:mt-0">
+        <div className="container">
+          <div className="space-y-12">
+            <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none mb-12 space-y-12">
+              {/* Content */}
+              <div className="space-y-12 overflow-hidden">
+                <div className="space-y-10 lg:hidden">
+                  {/* Course Info */}
+                  <CourseInfoMobile
+                    discountedPrice={discountedPrice}
+                    price={price}
+                    slug={courseSlug}
+                    title={title}
+                    thumbnail={thumbnail}
+                    youtubeId={youtubeId}
+                  />
+
+                  <CourseFeaturesMobile features={features} />
+                </div>
+
+                {/* Benefits */}
+                <CourseBenefits benefits={benefits} />
+
+                {/* Partnership */}
+                {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+                  <CoursePartnership />
+                )}
+
+                {/* What you'll learn */}
+                <CourseObjectives objectives={objectives} />
+
+                {/* Requirements */}
+                <CourseRequirements requirements={requirements} />
+
+                {/* Course content */}
+                <CourseContent modules={modules} />
+
+                {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+                  <CourseWorkshops />
+                )}
+
+                {/* Lecturers */}
+                <CourseLecturers lecturers={lecturers} />
+
+                {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+                  <>
+                    {/* Showcase */}
+                    <CourseProjects />
+                  </>
+                )}
+
+                {/* CourseCalen */}
+                {calendar && (
+                  <CourseOpeningSchedules
+                    calendars={calendar}
+                    slug={courseSlug}
+                  />
+                )}
+
+                <CoursePaymentMethods
+                  payment_methods={payment_methods}
                   slug={courseSlug}
-                  title={title}
-                  thumbnail={thumbnail}
-                  youtubeId={youtubeId}
                 />
-
-                <CourseFeaturesMobile features={features} />
+                <CoursePromotion promotions={promotions} />
               </div>
 
-              {/* Benefits */}
-              <CourseBenefits benefits={benefits} />
-
-              {/* Partnership */}
-              {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-                <CoursePartnership />
-              )}
-
-              {/* What you'll learn */}
-              <CourseObjectives objectives={objectives} />
-
-              {/* Requirements */}
-              <CourseRequirements requirements={requirements} />
-
-              {/* Course content */}
-              <CourseContent modules={modules} />
-
-              {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-                <CourseWorkshops />
-              )}
-
-              {/* Lecturers */}
-              <CourseLecturers lecturers={lecturers} />
-
-              {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-                <>
-                  {/* Showcase */}
-                  <CourseProjects />
-                </>
-              )}
-
-              {/* CourseCalen */}
-              {calendar && (
-                <CourseOpeningSchedules
-                  calendars={calendar}
-                  slug={courseSlug}
-                />
-              )}
-
-              <CoursePaymentMethods
-                payment_methods={payment_methods}
+              {/* Info Card */}
+              <CourseInfoCard
+                id={id}
+                title={title}
+                price={price}
+                discountedPrice={discountedPrice}
+                features={features}
                 slug={courseSlug}
+                thumbnail={thumbnail}
+                youtubeId={youtubeId}
               />
-              <CoursePromotion promotions={promotions} />
             </div>
 
-            {/* Info Card */}
-            <CourseInfoCard
-              id={id}
-              title={title}
-              price={price}
-              discountedPrice={discountedPrice}
-              features={features}
-              slug={courseSlug}
-              thumbnail={thumbnail}
-              youtubeId={youtubeId}
-            />
+            {/* Workspaces */}
+            <CourseWorkspaces />
+
+            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+              <>
+                {/* Reviews */}
+                <CourseReviews />
+              </>
+            )}
+
+            {/* Feedback */}
+            <CourseFeedback />
+
+            {/* CTA */}
+            <CourseCTA name={abbr} slug={courseSlug} />
           </div>
-
-          {/* Workspaces */}
-          <CourseWorkspaces />
-
-          {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-            <>
-              {/* Reviews */}
-              <CourseReviews />
-            </>
-          )}
-
-          {/* Feedback */}
-          <CourseFeedback />
-
-          {/* CTA */}
-          <CourseCTA name={abbr} slug={courseSlug} />
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ function CourseModule({
 
 export default function CourseContent({ modules }: { modules: IModule[] }) {
   return (
-    <div>
+    <section id="content">
       <CourseSectionHeading>Nội dung khoá học</CourseSectionHeading>
       <Accordion type="single" collapsible className="w-full bg-white">
         {modules.map((module, i) => (
@@ -65,6 +65,6 @@ export default function CourseContent({ modules }: { modules: IModule[] }) {
           />
         ))}
       </Accordion>
-    </div>
+    </section>
   );
 }

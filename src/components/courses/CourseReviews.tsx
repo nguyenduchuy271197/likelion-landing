@@ -9,7 +9,7 @@ import CourseSectionHeading from "./CourseSectionHeading";
 export default function CourseReviews() {
   const [open, setOpen] = useState(false);
   return (
-    <div>
+    <section>
       <CourseSectionHeading>Học viên nói gì sau khoá học?</CourseSectionHeading>
 
       <div className="relative aspect-[16/9] overflow-hidden">
@@ -31,6 +31,6 @@ export default function CourseReviews() {
         onClose={() => setOpen(false)}
         youtube={{ autoplay: 1, mute: 1 }}
       />
-    </div>
+    </section>
   );
 }

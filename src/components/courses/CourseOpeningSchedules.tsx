@@ -225,7 +225,7 @@ export default function CourseOpeningSchedules({
   if (calendars.length === 0) return null;
 
   return (
-    <div>
+    <section id="schedules">
       <CourseSectionHeading>Lịch khai giảng</CourseSectionHeading>
       <div
         className={cn(
@@ -242,6 +242,6 @@ export default function CourseOpeningSchedules({
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

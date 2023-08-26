@@ -1,39 +1,56 @@
-import Link from "next/link";
+"use client";
 
+import { Link } from "react-scroll";
 const items = [
   {
     label: "Lợi ích khóa học",
-    href: "#loi-ich-khoa-hoc",
+    target: "benefits",
   },
   {
     label: "Lộ trình",
-    href: "#lo-trinh",
+    target: "content",
   },
   {
     label: "Giảng viên",
-    href: "#giang-vien",
-  },
-  {
-    label: "Dự án",
-    href: "#du-an",
+    target: "lecturers",
   },
   {
     label: "Thông tin đăng ký",
-    href: "#thong-tin-dang-ky",
+    target: "schedules",
   },
   {
-    label: "Review",
-    href: "#review",
+    label: "Reviews",
+    target: "feedbacks",
   },
 ];
 
 export default function CourseNavigation() {
   return (
-    <nav>
+    <nav className="sticky top-[var(--navbar-height)] z-50 bg-[#FFEDE1] hidden md:block">
       <div className="container">
-        <ul className="border-b">
-          <li></li>
-        </ul>
+        <div className="flex justify-center lg:justify-start">
+          <ul className="flex items-center">
+            {items.map((item) => (
+              <li key={item.label}>
+                <Link
+                  smooth
+                  spy
+                  offset={-150}
+                  duration={200}
+                  to={item.target}
+                  className="px-6 py-4 font-medium transition duration-200 border-b-4 border-transparent hover:text-[#ff7700] hover:border-[#ff7700] cursor-pointer"
+                  href={`#${item.target}`}
+                  activeStyle={{
+                    borderColor: "#ff7700",
+                    color: "#ff7700",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

@@ -70,7 +70,7 @@ export default function CourseBenefits({
   if (!benefits || benefits.length !== 4) return null;
 
   return (
-    <section>
+    <section id="benefits">
       <CourseSectionHeading className="sm:hidden">
         Lợi ích của học viên
       </CourseSectionHeading>
