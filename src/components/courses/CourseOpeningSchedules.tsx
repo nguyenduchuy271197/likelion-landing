@@ -224,7 +224,7 @@ export default function CourseOpeningSchedules({
   if (calendars.length === 0) return null;
 
   return (
-    <div className="mt-12">
+    <div>
       <h2 className="mb-6 text-2xl font-medium">Lịch khai giảng</h2>
       <div
         className={cn(

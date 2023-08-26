@@ -55,7 +55,7 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
 
 export default function CourseWorkshops() {
   return (
-    <div className="mt-12">
+    <div>
       <div className="flex items-center gap-2 mb-6">
         <h2 className="text-2xl font-medium">Workshops</h2>
         <div className="flex items-center gap-1">

@@ -108,6 +108,7 @@ type TagType {
 }
 
 type BenefitType {
-  title String
-  icon  String
+  title       String
+  description String
+  icon        String
 }

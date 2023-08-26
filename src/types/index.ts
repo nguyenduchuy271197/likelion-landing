@@ -59,8 +59,9 @@ export interface ICourse {
     schedules: string[];
     status: string[];
   };
-  benefits: {
+  benefits?: {
     title: string;
+    description: string;
     icon: string;
   }[];
   highlights: string[];

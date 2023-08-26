@@ -66,7 +66,7 @@ export default function CoursePaymentMethods({
   if (!payment_methods) return null;
 
   return (
-    <section className="mt-12">
+    <section>
       <h2 className="mb-6 text-2xl font-medium">Phương thức thanh toán</h2>
       <div className="space-y-4">
         <CoursePaymentMethodRow

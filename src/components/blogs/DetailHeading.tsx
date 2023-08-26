@@ -14,7 +14,7 @@ export default function DetailHeading({
       <div className="container">
         <div className="text-center">
           <div className="mb-6">
-            <p className="mb-2 font-medium uppercase text-muted-foreground md:text-lg">
+            <p className="mb-2 font-bold uppercase text-muted-foreground md:text-lg">
               Blog
             </p>
             <h1 className="text-3xl font-bold md:text-4xl">{title}</h1>

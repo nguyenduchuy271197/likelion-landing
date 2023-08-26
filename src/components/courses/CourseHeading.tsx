@@ -28,22 +28,26 @@ export default function CourseHeading({
               ))}
             </ul>
 
-            <h1 className="mb-4 text-2xl font-bold capitalize sm:text-3xl lg:text-4xl">
+            <h1 className="mb-4 text-3xl font-bold capitalize lg:text-4xl">
               {title}
             </h1>
           </div>
 
-          <p className="text-lg">{subtitle}</p>
+          <p className="sm:text-lg">{subtitle}</p>
 
           {highlights.length > 0 && (
             <ul className="max-w-xs mx-auto space-y-2 lg:mx-0 lg:max-w-none">
               {highlights.map((highlight) => (
                 <li
-                  className="flex items-center gap-4 text-lg font-medium"
+                  className="flex items-center gap-2 font-medium sm:gap-4 sm:text-lg"
                   key={highlight}
                 >
                   <div className="p-1 rounded-full bg-muted">
-                    <Check stroke="#ff7700" size={16} strokeWidth={3} />
+                    <Check
+                      stroke="#ff7700"
+                      strokeWidth={3}
+                      className="w-3 h-3 sm:w-4 sm:h-4"
+                    />
                   </div>
                   <span>{highlight}</span>
                 </li>

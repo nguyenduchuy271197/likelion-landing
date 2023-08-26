@@ -5,7 +5,7 @@ import {
 
 export default function CourseWorkspaces() {
   return (
-    <div className="mt-12">
+    <div>
       <h2 className="mb-6 text-2xl font-medium">
         Học viên LIKELION làm việc ở đâu?
       </h2>

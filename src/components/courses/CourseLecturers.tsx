@@ -42,7 +42,7 @@ export default function CourseLecturers({
   if (!lecturers || lecturers.length === 0) return null;
 
   return (
-    <section className="mt-12">
+    <section>
       <h2 className="mb-6 text-2xl font-medium">Đội ngũ hướng dẫn</h2>
       <div className="space-y-4">
         {lecturers.map((lecturer) => (

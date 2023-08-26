@@ -5,11 +5,12 @@ import Image from "next/image";
 
 interface Benefit {
   title: string;
+  description: string;
   icon: string;
 }
 
 const benefitVariants = cva(
-  "text-white p-8 from-[#FF7711] to-[#FFA563] rounded-2xl",
+  "text-white p-8 from-[#FF7711] to-[#FFA563] rounded-2xl sm:rounded-lg",
   {
     variants: {
       index: {
@@ -29,19 +30,24 @@ export interface BenefitProps
   extends Benefit,
     VariantProps<typeof benefitVariants> {}
 
-function CourseBenefit({ title, icon, index = 0 }: BenefitProps) {
+function CourseBenefit({ title, description, icon, index = 0 }: BenefitProps) {
   if (index === undefined || index === null) return null;
 
   return (
     <div className={benefitVariants({ index })}>
       <div
         className={cn(
-          "flex flex-col max-w-xs sm:max-w-none  sm:w-4/5 gap-4 h-full justify-between mx-auto sm:mx-0 text-center sm:text-left",
-          [0, 2].includes(index) ? "sm:mr-auto" : "sm:ml-auto",
+          "flex flex-col max-w-xs gap-4 h-full justify-between mx-auto sm:mx-0 text-center sm:text-left",
+          [0, 2].includes(index)
+            ? "sm:mr-auto  sm:text-left"
+            : "sm:ml-auto sm:text-right",
           [0, 1].includes(index) ? "sm:flex-col" : "sm:flex-col-reverse"
         )}
       >
-        <h3 className="text-xl font-bold">{title}</h3>
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold">{title}</h3>
+          <p>{description}</p>
+        </div>
         <div className="relative aspect-[16/9]">
           <Image
             src={`data:image/svg+xml;utf8,${encodeURIComponent(icon)}`}
@@ -60,10 +66,10 @@ export default function CourseBenefits({
 }: {
   benefits: ICourse["benefits"];
 }) {
-  if (benefits.length !== 4) return null;
+  if (!benefits || benefits.length !== 4) return null;
 
   return (
-    <section className="mb-12">
+    <section>
       <h2 className="mb-6 text-2xl font-medium sm:hidden">
         Lợi ích của học viên
       </h2>

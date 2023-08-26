@@ -20,7 +20,7 @@ export default function CoursePromotion({
   if (!promotions) return null;
 
   return (
-    <section className="mt-12">
+    <section>
       <h2 className="mb-6 text-2xl font-medium">Các chương trình ưu đãi</h2>
       <ul className="space-y-4">
         {promotions.map((promotion) => (
