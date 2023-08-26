@@ -1,5 +1,6 @@
 import { LucideProps } from "lucide-react";
 import Icons from "../Icons";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 const Partner = (props: LucideProps) => (
   <svg
@@ -127,9 +128,9 @@ const Partner = (props: LucideProps) => (
 export default function CoursePartnership() {
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-medium">
+      <CourseSectionHeading>
         Đối tác hỗ trợ kết nối việc làm
-      </h2>
+      </CourseSectionHeading>
       <div className="flex items-center gap-8">
         <Icons.rightArrow className="w-20" />
         <Partner className="w-full grow" />

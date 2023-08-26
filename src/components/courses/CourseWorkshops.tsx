@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Badge } from "../ui/Badge";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 const courseWorkshops: CourseWorkshopType[] = [
   {
@@ -56,13 +57,13 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
 export default function CourseWorkshops() {
   return (
     <div>
-      <div className="flex items-center gap-2 mb-6">
-        <h2 className="text-2xl font-medium">Workshops</h2>
+      <CourseSectionHeading className="flex items-center gap-2">
+        <span>Workshops</span>
         <div className="flex items-center gap-1">
           <Badge className="bg-[#FF7100]">Mới</Badge>
           <Badge className="bg-[#FF7100]">Đặc biệt</Badge>
         </div>
-      </div>
+      </CourseSectionHeading>
 
       <div className="grid gap-8 sm:grid-cols-2">
         {courseWorkshops.map((courseWorkshop) => (

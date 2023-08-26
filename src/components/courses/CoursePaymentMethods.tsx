@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
 import { ICourse } from "@/types";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -67,7 +68,7 @@ export default function CoursePaymentMethods({
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-medium">Phương thức thanh toán</h2>
+      <CourseSectionHeading>Phương thức thanh toán</CourseSectionHeading>
       <div className="space-y-4">
         <CoursePaymentMethodRow
           title="Thanh toán một lần giảm còn"

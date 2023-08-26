@@ -1,5 +1,6 @@
 import { ICourse } from "@/types";
 import Image from "next/image";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 interface LectureType {
   name: string;
@@ -43,7 +44,7 @@ export default function CourseLecturers({
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-medium">Đội ngũ hướng dẫn</h2>
+      <CourseSectionHeading>Đội ngũ hướng dẫn</CourseSectionHeading>
       <div className="space-y-4">
         {lecturers.map((lecturer) => (
           <CourseLecturerRow key={lecturer.name} lecturer={lecturer} />

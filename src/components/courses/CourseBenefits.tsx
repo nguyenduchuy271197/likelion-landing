@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { ICourse } from "@/types";
 import { VariantProps, cva } from "class-variance-authority";
 import Image from "next/image";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 interface Benefit {
   title: string;
@@ -70,9 +71,10 @@ export default function CourseBenefits({
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-medium sm:hidden">
+      <CourseSectionHeading className="sm:hidden">
         Lợi ích của học viên
-      </h2>
+      </CourseSectionHeading>
+
       <div className="relative">
         <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
           {benefits.map((benefit, index) => {

@@ -2,13 +2,11 @@
 
 import CourseFeatureItem from "./CourseFeatureItem";
 import { ICourse } from "@/types";
-import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 import { useContext } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseThumbnail from "./CourseThumbnail";
-import CourseCountdown from "./CourseCountdown";
 
 type CourseInfoCardProps = Pick<
   ICourse,
@@ -23,10 +21,7 @@ type CourseInfoCardProps = Pick<
 >;
 
 export default function CourseInfoCard({
-  id,
   title,
-  price,
-  discountedPrice,
   features,
   slug,
   thumbnail,
@@ -43,50 +38,22 @@ export default function CourseInfoCard({
           youtubeId={youtubeId}
         />
         <div className="p-6 space-y-4">
+          {/* Registration */}
           <div>
-            {/* Price */}
-            {/* {discountedPrice ? (
-              <div className="mb-2">
-                <div className="flex items-center gap-4 mb-1">
-                  <div className="flex items-center gap-1 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
-                    {formatVNDCurrency(discountedPrice)}
-                  </div>
-                  <div className="flex items-center gap-1 line-through text-muted-foreground">
-                    {formatVNDCurrency(price)}
-                  </div>
-                </div>
-                <div className="text-muted-foreground">
-                  {calcDiscountedPercent(price, discountedPrice)}% off
-                </div>
-              </div>
-            ) : (
-              <div className="mb-4 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
-                {formatVNDCurrency(price)}
-              </div>
-            )} */}
-
-            {/* {[
-              "khoa-hoc-lap-trinh-web-fullstack",
-              "thanh-thao-lap-trinh-web-front-end",
-            ].includes(slug) && <CourseCountdown />} */}
-
-            {/* Registration */}
-            <div>
-              <Button
-                className="w-full"
-                asChild
-                onClick={() => setDialogOpen(true)}
+            <Button
+              className="w-full"
+              asChild
+              onClick={() => setDialogOpen(true)}
+            >
+              <Link
+                href={{
+                  pathname: "/register",
+                  query: { course: slug },
+                }}
               >
-                <Link
-                  href={{
-                    pathname: "/register",
-                    query: { course: slug },
-                  }}
-                >
-                  Đăng ký ngay
-                </Link>
-              </Button>
-            </div>
+                Đăng ký ngay
+              </Link>
+            </Button>
           </div>
 
           {/* Features */}

@@ -1,3 +1,5 @@
+import CourseSectionHeading from "./CourseSectionHeading";
+
 export default function CourseRequirements({
   requirements,
 }: {
@@ -7,7 +9,7 @@ export default function CourseRequirements({
 
   return (
     <div>
-      <h2 className="mb-6 text-2xl font-medium">Yêu cầu cho khoá học</h2>
+      <CourseSectionHeading>Yêu cầu cho khoá học</CourseSectionHeading>
       <ul className="flex flex-col gap-4 ml-4">
         {requirements.map((requirement) => (
           <li className="list-disc" key={requirement}>
