@@ -59,6 +59,10 @@ export interface ICourse {
     schedules: string[];
     status: string[];
   };
+  benefits: {
+    title: string;
+    icon: string;
+  }[];
 }
 
 export interface IModule {

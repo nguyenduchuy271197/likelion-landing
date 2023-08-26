@@ -79,6 +79,7 @@ export default async function CourseDetail({
     payment_methods,
     lecturers,
     tags,
+    benefits,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -106,7 +107,7 @@ export default async function CourseDetail({
             <CourseObjectives objectives={objectives} />
 
             {/* Benefits */}
-            <CourseBenefits />
+            <CourseBenefits benefits={benefits} />
 
             {/* Requirements */}
             <CourseRequirements requirements={requirements} />
