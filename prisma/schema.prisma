@@ -32,6 +32,7 @@ model Course {
   lecturers       LectureType[]
   tags            TagType?
   benefits        BenefitType[]
+  highlights      String[]
 }
 
 model User {

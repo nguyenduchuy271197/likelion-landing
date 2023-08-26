@@ -20,6 +20,7 @@ import CourseLecturers from "@/components/courses/CourseLecturers";
 import CoursePromotion from "@/components/courses/CoursePromotion";
 import CoursePaymentMethods from "@/components/courses/CoursePaymentMethods";
 import CourseBenefits from "@/components/courses/CourseBenefits";
+import CourseNavigation from "@/components/courses/CourseNavigation";
 
 export async function generateMetadata(
   {
@@ -80,17 +81,28 @@ export default async function CourseDetail({
     lecturers,
     tags,
     benefits,
+    highlights,
   } = await getCourseBySlug(courseSlug);
 
   return (
-    <div className="py-12">
+    <div className="pb-12">
+      <div className="mb-12">
+        {/* Title */}
+        <CourseHeading
+          title={title}
+          subtitle={subtitle}
+          tags={tags}
+          highlights={highlights}
+        />
+
+        {/* Course Navigation */}
+        <CourseNavigation />
+      </div>
+
       <div className="container">
         <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none mb-12">
           {/* Content */}
           <div className="overflow-hidden">
-            {/* Title */}
-            <CourseHeading title={title} subtitle={subtitle} tags={tags} />
-
             {/* Course Info */}
             <CourseInfoMobile
               discountedPrice={discountedPrice}

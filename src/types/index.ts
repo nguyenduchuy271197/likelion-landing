@@ -63,6 +63,7 @@ export interface ICourse {
     title: string;
     icon: string;
   }[];
+  highlights: string[];
 }
 
 export interface IModule {

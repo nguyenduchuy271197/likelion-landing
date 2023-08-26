@@ -36,7 +36,7 @@ export default function CourseInfoCard({
 
   return (
     <div className="hidden lg:block">
-      <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden">
+      <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden w-[350px]">
         <CourseThumbnail
           title={title}
           thumbnail={thumbnail}
