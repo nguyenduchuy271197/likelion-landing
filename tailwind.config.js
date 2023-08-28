@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -90,5 +92,15 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("tailwindcss-animate"),
     require("@tailwindcss/aspect-ratio"),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".bg-overlay": {
+          background:
+            "linear-gradient(var(--overlay-angle, 0deg), var(--overlay-colors)), var(--overlay-image)",
+          "background-position": "center",
+          "background-size": "cover",
+        },
+      });
+    }),
   ],
 };

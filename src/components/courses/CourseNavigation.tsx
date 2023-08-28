@@ -28,7 +28,7 @@ const items = [
 
 export default function CourseNavigation() {
   return (
-    <nav className="sticky top-[var(--navbar-height)] z-10 bg-muted text-primary hidden md:block">
+    <nav className="sticky top-[var(--navbar-height)] z-10 bg-primary text-muted hidden md:block">
       <div className="container">
         <CourseContainer>
           <div className="flex justify-center lg:justify-start">
