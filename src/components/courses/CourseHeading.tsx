@@ -582,74 +582,70 @@ export default function CourseHeading({
 
   return (
     <section
-      className="text-white bg-overlay"
-      style={
-        {
-          "--overlay-image":
-            "url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg')",
-          "--overlay-colors":
-            "rgba(120, 186, 232, .8),rgba(120, 186, 100, .8);",
-        } as React.CSSProperties
-      }
+      className="py-16 text-white bg-overlay"
+      style={{
+        background:
+          "linear-gradient(to top, rgba(120, 186, 232, .8), rgba(120, 186, 100, .8)),url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="w-full h-full py-16 backdrop-brightness-50">
-        <div className="container">
-          <CourseContainer>
-            <div className="flex flex-col items-center max-w-xl mx-auto space-y-6 text-center lg:text-left lg:max-w-none lg:items-start">
-              <div className="space-y-2">
-                <ul className="flex items-center justify-center gap-1 lg:justify-start">
-                  {tags.status.map((s) => (
-                    <li key={s}>
-                      <Badge size="lg" variant="secondary">
-                        {s}
-                      </Badge>
-                    </li>
-                  ))}
-                </ul>
+      <div className="container">
+        <CourseContainer>
+          <div className="flex flex-col items-center max-w-xl mx-auto space-y-6 text-center lg:text-left lg:max-w-none lg:items-start">
+            <div className="space-y-2">
+              <ul className="flex items-center justify-center gap-1 lg:justify-start">
+                {tags.status.map((s) => (
+                  <li key={s}>
+                    <Badge size="lg" variant="secondary">
+                      {s}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
 
-                <h1 className="mb-4 text-3xl font-bold capitalize lg:text-4xl">
-                  {title}
-                </h1>
-              </div>
-
-              <p className="sm:text-lg">{subtitle}</p>
-
-              {techs && techs.length > 0 && (
-                <ul className="flex flex-wrap items-center justify-center gap-4">
-                  {techs.map((tech) => {
-                    if (Object.keys(techIcons).includes(tech)) {
-                      return (
-                        <CourseTechIcon
-                          icon={techIcons[tech as keyof typeof techIcons]}
-                          key={tech}
-                        />
-                      );
-                    }
-                  })}
-                </ul>
-              )}
-
-              {highlights.length > 0 && (
-                <ul className="max-w-xs space-y-2 lg:mx-0">
-                  {highlights.map((highlight) => (
-                    <li
-                      className="flex items-center gap-2 font-medium sm:gap-4 sm:text-lg"
-                      key={highlight}
-                    >
-                      <div className="p-1 rounded-full bg-muted">
-                        <Check
-                          strokeWidth={3}
-                          className="w-3 h-3 text-primary sm:w-4 sm:h-4"
-                        />
-                      </div>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <h1 className="mb-4 text-3xl font-bold capitalize lg:text-4xl">
+                {title}
+              </h1>
             </div>
-          </CourseContainer>
-        </div>
+
+            <p className="sm:text-lg">{subtitle}</p>
+
+            {techs && techs.length > 0 && (
+              <ul className="flex flex-wrap items-center justify-center gap-4">
+                {techs.map((tech) => {
+                  if (Object.keys(techIcons).includes(tech)) {
+                    return (
+                      <CourseTechIcon
+                        icon={techIcons[tech as keyof typeof techIcons]}
+                        key={tech}
+                      />
+                    );
+                  }
+                })}
+              </ul>
+            )}
+
+            {highlights.length > 0 && (
+              <ul className="max-w-xs space-y-2 lg:mx-0">
+                {highlights.map((highlight) => (
+                  <li
+                    className="flex items-center gap-2 font-medium sm:gap-4 sm:text-lg"
+                    key={highlight}
+                  >
+                    <div className="p-1 rounded-full bg-muted">
+                      <Check
+                        strokeWidth={3}
+                        className="w-3 h-3 text-primary sm:w-4 sm:h-4"
+                      />
+                    </div>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </CourseContainer>
       </div>
     </section>
   );
