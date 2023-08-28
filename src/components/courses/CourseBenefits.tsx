@@ -54,7 +54,7 @@ function CourseBenefit({ title, description, icon, index = 0 }: BenefitProps) {
             src={`data:image/svg+xml;utf8,${encodeURIComponent(icon)}`}
             alt={title}
             fill
-            className="object-contain object-left"
+            className="object-contain object-center sm:object-left"
           />
         </div>
       </div>
