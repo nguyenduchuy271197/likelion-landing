@@ -11,7 +11,7 @@ interface LectureType {
 
 function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
   return (
-    <div className="grid sm:grid-cols-[100px_1fr] gap-2 sm:gap-8 bg-muted rounded-xl p-8 border">
+    <div className="grid sm:grid-cols-[100px_1fr] gap-2 sm:gap-8 bg-muted rounded-xl p-8">
       <div className="relative sm:w-full aspect-[1/1] w-20 mx-auto rounded-full bg-gradient-to-br from-[#FFE3CB] to-[#ff7100] overflow-hidden">
         <Image
           src={lecturer.avatar}

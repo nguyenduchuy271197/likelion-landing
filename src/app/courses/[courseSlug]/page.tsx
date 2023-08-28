@@ -21,6 +21,7 @@ import CoursePromotion from "@/components/courses/CoursePromotion";
 import CoursePaymentMethods from "@/components/courses/CoursePaymentMethods";
 import CourseBenefits from "@/components/courses/CourseBenefits";
 import CourseNavigation from "@/components/courses/CourseNavigation";
+import CourseContainer from "@/components/courses/CourseContainer";
 
 export async function generateMetadata(
   {
@@ -86,113 +87,111 @@ export default async function CourseDetail({
 
   return (
     <div className="pb-12">
-      {/* Title */}
-      <CourseHeading
-        title={title}
-        subtitle={subtitle}
-        tags={tags}
-        highlights={highlights}
-      />
+      <div id="course-info">
+        {/* Title */}
+        <CourseHeading
+          title={title}
+          subtitle={subtitle}
+          tags={tags}
+          highlights={highlights}
+        />
+        {/* Course Navigation */}
+        <CourseNavigation />
 
-      {/* Course Navigation */}
-      <CourseNavigation />
-
-      <div className="mt-12 lg:mt-0">
         <div className="container">
-          <div className="space-y-12">
-            <div className="grid lg:grid-cols-[1fr_350px] gap-16 max-w-screen-md mx-auto lg:max-w-none mb-12 space-y-12">
-              {/* Content */}
-              <div className="space-y-12 overflow-hidden">
-                <div className="space-y-10 lg:hidden">
-                  {/* Course Info */}
-                  <CourseInfoMobile
-                    discountedPrice={discountedPrice}
-                    price={price}
-                    slug={courseSlug}
-                    title={title}
-                    thumbnail={thumbnail}
-                    youtubeId={youtubeId}
-                  />
+          <CourseContainer>
+            {/* Info Card */}
+            <CourseInfoCard
+              id={id}
+              title={title}
+              price={price}
+              discountedPrice={discountedPrice}
+              features={features}
+              slug={courseSlug}
+              thumbnail={thumbnail}
+              youtubeId={youtubeId}
+            />
+          </CourseContainer>
+        </div>
 
-                  <CourseFeaturesMobile features={features} />
-                </div>
-
-                {/* Benefits */}
-                <CourseBenefits benefits={benefits} />
-
-                {/* Partnership */}
-                {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-                  <CoursePartnership />
-                )}
-
-                {/* What you'll learn */}
-                <CourseObjectives objectives={objectives} />
-
-                {/* Requirements */}
-                <CourseRequirements requirements={requirements} />
-
-                {/* Course content */}
-                <CourseContent modules={modules} />
-
-                {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-                  <CourseWorkshops />
-                )}
-
-                {/* Lecturers */}
-                <CourseLecturers lecturers={lecturers} />
-
-                {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-                  <>
-                    {/* Showcase */}
-                    <CourseProjects />
-                  </>
-                )}
-
-                {/* CourseCalen */}
-                {calendar && (
-                  <CourseOpeningSchedules
-                    calendars={calendar}
-                    slug={courseSlug}
-                  />
-                )}
-
-                <CoursePaymentMethods
-                  payment_methods={payment_methods}
-                  slug={courseSlug}
-                />
-                <CoursePromotion promotions={promotions} />
-              </div>
-
-              {/* Info Card */}
-              <CourseInfoCard
-                id={id}
-                title={title}
-                price={price}
+        <div className="container mt-12 space-y-12 lg:mt-0">
+          <CourseContainer className="space-y-12 overflow-hidden">
+            {/* Content */}
+            <div className="space-y-10 lg:hidden">
+              {/* Course Info */}
+              <CourseInfoMobile
                 discountedPrice={discountedPrice}
-                features={features}
+                price={price}
                 slug={courseSlug}
+                title={title}
                 thumbnail={thumbnail}
                 youtubeId={youtubeId}
               />
+
+              <CourseFeaturesMobile features={features} />
             </div>
 
-            {/* Workspaces */}
-            <CourseWorkspaces />
+            {/* Benefits */}
+            <CourseBenefits benefits={benefits} />
 
-            {/* Feedback */}
-            <CourseFeedback />
+            {/* Partnership */}
+            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+              <CoursePartnership />
+            )}
+
+            {/* What you'll learn */}
+            <CourseObjectives objectives={objectives} />
+
+            {/* Requirements */}
+            <CourseRequirements requirements={requirements} />
+
+            {/* Course content */}
+            <CourseContent modules={modules} />
+
+            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+              <CourseWorkshops />
+            )}
+
+            {/* Lecturers */}
+            <CourseLecturers lecturers={lecturers} />
 
             {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
               <>
-                {/* Reviews */}
-                <CourseReviews />
+                {/* Showcase */}
+                <CourseProjects />
               </>
             )}
 
-            {/* CTA */}
-            <CourseCTA name={abbr} slug={courseSlug} />
-          </div>
+            {/* CourseCalen */}
+            {calendar && (
+              <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
+            )}
+
+            <CoursePaymentMethods
+              payment_methods={payment_methods}
+              slug={courseSlug}
+            />
+            <CoursePromotion promotions={promotions} />
+          </CourseContainer>
         </div>
+      </div>
+
+      <div className="container mt-12 space-y-12">
+        {/* Workspaces */}
+        <CourseWorkspaces />
+
+        {/* Feedback */}
+        <CourseFeedback />
+
+        {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+          <>
+            {/* Reviews */}
+            <CourseReviews />
+          </>
+        )}
+
+        {/* CTA */}
+        <CourseCTA name={abbr} slug={courseSlug} />
       </div>
     </div>
   );

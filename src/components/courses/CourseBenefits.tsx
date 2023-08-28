@@ -15,10 +15,10 @@ const benefitVariants = cva(
   {
     variants: {
       index: {
-        0: "bg-gradient-to-tl sm:rounded-tl-[3rem]",
-        1: "bg-gradient-to-tr sm:rounded-tr-[3rem]",
-        2: "bg-gradient-to-bl sm:rounded-bl-[3rem]",
-        3: "bg-gradient-to-br sm:rounded-br-[3rem]",
+        0: "bg-gradient-to-tl sm:rounded-tl-[2.5rem]",
+        1: "bg-gradient-to-tr sm:rounded-tr-[2.5rem]",
+        2: "bg-gradient-to-bl sm:rounded-bl-[2.5rem]",
+        3: "bg-gradient-to-br sm:rounded-br-[2.5rem]",
       },
     },
     defaultVariants: {
@@ -49,12 +49,12 @@ function CourseBenefit({ title, description, icon, index = 0 }: BenefitProps) {
           <h3 className="text-xl font-bold">{title}</h3>
           <p>{description}</p>
         </div>
-        <div className="relative aspect-[16/9] sm:max-w-[250px] w-full">
+        <div className="relative aspect-[16/9] sm:max-w-[200px] w-full">
           <Image
             src={`data:image/svg+xml;utf8,${encodeURIComponent(icon)}`}
             alt={title}
             fill
-            className="object-contain"
+            className="object-contain object-left"
           />
         </div>
       </div>
