@@ -40,7 +40,7 @@ export default function CourseNavigation() {
                     offset={-150}
                     duration={200}
                     to={item.target}
-                    className="px-6 py-4 font-medium transition duration-200 border-b-4 border-transparent hover:text-[#ff7700] hover:border-[#ff7700] cursor-pointer"
+                    className="px-4 py-4 font-medium transition duration-200 border-b-4 border-transparent hover:text-[#ff7700] hover:border-[#ff7700] cursor-pointer"
                     href={`#${item.target}`}
                     activeStyle={{
                       borderColor: "#ff7700",
