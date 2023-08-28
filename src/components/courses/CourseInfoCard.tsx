@@ -54,7 +54,7 @@ export default function CourseInfoCard({
       ref={cardRef}
       className="fixed top-[calc(var(--navbar-height)+5rem)] z-20 ml-[calc(min(100%,1200px)-350px-32px)] hidden lg:block transition-all"
     >
-      <div className="w-[350px] bg-white border-4 border-white shadow-xl">
+      <div className="w-[350px] bg-white shadow-xl">
         <CourseThumbnail
           title={title}
           thumbnail={thumbnail}
