@@ -31,9 +31,7 @@ export default function CourseInfoCard({
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const courseInfo = document.getElementById("course-info");
-    const bottom = courseInfo?.getBoundingClientRect().bottom || 0;
-    window.addEventListener("scroll", () => {
+    const handleCardScroll = () => {
       if (cardRef.current) {
         if (
           window.scrollY +
@@ -46,7 +44,13 @@ export default function CourseInfoCard({
           cardRef.current.style.opacity = "1";
         }
       }
-    });
+    };
+
+    const courseInfo = document.getElementById("course-info");
+    const bottom = courseInfo?.getBoundingClientRect().bottom || 0;
+    window.addEventListener("scroll", handleCardScroll);
+
+    return () => window.removeEventListener("scroll", handleCardScroll);
   }, []);
 
   return (
@@ -54,7 +58,7 @@ export default function CourseInfoCard({
       ref={cardRef}
       className="fixed top-[calc(var(--navbar-height)+5rem)] z-20 ml-[calc(min(100%,1200px)-350px-32px)] hidden lg:block transition-all"
     >
-      <div className="w-[350px] bg-white shadow-xl">
+      <div className="w-[350px] bg-white border-2 border-white shadow-xl">
         <CourseThumbnail
           title={title}
           thumbnail={thumbnail}
