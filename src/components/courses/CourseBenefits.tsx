@@ -38,18 +38,18 @@ function CourseBenefit({ title, description, icon, index = 0 }: BenefitProps) {
     <div className={benefitVariants({ index })}>
       <div
         className={cn(
-          "flex flex-col max-w-xs gap-4 h-full justify-between mx-auto sm:mx-0 text-center sm:text-left",
+          "flex flex-col max-w-xs gap-6 h-full justify-between mx-auto sm:mx-0 text-center sm:text-left",
           [0, 2].includes(index)
-            ? "sm:mr-auto  sm:text-left"
-            : "sm:ml-auto sm:text-right",
+            ? "sm:items-start  sm:text-left"
+            : "sm:items-end sm:text-right",
           [0, 1].includes(index) ? "sm:flex-col" : "sm:flex-col-reverse"
         )}
       >
-        <div className="space-y-2">
+        <div className="space-y-2 grow">
           <h3 className="text-xl font-bold">{title}</h3>
           <p>{description}</p>
         </div>
-        <div className="relative aspect-[16/9]">
+        <div className="relative aspect-[16/9] sm:max-w-[250px] w-full">
           <Image
             src={`data:image/svg+xml;utf8,${encodeURIComponent(icon)}`}
             alt={title}
@@ -76,7 +76,7 @@ export default function CourseBenefits({
       </CourseSectionHeading>
 
       <div className="relative">
-        <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
+        <div className="grid gap-4 sm:grid-cols-2 sm:auto-rows-fr">
           {benefits.map((benefit, index) => {
             if (index === 0 || index === 1 || index === 2 || index === 3)
               return (

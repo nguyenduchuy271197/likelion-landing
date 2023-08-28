@@ -179,15 +179,15 @@ export default async function CourseDetail({
             {/* Workspaces */}
             <CourseWorkspaces />
 
+            {/* Feedback */}
+            <CourseFeedback />
+
             {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
               <>
                 {/* Reviews */}
                 <CourseReviews />
               </>
             )}
-
-            {/* Feedback */}
-            <CourseFeedback />
 
             {/* CTA */}
             <CourseCTA name={abbr} slug={courseSlug} />
