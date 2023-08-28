@@ -4,14 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import PlayButton from "../PlayButton";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 export default function CourseReviews() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="mt-12">
-      <h2 className="mb-6 text-2xl font-medium">
-        Học viên nói gì sau khoá học?
-      </h2>
+    <section>
+      <CourseSectionHeading>Học viên nói gì sau khoá học?</CourseSectionHeading>
 
       <div className="relative aspect-[16/9] overflow-hidden">
         <Image
@@ -32,6 +31,6 @@ export default function CourseReviews() {
         onClose={() => setOpen(false)}
         youtube={{ autoplay: 1, mute: 1 }}
       />
-    </div>
+    </section>
   );
 }

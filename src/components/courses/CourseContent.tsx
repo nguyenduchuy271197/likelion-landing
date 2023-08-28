@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/Accordion";
 import { IModule } from "@/types";
 import { FileText, GitFork } from "lucide-react";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseModule({
   name,
@@ -51,8 +52,8 @@ function CourseModule({
 
 export default function CourseContent({ modules }: { modules: IModule[] }) {
   return (
-    <div className="mt-12">
-      <h2 className="mb-6 text-2xl font-medium">Nội dung khoá học</h2>
+    <section id="content">
+      <CourseSectionHeading>Nội dung khoá học</CourseSectionHeading>
       <Accordion type="single" collapsible className="w-full bg-white">
         {modules.map((module, i) => (
           <CourseModule
@@ -64,6 +65,6 @@ export default function CourseContent({ modules }: { modules: IModule[] }) {
           />
         ))}
       </Accordion>
-    </div>
+    </section>
   );
 }

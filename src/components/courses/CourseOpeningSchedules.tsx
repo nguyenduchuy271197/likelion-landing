@@ -15,6 +15,7 @@ import { ReactNode, useContext } from "react";
 import { Button } from "../ui/Button";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import Link from "next/link";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseCalendarSingle({
   label,
@@ -224,8 +225,8 @@ export default function CourseOpeningSchedules({
   if (calendars.length === 0) return null;
 
   return (
-    <div className="mt-12">
-      <h2 className="mb-6 text-2xl font-medium">Lịch khai giảng</h2>
+    <section id="schedules">
+      <CourseSectionHeading>Lịch khai giảng</CourseSectionHeading>
       <div
         className={cn(
           "grid gap-2",
@@ -241,6 +242,6 @@ export default function CourseOpeningSchedules({
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

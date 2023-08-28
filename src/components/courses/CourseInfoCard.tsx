@@ -2,13 +2,11 @@
 
 import CourseFeatureItem from "./CourseFeatureItem";
 import { ICourse } from "@/types";
-import { calcDiscountedPercent, formatVNDCurrency } from "@/helpers";
 import { Button } from "../ui/Button";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseThumbnail from "./CourseThumbnail";
-import CourseCountdown from "./CourseCountdown";
 
 type CourseInfoCardProps = Pick<
   ICourse,
@@ -23,70 +21,62 @@ type CourseInfoCardProps = Pick<
 >;
 
 export default function CourseInfoCard({
-  id,
   title,
-  price,
-  discountedPrice,
   features,
   slug,
   thumbnail,
   youtubeId,
 }: CourseInfoCardProps) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const courseInfo = document.getElementById("course-info");
+    const bottom = courseInfo?.getBoundingClientRect().bottom || 0;
+    window.addEventListener("scroll", () => {
+      if (cardRef.current) {
+        if (
+          window.scrollY +
+            (cardRef.current?.offsetTop || 0) +
+            cardRef.current.getBoundingClientRect().height >=
+          bottom
+        ) {
+          cardRef.current.style.opacity = "0";
+        } else {
+          cardRef.current.style.opacity = "1";
+        }
+      }
+    });
+  }, []);
 
   return (
-    <div className="hidden lg:block">
-      <div className="sticky top-[var(--navbar-height)] shadow-xl overflow-hidden">
+    <div
+      ref={cardRef}
+      className="fixed top-[calc(var(--navbar-height)+5rem)] z-20 ml-[calc(min(100%,1200px)-350px-32px)] hidden lg:block transition-all"
+    >
+      <div className="w-[350px] bg-white border-4 border-white shadow-xl">
         <CourseThumbnail
           title={title}
           thumbnail={thumbnail}
           youtubeId={youtubeId}
         />
         <div className="p-6 space-y-4">
+          {/* Registration */}
           <div>
-            {/* Price */}
-            {/* {discountedPrice ? (
-              <div className="mb-2">
-                <div className="flex items-center gap-4 mb-1">
-                  <div className="flex items-center gap-1 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
-                    {formatVNDCurrency(discountedPrice)}
-                  </div>
-                  <div className="flex items-center gap-1 line-through text-muted-foreground">
-                    {formatVNDCurrency(price)}
-                  </div>
-                </div>
-                <div className="text-muted-foreground">
-                  {calcDiscountedPercent(price, discountedPrice)}% off
-                </div>
-              </div>
-            ) : (
-              <div className="mb-4 text-3xl font-bold tracking-tight scroll-m-20 lg:text-4xl">
-                {formatVNDCurrency(price)}
-              </div>
-            )} */}
-
-            {/* {[
-              "khoa-hoc-lap-trinh-web-fullstack",
-              "thanh-thao-lap-trinh-web-front-end",
-            ].includes(slug) && <CourseCountdown />} */}
-
-            {/* Registration */}
-            <div>
-              <Button
-                className="w-full"
-                asChild
-                onClick={() => setDialogOpen(true)}
+            <Button
+              className="w-full"
+              asChild
+              onClick={() => setDialogOpen(true)}
+            >
+              <Link
+                href={{
+                  pathname: "/register",
+                  query: { course: slug },
+                }}
               >
-                <Link
-                  href={{
-                    pathname: "/register",
-                    query: { course: slug },
-                  }}
-                >
-                  Đăng ký ngay
-                </Link>
-              </Button>
-            </div>
+                Đăng ký ngay
+              </Link>
+            </Button>
           </div>
 
           {/* Features */}

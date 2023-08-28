@@ -2,13 +2,14 @@ import {
   WorkspacesParallax,
   workspaceOptions,
 } from "../common/home/Workspaces";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 export default function CourseWorkspaces() {
   return (
-    <div className="mt-12">
-      <h2 className="mb-6 text-2xl font-medium">
+    <div>
+      <CourseSectionHeading>
         Học viên LIKELION làm việc ở đâu?
-      </h2>
+      </CourseSectionHeading>
       <div className="py-8">
         <WorkspacesParallax options={workspaceOptions} velocity={2} />
       </div>

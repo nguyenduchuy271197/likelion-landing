@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function ObjectivesItem({ name }: { name: string }) {
   return (
@@ -15,9 +16,9 @@ export default function CourseObjectives({
   objectives: string[];
 }) {
   return (
-    <div className="p-8 my-12 border">
-      <h2 className="mb-6 text-2xl font-medium">Bạn sẽ học được gì?</h2>
-      <ul className="grid gap-4 text-sm md:gap-6 md:grid-cols-2">
+    <div className="p-8 rounded-2xl bg-muted">
+      <CourseSectionHeading>Bạn sẽ học được gì?</CourseSectionHeading>
+      <ul className="grid gap-4 text-sm md:gap-6 md:grid-cols-2 sm:text-base">
         {objectives.map((obj) => (
           <ObjectivesItem key={obj} name={obj} />
         ))}

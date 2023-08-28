@@ -31,6 +31,8 @@ model Course {
   payment_methods PaymentMethodType?
   lecturers       LectureType[]
   tags            TagType?
+  benefits        BenefitType[]
+  highlights      String[]
 }
 
 model User {
@@ -103,4 +105,10 @@ type ModuleType {
 type TagType {
   schedules String[]
   status    String[]
+}
+
+type BenefitType {
+  title       String
+  description String
+  icon        String
 }

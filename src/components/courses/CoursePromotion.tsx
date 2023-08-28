@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CoursePromotionRow({ text }: { text: string }) {
   return (
@@ -20,8 +21,8 @@ export default function CoursePromotion({
   if (!promotions) return null;
 
   return (
-    <section className="mt-12">
-      <h2 className="mb-6 text-2xl font-medium">Các chương trình ưu đãi</h2>
+    <section>
+      <CourseSectionHeading>Các chương trình ưu đãi</CourseSectionHeading>
       <ul className="space-y-4">
         {promotions.map((promotion) => (
           <CoursePromotionRow key={promotion} text={promotion} />

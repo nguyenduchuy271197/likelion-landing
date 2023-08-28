@@ -1,12 +1,11 @@
 import { TestimonialRow } from "../common/home/Testimonials";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 export default function CourseFeedback() {
   return (
-    <div className="mt-12">
-      <h2 className="mb-6 text-2xl font-medium">
-        Học viên nói về LIKELION
-      </h2>
+    <section className="feedbacks">
+      <CourseSectionHeading>Học viên nói về LIKELION</CourseSectionHeading>
       <TestimonialRow />
-    </div>
+    </section>
   );
 }
