@@ -87,17 +87,17 @@ export default async function CourseDetail({
 
   return (
     <div className="pb-12">
+      {/* Title */}
+      <CourseHeading
+        title={title}
+        subtitle={subtitle}
+        tags={tags}
+        highlights={highlights}
+      />
+      {/* Course Navigation */}
+      <CourseNavigation />
+      
       <div id="course-info">
-        {/* Title */}
-        <CourseHeading
-          title={title}
-          subtitle={subtitle}
-          tags={tags}
-          highlights={highlights}
-        />
-        {/* Course Navigation */}
-        <CourseNavigation />
-
         <div className="container">
           <CourseContainer>
             {/* Info Card */}
