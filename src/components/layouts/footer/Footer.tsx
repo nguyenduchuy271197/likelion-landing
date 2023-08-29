@@ -20,11 +20,13 @@ export default function Footer() {
               <div className="flex flex-col gap-2 mt-10 font-medium">
                 <div className="flex items-start gap-4">
                   <PhoneCall className="shrink-0" />
-                  <a href="tel:+84867133779">(+84) 86 713 3779</a>
+                  <a href="tel:+84867133779" target="_blank">
+                    (+84) 86 713 3779
+                  </a>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="shrink-0" />
-                  <a href="mailto:likelion.vn@likelion.net">
+                  <a href="mailto:likelion.vn@likelion.net" target="_blank">
                     likelion.vn@likelion.net
                   </a>
                 </div>
@@ -37,7 +39,10 @@ export default function Footer() {
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="shrink-0" />
-                  <a href="https://goo.gl/maps/b3Xq5DVnbKoHoxfb6">
+                  <a
+                    href="https://goo.gl/maps/b3Xq5DVnbKoHoxfb6"
+                    target="_blank"
+                  >
                     Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường Bến
                     Nghé, Quận 1, TP. HCM
                   </a>
