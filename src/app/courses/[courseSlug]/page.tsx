@@ -83,6 +83,7 @@ export default async function CourseDetail({
     tags,
     benefits,
     highlights,
+    techs,
   } = await getCourseBySlug(courseSlug);
 
   return (
@@ -93,10 +94,11 @@ export default async function CourseDetail({
         subtitle={subtitle}
         tags={tags}
         highlights={highlights}
+        techs={techs}
       />
       {/* Course Navigation */}
       <CourseNavigation />
-      
+
       <div id="course-info">
         <div className="container">
           <CourseContainer>

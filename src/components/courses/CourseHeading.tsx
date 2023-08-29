@@ -570,21 +570,29 @@ export default function CourseHeading({
   subtitle,
   tags,
   highlights,
+  techs,
 }: {
   title: string;
   subtitle: string;
   tags: ICourse["tags"];
   highlights: ICourse["highlights"];
+  techs: ICourse["techs"];
 }) {
-  const techs = ["html", "css", "js"];
-
   if (!tags) return null;
 
   return (
-    <section className="py-16 text-white border-b-2 bg-primary">
+    <section
+      className="py-16 text-white bg-overlay"
+      style={{
+        background:
+          "linear-gradient(to bottom, hsla(var(--primary) / 0.8), hsla(var(--primary) / 1)),url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="container">
         <CourseContainer>
-          <div className="max-w-xl mx-auto space-y-4 text-center lg:text-left lg:max-w-none">
+          <div className="flex flex-col items-center max-w-xl mx-auto space-y-6 text-center lg:text-left lg:max-w-none lg:items-start">
             <div className="space-y-2">
               <ul className="flex items-center justify-center gap-1 lg:justify-start">
                 {tags.status.map((s) => (
@@ -603,16 +611,23 @@ export default function CourseHeading({
 
             <p className="sm:text-lg">{subtitle}</p>
 
-            {/* <ul>
-              {techs.map((tech) => {
-                if (Object.keys(techIcons).includes(tech)) {
-                  return <CourseTechIcon icon={techIcons[tech]} key={tech} />;
-                }
-              })}
-            </ul> */}
+            {techs && techs.length > 0 && (
+              <ul className="flex flex-wrap items-center justify-center gap-4">
+                {techs.map((tech) => {
+                  if (Object.keys(techIcons).includes(tech)) {
+                    return (
+                      <CourseTechIcon
+                        icon={techIcons[tech as keyof typeof techIcons]}
+                        key={tech}
+                      />
+                    );
+                  }
+                })}
+              </ul>
+            )}
 
             {highlights.length > 0 && (
-              <ul className="max-w-xs mx-auto space-y-2 lg:mx-0 lg:max-w-none">
+              <ul className="max-w-xs space-y-2 lg:mx-0">
                 {highlights.map((highlight) => (
                   <li
                     className="flex items-center gap-2 font-medium sm:gap-4 sm:text-lg"
