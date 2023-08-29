@@ -7,8 +7,6 @@ import CourseTechIcon from "./CourseTechIcon";
 const techIcons = {
   html: (props: LucideProps) => (
     <svg
-      width={66}
-      height={94}
       viewBox="0 0 66 94"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +56,6 @@ const techIcons = {
   ),
   css: (props: LucideProps) => (
     <svg
-      width={66}
-      height={94}
       viewBox="0 0 66 94"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -105,20 +101,20 @@ const techIcons = {
   ),
   js: (props: LucideProps) => (
     <svg
-      width={101}
-      height={100}
       viewBox="0 0 101 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path d="M100.8 0H0.799805V100H100.8V0Z" fill="#F7DF1E" />
+      <path
+        d="M67.9701 78.1296C69.9801 81.4196 72.6001 83.8396 77.2401 83.8396C81.1301 83.8396 83.6201 81.8896 83.6201 79.2096C83.6201 75.9896 81.0601 74.8496 76.7801 72.9697L74.4301 71.9596C67.6501 69.0696 63.1401 65.4496 63.1401 57.7996C63.1401 50.7496 68.5101 45.3896 76.9001 45.3896C82.8701 45.3896 87.1701 47.4696 90.2701 52.9096L82.9501 57.6096C81.3401 54.7196 79.6001 53.5797 76.9001 53.5797C74.2001 53.5797 72.4001 55.3296 72.4001 57.6096C72.4001 60.4296 74.1501 61.5696 78.1801 63.3196L80.5301 64.3297C88.5101 67.7497 93.0201 71.2396 93.0201 79.0896C93.0201 87.5496 86.3701 92.1897 77.4501 92.1897C68.5301 92.1897 63.0801 88.0297 60.3301 82.5797L67.9701 78.1396V78.1296ZM34.7701 78.9397C36.2501 81.5597 37.5901 83.7696 40.8201 83.7696C44.0501 83.7696 45.8501 82.5597 45.8501 77.8697V45.9196H55.2501V77.9996C55.2501 87.7296 49.5501 92.1597 41.2201 92.1597C33.7001 92.1597 29.3401 88.2696 27.1201 83.5797L34.7701 78.9496V78.9397Z"
+        fill="black"
+      />
     </svg>
   ),
   react: (props: LucideProps) => (
     <svg
-      width={97}
-      height={98}
       viewBox="0 0 97 98"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -147,8 +143,6 @@ const techIcons = {
   ),
   git: (props: LucideProps) => (
     <svg
-      width={101}
-      height={100}
       viewBox="0 0 101 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -178,8 +172,6 @@ const techIcons = {
   ),
   github: (props: LucideProps) => (
     <svg
-      width={101}
-      height={98}
       viewBox="0 0 101 98"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -195,8 +187,6 @@ const techIcons = {
   ),
   node: (props: LucideProps) => (
     <svg
-      width={94}
-      height={58}
       viewBox="0 0 94 58"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -326,8 +316,6 @@ const techIcons = {
   ),
   tailwind: (props: LucideProps) => (
     <svg
-      width={101}
-      height={60}
       viewBox="0 0 101 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -341,8 +329,6 @@ const techIcons = {
   ),
   webpack: (props: LucideProps) => (
     <svg
-      width={89}
-      height={100}
       viewBox="0 0 89 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -364,8 +350,6 @@ const techIcons = {
   ),
   npm: (props: LucideProps) => (
     <svg
-      width={101}
-      height={40}
       viewBox="0 0 101 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -391,8 +375,6 @@ const techIcons = {
   ),
   mongo: (props: LucideProps) => (
     <svg
-      width={82}
-      height={94}
       viewBox="0 0 82 94"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -446,8 +428,6 @@ const techIcons = {
   ),
   express: (props: LucideProps) => (
     <svg
-      width={101}
-      height={59}
       viewBox="0 0 101 59"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -461,8 +441,6 @@ const techIcons = {
   ),
   postgre: (props: LucideProps) => (
     <svg
-      width={98}
-      height={100}
       viewBox="0 0 98 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -528,8 +506,6 @@ const techIcons = {
   ),
   python: (props: LucideProps) => (
     <svg
-      width={77}
-      height={94}
       viewBox="0 0 77 94"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -587,8 +563,6 @@ const techIcons = {
   ),
   sql: (props: LucideProps) => (
     <svg
-      width={59}
-      height={101}
       viewBox="0 0 59 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -614,8 +588,6 @@ const techIcons = {
   ),
   numpy: (props: LucideProps) => (
     <svg
-      width={101}
-      height={108}
       viewBox="0 0 101 108"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -661,8 +633,6 @@ const techIcons = {
   ),
   pandas: (props: LucideProps) => (
     <svg
-      width={64}
-      height={101}
       viewBox="0 0 64 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -701,8 +671,6 @@ const techIcons = {
   ),
   matplotlib: (props: LucideProps) => (
     <svg
-      width={102}
-      height={102}
       viewBox="0 0 102 102"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -751,8 +719,6 @@ const techIcons = {
   ),
   seaborn: (props: LucideProps) => (
     <svg
-      width={101}
-      height={101}
       viewBox="0 0 101 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -4695,8 +4661,6 @@ const techIcons = {
   ),
   plotly: (props: LucideProps) => (
     <svg
-      width={101}
-      height={101}
       viewBox="0 0 101 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -4814,8 +4778,6 @@ const techIcons = {
   ),
   java: (props: LucideProps) => (
     <svg
-      width={74}
-      height={101}
       viewBox="0 0 74 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -4855,8 +4817,6 @@ const techIcons = {
   ),
   springboot: (props: LucideProps) => (
     <svg
-      width={101}
-      height={91}
       viewBox="0 0 101 91"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -4870,8 +4830,6 @@ const techIcons = {
   ),
   restful: (props: LucideProps) => (
     <svg
-      width={101}
-      height={101}
       viewBox="0 0 101 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -4961,8 +4919,6 @@ const techIcons = {
   ),
   hibernate: (props: LucideProps) => (
     <svg
-      width={97}
-      height={101}
       viewBox="0 0 97 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -4988,8 +4944,6 @@ const techIcons = {
   ),
   springdata: (props: LucideProps) => (
     <svg
-      width={101}
-      height={125}
       viewBox="0 0 101 125"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -5011,8 +4965,6 @@ const techIcons = {
   ),
   thymeleaf: (props: LucideProps) => (
     <svg
-      width={101}
-      height={101}
       viewBox="0 0 101 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -5034,8 +4986,6 @@ const techIcons = {
   ),
   junit: (props: LucideProps) => (
     <svg
-      width={101}
-      height={31}
       viewBox="0 0 101 31"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -5089,8 +5039,6 @@ const techIcons = {
   ),
   mockito: (props: LucideProps) => (
     <svg
-      width={101}
-      height={51}
       viewBox="0 0 101 51"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -7772,8 +7720,6 @@ const techIcons = {
   ),
   postman: (props: LucideProps) => (
     <svg
-      width={101}
-      height={101}
       viewBox="0 0 101 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -7827,8 +7773,6 @@ const techIcons = {
   ),
   intellij: (props: LucideProps) => (
     <svg
-      width={101}
-      height={101}
       viewBox="0 0 101 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -7938,8 +7882,6 @@ const techIcons = {
   ),
   springsecurity: (props: LucideProps) => (
     <svg
-      width={74}
-      height={100}
       viewBox="0 0 74 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -7957,8 +7899,6 @@ const techIcons = {
   ),
   springcloud: (props: LucideProps) => (
     <svg
-      width={101}
-      height={70}
       viewBox="0 0 101 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -7976,8 +7916,6 @@ const techIcons = {
   ),
   docker: (props: LucideProps) => (
     <svg
-      width={101}
-      height={72}
       viewBox="0 0 101 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -8027,8 +7965,6 @@ const techIcons = {
   ),
   dockercompose: (props: LucideProps) => (
     <svg
-      width={79}
-      height={100}
       viewBox="0 0 79 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -9946,8 +9882,6 @@ const techIcons = {
   ),
   redis: (props: LucideProps) => (
     <svg
-      width={101}
-      height={86}
       viewBox="0 0 101 86"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10017,8 +9951,6 @@ const techIcons = {
   ),
   kafka: (props: LucideProps) => (
     <svg
-      width={63}
-      height={100}
       viewBox="0 0 63 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10032,8 +9964,6 @@ const techIcons = {
   ),
   websocket: (props: LucideProps) => (
     <svg
-      width={101}
-      height={76}
       viewBox="0 0 101 76"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10051,8 +9981,6 @@ const techIcons = {
   ),
   xampp: (props: LucideProps) => (
     <svg
-      width={100}
-      height={100}
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10074,8 +10002,6 @@ const techIcons = {
   ),
   wamp: (props: LucideProps) => (
     <svg
-      width={101}
-      height={100}
       viewBox="0 0 101 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10097,8 +10023,6 @@ const techIcons = {
   ),
   mamp: (props: LucideProps) => (
     <svg
-      width={101}
-      height={100}
       viewBox="0 0 101 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10116,8 +10040,6 @@ const techIcons = {
   ),
   mysql: (props: LucideProps) => (
     <svg
-      width={101}
-      height={98}
       viewBox="0 0 101 98"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10135,8 +10057,6 @@ const techIcons = {
   ),
   ajax: (props: LucideProps) => (
     <svg
-      width={101}
-      height={44}
       viewBox="0 0 101 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10182,8 +10102,6 @@ const techIcons = {
   ),
   json: (props: LucideProps) => (
     <svg
-      width={101}
-      height={100}
       viewBox="0 0 101 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10229,8 +10147,6 @@ const techIcons = {
   ),
   xml: (props: LucideProps) => (
     <svg
-      width={78}
-      height={100}
       viewBox="0 0 78 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10276,8 +10192,6 @@ const techIcons = {
   ),
   laravel: (props: LucideProps) => (
     <svg
-      width={98}
-      height={100}
       viewBox="0 0 98 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10293,8 +10207,6 @@ const techIcons = {
   ),
   wordpress: (props: LucideProps) => (
     <svg
-      width={101}
-      height={100}
       viewBox="0 0 101 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -10324,8 +10236,6 @@ const techIcons = {
   ),
   shopify: (props: LucideProps) => (
     <svg
-      width={89}
-      height={100}
       viewBox="0 0 89 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
