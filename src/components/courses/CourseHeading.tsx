@@ -585,7 +585,7 @@ export default function CourseHeading({
       className="py-16 text-white bg-overlay"
       style={{
         background:
-          "linear-gradient(to top, rgba(120, 186, 232, .8), rgba(120, 186, 100, .8)),url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg')",
+          "linear-gradient(to bottom, hsla(var(--primary) / 0.8), hsla(var(--primary) / 1)),url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
