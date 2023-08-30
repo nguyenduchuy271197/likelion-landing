@@ -17,13 +17,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/Sheet";
 import Link from "next/link";
-import { CourseType } from "./Navbar";
 import Icons from "@/components/Icons";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
+import { ICourse } from "@/types";
 
-export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
+export default function NavMenuMobile({ courses }: { courses: ICourse[] }) {
   const { setOpen } = useContext(RegisterDialogContext);
 
   return (
@@ -64,14 +64,10 @@ export default function NavMenuMobile({ courses }: { courses: CourseType[] }) {
                   <li key={course.title}>
                     <SheetClose asChild>
                       <Link
-                        href={course.href}
-                        className={cn(
-                          "block w-full p-2 hover:text-accent-foreground",
-                          !course.published &&
-                            "pointer-events-none opacity-30 text-primary"
-                        )}
+                        href={`/courses/${course.slug}`}
+                        className="block w-full p-2 hover:text-accent-foreground"
                       >
-                        {course.title} {!course.published && "(Coming soon...)"}
+                        {course.title}
                       </Link>
                     </SheetClose>
                   </li>

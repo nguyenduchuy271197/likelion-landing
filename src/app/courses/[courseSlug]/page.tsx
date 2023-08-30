@@ -9,8 +9,7 @@ import CoursePartnership from "@/components/courses/CoursePartnership";
 import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import CourseReviews from "@/components/courses/CourseReviews";
-import { courses } from "@/components/layouts/navbar/Navbar";
-import { getCourseBySlug } from "@/services/courseService";
+import { getCourseBySlug, getCourses } from "@/services/courseService";
 import { Metadata, ResolvingMetadata } from "next";
 import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules";
 import CourseWorkshops from "@/components/courses/CourseWorkshops";
@@ -49,11 +48,11 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-  return courses
-    .filter((course) => course.published)
-    .map((course) => ({
-      courseSlug: course.slug,
-    }));
+  const courses = await getCourses();
+
+  return courses.map((course) => ({
+    courseSlug: course.slug,
+  }));
 }
 
 export default async function CourseDetail({
@@ -100,7 +99,7 @@ export default async function CourseDetail({
       <div id="course-info-scroll">
         {/* Course Navigation */}
         <CourseNavigation />
-        
+
         <div className="container">
           <CourseContainer>
             {/* Info Card */}

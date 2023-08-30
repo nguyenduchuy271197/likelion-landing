@@ -10284,24 +10284,26 @@ export default function CourseHeading({
     >
       <div className="container">
         <CourseContainer>
-          <div className="flex flex-col items-center max-w-xl mx-auto space-y-6 text-center lg:text-left lg:max-w-none lg:items-start">
-            <div className="space-y-2">
-              <ul className="flex items-center justify-center gap-1 lg:justify-start">
-                {tags.status.map((s) => (
-                  <li key={s}>
-                    <Badge size="lg" variant="secondary">
-                      {s}
-                    </Badge>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex flex-col items-center max-w-xl mx-auto space-y-8 text-center lg:text-left lg:max-w-none lg:items-start">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <ul className="flex items-center justify-center gap-1 lg:justify-start">
+                  {tags.status.map((s) => (
+                    <li key={s}>
+                      <Badge size="lg" variant="secondary">
+                        {s}
+                      </Badge>
+                    </li>
+                  ))}
+                </ul>
 
-              <h1 className="mb-4 text-3xl font-bold capitalize lg:text-4xl">
-                {title}
-              </h1>
+                <h1 className="mb-4 text-3xl font-bold capitalize lg:text-4xl">
+                  {title}
+                </h1>
+              </div>
+
+              <p className="sm:text-lg">{subtitle}</p>
             </div>
-
-            <p className="sm:text-lg">{subtitle}</p>
 
             {techs && techs.length > 0 && (
               <ul className="flex flex-wrap items-center justify-center gap-4">

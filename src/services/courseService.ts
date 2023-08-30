@@ -3,13 +3,9 @@
 import { prisma } from "@/lib/prisma";
 import { ICourse } from "@/types";
 
-export async function getListOfCourses() {
+export async function getCourses() {
   const courses = await prisma.course.findMany();
-
-  return courses.map((course) => ({
-    id: course.id,
-    title: course.title,
-  }));
+  return courses as ICourse[];
 }
 
 export async function getCourseBySlug(slug: string) {

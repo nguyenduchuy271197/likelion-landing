@@ -1,4 +1,5 @@
 import RegisterFormBox from "@/components/common/register/RegisterFormBox";
+import { getCourses } from "@/services/courseService";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -12,12 +13,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Register({
+export default async function Register({
   searchParams,
 }: {
   searchParams: { course: string };
 }) {
-  const { course = "fullstack-web-development-bootcamp" } = searchParams;
+  const { course } = searchParams;
+  const courses = await getCourses();
+
   return (
     <div>
       <div className="container">
@@ -37,7 +40,7 @@ export default function Register({
 
             {/* Form Box */}
             <div className="w-full min-h-[70vh] flex items-center">
-              <RegisterFormBox initialCourse={course} />
+              <RegisterFormBox initialCourse={course} courses={courses} />
             </div>
           </div>
         </div>

@@ -15,9 +15,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu";
 import NavMenuContentCard from "./NavMenuContentCard";
-import { CourseType } from "./Navbar";
+import { ICourse } from "@/types";
 
-export default function NavMenu({ courses }: { courses: CourseType[] }) {
+export default function NavMenu({ courses }: { courses: ICourse[] }) {
   const pathname = usePathname();
 
   return (
@@ -49,18 +49,9 @@ export default function NavMenu({ courses }: { courses: CourseType[] }) {
                   <ListItem
                     title={course.title}
                     key={course.slug}
-                    href={course.href}
-                    className={cn(
-                      !course.published && "pointer-events-none opacity-40"
-                    )}
+                    href={`/courses/${course.slug}`}
                   >
-                    {course.published ? (
-                      course.excerpt
-                    ) : (
-                      <span className={cn(!course.published && "text-primary")}>
-                        Coming soon...
-                      </span>
-                    )}
+                    {course.excerpt}
                   </ListItem>
                 ))}
               </div>
