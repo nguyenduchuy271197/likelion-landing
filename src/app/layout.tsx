@@ -20,6 +20,7 @@ import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 import PhoneCall from "@/components/PhoneCall";
 import { getCourses } from "@/services/courseService";
+import TrialPopup from "@/components/popups/TrialPopup";
 
 // Load body font
 const bodyFont = Roboto({
@@ -72,6 +73,7 @@ export default async function RootLayout({
           </div>
           <Toaster />
           <PhoneCall />
+          <TrialPopup />
         </Providers>
 
         {/* <!-- Meta Pixel Code --> */}
