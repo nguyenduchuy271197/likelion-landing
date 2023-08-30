@@ -57,12 +57,11 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
 export default function CourseWorkshops() {
   return (
     <div>
-      <CourseSectionHeading className="flex items-center gap-2">
-        <span>Workshops</span>
-        <div className="flex items-center gap-1">
-          <Badge className="bg-[#FF7100]">Mới</Badge>
-          <Badge className="bg-[#FF7100]">Đặc biệt</Badge>
-        </div>
+      <CourseSectionHeading
+        className="flex items-center gap-2"
+        tags={["Mới", "Đặc biệt"]}
+      >
+        Workshops
       </CourseSectionHeading>
 
       <div className="grid gap-8 sm:grid-cols-2">
