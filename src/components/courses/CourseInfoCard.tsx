@@ -73,7 +73,7 @@ export default function CourseInfoCard({
 
   useEffect(() => {
     const handleCardScroll = () => {
-      const scrollY = window.scrollY + 72;
+      const scrollY = window.scrollY + 72 + 60;
       setIsInterval(scrollY >= top && scrollY <= bottom - cardHeight);
     };
 
