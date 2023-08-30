@@ -4,61 +4,25 @@ import CourseFeatureItem from "./CourseFeatureItem";
 import { ICourse } from "@/types";
 import { Button } from "../ui/Button";
 import Link from "next/link";
-import { useContext, useEffect, useRef } from "react";
+import { forwardRef, useContext, useEffect, useRef, useState } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseThumbnail from "./CourseThumbnail";
+import { cn } from "@/lib/utils";
 
 type CourseInfoCardProps = Pick<
   ICourse,
-  | "id"
-  | "title"
-  | "price"
-  | "discountedPrice"
-  | "features"
-  | "slug"
-  | "thumbnail"
-  | "youtubeId"
+  "title" | "features" | "slug" | "thumbnail" | "youtubeId"
 >;
 
-export default function CourseInfoCard({
-  title,
-  features,
-  slug,
-  thumbnail,
-  youtubeId,
-}: CourseInfoCardProps) {
-  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
-  const cardRef = useRef<HTMLDivElement>(null);
+const CourseInfo = forwardRef<HTMLDivElement, CourseInfoCardProps>(
+  function CourseInfo({ title, features, slug, thumbnail, youtubeId }, ref) {
+    const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
-  useEffect(() => {
-    const handleCardScroll = () => {
-      if (cardRef.current) {
-        if (
-          window.scrollY +
-            (cardRef.current?.offsetTop || 0) +
-            cardRef.current.getBoundingClientRect().height >=
-          bottom
-        ) {
-          cardRef.current.style.opacity = "0";
-        } else {
-          cardRef.current.style.opacity = "1";
-        }
-      }
-    };
-
-    const courseInfo = document.getElementById("course-info");
-    const bottom = courseInfo?.getBoundingClientRect().bottom || 0;
-    window.addEventListener("scroll", handleCardScroll);
-
-    return () => window.removeEventListener("scroll", handleCardScroll);
-  }, []);
-
-  return (
-    <div
-      ref={cardRef}
-      className="fixed top-[calc(var(--navbar-height)+5rem)] z-20 ml-[calc(min(100%,1200px)-350px-32px)] hidden lg:block transition-all"
-    >
-      <div className="w-[350px] bg-white border-2 border-white shadow-xl">
+    return (
+      <div
+        className="w-[350px] bg-white border-2 border-white shadow-xl"
+        ref={ref}
+      >
         <CourseThumbnail
           title={title}
           thumbnail={thumbnail}
@@ -96,6 +60,66 @@ export default function CourseInfoCard({
           </div>
         </div>
       </div>
-    </div>
+    );
+  }
+);
+
+export default function CourseInfoCard({
+  title,
+  features,
+  slug,
+  thumbnail,
+  youtubeId,
+}: CourseInfoCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isInterval, setIsInterval] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleCardScroll = () => {
+      const scrollY = window.scrollY + 72;
+      setIsInterval(scrollY >= top && scrollY <= bottom - cardHeight);
+    };
+
+    const courseInfo = document.getElementById("course-info-scroll");
+    const bottom = courseInfo?.getBoundingClientRect().bottom || 0;
+    const top = courseInfo?.getBoundingClientRect().top || 0;
+    const cardHeight = cardRef.current?.getBoundingClientRect().height || 0;
+    window.addEventListener("scroll", handleCardScroll);
+
+    return () => window.removeEventListener("scroll", handleCardScroll);
+  }, []);
+
+  return (
+    <>
+      <div
+        className={cn(
+          "absolute top-20 z-20 ml-[calc(min(100%,1200px)-350px-2rem)] hidden lg:block transition-all",
+          isInterval ? "opacity-0" : "opacity-100"
+        )}
+      >
+        <CourseInfo
+          ref={cardRef}
+          title={title}
+          features={features}
+          slug={slug}
+          thumbnail={thumbnail}
+          youtubeId={youtubeId}
+        />
+      </div>
+      <div
+        className={cn(
+          "fixed top-[calc(var(--navbar-height)+1rem)] z-20 ml-[calc(min(100%,1200px)-350px-32px)] hidden lg:block transition-all",
+          isInterval ? "opacity-100" : "opacity-0"
+        )}
+      >
+        <CourseInfo
+          title={title}
+          features={features}
+          slug={slug}
+          thumbnail={thumbnail}
+          youtubeId={youtubeId}
+        />
+      </div>
+    </>
   );
 }
