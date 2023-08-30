@@ -101,7 +101,7 @@ export default function TrialPopup() {
         </AspectRatio>
 
         {isImageReady && (
-          <TrialButton className="absolute w-full max-w-[210px] right-8 bottom-8 hover:scale-105 transition-all duration-300" />
+          <TrialButton className="absolute w-full max-w-[210px] right-8 bottom-8 hover:scale-105 transition-all duration-300 animate-pulse-512 rounded" />
         )}
       </a>
     </Popup>
