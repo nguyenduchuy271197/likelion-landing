@@ -3,7 +3,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/Dialog";
@@ -16,18 +15,21 @@ import RegisterSuccess from "./RegisterSuccess";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
+import { ICourse } from "@/types";
 
-export function RegisterDialog({ course }: { course: string }) {
+export function RegisterDialog({
+  initialCourse,
+  courses,
+}: {
+  initialCourse: string;
+  courses: ICourse[];
+}) {
   const router = useRouter();
   const { onResetCourse } = useContext(RegisterContext);
   const { open, setOpen } = useContext(RegisterDialogContext);
 
-  const {
-    isRegisterLoading,
-    isRegisterError,
-    isRegisterSuccess,
-    registerUser,
-  } = useRegisterUser();
+  const { isRegisterLoading, isRegisterSuccess, registerUser } =
+    useRegisterUser();
 
   function handleCloseDialog() {
     setOpen(false);
@@ -61,9 +63,10 @@ export function RegisterDialog({ course }: { course: string }) {
 
             {/* Form */}
             <RegisterForm
-              initialCourse={course}
+              initialCourse={initialCourse}
               registerUser={registerUser}
               isSubmitting={isRegisterLoading}
+              courses={courses}
             />
           </>
         )}

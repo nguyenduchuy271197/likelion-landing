@@ -26,6 +26,7 @@ export interface ICourse {
   id: string;
   slug: string;
   title: string;
+  excerpt: string;
   abbr: string;
   subtitle: string;
   thumbnail: string;

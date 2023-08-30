@@ -19,10 +19,7 @@ const CourseInfo = forwardRef<HTMLDivElement, CourseInfoCardProps>(
     const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
     return (
-      <div
-        className="w-[350px] bg-white border-2 border-white shadow-xl"
-        ref={ref}
-      >
+      <div className="w-[350px] bg-white shadow-xl" ref={ref}>
         <CourseThumbnail
           title={title}
           thumbnail={thumbnail}
@@ -94,7 +91,7 @@ export default function CourseInfoCard({
       <div
         className={cn(
           "absolute top-20 z-20 ml-[calc(min(100%,1200px)-350px-2rem)] hidden lg:block transition-all",
-          isInterval ? "opacity-0" : "opacity-100"
+          isInterval ? "opacity-0 invisible" : "opacity-100 visible"
         )}
       >
         <CourseInfo
@@ -109,7 +106,7 @@ export default function CourseInfoCard({
       <div
         className={cn(
           "fixed top-[calc(var(--navbar-height)+1rem)] z-20 ml-[calc(min(100%,1200px)-350px-32px)] hidden lg:block transition-all",
-          isInterval ? "opacity-100" : "opacity-0"
+          isInterval ? "opacity-100 visible" : "opacity-0 invisible"
         )}
       >
         <CourseInfo

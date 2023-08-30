@@ -3,6 +3,7 @@ import Events from "@/components/common/home/Events";
 import Workspaces from "@/components/common/home/Workspaces";
 import siteConfig from "@/config/siteConfig";
 import { getBlogsByTag } from "@/services/blogService";
+import { getCourses } from "@/services/courseService";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -21,12 +22,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function Home() {
+export default async function Home() {
   const eventBlogs = getBlogsByTag("events");
+  const courses = await getCourses();
   return (
     <div className="flex flex-col">
       <Banner />
-      <Courses />
+      <Courses courses={courses} />
       <Teachers />
       <TechStack />
       <Testimonials />

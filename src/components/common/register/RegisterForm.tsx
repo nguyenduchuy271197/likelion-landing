@@ -26,18 +26,20 @@ import {
 } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 import { UseMutateFunction } from "@tanstack/react-query";
-import { courses } from "@/components/layouts/navbar/Navbar";
+import { ICourse } from "@/types";
 
 interface RegisterFormProps {
   initialCourse: string;
   registerUser: UseMutateFunction<void, unknown, RegisterFormType, unknown>;
   isSubmitting: boolean;
+  courses: ICourse[];
 }
 
 export function RegisterForm({
   initialCourse,
   registerUser,
   isSubmitting,
+  courses,
 }: RegisterFormProps) {
   const { register, onRegisterForm } = useContext(RegisterContext);
 

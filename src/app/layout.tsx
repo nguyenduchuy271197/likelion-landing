@@ -18,8 +18,9 @@ import Script from "next/script";
 import Image from "next/image";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
-import Head from "next/head";
 import PhoneCall from "@/components/PhoneCall";
+import { getCourses } from "@/services/courseService";
+import TrialPopup from "@/components/popups/TrialPopup";
 
 // Load body font
 const bodyFont = Roboto({
@@ -42,13 +43,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   dialog,
 }: {
   children: ReactNode;
   dialog: ReactNode;
 }) {
+  const courses = await getCourses();
+
   return (
     <html
       lang="en"
@@ -60,7 +63,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className="overflow-x-hidden">
         <Providers>
           <div className="flex flex-col min-h-screen antialiased pt-body-top">
-            <Navbar />
+            <Navbar courses={courses} />
             <main className="grow">
               {children}
               {dialog}
@@ -70,6 +73,7 @@ export default function RootLayout({
           </div>
           <Toaster />
           <PhoneCall />
+          <TrialPopup />
         </Providers>
 
         {/* <!-- Meta Pixel Code --> */}
