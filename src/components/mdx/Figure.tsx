@@ -7,7 +7,7 @@ interface FigureProps {
 
 export default function Figure({ imageUrl, caption }: FigureProps) {
   return (
-    <div>
+    <div className="figure">
       <Image
         loading="lazy"
         className="w-full mx-auto mb-0"

@@ -119,6 +119,10 @@
     @apply text-justify;
   }
 
+  .prose .figure p {
+    @apply text-center;
+  }
+
   .prose ul {
     @apply text-justify;
   }
