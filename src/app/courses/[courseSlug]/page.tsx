@@ -87,7 +87,7 @@ export default async function CourseDetail({
   } = await getCourseBySlug(courseSlug);
 
   return (
-    <div className="pb-12">
+    <div className="relative pb-12">
       {/* Title */}
       <CourseHeading
         title={title}
@@ -96,18 +96,16 @@ export default async function CourseDetail({
         highlights={highlights}
         techs={techs}
       />
-      {/* Course Navigation */}
-      <CourseNavigation />
 
-      <div id="course-info">
+      <div id="course-info-scroll">
+        {/* Course Navigation */}
+        <CourseNavigation />
+        
         <div className="container">
           <CourseContainer>
             {/* Info Card */}
             <CourseInfoCard
-              id={id}
               title={title}
-              price={price}
-              discountedPrice={discountedPrice}
               features={features}
               slug={courseSlug}
               thumbnail={thumbnail}
