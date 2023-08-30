@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AspectRatio } from "../ui/AspectRatio";
 import Popup from "./Popup";
 import { LucideProps } from "lucide-react";
+import { useState } from "react";
 
 function TrialButton(props: LucideProps) {
   return (
@@ -81,6 +82,8 @@ function TrialButton(props: LucideProps) {
 }
 
 export default function TrialPopup() {
+  const [isImageReady, setIsImageReady] = useState<boolean>(false);
+
   return (
     <Popup delay={3000}>
       <a
@@ -93,9 +96,13 @@ export default function TrialPopup() {
             src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1693379749/popup/hoc-thu/Free_Trial_pop_up_hbploi.png"
             alt="Trial Class | LIKELION"
             fill
+            onLoad={() => setIsImageReady(true)}
           />
         </AspectRatio>
-        <TrialButton className="absolute w-full max-w-[210px] right-8 bottom-8 hover:scale-105 transition-all duration-300" />
+
+        {isImageReady && (
+          <TrialButton className="absolute w-full max-w-[210px] right-8 bottom-8 hover:scale-105 transition-all duration-300" />
+        )}
       </a>
     </Popup>
   );
