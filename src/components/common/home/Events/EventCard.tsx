@@ -20,27 +20,27 @@ export default function EventCard({
   publishOn,
 }: EventProps) {
   return (
-    <div className="flex flex-col h-full overflow-hidden border rounded-lg shadow-lg lg:flex-row">
-      <div className="lg:grow">
-        <div className="relative w-full h-full aspect-[7/3]">
-          <Image
-            src={thumbnail}
-            alt={title}
-            fill
-            className="object-cover w-full h-auto"
-          />
-        </div>
+    <div className="grid overflow-hidden border rounded-lg shadow-lg lg:grid-cols-[1fr_350px]">
+      <div className="relative aspect-[7/3] w-full h-full overflow-hidden">
+        <Image
+          src={thumbnail}
+          alt={title}
+          fill
+          className="object-cover w-full h-full"
+        />
       </div>
 
-      <div className="w-full h-full p-6 sm:p-8 grow lg:grow-0 lg:max-w-[350px]">
+      <div className="p-6">
         <div className="flex flex-col justify-between h-full space-y-4 lg:justify-start">
           <div className="space-y-2">
-            <h3 className="text-xl font-bold sm:text-2xl">{title}</h3>
+            <h3 className="text-xl font-bold sm:text-2xl line-clamp-2">
+              {title}
+            </h3>
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
               <Calendar size={16} />
               <span>{formatDate(publishOn)}</span>
             </div>
-            <p className="text-sm sm:text-base text-muted-foreground line-clamp-5">
+            <p className="text-sm sm:text-base text-muted-foreground line-clamp-3">
               {description}
             </p>
           </div>
