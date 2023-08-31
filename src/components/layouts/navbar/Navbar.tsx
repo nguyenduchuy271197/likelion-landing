@@ -2,9 +2,11 @@ import NavMenu from "./NavMenu";
 import Logo from "../../Logo";
 import NavMenuMobile from "./NavMenuMobile";
 import NavRegisterButton from "./NavRegisterButton";
-import { ICourse } from "@/types";
+import { getCourses } from "@/services/courseService";
 
-export default function Navbar({ courses }: { courses: ICourse[] }) {
+export default async function Navbar() {
+  const courses = await getCourses();
+
   return (
     <nav className="fixed inset-x-0 top-0 z-40 min-h-navbar backdrop-blur-sm h-fit shadow-navbar bg-background/90 ">
       <div className="container">
