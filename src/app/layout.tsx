@@ -1,11 +1,13 @@
 import "@/styles/globals.css";
+import "@/styles/swiper.css";
+import "@/styles/animate.css";
+
 import "highlight.js/styles/atom-one-dark.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "swiper/css/thumbs";
 import "react-modal-video/scss/modal-video.scss";
-import "@/styles/swiper.css";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import { Roboto } from "next/font/google";
 import Footer from "@/components/layouts/footer/Footer";
@@ -19,7 +21,6 @@ import Image from "next/image";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 import PhoneCall from "@/components/PhoneCall";
-import { getCourses } from "@/services/courseService";
 import TrialPopup from "@/components/popups/TrialPopup";
 
 // Load body font
@@ -72,15 +73,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   dialog,
 }: {
   children: ReactNode;
   dialog: ReactNode;
 }) {
-  const courses = await getCourses();
-
   return (
     <html
       lang="en"
@@ -92,7 +91,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning={true} className="overflow-x-hidden">
         <Providers>
           <div className="flex flex-col min-h-screen antialiased pt-body-top">
-            <Navbar courses={courses} />
+            <Navbar />
             <main className="grow">
               {children}
               {dialog}

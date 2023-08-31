@@ -95,11 +95,10 @@ export default async function CourseDetail({
         highlights={highlights}
         techs={techs}
       />
+      {/* Course Navigation */}
+      <CourseNavigation />
 
       <div id="course-info-scroll">
-        {/* Course Navigation */}
-        <CourseNavigation />
-
         <div className="container">
           <CourseContainer>
             {/* Info Card */}
