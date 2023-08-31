@@ -25,7 +25,7 @@ export default function NotFound() {
           </div>
 
           <div className="hidden md:block">
-            <Icons.notfound className="w-80" />
+            <Icons.notfound className="w-full max-w-xs" />
           </div>
         </div>
       </div>
