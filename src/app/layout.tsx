@@ -29,17 +29,46 @@ const bodyFont = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    template: "%s | LIKELION",
-    default: siteConfig.title,
+    template: `%s | ${siteConfig.brand}`,
+    default: siteConfig.defaultTitle,
   },
   description: siteConfig.description,
+  keywords: [siteConfig.brand],
+  applicationName: siteConfig.title,
+  authors: [{ name: siteConfig.brand, url: siteConfig.url }],
+  colorScheme: "light",
+  creator: siteConfig.brand,
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  category: "education",
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [
       "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692261866/og/opengraph-image_i6r5fy.png",
     ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

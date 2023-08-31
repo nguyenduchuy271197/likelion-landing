@@ -20,7 +20,7 @@ export default async function Blogs() {
     <div>
       <SectionBanner
         title="Blogs"
-        description="Blogs hấp dẫn và đa dạng với nhiều chủ đề"
+        description="Mỗi tuần một bài viết mới với chủ đề đa dạng, cung cấp hiểu biết sâu sắc về công nghệ và lập trình, mang tính ứng dụng cao trong công việc và cuộc sống."
         src={{
           sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543367/banners/blogs-mb.png",
           lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543368/banners/blogs.png",
