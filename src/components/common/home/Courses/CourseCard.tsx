@@ -1,14 +1,10 @@
-"use client";
-
-import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ICourse } from "@/types";
 
-export function CourseCard({ title, thumbnail, slug, tags }: ICourse) {
+export default function CourseCard({ title, thumbnail, slug, tags }: ICourse) {
   return (
     <div className="flex flex-col overflow-hidden transition duration-300 group hover:-translate-y-2">
       <Link
@@ -51,36 +47,5 @@ export function CourseCard({ title, thumbnail, slug, tags }: ICourse) {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function Courses({ courses }: { courses: ICourse[] }) {
-  return (
-    <section id="courses" className="scroll-mt-4">
-      <div className="container">
-        <div className="py-6 md:py-20">
-          <SectionHeading
-            title="Khóa học dẫn bạn đến thành công"
-            subtitle="Người mới bắt đầu? Chưa có kinh nghiệm? Khoá học lập trình của LIKELION hỗ trợ bạn mọi lúc trên con đường học tập của mình. "
-          />
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.5,
-              duration: 0.5,
-            }}
-            viewport={{ once: true }}
-          >
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {courses.map((course) => (
-                <CourseCard key={course.title} {...course} />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
   );
 }

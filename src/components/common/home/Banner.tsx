@@ -6,8 +6,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const Achievement = dynamic(
-  () => import("@/components/common/home/Achievement")
+const Achievements = dynamic(
+  () => import("@/components/common/home/Achievements")
 );
 
 const banners = [
@@ -143,7 +143,7 @@ export default function Banner() {
 
       {/* Achievements */}
       <div className="z-20 md:-translate-y-1/2 md:-translate-x-1/2 md:container md:absolute top-full left-1/2">
-        <Achievement />
+        <Achievements />
       </div>
     </motion.section>
   );

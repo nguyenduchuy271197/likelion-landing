@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode, useRef } from "react";
-import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import {
   motion,
