@@ -1,11 +1,9 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { TechStackOptions } from "./TechStack";
-import SectionHeading from "./SectionHeading";
-import { motion } from "framer-motion";
+import { TechStackOptions } from "../TechStack";
+import SectionHeading from "../SectionHeading";
 import Icons from "@/components/Icons";
+import { TeacherAvatarAnimated, TeacherInfoAnimated } from "./TeachersAnimated";
 
 const teachers: TeacherInfo[] = [
   {
@@ -102,13 +100,7 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
           reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         )}
       >
-        <motion.div
-          initial={{ opacity: 0, x: reverse ? 50 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          viewport={{ once: true }}
-          className="flex-1"
-        >
+        <TeacherInfoAnimated reverse={reverse}>
           <div className="max-w-lg mx-auto lg:max-w-none">
             <div>
               <div className="text-center lg:text-left">
@@ -139,18 +131,12 @@ function TeacherPortfolio({ info, reverse = false }: TeacherPortfolioProps) {
               </div>
             </div>
           </div>
-        </motion.div>
+        </TeacherInfoAnimated>
 
         <div className="flex items-center justify-center flex-1">
-          <motion.div
-            initial={{ opacity: 0, x: reverse ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            viewport={{ once: true }}
-            className="relative w-full max-w-[400px] aspect-[1/1]"
-          >
+          <TeacherAvatarAnimated reverse={reverse}>
             <Image src={avatar} fill alt={title} className="object-contain" />
-          </motion.div>
+          </TeacherAvatarAnimated>
         </div>
       </div>
     </div>

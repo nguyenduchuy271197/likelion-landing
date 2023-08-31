@@ -1,8 +1,6 @@
-"use client";
-
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
-import { Code2, LucideIcon, LucideProps, Star, Users } from "lucide-react";
+import { Code2, LucideIcon, Star, Users } from "lucide-react";
+import AchievementsAnimated from "./AchievementsAnimated";
 
 const achievements: Achievement[] = [
   {
@@ -69,33 +67,14 @@ function AchievementCard({
   );
 }
 
-export default function Achievement() {
+export default function Achievements() {
   return (
     <section className="container py-20 bg-white border-b md:py-10 md:shadow-lg md:rounded-2xl md:border-none">
-      <motion.div
-        className="flex flex-col items-center justify-between gap-12 md:gap-6 md:flex-row"
-        initial={{
-          opacity: 0,
-          y: 50,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          delay: 0.2,
-          duration: 0.4,
-        }}
-        exit={{
-          opacity: 0,
-          y: 50,
-        }}
-        viewport={{ once: true }}
-      >
+      <AchievementsAnimated>
         {achievements.map((achievement) => (
           <AchievementCard key={achievement.label} {...achievement} />
         ))}
-      </motion.div>
+      </AchievementsAnimated>
     </section>
   );
 }
