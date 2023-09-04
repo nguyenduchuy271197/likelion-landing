@@ -21,6 +21,8 @@ import CoursePaymentMethods from "@/components/courses/CoursePaymentMethods";
 import CourseBenefits from "@/components/courses/CourseBenefits";
 import CourseNavigation from "@/components/courses/CourseNavigation";
 import CourseContainer from "@/components/courses/CourseContainer";
+import data from "@/data/data.json";
+import { ICourse } from "@/types";
 
 export async function generateMetadata(
   {
@@ -48,7 +50,7 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-  const courses = await getCourses();
+  const courses = data["courses"] as ICourse[];
 
   return courses.map((course) => ({
     courseSlug: course.slug,

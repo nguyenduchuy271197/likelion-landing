@@ -1,10 +1,12 @@
 import SectionHeading from "../SectionHeading";
 import CoursesAnimated from "./CoursesAnimated";
 import CourseCard from "./CourseCard";
-import { getCourses } from "@/services/courseService";
+import { ICourse } from "@/types";
+import data from "@/data/data.json";
 
-export default async function Courses() {
-  const courses = await getCourses();
+export default function Courses() {
+  const courses = data["courses"] as ICourse[];
+
   return (
     <section id="courses" className="scroll-mt-4">
       <div className="container">

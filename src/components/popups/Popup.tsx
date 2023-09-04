@@ -18,7 +18,9 @@ export default function Popup({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="p-0 mt-12 sm:mt-0">{children}</DialogContent>
+      {open && (
+        <DialogContent className="p-0 mt-12 sm:mt-0">{children}</DialogContent>
+      )}
     </Dialog>
   );
 }

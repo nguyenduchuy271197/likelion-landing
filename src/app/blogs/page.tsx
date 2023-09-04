@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Blogs() {
+export default function Blogs() {
   const blogs = getAllBlogs();
   return (
     <div>

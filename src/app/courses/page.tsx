@@ -1,9 +1,10 @@
 import CourseCard from "@/components/common/home/Courses/CourseCard";
 import SectionHeading from "@/components/common/home/SectionHeading";
-import { getCourses } from "@/services/courseService";
+import data from "@/data/data.json";
+import { ICourse } from "@/types";
 
-export default async function Courses() {
-  const courses = await getCourses();
+export default function Courses() {
+  const courses = data["courses"] as ICourse[];
   return (
     <section>
       <div className="container">
