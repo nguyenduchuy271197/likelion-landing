@@ -112,7 +112,7 @@ export default function Banner() {
       >
         {banners.map((banner, index) => (
           <SwiperSlide key={banner.title}>
-            <Link href={banner.href} className="relative">
+            <Link href={banner.href} className="relative" prefetch={false}>
               <picture>
                 <source srcSet={banner.src.lg} media="(min-width: 768px)" />
                 <Image
