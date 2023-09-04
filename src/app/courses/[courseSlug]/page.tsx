@@ -57,7 +57,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function CourseDetail({
+export default function CourseDetail({
   params,
 }: {
   params: { courseSlug: string };
@@ -85,7 +85,7 @@ export default async function CourseDetail({
     benefits,
     highlights,
     techs,
-  } = await getCourseBySlug(courseSlug);
+  } = getCourseBySlug(courseSlug);
 
   return (
     <div className="relative pb-12">
