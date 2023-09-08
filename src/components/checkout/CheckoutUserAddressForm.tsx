@@ -17,13 +17,9 @@ import {
   FormMessage,
 } from "../ui/Form";
 import { Input } from "../ui/Input";
-import {
-  Control,
-  UseFormSetValue,
-  useFormState,
-  useWatch,
-} from "react-hook-form";
+import { Control, UseFormSetValue, useWatch } from "react-hook-form";
 import { CheckoutUserFormType } from "@/schema/checkout";
+import { ScrollArea } from "../ui/ScrollArea";
 
 interface IAddress {
   name: string;
@@ -43,6 +39,7 @@ export default function CheckoutUserAddressForm({
     control,
     name: "province",
   });
+
   const district = useWatch({
     control,
     name: "district",
@@ -53,24 +50,24 @@ export default function CheckoutUserAddressForm({
     queryFn: async () =>
       await axios
         .get("https://provinces.open-api.vn/api/p")
-        .then((res) => res.data as IAddress[] | undefined),
+        .then((res) => res.data as IAddress[]),
   });
 
   const { data: districts } = useQuery({
-    queryKey: ["districts"],
+    queryKey: ["districts", province],
     queryFn: async () =>
       await axios
         .get(`https://provinces.open-api.vn/api/p/${province}?depth=2`)
-        .then((res) => res.data.districts as IAddress[] | undefined),
+        .then((res) => res.data.districts as IAddress[]),
     enabled: !!province,
   });
 
   const { data: wards } = useQuery({
-    queryKey: ["wards"],
+    queryKey: ["wards", district],
     queryFn: async () =>
       await axios
         .get(`https://provinces.open-api.vn/api/d/${district}?depth=2`)
-        .then((res) => res.data.wards as IAddress[] | undefined),
+        .then((res) => res.data.wards as IAddress[]),
     enabled: !!district,
   });
 
@@ -78,7 +75,7 @@ export default function CheckoutUserAddressForm({
     <div className="space-y-4">
       <FormField
         control={control}
-        name="email"
+        name="address"
         render={({ field }) => (
           <FormItem>
             <FormLabel>Địa chỉ</FormLabel>
@@ -95,21 +92,34 @@ export default function CheckoutUserAddressForm({
           name="province"
           render={({ field }) => (
             <FormItem>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <FormLabel>Tỉnh/thành</FormLabel>
+              <Select
+                onValueChange={(value) => {
+                  field.onChange(value);
+                  setValue("district", "");
+                  setValue("ward", "");
+                }}
+                value={field.value}
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Chọn tỉnh/thành" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {provinces?.map((province) => (
-                    <SelectItem
-                      value={province.code.toString()}
-                      key={province.code}
-                    >
-                      {province.name}
+                  <ScrollArea className="h-72">
+                    <SelectItem value="" disabled>
+                      Chọn tỉnh/thành
                     </SelectItem>
-                  ))}
+                    {provinces?.map((province) => (
+                      <SelectItem
+                        value={province.code.toString()}
+                        key={province.code}
+                      >
+                        {province.name}
+                      </SelectItem>
+                    ))}
+                  </ScrollArea>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -121,21 +131,33 @@ export default function CheckoutUserAddressForm({
           name="district"
           render={({ field }) => (
             <FormItem>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <FormLabel>Quận/huyện</FormLabel>
+              <Select
+                onValueChange={(value) => {
+                  field.onChange(value);
+                  setValue("ward", "");
+                }}
+                value={field.value}
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Chọn quận/huyện" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {districts?.map((district) => (
-                    <SelectItem
-                      value={district.code.toString()}
-                      key={district.code}
-                    >
-                      {district.name}
+                  <ScrollArea className="h-72">
+                    <SelectItem value="" disabled>
+                      Chọn quận/huyện
                     </SelectItem>
-                  ))}
+                    {districts?.map((district) => (
+                      <SelectItem
+                        value={district.code.toString()}
+                        key={district.code}
+                      >
+                        {district.name}
+                      </SelectItem>
+                    ))}
+                  </ScrollArea>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -148,18 +170,24 @@ export default function CheckoutUserAddressForm({
           name="ward"
           render={({ field }) => (
             <FormItem>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <FormLabel>Phường/xã</FormLabel>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Chọn phường/xã" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {wards?.map((ward) => (
-                    <SelectItem value={ward.code.toString()} key={ward.code}>
-                      {ward.name}
+                  <ScrollArea className="h-72">
+                    <SelectItem value="" disabled>
+                      Chọn phường/xã
                     </SelectItem>
-                  ))}
+                    {wards?.map((ward) => (
+                      <SelectItem value={ward.code.toString()} key={ward.code}>
+                        {ward.name}
+                      </SelectItem>
+                    ))}
+                  </ScrollArea>
                 </SelectContent>
               </Select>
               <FormMessage />

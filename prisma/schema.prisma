@@ -47,6 +47,19 @@ model User {
   courseId          String?  @db.ObjectId
 }
 
+model Checkout {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String
+  phone          String
+  address        String
+  province       String
+  district       String
+  ward           String
+  tuition_option String
+  couponCode     String?
+}
+
 type CalendarType {
   title      String?
   start_date String?

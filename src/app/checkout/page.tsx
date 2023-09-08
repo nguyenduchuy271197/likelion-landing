@@ -9,7 +9,7 @@ export default function Checkout() {
           {/* Breadcrumbs */}
 
           {/* Checkout Content */}
-          <div className="grid sm:grid-cols-[1fr_350px] gap-8">
+          <div className="grid sm:grid-cols-[1fr_450px] gap-8">
             {/* User Form */}
             <CheckoutUserForm />
 
