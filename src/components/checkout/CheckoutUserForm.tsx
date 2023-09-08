@@ -65,8 +65,6 @@ export default function CheckoutUserForm() {
   return (
     <div className="px-8 py-12 space-y-6 border">
       <h1 className="text-3xl font-medium">Thông tin của bạn</h1>
-      <Button onClick={() => router.push("payment")}>haha</Button>
-
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-4">
