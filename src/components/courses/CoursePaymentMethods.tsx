@@ -5,29 +5,32 @@ import { Button } from "../ui/Button";
 import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
 import { ICourse } from "@/types";
-import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseSectionHeading from "./CourseSectionHeading";
+import useCheckoutStore from "@/stores/useCheckoutStore";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
+  slug: string;
   priority?: boolean;
   action: {
     label: string;
     href: string;
   };
+  tuition_option?: "once" | "monthly";
   children: ReactNode;
 }
 
 function CoursePaymentMethodRow({
   title,
+  slug,
   priority = false,
   action,
+  tuition_option = "once",
   className,
   children,
   ...props
 }: CourseTuitionProps) {
-  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
-
+  const startCheckout = useCheckoutStore((state) => state.startCheckout);
   return (
     <div
       className={cn(
@@ -46,7 +49,9 @@ function CoursePaymentMethodRow({
           <Button
             size="lg"
             className="w-full"
-            onClick={() => setDialogOpen(true)}
+            onClick={() => {
+              startCheckout(slug, tuition_option);
+            }}
             asChild
           >
             <Link href={action.href}>{action.label}</Link>
@@ -73,9 +78,11 @@ export default function CoursePaymentMethods({
         <CoursePaymentMethodRow
           title="Thanh toán một lần giảm còn"
           action={{
-            label: "Đăng ký",
-            href: `/register?course=${slug}`,
+            label: "Mua ngay",
+            href: `/checkout`,
           }}
+          tuition_option="once"
+          slug={slug}
           priority
         >
           {payment_methods.once.discounted ? (
@@ -99,9 +106,11 @@ export default function CoursePaymentMethods({
         </CoursePaymentMethodRow>
         <CoursePaymentMethodRow
           title={`Thanh toán thành ${payment_methods.monthly.times} đợt`}
+          tuition_option="monthly"
+          slug={slug}
           action={{
-            label: "Tìm hiểu thêm",
-            href: `/register?course=${slug}`,
+            label: "Mua ngay",
+            href: `/checkout`,
           }}
         >
           <div className="text-sm text-muted-foreground">Chỉ còn</div>

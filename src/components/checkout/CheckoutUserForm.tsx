@@ -29,6 +29,8 @@ import { Loader2 } from "lucide-react";
 export default function CheckoutUserForm() {
   const tuitionOption = useCheckoutStore((state) => state.tuitionOption);
   const couponCode = useCheckoutStore((state) => state.couponCode);
+  const nextStep = useCheckoutStore((state) => state.nextStep);
+
   const changeTuitionOption = useCheckoutStore(
     (state) => state.changeTuitionOption
   );
@@ -40,6 +42,7 @@ export default function CheckoutUserForm() {
         data: data,
       }),
     onSuccess: () => {
+      nextStep();
       router.push("/checkout/payment");
     },
   });
