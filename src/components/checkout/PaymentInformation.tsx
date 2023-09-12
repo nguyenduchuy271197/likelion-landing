@@ -1,5 +1,4 @@
-import { Copy } from "lucide-react";
-import { Button } from "../ui/Button";
+import ClipboardButton from "../ClipboardButton";
 
 function PaymentAccountRow({
   label,
@@ -16,9 +15,7 @@ function PaymentAccountRow({
       <p className="text-lg font-medium">{value}</p>
       {clipboard && (
         <div className="absolute bottom-2 right-2">
-          <Button variant="ghost">
-            <Copy />
-          </Button>
+          <ClipboardButton />
         </div>
       )}
     </div>
@@ -29,10 +26,10 @@ export default function PaymentInformation() {
   return (
     <div className="px-8 py-12 space-y-6 border">
       <h1 className="text-3xl font-medium">Thông tin thanh toán</h1>
-      <div className="space-y-6">
-        <div className="space-y-2">
+      <div className="space-y-8">
+        <div className="space-y-4">
           <h2 className="text-lg font-medium">Chuyển khoản bằng QR Code</h2>
-          <div className="grid grid-cols-[200px_1fr] gap-4">
+          <div className="grid grid-cols-[200px_1fr] gap-8">
             <div className="">
               <div className="aspect-[1/1] bg-muted"></div>
             </div>
@@ -45,7 +42,7 @@ export default function PaymentInformation() {
             </div>
           </div>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-4">
           <h2 className="text-lg font-medium">Chuyển khoản qua STK</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <PaymentAccountRow
