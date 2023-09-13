@@ -1,21 +1,18 @@
-"use client";
-
-import { Button } from "./ui/Button";
+import { Button, ButtonProps } from "./ui/Button";
 import { Check, Copy } from "lucide-react";
-import { useEffect, useState } from "react";
 
-export default function ClipboardButton() {
-  const [isCopied, setIsCopied] = useState(false);
+interface ClipboardButtonProps extends ButtonProps {
+  copied: boolean;
+}
 
-  useEffect(() => {
-    if (isCopied) {
-      setTimeout(() => setIsCopied(false), 750);
-    }
-  }, [isCopied]);
-
+export default function ClipboardButton({
+  copied,
+  onClick,
+  ...props
+}: ClipboardButtonProps) {
   return (
-    <Button variant="ghost" size="sm" onClick={() => setIsCopied(true)}>
-      {isCopied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+    <Button variant="ghost" size="sm" onClick={onClick} {...props}>
+      {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
     </Button>
   );
 }

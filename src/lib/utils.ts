@@ -12,3 +12,7 @@ export function generateNumberSequence(n: number) {
 export function formatNumber(number: number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+export function removeSpace(text: string) {
+  return text.replace(/\s+/g, "");
+}

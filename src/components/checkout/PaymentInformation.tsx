@@ -1,26 +1,24 @@
-import ClipboardButton from "../ClipboardButton";
+import PaymentAccountRow from "./PaymentAccountRow";
+import PaymentActions from "./PaymentActions";
 
-function PaymentAccountRow({
-  label,
-  value,
-  clipboard = false,
-}: {
-  label: string;
-  value: string;
-  clipboard?: boolean;
-}) {
-  return (
-    <div className="relative p-4 space-y-2 rounded-lg bg-primary text-primary-foreground">
-      <h5 className="text-sm">{label}</h5>
-      <p className="text-lg font-medium">{value}</p>
-      {clipboard && (
-        <div className="absolute bottom-2 right-2">
-          <ClipboardButton />
-        </div>
-      )}
-    </div>
-  );
-}
+const paymentAccount = [
+  {
+    label: "Số tài khoản",
+    value: "700 016 242465",
+  },
+  {
+    label: "Tên tài khoản",
+    value: "CÔNG TY TNHH LIKE LION",
+  },
+  {
+    label: "Nội dung",
+    value: "SĐT_HọTên",
+  },
+  {
+    label: "Chi nhánh",
+    value: "Shinhan - Chi nhánh Sài Gòn",
+  },
+];
 
 export default function PaymentInformation() {
   return (
@@ -49,10 +47,11 @@ export default function PaymentInformation() {
               label="Số tài khoản"
               value="700 016 242465"
               clipboard
+              space={false}
             />
             <PaymentAccountRow
               label="Tên tài khoản"
-              value="CÔNGTYTNHH LIKE LION"
+              value="CÔNG TY TNHH LIKE LION"
             />
             <PaymentAccountRow label="Nội dung" value="SĐT_HọTên" clipboard />
             <PaymentAccountRow
@@ -62,6 +61,9 @@ export default function PaymentInformation() {
           </div>
         </div>
       </div>
+
+      {/* Payment Actions */}
+      <PaymentActions />
     </div>
   );
 }
