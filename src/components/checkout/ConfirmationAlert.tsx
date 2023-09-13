@@ -402,8 +402,8 @@ export default function ConfirmationAlert() {
         </p>
         <ul className="flex items-center gap-8">
           {contacts.map((contact) => (
-            <li>
-              <contact.icon className="w-12 h-12" key={contact.label} />
+            <li key={contact.label}>
+              <contact.icon className="w-12 h-12" />
             </li>
           ))}
         </ul>
