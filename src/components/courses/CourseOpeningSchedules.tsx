@@ -123,7 +123,7 @@ function CourseOpeningScheduleCard({
                   {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
                 </span>
                 <span className="text-xs">
-                  (Thanh toán {calendar.tuition.monthly.times} đợi)
+                  (Thanh toán {calendar.tuition.monthly.times} đợt)
                 </span>{" "}
               </p>
             </CourseCalendarRow>
@@ -175,7 +175,7 @@ function CourseOpeningScheduleCard({
                   {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
                 </span>
                 <span className="text-xs">
-                  (Thanh toán {calendar.tuition.monthly.times} đợi)
+                  (Thanh toán {calendar.tuition.monthly.times} đợt)
                 </span>{" "}
               </p>
             </CourseCalendarSingle>
