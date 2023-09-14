@@ -90,7 +90,7 @@ export default function RootLayout({
           </div>
           <Toaster />
           <PhoneCall />
-          <TrialPopup />
+          {/* <TrialPopup /> */}
         </Providers>
 
         {/* <!-- Meta Pixel Code --> */}
