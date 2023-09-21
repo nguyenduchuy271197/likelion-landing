@@ -208,7 +208,7 @@
       "slug": "thanh-thao-lap-trinh-web-front-end",
       "discountedPrice": 9900000,
       "features": [
-        "Chọn học offline hoặc online qua Zoom",
+        "Chọn học offline hoặc online qua Google Meet",
         "20+ bài tập",
         "4 dự án thực tế",
         "Phụ đạo ngoài giờ miễn phí",
@@ -390,7 +390,7 @@
       "title": "Khoá học Python cho Data Analysis",
       "slug": "khoa-hoc-python-cho-data-analysis",
       "features": [
-        "36 buổi học qua Zoom",
+        "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
         "Mentor support 24/7",
         "Giấy chứng nhận"
@@ -562,7 +562,7 @@
       "title": "Khoá học Back-end PHP",
       "slug": "khoa-hoc-back-end-php",
       "features": [
-        "36 buổi học qua Zoom",
+        "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
         "Mentor support 24/7",
         "Giấy chứng nhận"
@@ -732,7 +732,7 @@
       "title": "Khoá học Back-end Java",
       "slug": "khoa-hoc-back-end-java",
       "features": [
-        "36 buổi học qua Zoom",
+        "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
         "Mentor support 24/7",
         "Giấy chứng nhận"
