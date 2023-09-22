@@ -49,8 +49,8 @@ export default function BlogDetail({ params }: BlogParams) {
 
         <main>
           <div className="container">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-16">
-              <div className="prose max-w-none">
+            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-8">
+              <div className="prose max-w-none lg:max-w-[75ch] xl:max-w-[85ch]">
                 <MDXRemote
                   source={content}
                   components={mdxConfig.components}
