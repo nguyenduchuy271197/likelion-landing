@@ -1,0 +1,259 @@
+---
+title: Ứng dụng Websocket vào trong Spring Webflux để tạo các ứng dụng chat có tính tương tác cao
+slug: Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat
+excerpt: Sử dụng WebSockets trong ngữ cảnh của Spring WebFlux. Triển khai kết nối WebSocket, xử lý tin nhắn và quản lý trạng thái kết nối.
+thumbnail: https://res.cloudinary.com/dbscqlwl7/image/upload/v1695350151/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/BLog_Thumbnail_kmczxk.png
+thumbnail_desktop: https://res.cloudinary.com/dbscqlwl7/image/upload/v1695350150/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/BLog_Desktop_j7dosv.png
+thumbnail_mobile: https://res.cloudinary.com/dbscqlwl7/image/upload/v1695350151/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/BLog_Mobile_undw3z.png
+thumbnail_og: https://res.cloudinary.com/dbscqlwl7/image/upload/v1695350151/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/BLog_Thumbnail_Social_dwrfdp.png
+tags: java
+publishOn: 1695350214
+---
+
+Trong thế giới phát triển ứng dụng hiện đại, sự tương tác thời gian thực và động đã trở thành một yếu tố quan trọng đối với trải nghiệm người dùng. Để đáp ứng với nhu cầu này, các kỹ thuật giao tiếp như Long Polling và Server-Sent Events (SSE) đã xuất hiện để cho phép ứng dụng gửi dữ liệu từ máy chủ đến máy khách mà không cần sự can thiệp của máy khách.
+Tuy nhiên, một công nghệ khác đã nhanh chóng trở nên phổ biến trong việc xây dựng các ứng dụng thời gian thực: WebSocket. WebSocket cung cấp một cách để thiết lập một kết nối liên tục giữa máy khách và máy chủ, cho phép dữ liệu được truyền đi và đến hai chiều một cách hiệu quả.
+Trong bài viết này, chúng ta sẽ khám phá cách sử dụng WebSockets trong ngữ cảnh của Spring WebFlux - một phần của Spring Framework dành cho lập trình phản hồi nhanh và không đồng bộ. Chúng ta sẽ đi sâu vào cách triển khai kết nối WebSocket, xử lý tin nhắn và quản lý trạng thái kết nối. Sẽ thú vị khi chúng ta khám phá cách mà Spring WebFlux giúp chúng ta xây dựng những ứng dụng động, tương tác mà người dùng sẽ yêu thích.
+
+## Phân biệt Spring WebFlux và Spring Web
+
+Spring Web và Spring Webflux đều là các framework trong hệ sinh thái Spring được sử dụng để xây dựng các ứng dụng web, nhưng chúng có một số khác biệt chính.
+
+- **Spring Web (Spring MVC)** được thiết kế để xử lý I/O đồng bộ, trong đó một luồng bị chặn cho đến khi nhận được phản hồi từ cơ sở dữ liệu hoặc dịch vụ khác.
+- **Spring Webflux**, ngược lại, là một framework web phản ứng được xây dựng trên Reactive Streams. Nó được thiết kế để xử lý I/O không đồng bộ, trong đó một luồng không bị chặn trong khi đang chờ phản hồi từ cơ sở dữ liệu hoặc dịch vụ khác.
+
+<Figure
+  imageUrl="https://res.cloudinary.com/dbscqlwl7/image/upload/v1695350150/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_1_ejgr86.png"
+  caption="Phân biệt Spring WebFlux và Spring Web"
+/>
+
+## Khái niệm Spring Webflux
+
+Spring Webflux rất phù hợp cho các ứng dụng yêu cầu độ đồng thời cao, chẳng hạn như các ứng dụng streaming hoặc xử lý dữ liệu thời gian thực.
+
+Spring Webflux sử dụng một thư viện gọi là reactor cho hỗ trợ reactive và reactor là một đối tượng thực thi của đặc tả [Reactive Stream](https://github.com/reactive-streams/reactive-streams-jvm#reactive-streams). Reactor có 2 loại chính:
+
+1. Flux: Được sử dụng để đại diện cho 0 đến N phần tử.
+2. Mono: Được sử dụng để đại diện cho 0 đến 1 phần tử hoặc một phần tử đơn.
+
+{/* <aside>🧑‍💻 ***Okay, hãy bắt tay vào code thôi!!***</aside> */}
+
+<Callout>Okay, hãy bắt tay vào code thôi!!</Callout>
+
+Trong phạm vi bài này, chúng ta kết hợp các công nghệ sau: **Spring Webflux** + **Websocket** + **Thymeleaf**.
+
+Maven dependencies:
+
+```xml
+<!-- Thymeleaf -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+
+<!-- Webflux -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-webflux</artifactId>
+</dependency>
+
+<!-- Websocket -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-websocket</artifactId>
+	<exclusions>
+		<exclusion>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>
+```
+
+## Cấu hình WebSocket Configuration
+
+Đầu tiên, chúng ta cần tạo một lớp thừa kế từ **WebSocketHandler** và ghi đè các phương thức cần thiết để xử lý các kết nối WebSocket từ người dùng. Trong **WebSocketHandler**, chúng ta có thể xử lý việc đăng ký, huỷ đăng ký và gửi tin nhắn.
+
+## Quản lý kết nối
+
+Trong **WebSocketHandler**, bạn cần một cơ chế để theo dõi các kết nối từ các người dùng. Bạn có thể sử dụng một **Map** hoặc cơ chế lưu trữ khác để lưu trữ danh sách các phiên kết nối của người dùng.
+
+Lưu ý rằng đây chỉ là một ví dụ cơ bản để cấu hình **WebSocketHandler** trong Spring WebFlux. Trong thực tế, bạn cần xử lý các sự kiện WebSocket như đăng ký, gửi/nhận tin nhắn, quản lý phiên, bảo mật, v.v. theo yêu cầu của ứng dụng của bạn.
+
+```java
+// ReactiveWebSocketHandler.java
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.socket.WebSocketHandler;
+import org.springframework.web.reactive.socket.WebSocketMessage;
+import org.springframework.web.reactive.socket.WebSocketSession;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import reactor.core.publisher.Sinks;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+@Component
+public class ReactiveWebSocketHandler implements WebSocketHandler {
+
+  private final Map < String, WebSocketSession > sessions = new ConcurrentHashMap < > ();
+
+  @Override
+  public Mono < Void > handle(WebSocketSession session) {
+    sessions.put(session.getId(), session);
+
+    Sinks.Many < String > userSink = Sinks.many().unicast().onBackpressureBuffer();
+    Flux < String > receive = session.receive().map(WebSocketMessage::getPayloadAsText);
+    return session.send(
+        userSink.asFlux()
+        .mergeWith(receive)
+        .map(session::textMessage)
+      )
+      .doFinally(signalType -> {
+        sessions.remove(session.getId());
+      });
+  }
+
+  public void sendMessageToUser(String sessionId, String message) {
+    WebSocketSession webSocketSession = sessions.get(sessionId);
+    webSocketSession.send(Mono.just(webSocketSession.textMessage(message))).subscribe();
+  }
+}
+```
+
+## Đăng ký **WebSocketHandler**
+
+Sau đó, chúng ta cấu hình **WebSocketHandlerAdapter** và đăng ký **WebSocketHandler** với đường dẫn "/ws" bằng cách sử dụng **SimpleUrlHandlerMapping**.
+
+```java
+// WebSocketConfig.java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.config.EnableWebFlux;
+import org.springframework.web.reactive.config.WebFluxConfigurer;
+import org.springframework.web.reactive.handler.SimpleUrlHandlerMapping;
+import org.springframework.web.reactive.socket.WebSocketHandler;
+import org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter;
+
+import java.util.Map;
+
+@Configuration
+@EnableWebFlux
+public class WebSocketConfig implements WebFluxConfigurer {
+
+  @Bean
+  public WebSocketHandlerAdapter handlerAdapter() {
+    return new WebSocketHandlerAdapter();
+  }
+
+  @Bean
+  public SimpleUrlHandlerMapping webSocketMapping(WebSocketHandler handler) {
+    return new SimpleUrlHandlerMapping(Map.of("/ws", handler), -1); // Đăng ký đường dẫn "/ws" với WebSocketHandler
+  }
+}
+```
+
+## **Cấu hình Thymeleaf**
+
+Khi sử dụng Thymeleaf trong dự án Spring WebFlux, cách cấu hình tương tự như khi sử dụng Spring MVC. Tuy nhiên, vì Spring WebFlux hoạt động bất đồng bộ, bạn cần sử dụng một phiên bản Thymeleaf thích hợp cho hệ thống bất đồng bộ.
+
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.CacheControl;
+import org.springframework.web.reactive.config.ResourceHandlerRegistry;
+import org.springframework.web.reactive.config.ViewResolverRegistry;
+import org.springframework.web.reactive.config.WebFluxConfigurer;
+import org.springframework.web.reactive.resource.VersionResourceResolver;
+import org.thymeleaf.spring6.ISpringWebFluxTemplateEngine;
+import org.thymeleaf.spring6.SpringWebFluxTemplateEngine;
+import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring6.view.reactive.ThymeleafReactiveViewResolver;
+import org.thymeleaf.templatemode.TemplateMode;
+
+import java.util.concurrent.TimeUnit;
+
+@Configuration
+public class WebConfig implements ApplicationContextAware, WebFluxConfigurer {
+
+  private ApplicationContext ctx;
+
+  @Override
+  public void setApplicationContext(ApplicationContext context) {
+    this.ctx = context;
+  }
+
+  @Bean
+  public SpringResourceTemplateResolver thymeleafTemplateResolver() {
+
+    final SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+    resolver.setApplicationContext(this.ctx);
+    resolver.setPrefix("classpath:/templates/");
+    resolver.setSuffix(".html");
+    resolver.setTemplateMode(TemplateMode.HTML);
+    resolver.setCacheable(false);
+    resolver.setCheckExistence(false);
+    return resolver;
+
+  }
+
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/**")
+      .addResourceLocations("/public", "classpath:/static/")
+      .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS))
+      .resourceChain(true)
+      .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
+  }
+
+  @Bean
+  public ISpringWebFluxTemplateEngine thymeleafTemplateEngine() {
+    final SpringWebFluxTemplateEngine templateEngine = new SpringWebFluxTemplateEngine();
+    templateEngine.setTemplateResolver(thymeleafTemplateResolver());
+    return templateEngine;
+  }
+
+  @Bean
+  public ThymeleafReactiveViewResolver thymeleafChunkedAndDataDrivenViewResolver() {
+    final ThymeleafReactiveViewResolver viewResolver = new ThymeleafReactiveViewResolver();
+    viewResolver.setTemplateEngine(thymeleafTemplateEngine());
+    viewResolver.setResponseMaxChunkSizeBytes(8192);
+    return viewResolver;
+  }
+
+  @Override
+  public void configureViewResolvers(ViewResolverRegistry registry) {
+    registry.viewResolver(thymeleafChunkedAndDataDrivenViewResolver());
+  }
+}
+```
+
+Sau khi đã cấu hình xong tất cả các thành phần của WebSocket trên Spring WebFlux, bước cuối cùng là kiểm tra thành phẩm.
+
+## Kiểm tra (testing)
+
+<aside>💡 ***Còn chần chờ gì nữa, start ứng dụng test thôi!!***</aside>
+
+- Truy cập vào http://localhost:8080/
+
+![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362942/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_2_f0hmtt.png)
+
+- Nhập tin nhắn và gửi:
+
+![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362942/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_3_wmbi5z.png)
+
+- Mở một tab mới để test gửi tin nhắn đến tất cả trong chanel:
+
+![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362942/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_4_ihs5zp.png)
+
+- Quay lại tab cũ để kiểm tra tin nhắn gửi đến mọi người trong channel:
+
+![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362944/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_5_jcb1ve.png)
+
+👉 Tóm lại, nếu bạn đang xây dựng một ứng dụng web truyền thống với giao tiếp
+đồng bộ, thì Spring Web có thể là lựa chọn tốt cho bạn. Nếu bạn đang xây dựng
+một ứng dụng có tính đồng thời cao với I/O không chặn, thì Spring Webflux có
+thể là lựa chọn tốt hơn.
+
+👉 Full source code: [Github Repo](https://github.com/minhjavapc/blogs/tree/master/Spring-Webflux-Websocket-Thymleeaf)

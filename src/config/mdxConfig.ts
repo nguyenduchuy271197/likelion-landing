@@ -8,6 +8,7 @@ import rehypeHighlight from "rehype-highlight";
 import HereButton from "@/components/mdx/HereButton";
 import Figure from "@/components/mdx/Figure";
 import YoutubeVideo from "@/components/mdx/YoutubeVideo";
+import Callout from "@/components/mdx/Callout";
 
 const mdxConfig = {
   components: {
@@ -16,6 +17,7 @@ const mdxConfig = {
     HereButton: HereButton,
     Figure: Figure,
     YoutubeVideo: YoutubeVideo,
+    Callout: Callout,
   },
   options: {
     remarkPlugins: [remarkGfm],
