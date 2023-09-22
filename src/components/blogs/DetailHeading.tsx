@@ -29,6 +29,7 @@ export default function DetailHeading({
               <Image
                 src={thumbnail_mobile}
                 alt={title}
+                title={title}
                 fill
                 priority
                 className="object-cover"
