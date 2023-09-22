@@ -11,10 +11,14 @@ publishOn: 1695350214
 ---
 
 Trong thế giới phát triển ứng dụng hiện đại, sự tương tác thời gian thực và động đã trở thành một yếu tố quan trọng đối với trải nghiệm người dùng. Để đáp ứng với nhu cầu này, các kỹ thuật giao tiếp như Long Polling và Server-Sent Events (SSE) đã xuất hiện để cho phép ứng dụng gửi dữ liệu từ máy chủ đến máy khách mà không cần sự can thiệp của máy khách.
+
 Tuy nhiên, một công nghệ khác đã nhanh chóng trở nên phổ biến trong việc xây dựng các ứng dụng thời gian thực: WebSocket. WebSocket cung cấp một cách để thiết lập một kết nối liên tục giữa máy khách và máy chủ, cho phép dữ liệu được truyền đi và đến hai chiều một cách hiệu quả.
+
 Trong bài viết này, chúng ta sẽ khám phá cách sử dụng WebSockets trong ngữ cảnh của Spring WebFlux - một phần của Spring Framework dành cho lập trình phản hồi nhanh và không đồng bộ. Chúng ta sẽ đi sâu vào cách triển khai kết nối WebSocket, xử lý tin nhắn và quản lý trạng thái kết nối. Sẽ thú vị khi chúng ta khám phá cách mà Spring WebFlux giúp chúng ta xây dựng những ứng dụng động, tương tác mà người dùng sẽ yêu thích.
 
 ## Phân biệt Spring WebFlux và Spring Web
+
+<Callout>Vậy Spring Webflux khác gì so với Spring Web?</Callout>
 
 Spring Web và Spring Webflux đều là các framework trong hệ sinh thái Spring được sử dụng để xây dựng các ứng dụng web, nhưng chúng có một số khác biệt chính.
 
@@ -32,10 +36,8 @@ Spring Webflux rất phù hợp cho các ứng dụng yêu cầu độ đồng t
 
 Spring Webflux sử dụng một thư viện gọi là reactor cho hỗ trợ reactive và reactor là một đối tượng thực thi của đặc tả [Reactive Stream](https://github.com/reactive-streams/reactive-streams-jvm#reactive-streams). Reactor có 2 loại chính:
 
-1. Flux: Được sử dụng để đại diện cho 0 đến N phần tử.
-2. Mono: Được sử dụng để đại diện cho 0 đến 1 phần tử hoặc một phần tử đơn.
-
-{/* <aside>🧑‍💻 ***Okay, hãy bắt tay vào code thôi!!***</aside> */}
+- **Flux**: Được sử dụng để đại diện cho 0 đến N phần tử.
+- **Mono**: Được sử dụng để đại diện cho 0 đến 1 phần tử hoặc một phần tử đơn.
 
 <Callout>Okay, hãy bắt tay vào code thôi!!</Callout>
 
@@ -71,13 +73,13 @@ Maven dependencies:
 
 ## Cấu hình WebSocket Configuration
 
-Đầu tiên, chúng ta cần tạo một lớp thừa kế từ **WebSocketHandler** và ghi đè các phương thức cần thiết để xử lý các kết nối WebSocket từ người dùng. Trong **WebSocketHandler**, chúng ta có thể xử lý việc đăng ký, huỷ đăng ký và gửi tin nhắn.
+Đầu tiên, chúng ta cần tạo một lớp thừa kế từ WebSocketHandler và ghi đè các phương thức cần thiết để xử lý các kết nối WebSocket từ người dùng. Trong WebSocketHandler, chúng ta có thể xử lý việc đăng ký, huỷ đăng ký và gửi tin nhắn.
 
 ## Quản lý kết nối
 
-Trong **WebSocketHandler**, bạn cần một cơ chế để theo dõi các kết nối từ các người dùng. Bạn có thể sử dụng một **Map** hoặc cơ chế lưu trữ khác để lưu trữ danh sách các phiên kết nối của người dùng.
+Trong WebSocketHandler, bạn cần một cơ chế để theo dõi các kết nối từ các người dùng. Bạn có thể sử dụng một Map hoặc cơ chế lưu trữ khác để lưu trữ danh sách các phiên kết nối của người dùng.
 
-Lưu ý rằng đây chỉ là một ví dụ cơ bản để cấu hình **WebSocketHandler** trong Spring WebFlux. Trong thực tế, bạn cần xử lý các sự kiện WebSocket như đăng ký, gửi/nhận tin nhắn, quản lý phiên, bảo mật, v.v. theo yêu cầu của ứng dụng của bạn.
+Lưu ý rằng đây chỉ là một ví dụ cơ bản để cấu hình WebSocketHandler trong Spring WebFlux. Trong thực tế, bạn cần xử lý các sự kiện WebSocket như đăng ký, gửi/nhận tin nhắn, quản lý phiên, bảo mật, v.v. theo yêu cầu của ứng dụng của bạn.
 
 ```java
 // ReactiveWebSocketHandler.java
@@ -120,9 +122,9 @@ public class ReactiveWebSocketHandler implements WebSocketHandler {
 }
 ```
 
-## Đăng ký **WebSocketHandler**
+## Đăng ký WebSocketHandler
 
-Sau đó, chúng ta cấu hình **WebSocketHandlerAdapter** và đăng ký **WebSocketHandler** với đường dẫn "/ws" bằng cách sử dụng **SimpleUrlHandlerMapping**.
+Sau đó, chúng ta cấu hình WebSocketHandlerAdapter và đăng ký WebSocketHandler với đường dẫn "/ws" bằng cách sử dụng SimpleUrlHandlerMapping.
 
 ```java
 // WebSocketConfig.java
@@ -233,27 +235,24 @@ Sau khi đã cấu hình xong tất cả các thành phần của WebSocket trê
 
 ## Kiểm tra (testing)
 
-<aside>💡 ***Còn chần chờ gì nữa, start ứng dụng test thôi!!***</aside>
+<Callout>Còn chần chờ gì nữa, start ứng dụng test thôi!!</Callout>
 
-- Truy cập vào http://localhost:8080/
+- **Bước 1**: Truy cập vào http://localhost:8080/
 
 ![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362942/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_2_f0hmtt.png)
 
-- Nhập tin nhắn và gửi:
+- **Bước 2**: Nhập tin nhắn và gửi:
 
 ![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362942/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_3_wmbi5z.png)
 
-- Mở một tab mới để test gửi tin nhắn đến tất cả trong chanel:
+- **Bước 3**: Mở một tab mới để test gửi tin nhắn đến tất cả trong chanel:
 
 ![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362942/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_4_ihs5zp.png)
 
-- Quay lại tab cũ để kiểm tra tin nhắn gửi đến mọi người trong channel:
+- **Bước 4**: Quay lại tab cũ để kiểm tra tin nhắn gửi đến mọi người trong channel:
 
 ![](https://res.cloudinary.com/dbscqlwl7/image/upload/v1695362944/blogs/Ung-dung-Websocket-vao-Spring-Webflux-tao-ung-dung-chat/Image_5_jcb1ve.png)
 
-👉 Tóm lại, nếu bạn đang xây dựng một ứng dụng web truyền thống với giao tiếp
-đồng bộ, thì Spring Web có thể là lựa chọn tốt cho bạn. Nếu bạn đang xây dựng
-một ứng dụng có tính đồng thời cao với I/O không chặn, thì Spring Webflux có
-thể là lựa chọn tốt hơn.
+<Callout>Tóm lại, nếu bạn đang xây dựng một ứng dụng web truyền thống với giao tiếp đồng bộ, thì Spring Web có thể là lựa chọn tốt cho bạn. Nếu bạn đang xây dựng một ứng dụng có tính đồng thời cao với I/O không chặn, thì Spring Webflux có thể là lựa chọn tốt hơn.</Callout>
 
 👉 Full source code: [Github Repo](https://github.com/minhjavapc/blogs/tree/master/Spring-Webflux-Websocket-Thymleeaf)
