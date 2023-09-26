@@ -18,12 +18,14 @@ import {
 } from "@/components/ui/Sheet";
 import Link from "next/link";
 import Icons from "@/components/Icons";
-import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import { ICourse } from "@/types";
 
-export default function NavMenuMobile({ courses }: { courses: ICourse[] }) {
+export default function NavMenuMobile({
+  courses,
+}: {
+  courses: { title: string; slug: string }[];
+}) {
   const { setOpen } = useContext(RegisterDialogContext);
 
   return (

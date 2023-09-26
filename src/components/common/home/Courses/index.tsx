@@ -1,11 +1,10 @@
 import SectionHeading from "../SectionHeading";
 import CoursesAnimated from "./CoursesAnimated";
 import CourseCard from "./CourseCard";
-import { ICourse } from "@/types";
 import data from "@/data/data.json";
 
 export default function Courses() {
-  const courses = data["courses"] as ICourse[];
+  const courses = data["courses"];
 
   return (
     <section id="courses" className="scroll-mt-4">

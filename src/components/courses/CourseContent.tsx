@@ -24,7 +24,7 @@ function CourseModule({
         {index}. {name}
       </AccordionTrigger>
       <AccordionContent>
-        <ul className="flex flex-col gap-4 py-2 text-sm">
+        <ul className="flex flex-col gap-4 py-2 text-base">
           {lessons.map((lesson) => (
             <li className="flex items-center gap-4" key={lesson}>
               <FileText size={16} className="shrink-0" />
@@ -54,7 +54,12 @@ export default function CourseContent({ modules }: { modules: IModule[] }) {
   return (
     <section id="content">
       <CourseSectionHeading>Nội dung khoá học</CourseSectionHeading>
-      <Accordion type="single" collapsible className="w-full bg-white">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full bg-white"
+        defaultValue={modules[0].name}
+      >
         {modules.map((module, i) => (
           <CourseModule
             name={module.name}

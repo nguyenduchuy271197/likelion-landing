@@ -15,9 +15,16 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu";
 import NavMenuContentCard from "./NavMenuContentCard";
-import { ICourse } from "@/types";
 
-export default function NavMenu({ courses }: { courses: ICourse[] }) {
+interface NavMenuProps {
+  courses: {
+    title: string;
+    slug: string;
+    excerpt: string;
+  }[];
+}
+
+export default function NavMenu({ courses }: NavMenuProps) {
   const pathname = usePathname();
 
   return (

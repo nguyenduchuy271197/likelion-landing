@@ -2,10 +2,9 @@ import siteConfig from "@/config/siteConfig";
 import { getBlogSlugs } from "@/services/blogService";
 import { MetadataRoute } from "next";
 import data from "@/data/data.json";
-import { ICourse } from "@/types";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const courses = data["courses"] as ICourse[];
+  const courses = data["courses"];
 
   const staticRoutes = [
     "",

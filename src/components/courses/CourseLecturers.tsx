@@ -1,4 +1,3 @@
-import { ICourse } from "@/types";
 import Image from "next/image";
 import CourseSectionHeading from "./CourseSectionHeading";
 
@@ -35,11 +34,16 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
   );
 }
 
-export default function CourseLecturers({
-  lecturers,
-}: {
-  lecturers: ICourse["lecturers"];
-}) {
+interface CourseLecturersProps {
+  lecturers: {
+    name: string;
+    profession: string;
+    avatar: string;
+    description: string;
+  }[];
+}
+
+export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
   if (!lecturers || lecturers.length === 0) return null;
 
   return (

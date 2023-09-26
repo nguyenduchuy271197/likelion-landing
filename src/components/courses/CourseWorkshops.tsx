@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Badge } from "../ui/Badge";
 import CourseSectionHeading from "./CourseSectionHeading";
 
 const courseWorkshops: CourseWorkshopType[] = [

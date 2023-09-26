@@ -2,9 +2,23 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
-import { ICourse } from "@/types";
 
-export default function CourseCard({ title, thumbnail, slug, tags }: ICourse) {
+interface CourseCardProps {
+  title: string;
+  thumbnail: string;
+  slug: string;
+  tags: {
+    schedules: string[];
+    status: string[];
+  };
+}
+
+export default function CourseCard({
+  title,
+  thumbnail,
+  slug,
+  tags,
+}: CourseCardProps) {
   return (
     <div className="flex flex-col overflow-hidden transition duration-300 group hover:-translate-y-2">
       <Link

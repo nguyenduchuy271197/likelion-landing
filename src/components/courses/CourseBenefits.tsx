@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { ICourse } from "@/types";
 import { VariantProps, cva } from "class-variance-authority";
 import Image from "next/image";
 import CourseSectionHeading from "./CourseSectionHeading";
@@ -8,6 +7,14 @@ interface Benefit {
   title: string;
   description: string;
   icon: string;
+}
+
+interface CourseBenefitsProps {
+  benefits?: {
+    title: string;
+    description: string;
+    icon: string;
+  }[];
 }
 
 const benefitVariants = cva(
@@ -62,11 +69,7 @@ function CourseBenefit({ title, description, icon, index = 0 }: BenefitProps) {
   );
 }
 
-export default function CourseBenefits({
-  benefits,
-}: {
-  benefits: ICourse["benefits"];
-}) {
+export default function CourseBenefits({ benefits }: CourseBenefitsProps) {
   if (!benefits || benefits.length !== 4) return null;
 
   return (

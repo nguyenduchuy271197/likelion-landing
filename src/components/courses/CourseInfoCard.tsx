@@ -1,7 +1,6 @@
 "use client";
 
 import CourseFeatureItem from "./CourseFeatureItem";
-import { ICourse } from "@/types";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 import { forwardRef, useContext, useEffect, useRef, useState } from "react";
@@ -9,10 +8,13 @@ import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseThumbnail from "./CourseThumbnail";
 import { cn } from "@/lib/utils";
 
-type CourseInfoCardProps = Pick<
-  ICourse,
-  "title" | "features" | "slug" | "thumbnail" | "youtubeId"
->;
+interface CourseInfoCardProps {
+  youtubeId?: string;
+  title: string;
+  features: string[];
+  thumbnail: string;
+  slug: string;
+}
 
 const CourseInfo = forwardRef<HTMLDivElement, CourseInfoCardProps>(
   function CourseInfo({ title, features, slug, thumbnail, youtubeId }, ref) {

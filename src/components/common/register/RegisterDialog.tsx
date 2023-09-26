@@ -8,21 +8,24 @@ import {
 } from "@/components/ui/Dialog";
 import { useRouter } from "next/navigation";
 import { RegisterForm } from "./RegisterForm";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
 import useRegisterUser from "./useRegisterUser";
 import RegisterSuccess from "./RegisterSuccess";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import { ICourse } from "@/types";
 
 export function RegisterDialog({
   initialCourse,
   courses,
 }: {
   initialCourse: string;
-  courses: ICourse[];
+  courses: {
+    id: string;
+    title: string;
+    slug: string;
+  }[];
 }) {
   const router = useRouter();
   const { onResetCourse } = useContext(RegisterContext);

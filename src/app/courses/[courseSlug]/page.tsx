@@ -6,10 +6,9 @@ import CourseInfoCard from "@/components/courses/CourseInfoCard";
 import CourseInfoMobile from "@/components/courses/CourseInfoMobile";
 import CourseObjectives from "@/components/courses/CourseObjectives";
 import CoursePartnership from "@/components/courses/CoursePartnership";
-import CourseProjects from "@/components/courses/CourseProjects";
 import CourseRequirements from "@/components/courses/CourseRequirements";
 import CourseReviews from "@/components/courses/CourseReviews";
-import { getCourseBySlug, getCourses } from "@/services/courseService";
+import { getCourseBySlug } from "@/services/courseService";
 import { Metadata, ResolvingMetadata } from "next";
 import CourseOpeningSchedules from "@/components/courses/CourseOpeningSchedules";
 import CourseWorkshops from "@/components/courses/CourseWorkshops";
@@ -22,7 +21,8 @@ import CourseBenefits from "@/components/courses/CourseBenefits";
 import CourseNavigation from "@/components/courses/CourseNavigation";
 import CourseContainer from "@/components/courses/CourseContainer";
 import data from "@/data/data.json";
-import { ICourse } from "@/types";
+import { redirect } from "next/navigation";
+import CourseShowcases from "@/components/courses/CourseShowcases";
 
 export async function generateMetadata(
   {
@@ -32,9 +32,11 @@ export async function generateMetadata(
   },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { title, subtitle, thumbnail_og } = await getCourseBySlug(
-    params.courseSlug
-  );
+  const course = getCourseBySlug(params.courseSlug);
+
+  if (!course) return {};
+
+  const { title, subtitle, thumbnail_og } = course;
 
   const previousImages = (await parent).openGraph?.images || [];
 
@@ -50,7 +52,7 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-  const courses = data["courses"] as ICourse[];
+  const courses = data["courses"];
 
   return courses.map((course) => ({
     courseSlug: course.slug,
@@ -63,6 +65,10 @@ export default function CourseDetail({
   params: { courseSlug: string };
 }) {
   const { courseSlug } = params;
+
+  const course = getCourseBySlug(courseSlug);
+
+  if (!course) return redirect("/");
 
   const {
     id,
@@ -85,7 +91,8 @@ export default function CourseDetail({
     benefits,
     highlights,
     techs,
-  } = getCourseBySlug(courseSlug);
+    showcases,
+  } = course;
 
   return (
     <div className="relative pb-12">
@@ -96,7 +103,9 @@ export default function CourseDetail({
         tags={tags}
         highlights={highlights}
         techs={techs}
+        slug={courseSlug}
       />
+      
       {/* Course Navigation */}
       <CourseNavigation />
 
@@ -155,17 +164,11 @@ export default function CourseDetail({
             {/* Lecturers */}
             <CourseLecturers lecturers={lecturers} />
 
-            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-              <>
-                {/* Showcase */}
-                <CourseProjects />
-              </>
-            )}
+            {/* Showcase */}
+            <CourseShowcases showcases={showcases} />
 
             {/* CourseCalen */}
-            {calendar && (
-              <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
-            )}
+            <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
 
             <CoursePaymentMethods
               payment_methods={payment_methods}
@@ -176,7 +179,7 @@ export default function CourseDetail({
         </div>
       </div>
 
-      <div className="container mt-12 space-y-12">
+      <div className="mt-12 space-y-12">
         {/* Workspaces */}
         <CourseWorkspaces />
 

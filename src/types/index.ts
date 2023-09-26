@@ -1,3 +1,5 @@
+import data from "@/data/data.json";
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -67,6 +69,11 @@ export interface ICourse {
   }[];
   highlights: string[];
   techs?: string[];
+  showcases?: {
+    src: string;
+    title: string;
+    tags: string[];
+  };
 }
 
 export interface IModule {
@@ -80,11 +87,11 @@ export interface ICalendar {
   start_date: string;
   duration: string;
   schedule: string;
-  location: {
+  location?: {
     name: string;
     address: string;
   };
-  tuition: {
+  tuition?: {
     once: { price: number };
     monthly: { price: number; times: number };
   };

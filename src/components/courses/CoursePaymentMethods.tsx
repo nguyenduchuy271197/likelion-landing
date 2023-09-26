@@ -4,7 +4,6 @@ import { HTMLAttributes, ReactNode, useContext } from "react";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
-import { ICourse } from "@/types";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseSectionHeading from "./CourseSectionHeading";
 
@@ -16,6 +15,20 @@ interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
     href: string;
   };
   children: ReactNode;
+}
+
+interface CoursePaymentMethods {
+  slug: string;
+  payment_methods?: {
+    once: {
+      origin: number;
+      discounted?: number | undefined;
+    };
+    monthly: {
+      times: number;
+      origin: number;
+    };
+  };
 }
 
 function CoursePaymentMethodRow({
@@ -60,10 +73,7 @@ function CoursePaymentMethodRow({
 export default function CoursePaymentMethods({
   slug,
   payment_methods,
-}: {
-  slug: string;
-  payment_methods: ICourse["payment_methods"];
-}) {
+}: CoursePaymentMethods) {
   if (!payment_methods) return null;
 
   return (

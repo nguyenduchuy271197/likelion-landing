@@ -219,10 +219,10 @@ export default function CourseOpeningSchedules({
   calendars,
   slug,
 }: {
-  calendars: ICalendar[];
+  calendars?: ICalendar[];
   slug: string;
 }) {
-  if (calendars.length === 0) return null;
+  if (!calendars || calendars.length === 0) return null;
 
   return (
     <section id="schedules">

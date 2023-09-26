@@ -200,7 +200,39 @@
         "mongo",
         "portgre"
       ],
-      "excerpt": "Trở thành lập trình viên Fullstack Bootcamp sau 3 tháng."
+      "excerpt": "Trở thành lập trình viên Fullstack Bootcamp sau 3 tháng.",
+      "showcases": [
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/dwelling.png",
+          "title": "Dwelling - Apartment Rental Company Website",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188469/courses/bootcamp-lap-trinh-web-fullstack/projects/portfolio.png",
+          "title": "John Doe - Artist Portfolio Website",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/phloko.png",
+          "title": "Floko - Design Agency Website",
+          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/travel.png",
+          "title": "TrapTip - Traveling Agency Website",
+          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/florist.png",
+          "title": "Florist - Flower Shop Website",
+          "tags": ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/greeny.png",
+          "title": "Greenery - Fruit eCommerce Website",
+          "tags": ["JavaScript", "ReactJS", "NodeJS", "MongoDB"]
+        }
+      ]
     },
     {
       "id": "64883a8ab6a3fddba741f55e",
@@ -383,7 +415,34 @@
         "tailwind",
         "webpack"
       ],
-      "excerpt": "Thành thạo kỹ năng xây dựng giao diện web, phát triển trong lĩnh vực dev web."
+      "excerpt": "Thành thạo kỹ năng xây dựng giao diện web, phát triển trong lĩnh vực dev web.",
+      "showcases": [
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/dwelling.png",
+          "title": "Dwelling - Apartment Rental Company Website",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188469/courses/bootcamp-lap-trinh-web-fullstack/projects/portfolio.png",
+          "title": "John Doe - Artist Portfolio Website",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/phloko.png",
+          "title": "Floko - Design Agency Website",
+          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/travel.png",
+          "title": "TrapTip - Traveling Agency Website",
+          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/florist.png",
+          "title": "Florist - Flower Shop Website",
+          "tags": ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"]
+        }
+      ]
     },
     {
       "id": "64df3889ac99f03faac99cee",

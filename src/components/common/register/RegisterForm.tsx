@@ -26,13 +26,16 @@ import {
 } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 import { UseMutateFunction } from "@tanstack/react-query";
-import { ICourse } from "@/types";
 
 interface RegisterFormProps {
   initialCourse: string;
   registerUser: UseMutateFunction<void, unknown, RegisterFormType, unknown>;
   isSubmitting: boolean;
-  courses: ICourse[];
+  courses: {
+    id: string;
+    title: string;
+    slug: string;
+  }[];
 }
 
 export function RegisterForm({
