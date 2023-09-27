@@ -19,7 +19,6 @@ import CoursePromotion from "@/components/courses/CoursePromotion";
 import CoursePaymentMethods from "@/components/courses/CoursePaymentMethods";
 import CourseBenefits from "@/components/courses/CourseBenefits";
 import CourseNavigation from "@/components/courses/CourseNavigation";
-import CourseContainer from "@/components/courses/CourseContainer";
 import data from "@/data/data.json";
 import { redirect } from "next/navigation";
 import CourseShowcases from "@/components/courses/CourseShowcases";
@@ -105,81 +104,61 @@ export default function CourseDetail({
         techs={techs}
         slug={courseSlug}
       />
-      
+
       {/* Course Navigation */}
       <CourseNavigation />
 
-      <div id="course-info-scroll">
-        <div className="container">
-          <CourseContainer>
-            {/* Info Card */}
-            <CourseInfoCard
-              title={title}
-              features={features}
-              slug={courseSlug}
-              thumbnail={thumbnail}
-              youtubeId={youtubeId}
-            />
-          </CourseContainer>
-        </div>
+      {/* Content */}
+      {/* <div className="space-y-10 lg:hidden">
+        <CourseInfoMobile
+          discountedPrice={discountedPrice}
+          price={price}
+          slug={courseSlug}
+          title={title}
+          thumbnail={thumbnail}
+          youtubeId={youtubeId}
+        />
 
-        <div className="container mt-12 space-y-12 lg:mt-0">
-          <CourseContainer className="space-y-12 overflow-hidden">
-            {/* Content */}
-            <div className="space-y-10 lg:hidden">
-              {/* Course Info */}
-              <CourseInfoMobile
-                discountedPrice={discountedPrice}
-                price={price}
-                slug={courseSlug}
-                title={title}
-                thumbnail={thumbnail}
-                youtubeId={youtubeId}
-              />
+        <CourseFeaturesMobile features={features} />
+      </div> */}
 
-              <CourseFeaturesMobile features={features} />
-            </div>
+      <div className="py-10 space-y-24 md:py-20 sm:space-y-36">
+        {/* Benefits */}
+        <CourseBenefits benefits={benefits} />
 
-            {/* Benefits */}
-            <CourseBenefits benefits={benefits} />
+        {/* Partnership */}
+        {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+          <CoursePartnership />
+        )}
 
-            {/* Partnership */}
-            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-              <CoursePartnership />
-            )}
+        {/* What you'll learn */}
+        <CourseObjectives objectives={objectives} />
 
-            {/* What you'll learn */}
-            <CourseObjectives objectives={objectives} />
+        {/* Requirements */}
+        <CourseRequirements requirements={requirements} />
 
-            {/* Requirements */}
-            <CourseRequirements requirements={requirements} />
+        {/* Course content */}
+        <CourseContent modules={modules} />
 
-            {/* Course content */}
-            <CourseContent modules={modules} />
+        {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
+          <CourseWorkshops />
+        )}
 
-            {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
-              <CourseWorkshops />
-            )}
+        {/* Lecturers */}
+        <CourseLecturers lecturers={lecturers} />
 
-            {/* Lecturers */}
-            <CourseLecturers lecturers={lecturers} />
+        {/* Showcase */}
+        {/* <CourseShowcases showcases={showcases} /> */}
 
-            {/* Showcase */}
-            <CourseShowcases showcases={showcases} />
+        {/* CourseCalen */}
+        <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
 
-            {/* CourseCalen */}
-            <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
+        <CoursePaymentMethods
+          payment_methods={payment_methods}
+          slug={courseSlug}
+        />
+        <CoursePromotion promotions={promotions} />
 
-            <CoursePaymentMethods
-              payment_methods={payment_methods}
-              slug={courseSlug}
-            />
-            <CoursePromotion promotions={promotions} />
-          </CourseContainer>
-        </div>
-      </div>
-
-      <div className="mt-12 space-y-12">
         {/* Workspaces */}
         <CourseWorkspaces />
 

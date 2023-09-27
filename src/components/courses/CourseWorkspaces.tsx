@@ -3,7 +3,7 @@ import { workspaceOptions } from "../common/home/Workspaces/workspaces";
 
 export default function CourseWorkspaces() {
   return (
-    <section className="bg-primary">
+    <section className="bg-[#1b1e29]">
       <div className="max-w-screen-xl px-8 mx-auto">
         <div className="py-28">
           <h2 className="mb-20 text-3xl font-bold text-center sm:text-4xl text-primary-foreground">

@@ -15,7 +15,7 @@ import { ReactNode, useContext } from "react";
 import { Button } from "../ui/Button";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import Link from "next/link";
-import CourseSectionHeading from "./CourseSectionHeading";
+import Image from "next/image";
 
 function CourseCalendarSingle({
   label,
@@ -55,7 +55,7 @@ function CourseCalendarRow({
         <Icon size={20} />
       </span>
       <div>
-        <div className="font-medium">{label}</div>
+        <div className="font-bold">{label}</div>
         <div className="">{children}</div>
       </div>
     </div>
@@ -74,127 +74,129 @@ function CourseOpeningScheduleCard({
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
   return (
-    <div className="relative flex flex-col px-6 py-6 space-y-6 sm:py-8 sm:px-8 rounded-xl text-muted bg-primary">
-      <h4 className="text-[#FFB37B] font-medium text-xl">{calendar.title}</h4>
+    <div className="relative flex flex-col p-12 space-y-8 rounded-lg text-muted bg-primary">
+      <h4 className="text-[#FFB37B] font-bold text-3xl">Lịch khai giảng</h4>
 
-      {layout === "double" ? (
-        <div className="space-y-6 grow">
-          {calendar.start_date && (
-            <CourseCalendarRow label="Khai giảng" icon={DoorOpen}>
-              {calendar.start_date}
-            </CourseCalendarRow>
-          )}
-          {calendar.duration && (
-            <CourseCalendarRow label="Lộ trình học" icon={Calendar}>
-              {calendar.duration}
-            </CourseCalendarRow>
-          )}
+      <div className="text-xl">
+        {layout === "double" ? (
+          <div className="space-y-8 grow">
+            {calendar.start_date && (
+              <CourseCalendarRow label="Khai giảng" icon={DoorOpen}>
+                {calendar.start_date}
+              </CourseCalendarRow>
+            )}
+            {calendar.duration && (
+              <CourseCalendarRow label="Lộ trình học" icon={Calendar}>
+                {calendar.duration}
+              </CourseCalendarRow>
+            )}
 
-          {calendar.schedule && (
-            <CourseCalendarRow label="Lịch học" icon={Clock2}>
-              {calendar.schedule}
-            </CourseCalendarRow>
-          )}
+            {calendar.schedule && (
+              <CourseCalendarRow label="Lịch học" icon={Clock2}>
+                {calendar.schedule}
+              </CourseCalendarRow>
+            )}
 
-          {calendar.location && (
-            <CourseCalendarRow label="Địa điểm" icon={MapPin}>
-              <p>{calendar.location.name}</p>
-              <p>{calendar.location.address}</p>
-            </CourseCalendarRow>
-          )}
+            {calendar.location && (
+              <CourseCalendarRow label="Địa điểm" icon={MapPin}>
+                <p>{calendar.location.name}</p>
+                <p>{calendar.location.address}</p>
+              </CourseCalendarRow>
+            )}
 
-          {calendar.platform && (
-            <CourseCalendarRow label="Platform" icon={PictureInPicture2}>
-              {calendar.platform}
-            </CourseCalendarRow>
-          )}
+            {calendar.platform && (
+              <CourseCalendarRow label="Platform" icon={PictureInPicture2}>
+                {calendar.platform}
+              </CourseCalendarRow>
+            )}
 
-          {calendar.tuition && (
-            <CourseCalendarRow label="Học phí" icon={DollarSign}>
-              <p>
-                <span className="font-medium">
-                  {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
-                </span>
-                <span className="text-xs">(Thanh toán trọn gói)</span>
-              </p>
-              hoặc
-              <p>
-                <span className="font-medium">
-                  {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
-                </span>
-                <span className="text-xs">
-                  (Thanh toán {calendar.tuition.monthly.times} đợt)
-                </span>{" "}
-              </p>
-            </CourseCalendarRow>
-          )}
-        </div>
-      ) : (
-        <div className="flex flex-col gap-6">
-          {calendar.start_date && (
-            <CourseCalendarSingle label="Khai giảng" icon={DoorOpen}>
-              {calendar.start_date}
-            </CourseCalendarSingle>
-          )}
-          {calendar.duration && (
-            <CourseCalendarSingle label="Lộ trình học" icon={Calendar}>
-              {calendar.duration}
-            </CourseCalendarSingle>
-          )}
+            {calendar.tuition && (
+              <CourseCalendarRow label="Học phí" icon={DollarSign}>
+                <p>
+                  <span className="font-medium">
+                    {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
+                  </span>
+                  <span className="text-xs">(Thanh toán trọn gói)</span>
+                </p>
+                hoặc
+                <p>
+                  <span className="font-medium">
+                    {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
+                  </span>
+                  <span className="text-xs">
+                    (Thanh toán {calendar.tuition.monthly.times} đợt)
+                  </span>{" "}
+                </p>
+              </CourseCalendarRow>
+            )}
+          </div>
+        ) : (
+          <div className="flex flex-col gap-8">
+            {calendar.start_date && (
+              <CourseCalendarSingle label="Khai giảng" icon={DoorOpen}>
+                {calendar.start_date}
+              </CourseCalendarSingle>
+            )}
+            {calendar.duration && (
+              <CourseCalendarSingle label="Lộ trình học" icon={Calendar}>
+                {calendar.duration}
+              </CourseCalendarSingle>
+            )}
 
-          {calendar.schedule && (
-            <CourseCalendarSingle label="Lịch học" icon={Clock2}>
-              {calendar.schedule}
-            </CourseCalendarSingle>
-          )}
+            {calendar.schedule && (
+              <CourseCalendarSingle label="Lịch học" icon={Clock2}>
+                {calendar.schedule}
+              </CourseCalendarSingle>
+            )}
 
-          {calendar.location && (
-            <CourseCalendarSingle label="Địa điểm" icon={MapPin}>
-              <p>{calendar.location.name}</p>
-              <p>{calendar.location.address}</p>
-            </CourseCalendarSingle>
-          )}
+            {calendar.location && (
+              <CourseCalendarSingle label="Địa điểm" icon={MapPin}>
+                <p>{calendar.location.name}</p>
+                <p>{calendar.location.address}</p>
+              </CourseCalendarSingle>
+            )}
 
-          {calendar.platform && (
-            <CourseCalendarSingle label="Platform" icon={PictureInPicture2}>
-              {calendar.platform}
-            </CourseCalendarSingle>
-          )}
+            {calendar.platform && (
+              <CourseCalendarSingle label="Platform" icon={PictureInPicture2}>
+                {calendar.platform}
+              </CourseCalendarSingle>
+            )}
 
-          {calendar.tuition && (
-            <CourseCalendarSingle label="Học phí" icon={DollarSign}>
-              <p>
-                <span className="font-medium">
-                  {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
-                </span>
-                <span className="text-xs">(Thanh toán trọn gói)</span>
-              </p>
-              hoặc
-              <p>
-                <span className="font-medium">
-                  {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
-                </span>
-                <span className="text-xs">
-                  (Thanh toán {calendar.tuition.monthly.times} đợt)
-                </span>{" "}
-              </p>
-            </CourseCalendarSingle>
-          )}
-        </div>
-      )}
+            {calendar.tuition && (
+              <CourseCalendarSingle label="Học phí" icon={DollarSign}>
+                <p>
+                  <span className="font-medium">
+                    {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
+                  </span>
+                  <span className="text-xs">(Thanh toán trọn gói)</span>
+                </p>
+                hoặc
+                <p>
+                  <span className="font-medium">
+                    {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
+                  </span>
+                  <span className="text-xs">
+                    (Thanh toán {calendar.tuition.monthly.times} đợt)
+                  </span>{" "}
+                </p>
+              </CourseCalendarSingle>
+            )}
+          </div>
+        )}
 
-      {layout === "double" && (
-        <div>
-          <Button
-            variant="secondary"
-            className="w-full"
-            onClick={() => setDialogOpen(true)}
-            asChild
-          >
-            <Link href={`/register?course=${slug}`}>Đăng ký</Link>
-          </Button>
-        </div>
-      )}
+        {layout === "double" && (
+          <div>
+            <Button
+              variant="secondary"
+              className="w-full"
+              onClick={() => setDialogOpen(true)}
+              asChild
+            >
+              <Link href={`/register?course=${slug}`}>Đăng ký</Link>
+            </Button>
+          </div>
+        )}
+      </div>
 
       {/* have facilities? */}
       {/* {hasMaterials && (
@@ -226,21 +228,34 @@ export default function CourseOpeningSchedules({
 
   return (
     <section id="schedules">
-      <CourseSectionHeading>Lịch khai giảng</CourseSectionHeading>
-      <div
-        className={cn(
-          "grid gap-2",
-          calendars.length === 1 ? "sm:grid-cols-1" : "sm:grid-cols-2"
-        )}
-      >
-        {calendars.map((calendar) => (
-          <CourseOpeningScheduleCard
-            calendar={calendar}
-            key={calendar.title}
-            slug={slug}
-            layout={calendars.length === 2 ? "double" : "single"}
-          />
-        ))}
+      <div className="max-w-screen-xl px-8 mx-auto">
+        <div className="flex items-center">
+          <div className="hidden lg:block">
+            <div className="relative w-[300px] md:w-[400px] aspect-[16/9]">
+              <Image
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1695800726/courses/Calendar_vsswj7.png"
+                alt="Lịch khai giảng"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div
+            className={cn(
+              "grid gap-2 grow",
+              calendars.length === 1 ? "sm:grid-cols-1" : "sm:grid-cols-2"
+            )}
+          >
+            {calendars.map((calendar) => (
+              <CourseOpeningScheduleCard
+                calendar={calendar}
+                key={calendar.title}
+                slug={slug}
+                layout={calendars.length === 2 ? "double" : "single"}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

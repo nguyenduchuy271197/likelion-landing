@@ -128,13 +128,17 @@ const Partner = (props: LucideProps) => (
 export default function CoursePartnership() {
   return (
     <section>
-      <CourseSectionHeading>
-        Đối tác hỗ trợ kết nối việc làm
-      </CourseSectionHeading>
-      <div className="flex items-center gap-8">
-        <Icons.rightArrow className="w-20" />
-        <Partner className="w-full grow" />
-        <Icons.rightArrow className="w-20 rotate-180" />
+      <div className="max-w-screen-md px-8 mx-auto">
+        <div className="space-y-16">
+          <h2 className="text-3xl font-bold text-center sm:text-4xl">
+            Đối tác hỗ trợ kết nối việc làm
+          </h2>
+          <div className="flex items-center gap-8">
+            <Icons.rightArrow className="w-20" />
+            <Partner className="w-full grow" />
+            <Icons.rightArrow className="w-20 rotate-180" />
+          </div>
+        </div>
       </div>
     </section>
   );

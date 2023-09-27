@@ -5,7 +5,7 @@ import { Button } from "../ui/Button";
 import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import CourseSectionHeading from "./CourseSectionHeading";
+import CoursePromotion from "./CoursePromotion";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -14,6 +14,7 @@ interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
     label: string;
     href: string;
   };
+  option: number;
   children: ReactNode;
 }
 
@@ -37,6 +38,7 @@ function CoursePaymentMethodRow({
   action,
   className,
   children,
+  option,
   ...props
 }: CourseTuitionProps) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
@@ -44,21 +46,26 @@ function CoursePaymentMethodRow({
   return (
     <div
       className={cn(
-        "flex flex-col justify-between gap-4 px-6 py-10 border rounded-lg md:items-center md:flex-row md:gap-8 bg-[#FFEDE1]",
-        priority && "bg-gradient-to-r from-[#ff7711] to-[#FFA563] text-muted",
+        "p-12 rounded-lg flex-1 h-[400px] flex flex-col",
+        priority
+          ? "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-muted"
+          : "bg-gradient-to-r from-rose-100 to-teal-100",
         className
       )}
       {...props}
     >
-      <div className="space-y-1">
-        <h5 className="text-lg font-medium">{title}</h5>
+      <div className="flex mb-4">
+        <div className="px-4 py-2 text-sm font-bold rounded-lg bg-primary/10">
+          Lựa chọn {option}
+        </div>
       </div>
-      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center md:gap-8 md:items-start sm:shrink-0 md:w-[400px]">
+      <h5 className="text-2xl font-bold">{title}</h5>
+      <div className="flex flex-col gap-6 mt-auto">
         <div className="space-y-1">{children}</div>
-        <div className="w-full xs:w-auto sm:w-full sm:max-w-[160px]">
+        <div className="">
           <Button
             size="lg"
-            className="w-full"
+            className="w-full px-12 py-8 text-base font-bold"
             onClick={() => setDialogOpen(true)}
             asChild
           >
@@ -77,51 +84,57 @@ export default function CoursePaymentMethods({
   if (!payment_methods) return null;
 
   return (
-    <section>
-      <CourseSectionHeading>Phương thức thanh toán</CourseSectionHeading>
-      <div className="space-y-4">
-        <CoursePaymentMethodRow
-          title="Thanh toán một lần giảm còn"
-          action={{
-            label: "Đăng ký",
-            href: `/register?course=${slug}`,
-          }}
-          priority
-        >
-          {payment_methods.once.discounted ? (
-            <>
-              <div className="text-sm line-through">
-                {formatNumber(payment_methods.once.origin)} VNĐ
-              </div>
-              <div className="flex items-start space-x-2">
-                <div className="text-lg font-bold lg:text-xl">
-                  {formatNumber(payment_methods.once.discounted)} VNĐ
+    <section className="bg-[#FFD03D]" id="payment">
+      <div className="max-w-screen-lg px-8 mx-auto">
+        <div className="space-y-16 py-28">
+          <h2 className="text-3xl font-bold text-center sm:text-4xl">
+            Phương thức thanh toán
+          </h2>
+          <div className="flex flex-col gap-8 md:flex-row">
+            <CoursePaymentMethodRow
+              title="Thanh toán một lần giảm còn"
+              action={{
+                label: "Đăng ký",
+                href: `/register?course=${slug}`,
+              }}
+              option={1}
+              priority
+            >
+              {payment_methods.once.discounted ? (
+                <div className="space-y-2">
+                  <div className="text-lg font-bold lg:text-4xl">
+                    {formatNumber(payment_methods.once.discounted)} VNĐ
+                  </div>
+                  <div className="line-through">
+                    {formatNumber(payment_methods.once.origin)} VNĐ
+                  </div>
                 </div>
+              ) : (
+                <div className="flex items-start space-x-2">
+                  <div className="text-lg font-bold lg:text-xl">
+                    {formatNumber(payment_methods.once.origin)} VNĐ
+                  </div>
+                </div>
+              )}
+            </CoursePaymentMethodRow>
+            <CoursePaymentMethodRow
+              option={2}
+              title={`Thanh toán thành ${payment_methods.monthly.times} đợt`}
+              action={{
+                label: "Tìm hiểu thêm",
+                href: `/register?course=${slug}`,
+              }}
+            >
+              <div className="text-muted-foreground">Chỉ còn</div>
+              <div className="flex items-end space-x-2">
+                <div className="text-4xl font-bold">
+                  {formatNumber(payment_methods.monthly.origin)} VNĐ
+                </div>
+                <div className="font-medium">/ tháng</div>
               </div>
-            </>
-          ) : (
-            <div className="flex items-start space-x-2">
-              <div className="text-lg font-bold lg:text-xl">
-                {formatNumber(payment_methods.once.origin)} VNĐ
-              </div>
-            </div>
-          )}
-        </CoursePaymentMethodRow>
-        <CoursePaymentMethodRow
-          title={`Thanh toán thành ${payment_methods.monthly.times} đợt`}
-          action={{
-            label: "Tìm hiểu thêm",
-            href: `/register?course=${slug}`,
-          }}
-        >
-          <div className="text-sm text-muted-foreground">Chỉ còn</div>
-          <div className="flex items-end space-x-2">
-            <div className="text-lg font-bold lg:text-xl">
-              {formatNumber(payment_methods.monthly.origin)} VNĐ
-            </div>
-            <div className="font-medium">/ tháng</div>
+            </CoursePaymentMethodRow>
           </div>
-        </CoursePaymentMethodRow>
+        </div>
       </div>
     </section>
   );

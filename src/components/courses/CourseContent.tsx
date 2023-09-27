@@ -6,7 +6,6 @@ import {
 } from "@/components/ui/Accordion";
 import { IModule } from "@/types";
 import { FileText, GitFork } from "lucide-react";
-import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseModule({
   name,
@@ -16,18 +15,18 @@ function CourseModule({
 }: IModule & { index: number }) {
   return (
     <AccordionItem
-      className="px-8 py-2 [&[data-state='open']]:bg-[#fafafa] border"
+      className="px-8 py-4 rounded-lg bg-[#6F4AFF] text-muted"
       value={name}
       key={name}
     >
-      <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left font-bold uppercase">
+      <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left font-bold uppercase text-xl [&_svg]:w-8 [&_svg]:h-8">
         {index}. {name}
       </AccordionTrigger>
       <AccordionContent>
-        <ul className="flex flex-col gap-4 py-2 text-base">
+        <ul className="flex flex-col gap-4 py-2 text-xl">
           {lessons.map((lesson) => (
             <li className="flex items-center gap-4" key={lesson}>
-              <FileText size={16} className="shrink-0" />
+              <FileText className="w-6 h-6 shrink-0" />
               {lesson}
             </li>
           ))}
@@ -35,7 +34,7 @@ function CourseModule({
           {projects &&
             projects?.map((project, i) => (
               <li className="flex items-center gap-4" key={project}>
-                <GitFork size={16} className="shrink-0" />
+                <GitFork className="w-6 h-6 shrink-0" />
                 <p>
                   <span className="font-medium">
                     Project{projects.length > 1 && ` ${i + 1}`}:
@@ -53,23 +52,29 @@ function CourseModule({
 export default function CourseContent({ modules }: { modules: IModule[] }) {
   return (
     <section id="content">
-      <CourseSectionHeading>Nội dung khoá học</CourseSectionHeading>
-      <Accordion
-        type="single"
-        collapsible
-        className="w-full bg-white"
-        defaultValue={modules[0].name}
-      >
-        {modules.map((module, i) => (
-          <CourseModule
-            name={module.name}
-            lessons={module.lessons}
-            key={module.name}
-            index={i + 1}
-            projects={module.projects}
-          />
-        ))}
-      </Accordion>
+      <div className="container">
+        <div className="space-y-12">
+          <h2 className="text-4xl font-bold text-center sm:text-5xl">
+            Nội dung khoá học
+          </h2>
+          <Accordion
+            type="multiple"
+            // collapsible
+            className="flex flex-col w-full gap-4"
+            defaultValue={[modules[0].name]}
+          >
+            {modules.map((module, i) => (
+              <CourseModule
+                name={module.name}
+                lessons={module.lessons}
+                key={module.name}
+                index={i + 1}
+                projects={module.projects}
+              />
+            ))}
+          </Accordion>
+        </div>
+      </div>
     </section>
   );
 }

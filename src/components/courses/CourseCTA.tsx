@@ -15,9 +15,9 @@ export default function CourseCTA({ name, slug }: CourseCTAProps) {
   if (!name) return null;
 
   return (
-    <section className="">
+    <section>
       <div className="max-w-screen-lg px-8 mx-auto">
-        <div className="flex flex-col items-center gap-8 py-16 rounded-3xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+        <div className="flex flex-col items-center gap-8 px-8 py-16 rounded-3xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
           <h3 className="text-3xl font-bold text-center sm:text-4xl text-primary-foreground">
             Bạn cần tư vấn về khoá học{" "}
             <span className="capitalize">{name}</span>?

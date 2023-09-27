@@ -45,9 +45,9 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
           alt={title}
         />
       </div>
-      <div className="py-2 space-y-1">
-        <h3 className="text-lg font-medium">{title}</h3>
-        <p className="text-sm text-muted-foreground">{description}</p>
+      <div className="py-4 space-y-1">
+        <h3 className="text-2xl font-bold">{title}</h3>
+        <p className="text-lg text-muted-foreground">{description}</p>
       </div>
     </div>
   );
@@ -55,19 +55,26 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
 
 export default function CourseWorkshops() {
   return (
-    <div>
-      <CourseSectionHeading
-        className="flex items-center gap-2"
-        tags={["Mới", "Đặc biệt"]}
-      >
-        Workshops
-      </CourseSectionHeading>
+    <section>
+      <div className="container">
+        <div className="">
+          <CourseSectionHeading
+            className="flex items-center gap-2"
+            tags={["Mới", "Đặc biệt"]}
+          >
+            Workshops
+          </CourseSectionHeading>
 
-      <div className="grid gap-8 sm:grid-cols-2">
-        {courseWorkshops.map((courseWorkshop) => (
-          <CourseWorkshopCard key={courseWorkshop.title} {...courseWorkshop} />
-        ))}
+          <div className="grid gap-8 sm:grid-cols-2">
+            {courseWorkshops.map((courseWorkshop) => (
+              <CourseWorkshopCard
+                key={courseWorkshop.title}
+                {...courseWorkshop}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

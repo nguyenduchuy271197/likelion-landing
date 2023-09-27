@@ -1,6 +1,5 @@
 import { Badge } from "../ui/Badge";
-import { Check, LucideProps } from "lucide-react";
-import CourseContainer from "./CourseContainer";
+import { Check } from "lucide-react";
 import CourseTechIcon from "./CourseTechIcon";
 import CourseHeadingActions from "./CourseHeadingActions";
 
@@ -228,64 +227,62 @@ export default function CourseHeading({
       }}
     >
       <div className="container">
-        <CourseContainer>
-          <div className="flex flex-col items-center max-w-xl mx-auto space-y-8 text-center lg:text-left lg:max-w-none lg:items-start">
-            <div className="space-y-4">
-              <div className="space-y-3">
-                <ul className="flex items-center justify-center gap-1 lg:justify-start">
-                  {tags.status.map((s) => (
-                    <li key={s}>
-                      <Badge variant="secondary">{s}</Badge>
-                    </li>
-                  ))}
-                </ul>
-
-                <h1 className="text-3xl font-bold capitalize lg:text-5xl">
-                  {title}
-                </h1>
-              </div>
-
-              <p className="sm:text-lg text-muted/90">{subtitle}</p>
-            </div>
-
-            {techs && techs.length > 0 && (
-              <ul className="flex flex-wrap items-center justify-center gap-4">
-                {techs.map((tech) => {
-                  if (Object.keys(techIcons).includes(tech)) {
-                    return (
-                      <CourseTechIcon
-                        title={techIcons[tech as keyof typeof techIcons].title}
-                        src={techIcons[tech as keyof typeof techIcons].src}
-                        key={tech}
-                      />
-                    );
-                  }
-                })}
-              </ul>
-            )}
-
-            <CourseHeadingActions slug={slug} />
-
-            {highlights.length > 0 && (
-              <ul className="max-w-xs space-y-2 lg:mx-0">
-                {highlights.map((highlight) => (
-                  <li
-                    className="flex items-center gap-2 font-medium sm:gap-4 sm:text-lg"
-                    key={highlight}
-                  >
-                    <div className="p-1 rounded-full bg-muted">
-                      <Check
-                        strokeWidth={3}
-                        className="w-3 h-3 text-primary sm:w-4 sm:h-4"
-                      />
-                    </div>
-                    <span>{highlight}</span>
+        <div className="flex flex-col items-center max-w-xl mx-auto space-y-8 text-center lg:text-left lg:max-w-none lg:items-start">
+          <div className="space-y-4">
+            <div className="space-y-3">
+              <ul className="flex items-center justify-center gap-1 lg:justify-start">
+                {tags.status.map((s) => (
+                  <li key={s}>
+                    <Badge variant="secondary">{s}</Badge>
                   </li>
                 ))}
               </ul>
-            )}
+
+              <h1 className="text-4xl font-bold capitalize lg:text-5xl">
+                {title}
+              </h1>
+            </div>
+
+            <p className="sm:text-lg text-muted/90">{subtitle}</p>
           </div>
-        </CourseContainer>
+
+          {techs && techs.length > 0 && (
+            <ul className="flex flex-wrap items-center justify-center gap-4">
+              {techs.map((tech) => {
+                if (Object.keys(techIcons).includes(tech)) {
+                  return (
+                    <CourseTechIcon
+                      title={techIcons[tech as keyof typeof techIcons].title}
+                      src={techIcons[tech as keyof typeof techIcons].src}
+                      key={tech}
+                    />
+                  );
+                }
+              })}
+            </ul>
+          )}
+
+          <CourseHeadingActions slug={slug} />
+
+          {highlights.length > 0 && (
+            <ul className="space-y-2 lg:mx-0">
+              {highlights.map((highlight) => (
+                <li
+                  className="flex items-center gap-2 font-medium sm:gap-4 sm:text-lg"
+                  key={highlight}
+                >
+                  <div className="p-1 rounded-full bg-muted">
+                    <Check
+                      strokeWidth={3}
+                      className="w-3 h-3 text-primary sm:w-4 sm:h-4"
+                    />
+                  </div>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </section>
   );

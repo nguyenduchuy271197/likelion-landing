@@ -10,10 +10,10 @@ export default function CourseHeadingActions({ slug }: { slug: string }) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-col items-center gap-4 sm:flex-row">
       <Button
         variant="secondary"
-        className="uppercase px-12 py-6 text-base font-bold text-black transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-orange-200 to-orange-400 hover:from-orange-300 hover:to-orange-500 shadow-[0_2px_8px_rgba(255,255,255,_0.7)] hover:shadow-[0_3px_16px_rgba(255,255,255,_0.7)]"
+        className="uppercase px-12 py-6 text-base font-bold text-white transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 shadow-[0_2px_8px_rgba(255,255,255,_0.7)] hover:shadow-[0_3px_16px_rgba(255,255,255,_0.7)]"
         asChild
         onClick={() => setDialogOpen(true)}
       >

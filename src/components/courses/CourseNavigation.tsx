@@ -18,7 +18,7 @@ const items = [
   },
   {
     label: "Thông tin đăng ký",
-    target: "schedules",
+    target: "payment",
   },
   {
     label: "Reviews",
@@ -30,31 +30,26 @@ export default function CourseNavigation() {
   return (
     <nav className="sticky top-[var(--navbar-height)] z-10 bg-primary text-muted hidden md:block">
       <div className="container">
-        <CourseContainer>
-          <div className="flex justify-center lg:justify-start">
-            <ul className="flex items-center">
-              {items.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    smooth
-                    spy
-                    offset={-150}
-                    duration={200}
-                    to={item.target}
-                    className="px-4 py-4 font-medium transition duration-200 border-b-4 border-transparent hover:text-[#ff7700] hover:border-[#ff7700] cursor-pointer"
-                    href={`#${item.target}`}
-                    activeStyle={{
-                      borderColor: "#ff7700",
-                      color: "#ff7700",
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </CourseContainer>
+        <div className="flex justify-center">
+          <ul className="flex items-center">
+            {items.map((item) => (
+              <li key={item.label}>
+                <Link
+                  smooth
+                  spy
+                  offset={-150}
+                  duration={200}
+                  to={item.target}
+                  className="px-4 py-4 font-medium transition duration-200 border-b-4 border-transparent cursor-pointer hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent"
+                  href={`#${item.target}`}
+                  activeClass="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
