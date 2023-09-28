@@ -267,7 +267,7 @@
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
       "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 2 tháng (khoá offline) hoặc 3 tháng (khoá online).",
       "abbr": "Front-end",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113331/courses/thanh-thao-lap-trinh-web-frond-end/thumbnail.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "calendar": [
         {
           "title": "Khoá Front-end (offline)",
@@ -371,7 +371,7 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online/Offline", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_Front-end_idoro6.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "highlights": [
         "Nâng cấp giao diện web",
         "Tương tác trực tiếp với giảng viên",
@@ -469,7 +469,7 @@
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
       "subtitle": "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
       "abbr": "Python Data",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692357363/courses/khoa-hoc-python-cho-data-analysis/thumbnail_olwo74.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820938/courses/data-science-co-ban-voi-python/Python_lm3uf0.png",
       "calendar": [
         {
           "title": "Python cho Data Analysis",
@@ -573,7 +573,7 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_Python_hchvvj.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820938/courses/data-science-co-ban-voi-python/Python_lm3uf0.png",
       "lecturers": [
         {
           "name": "Đinh Hoàng Anh",
@@ -831,7 +831,7 @@
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
       "subtitle": "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
       "abbr": "Java",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692589411/courses/khoa-hoc-back-end-java/Thumbnail_Java300_1_qeq21t.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
       "calendar": [
         {
           "title": "Back-end Java",
@@ -918,7 +918,7 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_Java_atj7kt.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
       "lecturers": [
         {
           "name": "Nguyễn Thu Hà",

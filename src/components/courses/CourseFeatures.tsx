@@ -1,25 +1,21 @@
-import { Check } from "lucide-react";
+import { Plus } from "lucide-react";
 import Image from "next/image";
 
-function ObjectivesItem({ name }: { name: string }) {
+function CourseFeature({ name }: { name: string }) {
   return (
     <li className="flex items-center gap-4">
       <div className="flex items-center justify-center rounded-full w-7 h-7 shrink-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-        <Check className="w-4 h-4 font-bold text-muted" strokeWidth={3} />
+        <Plus className="w-4 h-4 text-muted" strokeWidth={3} />
       </div>
       {name}
     </li>
   );
 }
 
-export default function CourseObjectives({
-  objectives,
-}: {
-  objectives: string[];
-}) {
+export default function CourseFeatures({ features }: { features: string[] }) {
   return (
     <section>
-      <div className="max-w-screen-xl px-8 mx-auto">
+      <div className="max-w-screen-lg px-8 mx-auto">
         <div className="flex items-center justify-between gap-8">
           <div className="hidden md:block">
             <div className="relative w-[300px] md:w-[400px] aspect-[1/1] rounded-lg overflow-hidden">
@@ -31,10 +27,10 @@ export default function CourseObjectives({
             </div>
           </div>
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold">Bạn sẽ học được gì?</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">Khoá học bao gồm</h2>
             <ul className="flex flex-col gap-4 text-lg">
-              {objectives.map((ob) => (
-                <ObjectivesItem key={ob} name={ob} />
+              {features.map((feature) => (
+                <CourseFeature key={feature} name={feature} />
               ))}
             </ul>
           </div>

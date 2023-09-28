@@ -1,6 +1,5 @@
 import CourseCTA from "@/components/courses/CourseCTA";
 import CourseContent from "@/components/courses/CourseContent";
-import CourseFeaturesMobile from "@/components/courses/CourseFeaturesMobile";
 import CourseHeading from "@/components/courses/CourseHeading";
 import CourseInfoCard from "@/components/courses/CourseInfoCard";
 import CourseInfoMobile from "@/components/courses/CourseInfoMobile";
@@ -21,7 +20,7 @@ import CourseBenefits from "@/components/courses/CourseBenefits";
 import CourseNavigation from "@/components/courses/CourseNavigation";
 import data from "@/data/data.json";
 import { redirect } from "next/navigation";
-import CourseShowcases from "@/components/courses/CourseShowcases";
+import CourseFeatures from "@/components/courses/CourseFeatures";
 
 export async function generateMetadata(
   {
@@ -108,21 +107,16 @@ export default function CourseDetail({
       {/* Course Navigation */}
       <CourseNavigation />
 
-      {/* Content */}
-      {/* <div className="space-y-10 lg:hidden">
-        <CourseInfoMobile
+      <div className="py-10 space-y-24 md:py-20 sm:space-y-36">
+        {/* <CourseInfoMobile
           discountedPrice={discountedPrice}
           price={price}
           slug={courseSlug}
           title={title}
           thumbnail={thumbnail}
           youtubeId={youtubeId}
-        />
+        /> */}
 
-        <CourseFeaturesMobile features={features} />
-      </div> */}
-
-      <div className="py-10 space-y-24 md:py-20 sm:space-y-36">
         {/* Benefits */}
         <CourseBenefits benefits={benefits} />
 
@@ -136,6 +130,9 @@ export default function CourseDetail({
 
         {/* Requirements */}
         <CourseRequirements requirements={requirements} />
+
+        {/* Features */}
+        <CourseFeatures features={features} />
 
         {/* Course content */}
         <CourseContent modules={modules} />

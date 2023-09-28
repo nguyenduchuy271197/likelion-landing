@@ -31,16 +31,12 @@ export default function CourseHeadingActions({ slug }: { slug: string }) {
         asChild
         className="uppercase px-12 py-6 text-base font-bold text-black transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-gray-50 to-gray-200 hover:shadow-[0_2px_8px_rgba(255,255,255,_0.7)]"
       >
-        <ScrollLink
-          smooth
-          spy
-          offset={-150}
-          duration={200}
-          to="content"
-          href="#content"
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
+          target="_blank"
         >
-          Xem lộ trình
-        </ScrollLink>
+          Học thử miễn phí
+        </Link>
       </Button>
     </div>
   );
