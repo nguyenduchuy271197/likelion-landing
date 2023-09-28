@@ -1,11 +1,11 @@
-import { Plus } from "lucide-react";
+import { Code, Plus } from "lucide-react";
 import Image from "next/image";
 
 function CourseFeature({ name }: { name: string }) {
   return (
     <li className="flex items-center gap-4">
       <div className="flex items-center justify-center rounded-full w-7 h-7 shrink-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-        <Plus className="w-4 h-4 text-muted" strokeWidth={3} />
+        <Code className="w-4 h-4 text-muted" strokeWidth={3} />
       </div>
       {name}
     </li>

@@ -44,11 +44,17 @@ export default function CourseShowcases({
 
   return (
     <section id="projects">
-      <CourseSectionHeading>Dự án của học viên</CourseSectionHeading>
-      <div className="grid gap-8 sm:grid-cols-2">
-        {showcases.map((showcase) => (
-          <CourseShowcase key={showcase.title} {...showcase} />
-        ))}
+      <div className="container">
+        <div className="space-y-12">
+          <h2 className="text-3xl font-bold text-center sm:text-4xl">
+            Dự án cuối khoá
+          </h2>
+          <div className="grid gap-8 sm:grid-cols-2">
+            {showcases.map((showcase) => (
+              <CourseShowcase key={showcase.title} {...showcase} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

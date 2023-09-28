@@ -69,10 +69,10 @@ export default function CoursePromotion({
                     dangerouslySetInnerHTML={{ __html: promotion }}
                     className="[&>strong]:font-bold [&>strong]:text-[#FF7711] mb-2 text-xl font-bold"
                   />
-                  <p className="opacity-75">
+                  {/* <p className="opacity-75">
                     Lorem ipsum dolor sit amet consectetur. Consequat
                     sollicitudin in euismod dolor, nec sodales viverra.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </li>

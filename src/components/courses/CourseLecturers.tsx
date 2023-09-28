@@ -19,7 +19,7 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex flex-col items-center justify-center gap-8">
-        <div className="flex items-center justify-center p-1 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+        <div className="flex items-center justify-center p-2 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-rose-400 to-orange-300">
             <Image
               src={lecturer.avatar}

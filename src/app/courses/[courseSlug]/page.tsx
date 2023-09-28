@@ -21,6 +21,7 @@ import CourseNavigation from "@/components/courses/CourseNavigation";
 import data from "@/data/data.json";
 import { redirect } from "next/navigation";
 import CourseFeatures from "@/components/courses/CourseFeatures";
+import CourseShowcases from "@/components/courses/CourseShowcases";
 
 export async function generateMetadata(
   {
@@ -80,6 +81,7 @@ export default function CourseDetail({
     requirements,
     abbr,
     thumbnail,
+    background,
     youtubeId,
     calendar,
     promotions,
@@ -102,6 +104,8 @@ export default function CourseDetail({
         highlights={highlights}
         techs={techs}
         slug={courseSlug}
+        thumbnail={thumbnail}
+        background={background}
       />
 
       {/* Course Navigation */}
@@ -145,7 +149,7 @@ export default function CourseDetail({
         <CourseLecturers lecturers={lecturers} />
 
         {/* Showcase */}
-        {/* <CourseShowcases showcases={showcases} /> */}
+        <CourseShowcases showcases={showcases} />
 
         {/* CourseCalen */}
         <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />

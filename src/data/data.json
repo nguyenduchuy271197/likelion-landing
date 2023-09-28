@@ -71,13 +71,13 @@
         },
         {
           "name": "Nguyễn Văn Minh",
-          "profession": "Software Engineer/Workshop Guest",
+          "profession": "Software Engineer & Workshop Guest",
           "description": "Xin chào, với hơn 4 năm chinh phục nhiều dự án trong mảng tài chính - ngân hàng cho các tập đoàn lớn như Shinhan, HSBC hay UOB và trực tiếp phụ trách tuyển dụng Developer cho các dự án, mình chắc chắn rằng sẽ khiến các bạn ồ lên thích thú khi tham gia các buổi workshops ở LIKELION. Không những thế, Minh sẽ “dằn túi” cho các bạn một núi bí quyết hay ho để vượt qua vòng phỏng vấn của các nhà tuyển dụng khó tính và nhanh chóng đạt được mục tiêu “đi làm như một Dev chính hiệu!”.",
           "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png"
         },
         {
           "name": "Nguyễn Khánh Dương",
-          "profession": "Senior Front-end Engineer/Workshop Guest",
+          "profession": "Senior Front-end Engineer & Workshop Guest",
           "description": "Chào các bạn, mình là Dương, hiện đang đảm nhận vị trí Leader của team Front-end developer cho các dự án phát triển phần mềm. Mình từng làm việc tại các công ty công nghệ lớn như SUNO và Unit. Cùng hơn 4 năm kinh nghiệm triển khai các dự án trong lĩnh vực kỹ thuật phần mềm, mình sẽ chia sẻ cho các bạn tất tần tật “bí kíp sinh tồn” để làm hành trang trước khi dấn thân vào ngành IT với tinh thần đầy tự tin và nhiệt huyết nhé.",
           "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Du%CC%9Bo%CC%9Bng_llbmjl.png"
         }
@@ -267,36 +267,38 @@
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
       "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 2 tháng (khoá offline) hoặc 3 tháng (khoá online).",
       "abbr": "Front-end",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888907/courses/thanh-thao-lap-trinh-web-frond-end/image_8_ghyytp.png",
+      "background": {
+        "from": "#22c55e",
+        "to": "#16a34a"
+      },
       "calendar": [
         {
-          "title": "Khoá Front-end (offline)",
+          "title": "Khoá Front-end",
           "start_date": "23/10/2023",
-          "duration": "2 tháng / 80 buổi học",
-          "schedule": "Thứ 2 đến Thứ 6 / 9:00 - 17:00",
-          "location": {
-            "name": "Y5 Office",
-            "address": "135 Hai Bà Trưng, Quận 1, TP. HCM"
-          },
-          "tuition": {
-            "once": {
-              "price": 9900000
-            },
-            "monthly": {
-              "price": 5500000,
-              "times": 2
-            }
-          }
+          "duration": "12 tuần / 36 buổi",
+          "schedule": "Thứ 2 - 4 - 6 / 18:00 - 21:00",
+          "platform": "Google Meet"
         }
       ],
       "promotions": [
         "Học theo nhóm <strong>giảm thêm 200.000đ</strong>",
         "Cựu học viên <strong>giảm thêm 300.000đ</strong>"
       ],
+      "payment_methods": {
+        "once": {
+          "origin": 7500000,
+          "discounted": 6000000
+        },
+        "monthly": {
+          "times": 3,
+          "origin": 2500000
+        }
+      },
       "lecturers": [
         {
           "name": "Nguyễn Đức Huy",
-          "profession": "Fullstack Developer/Giảng viên",
+          "profession": "Fullstack Developer & Giảng viên",
           "description": "Với hơn 2 năm kinh nghiệm trong ngành Data Science cùng 5 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy khóa Bootcamp, mình tin chắc là sẽ đem đến cho các bạn những buổi học đầy thú vị và chất lượng. Tham gia khóa học, các bạn sẽ được hướng dẫn cách học lập trình hiệu quả nhất cũng như góp phần hoạch định được chính xác con đường phát triển thành một lập trình viên chuyên nghiệp. Huy đang ở đây để sẵn sàng “on air” cùng bạn!",
           "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Huy_eumn2w.png"
         },
@@ -469,7 +471,11 @@
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
       "subtitle": "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
       "abbr": "Python Data",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820938/courses/data-science-co-ban-voi-python/Python_lm3uf0.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888889/courses/khoa-hoc-python-cho-data-analysis/Group_pdsys1.png",
+      "background": {
+        "from": "#3b82f6",
+        "to": "#2563eb"
+      },
       "calendar": [
         {
           "title": "Python cho Data Analysis",
@@ -573,7 +579,7 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820938/courses/data-science-co-ban-voi-python/Python_lm3uf0.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888940/courses/khoa-hoc-python-cho-data-analysis/Python_lm3uf0_a4xsa3.png",
       "lecturers": [
         {
           "name": "Đinh Hoàng Anh",
@@ -756,7 +762,7 @@
       "lecturers": [
         {
           "name": "Đỗ Xuân Duy",
-          "profession": "ITS Technical Team Lead/ Senior Full Stack Developer",
+          "profession": "ITS Technical Team Lead & Senior Full Stack Developer",
           "description": "Chào các bạn! Mình là Xuân Duy, hiện đang là Technical Team Lead tại Archetype Group, đồng thời là Nghiên cứu sinh Thạc sĩ Khoa học máy tính tại Học viện Công nghệ Bưu chính Viễn thông. Với hơn 5 năm kinh nghiệm trong lĩnh vực CNTT, cùng kiến thức trải rộng toàn bộ chuỗi công nghệ LAMP cũng như ứng dụng LAMP và các Framework của PHP vào phát triển và vận hành các dự án phần mềm (như ERP, HIS,…), cộng hưởng với sự nhiệt huyết trong giảng dạy, mình chắc chắn sẽ mang đến cho các bạn những tiết học bổ ích, kiến thức thực chiến và góc nhìn mới mẻ về PHP Dev dựa trên kinh nghiệm thực tế của mình.",
           "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692697239/lecturers/Anh_Duy_s7v0nn.png"
         }
@@ -831,7 +837,11 @@
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
       "subtitle": "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
       "abbr": "Java",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888828/courses/khoa-hoc-back-end-java/Group_1_o0ze2o.png",
+      "background": {
+        "from": "#ef4444",
+        "to": "#dc2626"
+      },
       "calendar": [
         {
           "title": "Back-end Java",

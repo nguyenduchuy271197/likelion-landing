@@ -2,6 +2,7 @@ import { Badge } from "../ui/Badge";
 import { Check } from "lucide-react";
 import CourseTechIcon from "./CourseTechIcon";
 import CourseHeadingActions from "./CourseHeadingActions";
+import Image from "next/image";
 
 interface CourseHeadingProps {
   title: string;
@@ -13,6 +14,11 @@ interface CourseHeadingProps {
   highlights: string[];
   techs?: string[];
   slug: string;
+  thumbnail: string;
+  background?: {
+    from: string;
+    to: string;
+  };
 }
 
 const techIcons = {
@@ -213,31 +219,32 @@ export default function CourseHeading({
   highlights,
   techs,
   slug,
+  thumbnail,
+  background,
 }: CourseHeadingProps) {
-  if (!tags) return null;
-
   return (
     <section
-      className="py-16 text-white bg-overlay"
+      className="py-16 pb-40 bg-black text-muted clip-path-polygon-[0_0,_100%_0%,_100%_80%,_0%_100%] mb-10"
       style={{
-        background:
-          "linear-gradient(to bottom, hsla(var(--primary) / 0.8), hsla(var(--primary) / 1)),url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688436630/gallery/LLV06256_kkpwo3.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        background: `linear-gradient(to right,  ${
+          background?.from || "#000"
+        } 0%,${background?.to || "#000"} 100%)`,
       }}
     >
       <div className="container">
-        <div className="flex">
+        <div className="flex flex-col items-center gap-8 lg:flex-row">
           <div className="flex flex-col items-center max-w-2xl space-y-8 text-center lg:text-left lg:items-start">
             <div className="space-y-4">
               <div className="space-y-3">
-                <ul className="flex items-center justify-center gap-1 lg:justify-start">
-                  {tags.status.map((s) => (
-                    <li key={s}>
-                      <Badge variant="secondary">{s}</Badge>
-                    </li>
-                  ))}
-                </ul>
+                {tags.status.length > 0 ? (
+                  <ul className="flex items-center justify-center gap-1 lg:justify-start">
+                    {tags.status.map((s) => (
+                      <li key={s}>
+                        <Badge variant="secondary">{s}</Badge>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
 
                 <h1 className="text-4xl font-bold capitalize lg:text-5xl">
                   {title}
@@ -284,7 +291,16 @@ export default function CourseHeading({
               </ul>
             )}
           </div>
-          <div></div>
+          <div className="hidden lg:block">
+            <div className="relative w-[300px] lg:w-[400px] aspect-[1/1]">
+              <Image
+                src={thumbnail}
+                alt={title}
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

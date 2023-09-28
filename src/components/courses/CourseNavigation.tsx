@@ -1,7 +1,6 @@
 "use client";
 
 import { Link } from "react-scroll";
-import CourseContainer from "./CourseContainer";
 
 const items = [
   {
@@ -28,7 +27,7 @@ const items = [
 
 export default function CourseNavigation() {
   return (
-    <nav className="sticky top-[var(--navbar-height)] z-10 bg-primary text-muted hidden md:block">
+    <nav className="sticky top-[var(--navbar-height)] z-10 hidden md:block bg-background border-y">
       <div className="container">
         <div className="flex justify-center">
           <ul className="flex items-center">
