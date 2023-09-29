@@ -12,15 +12,6 @@ const Achievements = dynamic(
 
 const banners = [
   {
-    href: "/courses/khoa-hoc-lap-trinh-web-fullstack",
-    src: {
-      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543394/home/banners/fullstack-mb.png",
-      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/fullstack.png",
-    },
-    title: "Bootcamp lập trình web Fullstack",
-    description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 3 tháng",
-  },
-  {
     href: "/courses/thanh-thao-lap-trinh-web-front-end",
     src: {
       sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_Front-end_Mobile_a1zjb0.png",
@@ -50,17 +41,25 @@ const banners = [
     description:
       "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng",
   },
+  // {
+  //   href: "/courses/khoa-hoc-back-end-php",
+  //   src: {
+  //     sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668540/home/banners/Cover_PHP_Mobile_ryh5de.png",
+  //     lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_PHP_Desktop_z8jpma.png",
+  //   },
+  //   title: "Back-End PHP",
+  //   description:
+  //     "Sử dụng thành thạo PHP, MySQL, Laravel để phát triển website đa dạng và mạnh mẽ chỉ trong 3 tháng",
+  // },
   {
-    href: "/courses/khoa-hoc-back-end-php",
+    href: "/courses/khoa-hoc-lap-trinh-web-fullstack",
     src: {
-      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668540/home/banners/Cover_PHP_Mobile_ryh5de.png",
-      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_PHP_Desktop_z8jpma.png",
+      sm: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543394/home/banners/fullstack-mb.png",
+      lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543234/home/banners/fullstack.png",
     },
-    title: "Back-End PHP",
-    description:
-      "Sử dụng thành thạo PHP, MySQL, Laravel để phát triển website đa dạng và mạnh mẽ chỉ trong 3 tháng",
+    title: "Bootcamp lập trình web Fullstack",
+    description: "Khoá học giúp bạn trở thành lập trình viên chỉ sau 3 tháng",
   },
-
   {
     href: "/about",
     src: {
