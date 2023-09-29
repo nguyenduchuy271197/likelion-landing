@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function ObjectivesItem({ name }: { name: string }) {
   return (
@@ -31,7 +32,7 @@ export default function CourseObjectives({
             </div>
           </div>
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold">Bạn sẽ học được gì?</h2>
+            <CourseSectionHeading>Bạn sẽ học được gì?</CourseSectionHeading>
             <ul className="flex flex-col gap-4 text-lg">
               {objectives.map((ob) => (
                 <ObjectivesItem key={ob} name={ob} />

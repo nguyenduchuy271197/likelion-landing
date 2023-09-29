@@ -16,6 +16,7 @@ import { Button } from "../ui/Button";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import Link from "next/link";
 import Image from "next/image";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseCalendarSingle({
   label,
@@ -32,10 +33,10 @@ function CourseCalendarSingle({
         <span className="min-w-[40px]">
           <Icon />
         </span>
-        <span className="min-w-[120px] font-medium">{label}</span>
+        <span className="min-w-[120px] font-bold">{label}</span>
       </div>
 
-      <div className="ml-[40px] lg:ml-0">{children}</div>
+      <div className="ml-[40px] lg:ml-0 font-medium">{children}</div>
     </div>
   );
 }
@@ -74,8 +75,11 @@ function CourseOpeningScheduleCard({
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
   return (
-    <div className="relative flex flex-col p-12 space-y-8 rounded-lg text-muted bg-primary">
-      <h4 className="text-[#FFB37B] font-bold text-3xl">Lịch khai giảng</h4>
+    <div className="relative flex flex-col p-8 space-y-8 rounded-lg sm:p-12 text-muted bg-primary">
+      {/* <h3 className="text-[#FFB37B] font-bold text-3xl">Lịch khai giảng</h3> */}
+      <CourseSectionHeading className="text-[#FFB37B]">
+        Lịch khai giảng
+      </CourseSectionHeading>
 
       <div className="text-xl">
         {layout === "double" ? (

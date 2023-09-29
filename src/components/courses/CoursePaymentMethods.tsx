@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CoursePromotion from "./CoursePromotion";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -59,7 +60,7 @@ function CoursePaymentMethodRow({
           Lựa chọn {option}
         </div>
       </div>
-      <h5 className="text-2xl font-bold">{title}</h5>
+      <h5 className="mb-8 text-2xl font-bold">{title}</h5>
       <div className="flex flex-col gap-6 mt-auto">
         <div className="space-y-1">{children}</div>
         <div className="">
@@ -86,10 +87,10 @@ export default function CoursePaymentMethods({
   return (
     <section className="bg-[#FFD03D]" id="payment">
       <div className="max-w-screen-lg px-8 mx-auto">
-        <div className="space-y-16 py-28">
-          <h2 className="text-3xl font-bold text-center sm:text-4xl">
+        <div className="space-y-16 py-14 sm:py-28">
+          <CourseSectionHeading className="text-center">
             Phương thức thanh toán
-          </h2>
+          </CourseSectionHeading>
           <div className="flex flex-col gap-8 md:flex-row">
             <CoursePaymentMethodRow
               title="Thanh toán một lần giảm còn"
@@ -102,16 +103,16 @@ export default function CoursePaymentMethods({
             >
               {payment_methods.once.discounted ? (
                 <div className="space-y-2">
-                  <div className="text-lg font-bold lg:text-4xl">
-                    {formatNumber(payment_methods.once.discounted)} VNĐ
-                  </div>
                   <div className="line-through">
                     {formatNumber(payment_methods.once.origin)} VNĐ
+                  </div>
+                  <div className="text-3xl font-bold lg:text-4xl">
+                    {formatNumber(payment_methods.once.discounted)} VNĐ
                   </div>
                 </div>
               ) : (
                 <div className="flex items-start space-x-2">
-                  <div className="text-lg font-bold lg:text-xl">
+                  <div className="text-3xl font-bold lg:text-4xl">
                     {formatNumber(payment_methods.once.origin)} VNĐ
                   </div>
                 </div>
@@ -127,7 +128,7 @@ export default function CoursePaymentMethods({
             >
               <div className="text-muted-foreground">Chỉ còn</div>
               <div className="flex items-end space-x-2">
-                <div className="text-4xl font-bold">
+                <div className="text-3xl font-bold lg:text-4xl">
                   {formatNumber(payment_methods.monthly.origin)} VNĐ
                 </div>
                 <div className="font-medium">/ tháng</div>

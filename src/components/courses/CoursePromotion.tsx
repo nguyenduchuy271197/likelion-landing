@@ -44,9 +44,9 @@ export default function CoursePromotion({
       <div className="flex flex-col items-center max-w-screen-xl gap-6 p-6 m-auto lg:flex-row lg:gap-0">
         <div className="relative flex w-full flex-1 items-center lg:basis-[400px] lg:text-right">
           <div className="flex-1 lg:pr-6">
-            <h2 className="text-4xl font-bold text-center">
+            <CourseSectionHeading className="text-center">
               Các chương trình ưu đãi hấp dẫn
-            </h2>
+            </CourseSectionHeading>
           </div>
           <div className="hidden w-16 h-px mt-px bg-primary top-1/2 lg:block" />
         </div>

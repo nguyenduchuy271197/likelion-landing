@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface CourseCardProps {
   title: string;
-  thumbnail: string;
+  thumbnail_og: string;
   slug: string;
   tags: {
     schedules: string[];
@@ -15,7 +15,7 @@ interface CourseCardProps {
 
 export default function CourseCard({
   title,
-  thumbnail,
+  thumbnail_og,
   slug,
   tags,
 }: CourseCardProps) {
@@ -26,7 +26,7 @@ export default function CourseCard({
         className="relative overflow-hidden aspect-[4/3] rounded-2xl hover:shadow "
       >
         <Image
-          src={thumbnail}
+          src={thumbnail_og}
           alt={title}
           width={400}
           height={200}

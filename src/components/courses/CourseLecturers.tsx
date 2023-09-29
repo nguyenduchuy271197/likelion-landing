@@ -1,12 +1,6 @@
 import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { Quote } from "lucide-react";
-
-const pfFont = Playfair_Display({
-  subsets: ["vietnamese"],
-  weight: ["400", "500", "700", "900"],
-});
+import CourseSectionHeading from "./CourseSectionHeading";
 
 interface LectureType {
   name: string;
@@ -37,13 +31,10 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
           </div>
         </div>
         <div>
-          <p
-            className={cn(
-              "text-xl leading-relaxed text-center font-medium",
-              pfFont.className
-            )}
-          >
-            “{lecturer.description}”
+          <p className="text-xl font-medium leading-relaxed text-center">
+            <span className="text-2xl">“</span>
+            {lecturer.description}
+            <span className="text-2xl">”</span>
           </p>
         </div>
       </div>
@@ -67,9 +58,9 @@ export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
     <section id="lecturers">
       <div className="container">
         <div className="space-y-14 md:space-y-20">
-          <h2 className="text-3xl font-bold text-center sm:text-4xl">
+          <CourseSectionHeading className="text-center">
             Đội ngũ hướng dẫn
-          </h2>
+          </CourseSectionHeading>
           <div className="space-y-16">
             {lecturers.map((lecturer) => (
               <CourseLecturerRow key={lecturer.name} lecturer={lecturer} />

@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/Accordion";
 import { IModule } from "@/types";
 import { FileText, GitFork } from "lucide-react";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseModule({
   name,
@@ -15,7 +16,7 @@ function CourseModule({
 }: IModule & { index: number }) {
   return (
     <AccordionItem
-      className="px-8 py-4 rounded-lg bg-[#6F4AFF] text-muted"
+      className="px-8 py-4 rounded-lg text-muted bg-gradient-to-r from-pink-700 via-red-600 to-red-500"
       value={name}
       key={name}
     >
@@ -54,9 +55,9 @@ export default function CourseContent({ modules }: { modules: IModule[] }) {
     <section id="content">
       <div className="container">
         <div className="space-y-12">
-          <h2 className="text-4xl font-bold text-center sm:text-5xl">
+          <CourseSectionHeading className="text-center">
             Nội dung khoá học
-          </h2>
+          </CourseSectionHeading>
           <Accordion
             type="multiple"
             // collapsible

@@ -14,7 +14,7 @@ export default function CourseSectionHeading({
   ...props
 }: CourseSectionHeadingProps) {
   return (
-    <h2 className={cn("mb-6 text-2xl font-medium", className)} {...props}>
+    <h2 className={cn("text-3xl font-bold sm:text-4xl", className)} {...props}>
       {tags && tags.length > 0 ? (
         <>
           <span>{children}</span>

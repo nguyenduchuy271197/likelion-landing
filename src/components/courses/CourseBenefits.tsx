@@ -41,9 +41,6 @@ export default function CourseBenefits({ benefits }: { benefits: Benefit[] }) {
     <section id="benefits">
       <div className="max-w-screen-xl px-8 mx-auto">
         <div className="space-y-16">
-          {/* <h2 className="text-3xl font-bold text-center sm:text-4xl">
-            Lợi ích của học viên
-          </h2> */}
           <div className="flex flex-col justify-between gap-8 md:flex-row">
             <CourseBenefitColumn benefits={benefits.slice(0, 3)} />
             <CourseBenefitColumn

@@ -1,5 +1,6 @@
 import { Check, Plus } from "lucide-react";
 import Image from "next/image";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseRequirement({ name }: { name: string }) {
   return (
@@ -24,9 +25,7 @@ export default function CourseRequirements({
       <div className="max-w-screen-lg px-8 mx-auto">
         <div className="flex items-center justify-between gap-8">
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              Yêu cầu cho khoá học
-            </h2>
+            <CourseSectionHeading>Yêu cầu cho khoá học</CourseSectionHeading>
             <ul className="flex flex-col gap-4 text-lg">
               {requirements.map((requirement) => (
                 <CourseRequirement key={requirement} name={requirement} />

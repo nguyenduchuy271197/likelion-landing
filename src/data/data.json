@@ -1,259 +1,14 @@
 {
   "courses": [
     {
-      "id": "6482a08d232bf6c1513a1111",
-      "title": "Bootcamp lập trình web Fullstack",
-      "subtitle": "Trở thành lập trình viên phát triển website toàn diện từ Front-end đến Back-end chỉ trong 3 tháng.",
-      "slug": "khoa-hoc-lap-trinh-web-fullstack",
-      "objectives": [
-        "Xây dựng 6 dự án phát triển web để bổ sung vào portfolio, sẵn sàng ứng tuyển vị trí Intern/Fresher lập trình viên web Full-stack",
-        "Cách triển khai đăng ký người dùng, đăng nhập, đăng xuất và nội dung do người dùng tạo",
-        "Thành thạo Front-end với ReactJS",
-        "Làm chủ Back-end với NodeJS",
-        "Kiểm soát cơ sở dữ liệu (MongoDB) sử dụng JavaScript",
-        "Seminar chia sẻ kinh nghiệm từ lập trình viên các tập đoàn lớn"
-      ],
-      "requirements": [
-        "Không yêu cầu máy tính cá nhân",
-        "Không yêu cầu kiến thức đầu vào"
-      ],
-      "discountedPrice": 17500000,
-      "price": 22500000,
-      "features": [
-        "120 buổi học trực tiếp",
-        "30+ bài tập",
-        "6 dự án thực tế",
-        "Phụ đạo ngoài giờ miễn phí",
-        "Giấy chứng nhận",
-        "Có hỗ trợ kết nối việc làm"
-      ],
-      "abbr": "Fullstack",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
-      "youtubeId": "duAOTul9UNs",
-      "calendar": [
-        {
-          "title": "Bootcamp 6",
-          "start_date": "23/10/2023",
-          "duration": "3 tháng / 120 buổi học",
-          "schedule": "Thứ 2 đến Thứ 6 / 9:00 - 17:00",
-          "location": {
-            "name": "Y5 Office",
-            "address": "135 Hai Bà Trưng, Quận 1, TP. HCM"
-          }
-        }
-      ],
-      "promotions": [
-        "Học theo nhóm <strong>giảm thêm 500.000đ</strong>",
-        "Cựu học viên <strong>giảm thêm 500.000đ</strong>"
-      ],
-      "payment_methods": {
-        "once": {
-          "origin": 19500000,
-          "discounted": 15000000
-        },
-        "monthly": {
-          "times": 3,
-          "origin": 5500000
-        }
-      },
-      "lecturers": [
-        {
-          "name": "Nguyễn Đức Huy",
-          "profession": "Fullstack Developer/Giảng viên",
-          "description": "Với hơn 2 năm kinh nghiệm trong ngành Data Science cùng 5 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy khóa Bootcamp, mình tin chắc là sẽ đem đến cho các bạn những buổi học đầy thú vị và chất lượng. Tham gia khóa học, các bạn sẽ được hướng dẫn cách học lập trình hiệu quả nhất cũng như góp phần hoạch định được chính xác con đường phát triển thành một lập trình viên chuyên nghiệp. Huy đang ở đây để sẵn sàng “on air” cùng bạn!",
-          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Huy_eumn2w.png"
-        },
-        {
-          "name": "Nguyễn Tuấn Phúc",
-          "profession": "Mentor",
-          "description": "Xin chào, mình là Phúc. Hiện đang đảm nhận vị trí mentor cho các khóa học của LIKELION. Nhờ kinh nghiệm thực chiến nhiều dự án khác nhau cùng khoảng thời gian dài đồng hành với các bạn học viên, từ sinh viên CNTT cho đến các bạn chuyển ngành, mình thấu hiểu được những khó khăn mà các bạn thường gặp phải trong quá trình học. Bởi vậy, mình sẽ luôn có mặt để hỗ trợ các bạn vượt qua mọi khó khăn trên chặng đường tiến đến thành công. Hãy đồng hành cùng nhau nhé!",
-          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Phu%CC%81c_uuulxv.png"
-        },
-        {
-          "name": "Nguyễn Văn Minh",
-          "profession": "Software Engineer & Workshop Guest",
-          "description": "Xin chào, với hơn 4 năm chinh phục nhiều dự án trong mảng tài chính - ngân hàng cho các tập đoàn lớn như Shinhan, HSBC hay UOB và trực tiếp phụ trách tuyển dụng Developer cho các dự án, mình chắc chắn rằng sẽ khiến các bạn ồ lên thích thú khi tham gia các buổi workshops ở LIKELION. Không những thế, Minh sẽ “dằn túi” cho các bạn một núi bí quyết hay ho để vượt qua vòng phỏng vấn của các nhà tuyển dụng khó tính và nhanh chóng đạt được mục tiêu “đi làm như một Dev chính hiệu!”.",
-          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png"
-        },
-        {
-          "name": "Nguyễn Khánh Dương",
-          "profession": "Senior Front-end Engineer & Workshop Guest",
-          "description": "Chào các bạn, mình là Dương, hiện đang đảm nhận vị trí Leader của team Front-end developer cho các dự án phát triển phần mềm. Mình từng làm việc tại các công ty công nghệ lớn như SUNO và Unit. Cùng hơn 4 năm kinh nghiệm triển khai các dự án trong lĩnh vực kỹ thuật phần mềm, mình sẽ chia sẻ cho các bạn tất tần tật “bí kíp sinh tồn” để làm hành trang trước khi dấn thân vào ngành IT với tinh thần đầy tự tin và nhiệt huyết nhé.",
-          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Du%CC%9Bo%CC%9Bng_llbmjl.png"
-        }
-      ],
-      "modules": [
-        {
-          "name": "HTML, CSS từ cơ bản đến chuyên sâu",
-          "lessons": [
-            "Giới thiệu về HTML, CSS và vai trò của nó trong phát triển web",
-            "Cú pháp và cấu trúc HTML, CSS",
-            "Tạo văn bản, hình ảnh và liên kết chúng với trang web",
-            "Các phần tử: danh sách (list), biểu mẫu (form) và bảng (table)",
-            "CSS Selector: xác định các phần tử HMTL muốn áp dụng thuộc tính CSS",
-            "Các thuộc tính tạo kiểu cơ bản: màu sắc, phông chữ, nền,…",
-            "Tạo bố cục bằng CSS sử dụng model box, position, flexbox và grid",
-            "Thiết kế responsive và media query"
-          ],
-          "projects": ["Landing page", "Portfolio Website"]
-        },
-        {
-          "name": "Front-end: JavaScript ES6",
-          "lessons": [
-            "Giới thiệu về JavaScript: kiểu dữ liệu, biến, toán tử, cấu trúc kiểm soát",
-            "Hàm JavaScript: cách tạo và gọi hàm, biểu thức hàm và phạm vi truy cập",
-            "Mảng (array): các phương thức hữu ích như Map, Reduce, Filter và Find.",
-            "Đối tượng (object): phương thức và khái niệm lập trình hướng đối tượng",
-            "Mô hình các đối tượng tài liệu (DOM): cách thao tác với DOM; tạo, đọc, cập nhật và xoá các phần tử HTML",
-            "Lập trình bất đồng bộ (asynchronous): cách sử dụng Promise, Async/Await và fetch API",
-            "Các khái niệm JavaScript nâng cao: Closures, Hoisting, Prototypal inheritance, và Design patterns.",
-            "JavaScript ES6: hàm Arrow, cú pháp Destructuring toán tử Spread, Optional Chaining,…"
-          ],
-          "projects": ["To-do Application"]
-        },
-        {
-          "name": "Front-end nâng cao với ReactJS",
-          "lessons": [
-            "Giới thiệu về ReactJS: khái niệm, công dụng và cách cài đặt môi trường",
-            "Component và JSX: tạo component, hiểu cú pháp JSX, props, state",
-            "Biểu mẫu (form) và sự kiện (event): xử lý sự kiện, nhập và xác thực biểu mẫu",
-            "Định tuyến (routing) và điều hướng (navigation): sử dụng React Router, tạo liên kết và các route ",
-            "Những tính năng mới nhất (luôn được cập nhật) trong ReactJS: Hook, Context API, Suspense, React Lazy,… ",
-            "Sử dụng Firebase để tạo ứng dụng Full-stack "
-          ],
-          "projects": ["Ecommerce Website với ReactJS và Supabase"]
-        },
-        {
-          "name": "Back-end: NodeJS và MongoDB",
-          "lessons": [
-            "Giới thiệu về framework ExpressJS: khái niệm, công dụng và cách cài đặt môi trường",
-            "Làm chủ tất cả công nghệ Back-end hiện đại: NodeJS, MongoDB và Mongoose",
-            "Xây dựng RESTful API nhanh, có thể mở rộng và nhiều tính năng (bộ lọc, sắp xếp, phân trang,…)",
-            "NodeJS: event loop, blocking và non-blocking code, streams, modules,…",
-            "Triển khai CRUD với MongoDB và Mongoose",
-            "Mongoose nâng cao: các tính năng chuyên sâu",
-            "Cơ sở dữ liệu NoSQL và SQL",
-            "Authentication và authorization (bao gồm cài đặt lại mật khẩu)"
-          ],
-          "projects": ["Shopping Online REST API"]
-        },
-        {
-          "name": "Đồ án cuối khoá",
-          "lessons": [
-            "Ideathon: Thảo luận ý tưởng xây dựng trang web",
-            "Cùng đồng đội code ra ý tưởng của mình",
-            "Hackathon: Trình bày dự án cuối khoá và nhận feedback."
-          ],
-          "projects": ["Đồ án cuối khoá"]
-        },
-        {
-          "name": "Career week",
-          "lessons": [
-            "Workshop hướng dẫn, chỉnh sửa CV, Portfolio",
-            "Buổi phỏng vấn giả định nâng cao kỹ năng",
-            "Kết nối CV đến các doanh nghiệp IT trong mạng lưới",
-            "Chia sẻ kinh nghiệm thực tế"
-          ],
-          "projects": []
-        }
-      ],
-      "tags": {
-        "schedules": ["3 tháng", "120 buổi"],
-        "status": ["Offline", "Beginner"]
-      },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_Fullstack_nlj9gc.png",
-      "benefits": [
-        {
-          "title": "Lộ trình khoa học",
-          "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
-        },
-        {
-          "title": "Project thực tế",
-          "description": "Học viên được thực hành và mài dũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
-        },
-        {
-          "title": "Thời gian linh hoạt",
-          "description": "Thời gian học vào buổi tối, dễ dàng sắp xếp công việc. Hình thức học online và tương tác trực tiếp với giảng viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/calendar-check_r83jcs.svg"
-        },
-        {
-          "title": "Hỗ trợ 24/7",
-          "description": "Đội ngũ mentor tận tâm và nhiệt tình, luôn có mặt để giúp đỡ và giải đáp thắc mắc cho học viên 24/7.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/phone-incoming_byz9gp.svg"
-        },
-        {
-          "title": "Chứng nhận tốt nghiệp",
-          "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
-        },
-        {
-          "title": "Làm việc từ xa",
-          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
-        }
-      ],
-      "highlights": [
-        "Nâng cấp kỹ năng lập trình web",
-        "Dự án và bài tập thực tế",
-        "Tìm được việc làm sau 3 tháng"
-      ],
-      "techs": [
-        "html",
-        "css",
-        "js",
-        "react",
-        "tailwind",
-        "node",
-        "express",
-        "mongo",
-        "portgre"
-      ],
-      "excerpt": "Trở thành lập trình viên Fullstack Bootcamp sau 3 tháng.",
-      "showcases": [
-        {
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/dwelling.png",
-          "title": "Dwelling - Apartment Rental Company Website",
-          "tags": ["HTML", "CSS", "JavaScript"]
-        },
-        {
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188469/courses/bootcamp-lap-trinh-web-fullstack/projects/portfolio.png",
-          "title": "John Doe - Artist Portfolio Website",
-          "tags": ["HTML", "CSS", "JavaScript"]
-        },
-        {
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/phloko.png",
-          "title": "Floko - Design Agency Website",
-          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
-        },
-        {
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/travel.png",
-          "title": "TrapTip - Traveling Agency Website",
-          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
-        },
-        {
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/florist.png",
-          "title": "Florist - Flower Shop Website",
-          "tags": ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"]
-        },
-        {
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/greeny.png",
-          "title": "Greenery - Fruit eCommerce Website",
-          "tags": ["JavaScript", "ReactJS", "NodeJS", "MongoDB"]
-        }
-      ]
-    },
-    {
       "id": "64883a8ab6a3fddba741f55e",
       "title": "Thành thạo lập trình web Front-end",
       "slug": "thanh-thao-lap-trinh-web-front-end",
       "discountedPrice": 9900000,
       "features": [
-        "Chọn học offline hoặc online qua Google Meet",
-        "20+ bài tập",
-        "4 dự án thực tế",
-        "Phụ đạo ngoài giờ miễn phí",
+        "36 buổi học qua Google Meet",
+        "Slide bài giảng chi tiết, tài liệu tham khảo",
+        "Mentor support 24/7",
         "Giấy chứng nhận"
       ],
       "objectives": [
@@ -265,7 +20,7 @@
       ],
       "price": 12500000,
       "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
-      "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 2 tháng (khoá offline) hoặc 3 tháng (khoá online).",
+      "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 3 tháng.",
       "abbr": "Front-end",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888907/courses/thanh-thao-lap-trinh-web-frond-end/image_8_ghyytp.png",
       "background": {
@@ -351,15 +106,6 @@
           "projects": ["Ecommerce Website với ReactJS và Supabase"]
         },
         {
-          "name": "Career Week (cho khoá offline)",
-          "lessons": [
-            "Workshop hướng dẫn, chỉnh sửa CV, Portfolio",
-            "Buổi phỏng vấn giả định nâng cao kỹ năng",
-            "Seminar chia sẻ kinh nghiệm thực tế"
-          ],
-          "projects": []
-        },
-        {
           "name": "Đồ án cuối khoá",
           "lessons": [
             "Ideathon: Thảo luận ý tưởng xây dựng trang web cùng giảng viên",
@@ -371,7 +117,7 @@
       ],
       "tags": {
         "schedules": ["3 tháng", "36 buổi"],
-        "status": ["Online/Offline", "Beginner"]
+        "status": ["Online", "Beginner"]
       },
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "highlights": [
@@ -387,7 +133,7 @@
         },
         {
           "title": "Project thực tế",
-          "description": "Học viên được thực hành và mài dũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
+          "description": "Học viên được thực hành và mài giũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
         },
         {
@@ -601,7 +347,7 @@
         },
         {
           "title": "Project thực tế",
-          "description": "Học viên được thực hành và mài dũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
+          "description": "Học viên được thực hành và mài giũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
         },
         {
@@ -635,186 +381,6 @@
         "plotly"
       ],
       "excerpt": "Nắm vững Python, ứng dụng vào xử lý và trực quan hoá dữ liệu sau 3 tháng."
-    },
-    {
-      "id": "64df40005404ec4d4345fe36",
-      "title": "Khoá học Back-end PHP",
-      "slug": "khoa-hoc-back-end-php",
-      "features": [
-        "36 buổi học qua Google Meet",
-        "Slide bài giảng chi tiết, tài liệu tham khảo",
-        "Mentor support 24/7",
-        "Giấy chứng nhận"
-      ],
-      "objectives": [
-        "Hiểu và thành thạo ngôn ngữ PHP để tạo ra website động cơ bản",
-        "Hiểu và thực hành tích hợp mã code của bên thứ ba vào dự án website của bạn",
-        "Nắm vững về cơ sở dữ liệu quan hệ và sử dụng dữ liệu bằng PHP",
-        "Thành thạo và ứng dụng framework Laravel chỉ sau 3 tháng",
-        "Xây dựng ứng dụng website bằng Laravel và quản lý, phát triển ứng dụng một cách hiệu quả nhất"
-      ],
-      "price": 6000000,
-      "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
-      "subtitle": "Sử dụng thành thạo PHP, MySQL, Laravel để phát triển website đa dạng và mạnh mẽ chỉ trong 3 tháng.",
-      "abbr": "PHP",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692589416/courses/khoa-hoc-back-end-php/Thumbnail_PHP300_1_ohhbr9.png",
-      "calendar": [
-        {
-          "title": "Back-end PHP",
-          "start_date": "23/10/2023",
-          "duration": "12 tuần / 36 buổi",
-          "schedule": "Thứ 2 - 4 - 6 / 18:00 - 21:00",
-          "platform": "Google Meet"
-        }
-      ],
-      "promotions": [
-        "Học theo nhóm <strong>giảm thêm 200.000đ</strong>",
-        "Cựu học viên <strong>giảm thêm 300.000đ</strong>"
-      ],
-      "payment_methods": {
-        "once": {
-          "origin": 7500000,
-          "discounted": 6000000
-        },
-        "monthly": {
-          "times": 3,
-          "origin": 2500000
-        }
-      },
-      "modules": [
-        {
-          "name": "PHP cơ bản",
-          "lessons": [
-            "Giới thiệu và cài đặt môi trường (XAMPP, WAMP, hoặc MAMP)",
-            "Câu lệnh điều kiện: If / else",
-            "Hàm và mảng",
-            "Kiểu dữ liệu và biến",
-            "Toán tử",
-            "Câu lệnh: Switch",
-            "Vòng lặp: For / While / Do-while",
-            "Luyện tập: Hiểu và làm quen với các thao tác và cú pháp PHP",
-            "Biểu mẫu PHP (PHP form)",
-            "Đưa dữ liệu từ client đến server",
-            "Cấu trúc và thư mục của PHP"
-          ],
-          "projects": []
-        },
-        {
-          "name": "Cơ sở dữ liệu",
-          "lessons": [
-            "Session storage và cookies storage trong PHP",
-            "Cơ sở dữ liệu MySQL",
-            "Các cú pháp và thao tác trong cơ sở dữ liệu",
-            "Thao tác với hàm trong cơ sở dữ liệu",
-            "Lập trình hướng đối tượng",
-            "Namespaces và Autoloading"
-          ],
-          "projects": ["Làm quen với cơ sở dữ liệu"]
-        },
-        {
-          "name": "Thao tác với API",
-          "lessons": [
-            "Giới thiệu về URL và API trong PHP",
-            "Tương tác dữ liệu từ server bằng AJAX",
-            "Kiểu dữ liệu JSON và XML trong PHP",
-            "Tối ưu trong lập trình PHP: Caching, Compression, Performance",
-            "Bảo mật ứng dụng PHP: XSS, CSRF, SQL Injection",
-            "Kiểm tra và sửa lỗi (debug)"
-          ],
-          "projects": []
-        },
-        {
-          "name": "Thư viện và Laravel",
-          "lessons": [
-            "Giới thiệu vài thư viện thường dùng trong PHP",
-            "Giới thiệu và cài đặt môi trường Laravel",
-            "Định tuyến routes và routing",
-            "Tương tác cơ sở dữ liệu bằng Laravel",
-            "Xử lý request và response",
-            "Template trong Laravel",
-            "Xác thực và phân quyền trong Laravel",
-            "Service providers và Dependency injection trong Laravel"
-          ],
-          "projects": ["Làm quen với Laravel"]
-        },
-        {
-          "name": "Tìm hiểu về các nền tảng phổ biến",
-          "lessons": [
-            "Quản lý nội dung - Wordpress",
-            "Thương mại điện tử - Shopify"
-          ],
-          "projects": []
-        },
-        {
-          "name": "Đồ án cuối khoá",
-          "lessons": [
-            "Ôn lại nội dung và củng cố kiến thức đã học",
-            "Học viên thuyết trình về dự án cuối khoá"
-          ],
-          "projects": []
-        }
-      ],
-      "tags": {
-        "schedules": ["3 tháng", "36 buổi"],
-        "status": ["Online", "Beginner"]
-      },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_PHP_ooj8im.png",
-      "lecturers": [
-        {
-          "name": "Đỗ Xuân Duy",
-          "profession": "ITS Technical Team Lead & Senior Full Stack Developer",
-          "description": "Chào các bạn! Mình là Xuân Duy, hiện đang là Technical Team Lead tại Archetype Group, đồng thời là Nghiên cứu sinh Thạc sĩ Khoa học máy tính tại Học viện Công nghệ Bưu chính Viễn thông. Với hơn 5 năm kinh nghiệm trong lĩnh vực CNTT, cùng kiến thức trải rộng toàn bộ chuỗi công nghệ LAMP cũng như ứng dụng LAMP và các Framework của PHP vào phát triển và vận hành các dự án phần mềm (như ERP, HIS,…), cộng hưởng với sự nhiệt huyết trong giảng dạy, mình chắc chắn sẽ mang đến cho các bạn những tiết học bổ ích, kiến thức thực chiến và góc nhìn mới mẻ về PHP Dev dựa trên kinh nghiệm thực tế của mình.",
-          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692697239/lecturers/Anh_Duy_s7v0nn.png"
-        }
-      ],
-      "highlights": [
-        "Ứng dụng phát triển web động",
-        "Tương tác trực tiếp với giảng viên",
-        "Lộ trình bài bản, thực chiến"
-      ],
-      "benefits": [
-        {
-          "title": "Lộ trình khoa học",
-          "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
-        },
-        {
-          "title": "Project thực tế",
-          "description": "Học viên được thực hành và mài dũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
-        },
-        {
-          "title": "Thời gian linh hoạt",
-          "description": "Thời gian học vào buổi tối, dễ dàng sắp xếp công việc. Hình thức học online và tương tác trực tiếp với giảng viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/calendar-check_r83jcs.svg"
-        },
-        {
-          "title": "Hỗ trợ 24/7",
-          "description": "Đội ngũ mentor tận tâm và nhiệt tình, luôn có mặt để giúp đỡ và giải đáp thắc mắc cho học viên 24/7.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/phone-incoming_byz9gp.svg"
-        },
-        {
-          "title": "Chứng nhận tốt nghiệp",
-          "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
-        },
-        {
-          "title": "Làm việc từ xa",
-          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
-        }
-      ],
-      "techs": [
-        "xampp",
-        "wamp",
-        "mamp",
-        "mysql",
-        "ajax",
-        "laravel",
-        "wordpress",
-        "shopify"
-      ],
-      "excerpt": "Nắm vững PHP trong 3 tháng cho người mới bắt đầu."
     },
     {
       "id": "64df41785404ec4d4345fe3a",
@@ -950,7 +516,7 @@
         },
         {
           "title": "Project thực tế",
-          "description": "Học viên được thực hành và mài dũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
+          "description": "Học viên được thực hành và mài giũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
         },
         {
@@ -985,6 +551,250 @@
         "mockito"
       ],
       "excerpt": "Sử dụng thành thạo Spring Boot, dựng web nhanh chóng sau 3 tháng."
+    },
+    {
+      "id": "6482a08d232bf6c1513a1111",
+      "title": "Bootcamp lập trình web Fullstack",
+      "subtitle": "Trở thành lập trình viên phát triển website toàn diện từ Front-end đến Back-end chỉ trong 3 tháng.",
+      "slug": "khoa-hoc-lap-trinh-web-fullstack",
+      "objectives": [
+        "Xây dựng 6 dự án phát triển web để bổ sung vào portfolio, sẵn sàng ứng tuyển vị trí Intern/Fresher lập trình viên web Full-stack",
+        "Cách triển khai đăng ký người dùng, đăng nhập, đăng xuất và nội dung do người dùng tạo",
+        "Thành thạo Front-end với ReactJS",
+        "Làm chủ Back-end với NodeJS",
+        "Kiểm soát cơ sở dữ liệu (MongoDB) sử dụng JavaScript",
+        "Seminar chia sẻ kinh nghiệm từ lập trình viên các tập đoàn lớn"
+      ],
+      "requirements": [
+        "Không yêu cầu máy tính cá nhân",
+        "Không yêu cầu kiến thức đầu vào"
+      ],
+      "discountedPrice": 17500000,
+      "price": 22500000,
+      "features": [
+        "120 buổi học trực tiếp",
+        "30+ bài tập",
+        "6 dự án thực tế",
+        "Phụ đạo ngoài giờ miễn phí",
+        "Giấy chứng nhận",
+        "Có hỗ trợ kết nối việc làm"
+      ],
+      "abbr": "Fullstack",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
+      "youtubeId": "duAOTul9UNs",
+      "calendar": [
+        {
+          "title": "Bootcamp 6",
+          "start_date": "25/09/2023",
+          "duration": "3 tháng / 120 buổi học",
+          "schedule": "Thứ 2 đến Thứ 6 / 9:00 - 17:00",
+          "location": {
+            "name": "Y5 Office",
+            "address": "135 Hai Bà Trưng, Quận 1, TP. HCM"
+          }
+        }
+      ],
+      "promotions": [
+        "Học theo nhóm <strong>giảm thêm 500.000đ</strong>",
+        "Cựu học viên <strong>giảm thêm 500.000đ</strong>"
+      ],
+      "payment_methods": {
+        "once": {
+          "origin": 19500000,
+          "discounted": 15000000
+        },
+        "monthly": {
+          "times": 3,
+          "origin": 5500000
+        }
+      },
+      "lecturers": [
+        {
+          "name": "Nguyễn Đức Huy",
+          "profession": "Fullstack Developer/Giảng viên",
+          "description": "Với hơn 2 năm kinh nghiệm trong ngành Data Science cùng 5 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy khóa Bootcamp, mình tin chắc là sẽ đem đến cho các bạn những buổi học đầy thú vị và chất lượng. Tham gia khóa học, các bạn sẽ được hướng dẫn cách học lập trình hiệu quả nhất cũng như góp phần hoạch định được chính xác con đường phát triển thành một lập trình viên chuyên nghiệp. Huy đang ở đây để sẵn sàng “on air” cùng bạn!",
+          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Huy_eumn2w.png"
+        },
+        {
+          "name": "Nguyễn Tuấn Phúc",
+          "profession": "Mentor",
+          "description": "Xin chào, mình là Phúc. Hiện đang đảm nhận vị trí mentor cho các khóa học của LIKELION. Nhờ kinh nghiệm thực chiến nhiều dự án khác nhau cùng khoảng thời gian dài đồng hành với các bạn học viên, từ sinh viên CNTT cho đến các bạn chuyển ngành, mình thấu hiểu được những khó khăn mà các bạn thường gặp phải trong quá trình học. Bởi vậy, mình sẽ luôn có mặt để hỗ trợ các bạn vượt qua mọi khó khăn trên chặng đường tiến đến thành công. Hãy đồng hành cùng nhau nhé!",
+          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Phu%CC%81c_uuulxv.png"
+        },
+        {
+          "name": "Nguyễn Văn Minh",
+          "profession": "Software Engineer & Workshop Guest",
+          "description": "Xin chào, với hơn 4 năm chinh phục nhiều dự án trong mảng tài chính - ngân hàng cho các tập đoàn lớn như Shinhan, HSBC hay UOB và trực tiếp phụ trách tuyển dụng Developer cho các dự án, mình chắc chắn rằng sẽ khiến các bạn ồ lên thích thú khi tham gia các buổi workshops ở LIKELION. Không những thế, Minh sẽ “dằn túi” cho các bạn một núi bí quyết hay ho để vượt qua vòng phỏng vấn của các nhà tuyển dụng khó tính và nhanh chóng đạt được mục tiêu “đi làm như một Dev chính hiệu!”.",
+          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png"
+        },
+        {
+          "name": "Nguyễn Khánh Dương",
+          "profession": "Senior Front-end Engineer & Workshop Guest",
+          "description": "Chào các bạn, mình là Dương, hiện đang đảm nhận vị trí Leader của team Front-end developer cho các dự án phát triển phần mềm. Mình từng làm việc tại các công ty công nghệ lớn như SUNO và Unit. Cùng hơn 4 năm kinh nghiệm triển khai các dự án trong lĩnh vực kỹ thuật phần mềm, mình sẽ chia sẻ cho các bạn tất tần tật “bí kíp sinh tồn” để làm hành trang trước khi dấn thân vào ngành IT với tinh thần đầy tự tin và nhiệt huyết nhé.",
+          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Du%CC%9Bo%CC%9Bng_llbmjl.png"
+        }
+      ],
+      "modules": [
+        {
+          "name": "HTML, CSS từ cơ bản đến chuyên sâu",
+          "lessons": [
+            "Giới thiệu về HTML, CSS và vai trò của nó trong phát triển web",
+            "Cú pháp và cấu trúc HTML, CSS",
+            "Tạo văn bản, hình ảnh và liên kết chúng với trang web",
+            "Các phần tử: danh sách (list), biểu mẫu (form) và bảng (table)",
+            "CSS Selector: xác định các phần tử HMTL muốn áp dụng thuộc tính CSS",
+            "Các thuộc tính tạo kiểu cơ bản: màu sắc, phông chữ, nền,…",
+            "Tạo bố cục bằng CSS sử dụng model box, position, flexbox và grid",
+            "Thiết kế responsive và media query"
+          ],
+          "projects": ["Landing page", "Portfolio Website"]
+        },
+        {
+          "name": "Front-end: JavaScript ES6",
+          "lessons": [
+            "Giới thiệu về JavaScript: kiểu dữ liệu, biến, toán tử, cấu trúc kiểm soát",
+            "Hàm JavaScript: cách tạo và gọi hàm, biểu thức hàm và phạm vi truy cập",
+            "Mảng (array): các phương thức hữu ích như Map, Reduce, Filter và Find.",
+            "Đối tượng (object): phương thức và khái niệm lập trình hướng đối tượng",
+            "Mô hình các đối tượng tài liệu (DOM): cách thao tác với DOM; tạo, đọc, cập nhật và xoá các phần tử HTML",
+            "Lập trình bất đồng bộ (asynchronous): cách sử dụng Promise, Async/Await và fetch API",
+            "Các khái niệm JavaScript nâng cao: Closures, Hoisting, Prototypal inheritance, và Design patterns.",
+            "JavaScript ES6: hàm Arrow, cú pháp Destructuring toán tử Spread, Optional Chaining,…"
+          ],
+          "projects": ["To-do Application"]
+        },
+        {
+          "name": "Front-end nâng cao với ReactJS",
+          "lessons": [
+            "Giới thiệu về ReactJS: khái niệm, công dụng và cách cài đặt môi trường",
+            "Component và JSX: tạo component, hiểu cú pháp JSX, props, state",
+            "Biểu mẫu (form) và sự kiện (event): xử lý sự kiện, nhập và xác thực biểu mẫu",
+            "Định tuyến (routing) và điều hướng (navigation): sử dụng React Router, tạo liên kết và các route ",
+            "Những tính năng mới nhất (luôn được cập nhật) trong ReactJS: Hook, Context API, Suspense, React Lazy,… ",
+            "Sử dụng Firebase để tạo ứng dụng Full-stack "
+          ],
+          "projects": ["Ecommerce Website với ReactJS và Supabase"]
+        },
+        {
+          "name": "Back-end: NodeJS và MongoDB",
+          "lessons": [
+            "Giới thiệu về framework ExpressJS: khái niệm, công dụng và cách cài đặt môi trường",
+            "Làm chủ tất cả công nghệ Back-end hiện đại: NodeJS, MongoDB và Mongoose",
+            "Xây dựng RESTful API nhanh, có thể mở rộng và nhiều tính năng (bộ lọc, sắp xếp, phân trang,…)",
+            "NodeJS: event loop, blocking và non-blocking code, streams, modules,…",
+            "Triển khai CRUD với MongoDB và Mongoose",
+            "Mongoose nâng cao: các tính năng chuyên sâu",
+            "Cơ sở dữ liệu NoSQL và SQL",
+            "Authentication và authorization (bao gồm cài đặt lại mật khẩu)"
+          ],
+          "projects": ["Shopping Online REST API"]
+        },
+        {
+          "name": "Đồ án cuối khoá",
+          "lessons": [
+            "Ideathon: Thảo luận ý tưởng xây dựng trang web",
+            "Cùng đồng đội code ra ý tưởng của mình",
+            "Hackathon: Trình bày dự án cuối khoá và nhận feedback."
+          ],
+          "projects": ["Đồ án cuối khoá"]
+        },
+        {
+          "name": "Career week",
+          "lessons": [
+            "Workshop hướng dẫn, chỉnh sửa CV, Portfolio",
+            "Buổi phỏng vấn giả định nâng cao kỹ năng",
+            "Kết nối CV đến các doanh nghiệp IT trong mạng lưới",
+            "Chia sẻ kinh nghiệm thực tế"
+          ],
+          "projects": []
+        }
+      ],
+      "tags": {
+        "schedules": ["3 tháng", "120 buổi"],
+        "status": ["Offline", "Beginner"]
+      },
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_Fullstack_nlj9gc.png",
+      "benefits": [
+        {
+          "title": "Lộ trình khoa học",
+          "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
+        },
+        {
+          "title": "Project thực tế",
+          "description": "Học viên được thực hành và mài giũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
+        },
+        {
+          "title": "Thời gian linh hoạt",
+          "description": "Thời gian học vào buổi tối, dễ dàng sắp xếp công việc. Hình thức học online và tương tác trực tiếp với giảng viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/calendar-check_r83jcs.svg"
+        },
+        {
+          "title": "Hỗ trợ 24/7",
+          "description": "Đội ngũ mentor tận tâm và nhiệt tình, luôn có mặt để giúp đỡ và giải đáp thắc mắc cho học viên 24/7.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/phone-incoming_byz9gp.svg"
+        },
+        {
+          "title": "Chứng nhận tốt nghiệp",
+          "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
+        },
+        {
+          "title": "Làm việc từ xa",
+          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
+        }
+      ],
+      "highlights": [
+        "Nâng cấp kỹ năng lập trình web",
+        "Dự án và bài tập thực tế",
+        "Tìm được việc làm sau 3 tháng"
+      ],
+      "techs": [
+        "html",
+        "css",
+        "js",
+        "react",
+        "tailwind",
+        "node",
+        "express",
+        "mongo",
+        "portgre"
+      ],
+      "excerpt": "Trở thành lập trình viên Fullstack Bootcamp sau 3 tháng.",
+      "showcases": [
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/dwelling.png",
+          "title": "Dwelling - Apartment Rental Company Website",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188469/courses/bootcamp-lap-trinh-web-fullstack/projects/portfolio.png",
+          "title": "John Doe - Artist Portfolio Website",
+          "tags": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/phloko.png",
+          "title": "Floko - Design Agency Website",
+          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188472/courses/bootcamp-lap-trinh-web-fullstack/projects/travel.png",
+          "title": "TrapTip - Traveling Agency Website",
+          "tags": ["JavaScript", "ReactJS", "Tailwind CSS"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/florist.png",
+          "title": "Florist - Flower Shop Website",
+          "tags": ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"]
+        },
+        {
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688188468/courses/bootcamp-lap-trinh-web-fullstack/projects/greeny.png",
+          "title": "Greenery - Fruit eCommerce Website",
+          "tags": ["JavaScript", "ReactJS", "NodeJS", "MongoDB"]
+        }
+      ]
     }
   ]
 }

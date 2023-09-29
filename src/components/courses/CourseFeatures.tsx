@@ -1,5 +1,6 @@
 import { Code, Plus } from "lucide-react";
 import Image from "next/image";
+import CourseSectionHeading from "./CourseSectionHeading";
 
 function CourseFeature({ name }: { name: string }) {
   return (
@@ -27,7 +28,7 @@ export default function CourseFeatures({ features }: { features: string[] }) {
             </div>
           </div>
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold sm:text-4xl">Khoá học bao gồm</h2>
+            <CourseSectionHeading>Khoá học bao gồm</CourseSectionHeading>
             <ul className="flex flex-col gap-4 text-lg">
               {features.map((feature) => (
                 <CourseFeature key={feature} name={feature} />
