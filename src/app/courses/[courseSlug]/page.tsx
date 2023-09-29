@@ -75,6 +75,7 @@ export default function CourseDetail({
     subtitle,
     objectives,
     features,
+    trialUrl,
     price,
     discountedPrice,
     modules,
@@ -106,6 +107,7 @@ export default function CourseDetail({
         slug={courseSlug}
         thumbnail={thumbnail}
         background={background}
+        trialUrl={trialUrl}
       />
 
       {/* Course Navigation */}

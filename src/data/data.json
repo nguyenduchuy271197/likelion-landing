@@ -194,7 +194,8 @@
           "title": "Florist - Flower Shop Website",
           "tags": ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"]
         }
-      ]
+      ],
+      "trialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
     },
     {
       "id": "64df3889ac99f03faac99cee",
@@ -380,7 +381,8 @@
         "seaborn",
         "plotly"
       ],
-      "excerpt": "Nắm vững Python, ứng dụng vào xử lý và trực quan hoá dữ liệu sau 3 tháng."
+      "excerpt": "Nắm vững Python, ứng dụng vào xử lý và trực quan hoá dữ liệu sau 3 tháng.",
+      "trialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
     },
     {
       "id": "64df41785404ec4d4345fe3a",
@@ -550,7 +552,8 @@
         "junit",
         "mockito"
       ],
-      "excerpt": "Sử dụng thành thạo Spring Boot, dựng web nhanh chóng sau 3 tháng."
+      "excerpt": "Sử dụng thành thạo Spring Boot, dựng web nhanh chóng sau 3 tháng.",
+      "trialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
     },
     {
       "id": "6482a08d232bf6c1513a1111",
@@ -726,8 +729,8 @@
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
         },
         {
-          "title": "Thời gian linh hoạt",
-          "description": "Thời gian học vào buổi tối, dễ dàng sắp xếp công việc. Hình thức học online và tương tác trực tiếp với giảng viên.",
+          "title": "Cơ sở vật chất hiện đại",
+          "description": "Trang bị máy lạnh và máy tính cho tất cả các lớp.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/calendar-check_r83jcs.svg"
         },
         {

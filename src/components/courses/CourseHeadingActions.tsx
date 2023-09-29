@@ -6,7 +6,13 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 
-export default function CourseHeadingActions({ slug }: { slug: string }) {
+export default function CourseHeadingActions({
+  slug,
+  trialUrl,
+}: {
+  slug: string;
+  trialUrl: string;
+}) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
   return (
@@ -27,17 +33,16 @@ export default function CourseHeadingActions({ slug }: { slug: string }) {
         </Link>
       </Button>
 
-      <Button
-        asChild
-        className="uppercase px-12 py-6 text-base font-bold text-black transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-gray-50 to-gray-200 hover:shadow-[0_2px_8px_rgba(255,255,255,_0.7)]"
-      >
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
-          target="_blank"
+      {trialUrl && (
+        <Button
+          asChild
+          className="uppercase px-12 py-6 text-base font-bold text-black transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-gray-50 to-gray-200 hover:shadow-[0_2px_8px_rgba(255,255,255,_0.7)]"
         >
-          Học thử miễn phí
-        </Link>
-      </Button>
+          <Link href={trialUrl} target="_blank">
+            Học thử miễn phí
+          </Link>
+        </Button>
+      )}
     </div>
   );
 }

@@ -19,6 +19,7 @@ interface CourseHeadingProps {
     from: string;
     to: string;
   };
+  trialUrl?: string;
 }
 
 const techIcons = {
@@ -221,6 +222,7 @@ export default function CourseHeading({
   slug,
   thumbnail,
   background,
+  trialUrl,
 }: CourseHeadingProps) {
   return (
     <section
@@ -254,7 +256,7 @@ export default function CourseHeading({
               <p className="sm:text-lg text-muted/90">{subtitle}</p>
             </div>
 
-            <CourseHeadingActions slug={slug} />
+            <CourseHeadingActions slug={slug} trialUrl={trialUrl} />
 
             {techs && techs.length > 0 && (
               <ul className="flex flex-wrap items-center justify-center gap-4">

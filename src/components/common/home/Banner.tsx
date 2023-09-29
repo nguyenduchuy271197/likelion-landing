@@ -18,8 +18,7 @@ const banners = [
       lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668539/home/banners/Cover_Front-end_Desktop_ta7mes.png",
     },
     title: "Thành Thạo Lập Trình Web Front-End",
-    description:
-      "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 2 tháng (khoá offline) hoặc 3 tháng (khoá online)",
+    description: "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 3 tháng",
   },
   {
     href: "/courses/khoa-hoc-python-cho-data-analysis",
