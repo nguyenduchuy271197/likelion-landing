@@ -3,7 +3,6 @@
 import { useContext } from "react";
 import { Button } from "../ui/Button";
 import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 
 export default function CourseHeadingActions({
@@ -11,7 +10,7 @@ export default function CourseHeadingActions({
   trialUrl,
 }: {
   slug: string;
-  trialUrl: string;
+  trialUrl?: string;
 }) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
