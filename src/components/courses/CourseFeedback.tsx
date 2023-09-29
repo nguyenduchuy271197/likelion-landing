@@ -5,8 +5,14 @@ import CourseSectionHeading from "./CourseSectionHeading";
 export default function CourseFeedback() {
   return (
     <section className="feedbacks">
-      <CourseSectionHeading>Học viên nói về LIKELION</CourseSectionHeading>
-      <TestimonialRow testimonials={testimonials} />
+      <div className="container">
+        <div className="space-y-20">
+          <CourseSectionHeading className="text-center">
+            Học viên nói về LIKELION
+          </CourseSectionHeading>
+          <TestimonialRow testimonials={testimonials} />
+        </div>
+      </div>
     </section>
   );
 }

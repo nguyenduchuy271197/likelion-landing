@@ -7,7 +7,7 @@ import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 import CourseThumbnail from "./CourseThumbnail";
 
 interface CourseInfoMobileProps {
-  discountedPrice: number;
+  discountedPrice?: number;
   price: number;
   slug: string;
   title: string;

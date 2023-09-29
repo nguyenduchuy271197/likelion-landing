@@ -7,14 +7,17 @@ import Link from "next/link";
 import RegisterSuccess from "./RegisterSuccess";
 import { useContext } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
-import { ICourse } from "@/types";
 
 export default function RegisterFormBox({
   initialCourse,
   courses,
 }: {
   initialCourse: string;
-  courses: ICourse[];
+  courses: {
+    id: string;
+    title: string;
+    slug: string;
+  }[];
 }) {
   const { isRegisterLoading, isRegisterSuccess, registerUser } =
     useRegisterUser();

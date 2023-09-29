@@ -2,7 +2,6 @@ import RegisterFormBox from "@/components/common/register/RegisterFormBox";
 import { Metadata } from "next";
 import Image from "next/image";
 import data from "@/data/data.json";
-import { ICourse } from "@/types";
 
 export const metadata: Metadata = {
   title: "Đăng ký tư vấn",
@@ -20,7 +19,7 @@ export default function Register({
   searchParams: { course: string };
 }) {
   const { course } = searchParams;
-  const courses = data["courses"] as ICourse[];
+  const courses = data["courses"];
 
   return (
     <div>

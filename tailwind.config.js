@@ -90,5 +90,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("tailwindcss-animate"),
     require("@tailwindcss/aspect-ratio"),
+    require("tailwind-clip-path"),
   ],
 };

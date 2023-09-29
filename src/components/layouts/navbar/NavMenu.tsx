@@ -15,9 +15,16 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu";
 import NavMenuContentCard from "./NavMenuContentCard";
-import { ICourse } from "@/types";
 
-export default function NavMenu({ courses }: { courses: ICourse[] }) {
+interface NavMenuProps {
+  courses: {
+    title: string;
+    slug: string;
+    excerpt: string;
+  }[];
+}
+
+export default function NavMenu({ courses }: NavMenuProps) {
   const pathname = usePathname();
 
   return (
@@ -38,7 +45,7 @@ export default function NavMenu({ courses }: { courses: ICourse[] }) {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none focus:shadow-md bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1689050859/courses/courses-thumbnail_yviy8j.png')] bg-cover"
+                    className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none focus:shadow-md bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1689050859/courses/courses-thumbnail_yviy8j.png')] bg-cover aspect-[1/1]"
                     href="/"
                   ></Link>
                 </NavigationMenuLink>

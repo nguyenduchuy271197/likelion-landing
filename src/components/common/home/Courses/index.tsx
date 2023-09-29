@@ -1,11 +1,10 @@
 import SectionHeading from "../SectionHeading";
 import CoursesAnimated from "./CoursesAnimated";
 import CourseCard from "./CourseCard";
-import { ICourse } from "@/types";
 import data from "@/data/data.json";
 
 export default function Courses() {
-  const courses = data["courses"] as ICourse[];
+  const courses = data["courses"];
 
   return (
     <section id="courses" className="scroll-mt-4">
@@ -18,7 +17,7 @@ export default function Courses() {
 
           <CoursesAnimated>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {courses.map((course) => (
+              {courses.slice(0, 3).map((course) => (
                 <CourseCard key={course.title} {...course} />
               ))}
             </div>

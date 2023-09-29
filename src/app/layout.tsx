@@ -9,7 +9,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/thumbs";
 import "react-modal-video/scss/modal-video.scss";
 import Navbar from "@/components/layouts/navbar/Navbar";
-import { Roboto } from "next/font/google";
+import { Roboto, Quicksand } from "next/font/google";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode } from "react";
@@ -29,6 +29,11 @@ const TrialPopup = dynamic(() => import("@/components/popups/TrialPopup"));
 const bodyFont = Roboto({
   subsets: ["vietnamese"],
   weight: ["100", "300", "400", "500", "700", "900"],
+});
+
+const quicksandFont = Quicksand({
+  subsets: ["vietnamese"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -73,8 +78,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "bg-white antialiased light scroll-smooth",
-        bodyFont.className
+        "bg-white antialiased light scroll-smooth font-medium",
+        quicksandFont.className
       )}
     >
       <body suppressHydrationWarning={true} className="overflow-x-hidden">

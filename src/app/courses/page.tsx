@@ -1,10 +1,10 @@
 import CourseCard from "@/components/common/home/Courses/CourseCard";
 import SectionHeading from "@/components/common/home/SectionHeading";
 import data from "@/data/data.json";
-import { ICourse } from "@/types";
 
 export default function Courses() {
-  const courses = data["courses"] as ICourse[];
+  const courses = data["courses"];
+
   return (
     <section>
       <div className="container">
@@ -14,7 +14,7 @@ export default function Courses() {
             subtitle="Người mới bắt đầu? Chưa có kinh nghiệm? Khoá học lập trình của LIKELION hỗ trợ bạn mọi lúc trên con đường học tập của mình. "
           />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {courses.map((course) => (
+            {courses.slice(0, 3).map((course) => (
               <CourseCard key={course.title} {...course} />
             ))}
           </div>

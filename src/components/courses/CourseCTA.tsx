@@ -5,28 +5,26 @@ import { Button } from "../ui/Button";
 import { useContext } from "react";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 
-export default function CourseCTA({
-  name,
-  slug,
-}: {
+interface CourseCTAProps {
   name: string;
   slug: string;
-}) {
-  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
+}
 
+export default function CourseCTA({ name, slug }: CourseCTAProps) {
+  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
   if (!name) return null;
 
   return (
-    <div className="h-80 rounded-3xl text-white bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1688550869/cta/fullstack_kwq2dx.png')] bg-cover bg-center overflow-hidden mt-12">
-      <div className="w-full h-full bg-gradient-to-r from-[#FF8F3B]/10 from-[0%] sm:from-[20%] via-[#FF8F3B] to-[#FF8F3B] flex justify-end items-center py-6 px-6 md:px-12">
-        <div className="flex flex-col items-start max-w-[230px] sm:max-w-xs">
-          <h3 className="mb-4 text-2xl font-medium md:text-3xl">
+    <section>
+      <div className="max-w-screen-lg px-8 mx-auto">
+        <div className="flex flex-col items-center gap-8 px-8 py-16 rounded-3xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+          <h3 className="text-3xl font-bold text-center sm:text-4xl text-primary-foreground">
             Bạn cần tư vấn về khoá học{" "}
             <span className="capitalize">{name}</span>?
           </h3>
           <Button
             variant="secondary"
-            className="sm:px-8 sm:py-6 sm:text-lg text-[#FF7100] rounded-xl px-6 py-6 w-full"
+            className="px-8 py-4 text-base font-medium text-black transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-gray-50 to-gray-200 hover:from-gray-100 hover:to-gray-300 hover:scale-105 shadow-[0_2px_10px_rgba(255,255,255,_0.7)] hover:shadow-[0_4px_20px_rgba(255,255,255,_0.7)]"
             asChild
             onClick={() => setDialogOpen(true)}
           >
@@ -41,6 +39,6 @@ export default function CourseCTA({
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
