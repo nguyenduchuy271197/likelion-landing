@@ -124,7 +124,7 @@ export default function Banner() {
                 />
               </picture>
               <div className="container">
-                <div className="h-[65vh] md:h-[75vh] flex items-end md:items-center py-12">
+                <div className="h-[450px] md:h-[550px] flex items-end md:items-center py-12">
                   <div className="max-w-lg text-left text-white lg:max-w-xl">
                     <h2 className="flex items-center gap-2 mb-4 text-4xl font-bold capitalize md:text-5xl lg:text-6xl">
                       {banner.title}
