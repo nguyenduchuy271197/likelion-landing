@@ -19,7 +19,10 @@
         "Thực hành xây dựng ứng dụng website lớn bằng ReactJS và học cách quản lý, phát triển ứng dụng một cách hiệu quả nhất"
       ],
       "price": 12500000,
-      "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
+      "requirements": [
+        "Bạn cần chuẩn bị máy tính cá nhân",
+        "LIKELION không yêu cầu kiến thức đầu vào"
+      ],
       "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 3 tháng.",
       "abbr": "Front-end",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888907/courses/thanh-thao-lap-trinh-web-frond-end/image_8_ghyytp.png",
@@ -215,7 +218,10 @@
         "Nâng cấp chuyên môn về dữ liệu nhờ Python chỉ sau 3 tháng"
       ],
       "price": 6000000,
-      "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
+      "requirements": [
+        "Bạn cần chuẩn bị máy tính cá nhân",
+        "LIKELION không yêu cầu kiến thức đầu vào"
+      ],
       "subtitle": "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
       "abbr": "Python Data",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888889/courses/khoa-hoc-python-cho-data-analysis/Group_pdsys1.png",
@@ -402,7 +408,10 @@
         "Trở thành lập trình viên Java Web bằng Spring Boot chỉ sau 3 tháng học"
       ],
       "price": 6000000,
-      "requirements": ["Máy tính cá nhân", "Không yêu cầu kiến thức đầu vào"],
+      "requirements": [
+        "Bạn cần chuẩn bị máy tính cá nhân",
+        "LIKELION không yêu cầu kiến thức đầu vào"
+      ],
       "subtitle": "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
       "abbr": "Java",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888828/courses/khoa-hoc-back-end-java/Group_1_o0ze2o.png",
@@ -569,8 +578,8 @@
         "Seminar chia sẻ kinh nghiệm từ lập trình viên các tập đoàn lớn"
       ],
       "requirements": [
-        "Không yêu cầu máy tính cá nhân",
-        "Không yêu cầu kiến thức đầu vào"
+        "Không yêu cầu Bạn cần chuẩn bị máy tính cá nhân",
+        "LIKELION không yêu cầu kiến thức đầu vào"
       ],
       "discountedPrice": 17500000,
       "price": 22500000,
@@ -584,6 +593,10 @@
       ],
       "abbr": "Fullstack",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
+      "background": {
+        "from": "#000",
+        "to": "#000"
+      },
       "youtubeId": "duAOTul9UNs",
       "calendar": [
         {

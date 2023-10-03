@@ -2,11 +2,26 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import CourseSectionHeading from "./CourseSectionHeading";
 
-function ObjectivesItem({ name }: { name: string }) {
+function ObjectivesItem({
+  name,
+  background,
+}: {
+  name: string;
+  background: {
+    from: string;
+    to: string;
+  };
+}) {
   return (
     <li className="flex items-center gap-4">
-      <div className="flex items-center justify-center rounded-full w-7 h-7 shrink-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-        <Check className="w-4 h-4 font-bold text-muted" strokeWidth={3} />
+      <div
+        className="flex items-center justify-center rounded-full w-7 h-7 shrink-0"
+        style={{
+          backgroundColor: background.from,
+          color: background.to,
+        }}
+      >
+        <Check className="w-4 h-4 font-bold" strokeWidth={3} />
       </div>
       {name}
     </li>
@@ -15,8 +30,13 @@ function ObjectivesItem({ name }: { name: string }) {
 
 export default function CourseObjectives({
   objectives,
+  background,
 }: {
   objectives: string[];
+  background: {
+    from: string;
+    to: string;
+  };
 }) {
   return (
     <section>
@@ -35,7 +55,7 @@ export default function CourseObjectives({
             <CourseSectionHeading>Bạn sẽ học được gì?</CourseSectionHeading>
             <ul className="flex flex-col gap-4 text-lg">
               {objectives.map((ob) => (
-                <ObjectivesItem key={ob} name={ob} />
+                <ObjectivesItem key={ob} name={ob} background={background} />
               ))}
             </ul>
           </div>

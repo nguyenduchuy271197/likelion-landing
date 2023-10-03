@@ -5,26 +5,41 @@ import {
   AccordionTrigger,
 } from "@/components/ui/Accordion";
 import { IModule } from "@/types";
-import { FileText, GitFork } from "lucide-react";
+import { ArrowDownRight, FileText, GitFork } from "lucide-react";
 import CourseSectionHeading from "./CourseSectionHeading";
+
+interface CourseModuleProps extends IModule {
+  index: number;
+  background: {
+    from: string;
+    to: string;
+  };
+}
 
 function CourseModule({
   name,
   lessons,
   projects,
   index,
-}: IModule & { index: number }) {
+  background,
+}: CourseModuleProps) {
   return (
-    <AccordionItem
-      className="px-8 py-4 rounded-lg text-muted bg-gradient-to-r from-pink-700 via-red-600 to-red-500"
-      value={name}
-      key={name}
+    <li
+      className="grid gap-8 py-16 border-b md:grid-cols-2"
+      style={{
+        borderColor: background.from,
+      }}
     >
-      <AccordionTrigger className="gap-4 [&>svg]:shrink-0 text-left font-bold uppercase text-xl [&_svg]:w-8 [&_svg]:h-8">
+      <h3
+        className="text-3xl font-bold sm:text-4xl md:max-w-sm"
+        style={{
+          color: background.to,
+        }}
+      >
         {index}. {name}
-      </AccordionTrigger>
-      <AccordionContent>
-        <ul className="flex flex-col gap-4 py-2 text-xl">
+      </h3>
+      <div>
+        <ul className="flex flex-col gap-4 text-lg">
           {lessons.map((lesson) => (
             <li className="flex items-center gap-4" key={lesson}>
               <FileText className="w-6 h-6 shrink-0" />
@@ -45,35 +60,71 @@ function CourseModule({
               </li>
             ))}
         </ul>
-      </AccordionContent>
-    </AccordionItem>
+      </div>
+    </li>
   );
 }
 
-export default function CourseContent({ modules }: { modules: IModule[] }) {
+function CourseHighlight({ name }: { name: string }) {
+  return (
+    <li className="flex items-center gap-4">
+      <ArrowDownRight className="w-5 h-5 shrink-0" />
+      {name}
+    </li>
+  );
+}
+
+export default function CourseContent({
+  modules,
+  highlights,
+  background,
+}: {
+  modules: IModule[];
+  highlights?: string[];
+  background: {
+    from: string;
+    to: string;
+  };
+}) {
   return (
     <section id="content">
-      <div className="container">
-        <div className="space-y-12">
-          <CourseSectionHeading className="text-center">
-            Nội dung khoá học
-          </CourseSectionHeading>
-          <Accordion
-            type="multiple"
-            // collapsible
-            className="flex flex-col w-full gap-4"
-            defaultValue={[modules[0].name]}
-          >
-            {modules.map((module, i) => (
-              <CourseModule
-                name={module.name}
-                lessons={module.lessons}
-                key={module.name}
-                index={i + 1}
-                projects={module.projects}
-              />
-            ))}
-          </Accordion>
+      <div
+        className="text-muted"
+        style={{
+          background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
+        }}
+      >
+        <div className="container">
+          <div className="grid gap-8 py-20 md:grid-cols-2">
+            <CourseSectionHeading className="md:max-w-sm">
+              Nội dung khoá học
+            </CourseSectionHeading>
+            <div>
+              {highlights && (
+                <ul className="flex flex-col gap-4 text-lg">
+                  {highlights.map((requirement) => (
+                    <CourseHighlight key={requirement} name={requirement} />
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="container">
+          <div>
+            <ul>
+              {modules.map((module, index) => (
+                <CourseModule
+                  key={module.name}
+                  {...module}
+                  index={index}
+                  background={background}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

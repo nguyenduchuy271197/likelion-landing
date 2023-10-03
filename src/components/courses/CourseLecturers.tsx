@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import CourseSectionHeading from "./CourseSectionHeading";
 
 interface LectureType {
@@ -9,12 +8,26 @@ interface LectureType {
   avatar: string;
 }
 
-function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
+function CourseLecturerRow({
+  lecturer,
+  background,
+}: {
+  lecturer: LectureType;
+  background: {
+    from: string;
+    to: string;
+  };
+}) {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex flex-col items-center justify-center gap-8">
         <div className="flex items-center justify-center p-2 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-rose-400 to-orange-300">
+          <div
+            className="relative aspect-[1/1] w-28 overflow-hidden rounded-[30px]"
+            style={{
+              background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
+            }}
+          >
             <Image
               src={lecturer.avatar}
               fill
@@ -49,9 +62,16 @@ interface CourseLecturersProps {
     avatar: string;
     description: string;
   }[];
+  background: {
+    from: string;
+    to: string;
+  };
 }
 
-export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
+export default function CourseLecturers({
+  lecturers,
+  background,
+}: CourseLecturersProps) {
   if (!lecturers || lecturers.length === 0) return null;
 
   return (
@@ -63,7 +83,11 @@ export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
           </CourseSectionHeading>
           <div className="space-y-16">
             {lecturers.map((lecturer) => (
-              <CourseLecturerRow key={lecturer.name} lecturer={lecturer} />
+              <CourseLecturerRow
+                key={lecturer.name}
+                lecturer={lecturer}
+                background={background}
+              />
             ))}
           </div>
         </div>

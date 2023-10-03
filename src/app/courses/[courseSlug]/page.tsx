@@ -1,8 +1,6 @@
 import CourseCTA from "@/components/courses/CourseCTA";
 import CourseContent from "@/components/courses/CourseContent";
 import CourseHeading from "@/components/courses/CourseHeading";
-import CourseInfoCard from "@/components/courses/CourseInfoCard";
-import CourseInfoMobile from "@/components/courses/CourseInfoMobile";
 import CourseObjectives from "@/components/courses/CourseObjectives";
 import CoursePartnership from "@/components/courses/CoursePartnership";
 import CourseRequirements from "@/components/courses/CourseRequirements";
@@ -124,7 +122,7 @@ export default function CourseDetail({
         /> */}
 
         {/* Benefits */}
-        <CourseBenefits benefits={benefits} />
+        <CourseBenefits benefits={benefits} background={background} />
 
         {/* Partnership */}
         {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
@@ -132,29 +130,36 @@ export default function CourseDetail({
         )}
 
         {/* What you'll learn */}
-        <CourseObjectives objectives={objectives} />
+        <CourseObjectives objectives={objectives} background={background} />
 
         {/* Requirements */}
-        <CourseRequirements requirements={requirements} />
+        <CourseRequirements
+          requirements={requirements}
+          background={background}
+        />
 
         {/* Features */}
         <CourseFeatures features={features} />
 
         {/* Course content */}
-        <CourseContent modules={modules} />
+        <CourseContent
+          modules={modules}
+          highlights={highlights}
+          background={background}
+        />
 
         {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
           <CourseWorkshops />
         )}
 
         {/* Lecturers */}
-        <CourseLecturers lecturers={lecturers} />
+        <CourseLecturers lecturers={lecturers} background={background} />
 
         {/* Showcase */}
         <CourseShowcases showcases={showcases} />
 
         {/* CourseCalen */}
-        <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
+        <CourseOpeningSchedules calendars={calendar} background={background} />
 
         <CoursePaymentMethods
           payment_methods={payment_methods}
