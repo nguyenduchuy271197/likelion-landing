@@ -1,25 +1,10 @@
 import { MoveRight, Plus } from "lucide-react";
 import CourseSectionHeading from "./CourseSectionHeading";
 
-function CourseRequirement({
-  name,
-  background,
-}: {
-  name: string;
-  background: {
-    from: string;
-    to: string;
-  };
-}) {
+function CourseRequirement({ name }: { name: string }) {
   return (
     <li className="flex items-center gap-4">
-      <div
-        className="flex items-center justify-center rounded-full w-7 h-7 shrink-0"
-        style={{
-          backgroundColor: background.from,
-          color: background.to,
-        }}
-      >
+      <div className="flex items-center justify-center text-orange-500 bg-orange-100 rounded-full w-7 h-7 shrink-0">
         <MoveRight className="w-4 h-4" strokeWidth={3} />
       </div>
       {name}
@@ -29,13 +14,10 @@ function CourseRequirement({
 
 export default function CourseRequirements({
   requirements,
-  background,
+  title,
 }: {
   requirements: string[];
-  background: {
-    from: string;
-    to: string;
-  };
+  title: string;
 }) {
   if (!requirements) return null;
 
@@ -44,16 +26,12 @@ export default function CourseRequirements({
       <div className="max-w-screen-lg px-8 mx-auto">
         <div className="grid gap-8 md:grid-cols-2">
           <CourseSectionHeading className="md:max-w-sm">
-            Đến với khóa học Python cho Data Analysis
+            Đến với {title}
           </CourseSectionHeading>
           <div>
             <ul className="flex flex-col gap-4 text-lg">
               {requirements.map((requirement) => (
-                <CourseRequirement
-                  key={requirement}
-                  name={requirement}
-                  background={background}
-                />
+                <CourseRequirement key={requirement} name={requirement} />
               ))}
             </ul>
           </div>

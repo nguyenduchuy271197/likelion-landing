@@ -1,43 +1,25 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/Accordion";
 import { IModule } from "@/types";
 import { ArrowDownRight, FileText, GitFork } from "lucide-react";
 import CourseSectionHeading from "./CourseSectionHeading";
 
 interface CourseModuleProps extends IModule {
   index: number;
-  background: {
-    from: string;
-    to: string;
-  };
 }
 
-function CourseModule({
-  name,
-  lessons,
-  projects,
-  index,
-  background,
-}: CourseModuleProps) {
+function CourseModule({ name, lessons, projects, index }: CourseModuleProps) {
   return (
-    <li
-      className="grid gap-8 py-16 border-b md:grid-cols-2"
-      style={{
-        borderColor: background.from,
-      }}
-    >
-      <h3
-        className="text-3xl font-bold sm:text-4xl md:max-w-sm"
-        style={{
-          color: background.to,
-        }}
-      >
-        {index}. {name}
-      </h3>
+    <li className="grid gap-8 py-16 border-b-2 border-orange-500/40 md:grid-cols-2">
+      <div>
+        <div className="flex items-center gap-8 md:max-w-sm">
+          <p className="text-6xl font-bold text-orange-500/50">
+            {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
+          </p>
+          <h3 className="text-3xl font-bold text-orange-500 sm:text-3xl">
+            {name}
+          </h3>
+        </div>
+      </div>
+
       <div>
         <ul className="flex flex-col gap-4 text-lg">
           {lessons.map((lesson) => (
@@ -49,12 +31,10 @@ function CourseModule({
 
           {projects &&
             projects?.map((project, i) => (
-              <li className="flex items-center gap-4" key={project}>
+              <li className="flex items-center gap-4 font-bold" key={project}>
                 <GitFork className="w-6 h-6 shrink-0" />
                 <p>
-                  <span className="font-medium">
-                    Project{projects.length > 1 && ` ${i + 1}`}:
-                  </span>{" "}
+                  <span>Project{projects.length > 1 && ` ${i + 1}`}:</span>{" "}
                   <span>{project}</span>
                 </p>
               </li>
@@ -65,10 +45,10 @@ function CourseModule({
   );
 }
 
-function CourseHighlight({ name }: { name: string }) {
+function CourseFeature({ name }: { name: string }) {
   return (
     <li className="flex items-center gap-4">
-      <ArrowDownRight className="w-5 h-5 shrink-0" />
+      <ArrowDownRight className="w-5 h-5 shrink-0" strokeWidth={3} />
       {name}
     </li>
   );
@@ -76,34 +56,24 @@ function CourseHighlight({ name }: { name: string }) {
 
 export default function CourseContent({
   modules,
-  highlights,
-  background,
+  features,
 }: {
   modules: IModule[];
-  highlights?: string[];
-  background: {
-    from: string;
-    to: string;
-  };
+  features?: string[];
 }) {
   return (
     <section id="content">
-      <div
-        className="text-muted"
-        style={{
-          background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
-        }}
-      >
+      <div className="bg-orange-500 text-muted">
         <div className="container">
           <div className="grid gap-8 py-20 md:grid-cols-2">
             <CourseSectionHeading className="md:max-w-sm">
               Nội dung khoá học
             </CourseSectionHeading>
             <div>
-              {highlights && (
-                <ul className="flex flex-col gap-4 text-lg">
-                  {highlights.map((requirement) => (
-                    <CourseHighlight key={requirement} name={requirement} />
+              {features && (
+                <ul className="flex flex-col gap-4 text-lg font-medium">
+                  {features.map((requirement) => (
+                    <CourseFeature key={requirement} name={requirement} />
                   ))}
                 </ul>
               )}
@@ -116,12 +86,7 @@ export default function CourseContent({
           <div>
             <ul>
               {modules.map((module, index) => (
-                <CourseModule
-                  key={module.name}
-                  {...module}
-                  index={index}
-                  background={background}
-                />
+                <CourseModule key={module.name} {...module} index={index} />
               ))}
             </ul>
           </div>

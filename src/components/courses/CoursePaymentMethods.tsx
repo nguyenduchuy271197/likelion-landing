@@ -5,7 +5,6 @@ import { Button } from "../ui/Button";
 import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import CoursePromotion from "./CoursePromotion";
 import CourseSectionHeading from "./CourseSectionHeading";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
@@ -47,10 +46,8 @@ function CoursePaymentMethodRow({
   return (
     <div
       className={cn(
-        "p-12 rounded-lg flex-1 h-[400px] flex flex-col",
-        priority
-          ? "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-muted"
-          : "bg-gradient-to-r from-rose-100 to-teal-100",
+        "p-12 rounded-2xl flex-1 h-[400px] flex flex-col",
+        priority ? "bg-orange-500 text-muted" : "bg-orange-100",
         className
       )}
       {...props}
@@ -85,9 +82,9 @@ export default function CoursePaymentMethods({
   if (!payment_methods) return null;
 
   return (
-    <section className="bg-[#FFD03D]" id="payment">
+    <section id="payment">
       <div className="max-w-screen-lg px-8 mx-auto">
-        <div className="space-y-16 py-14 sm:py-28">
+        <div className="space-y-16">
           <CourseSectionHeading className="text-center">
             Phương thức thanh toán
           </CourseSectionHeading>

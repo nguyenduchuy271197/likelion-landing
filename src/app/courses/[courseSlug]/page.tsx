@@ -104,8 +104,8 @@ export default function CourseDetail({
         techs={techs}
         slug={courseSlug}
         thumbnail={thumbnail}
-        background={background}
         trialUrl={trialUrl}
+        background={background}
       />
 
       {/* Course Navigation */}
@@ -122,7 +122,7 @@ export default function CourseDetail({
         /> */}
 
         {/* Benefits */}
-        <CourseBenefits benefits={benefits} background={background} />
+        <CourseBenefits benefits={benefits} />
 
         {/* Partnership */}
         {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
@@ -130,42 +130,34 @@ export default function CourseDetail({
         )}
 
         {/* What you'll learn */}
-        <CourseObjectives objectives={objectives} background={background} />
+        <CourseObjectives objectives={objectives} />
 
         {/* Requirements */}
-        <CourseRequirements
-          requirements={requirements}
-          background={background}
-        />
-
-        {/* Features */}
-        <CourseFeatures features={features} />
+        <CourseRequirements requirements={requirements} title={title} />
 
         {/* Course content */}
-        <CourseContent
-          modules={modules}
-          highlights={highlights}
-          background={background}
-        />
+        <CourseContent modules={modules} features={features} />
 
         {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
           <CourseWorkshops />
         )}
 
         {/* Lecturers */}
-        <CourseLecturers lecturers={lecturers} background={background} />
+        <CourseLecturers lecturers={lecturers} />
 
         {/* Showcase */}
         <CourseShowcases showcases={showcases} />
 
         {/* CourseCalen */}
-        <CourseOpeningSchedules calendars={calendar} background={background} />
+        <CourseOpeningSchedules calendars={calendar} thumbnail={thumbnail} />
 
-        <CoursePaymentMethods
-          payment_methods={payment_methods}
-          slug={courseSlug}
-        />
-        <CoursePromotion promotions={promotions} />
+        <div className="space-y-16">
+          <CoursePaymentMethods
+            payment_methods={payment_methods}
+            slug={courseSlug}
+          />
+          <CoursePromotion promotions={promotions} />
+        </div>
 
         {/* Workspaces */}
         <CourseWorkspaces />
@@ -181,7 +173,7 @@ export default function CourseDetail({
         )}
 
         {/* CTA */}
-        <CourseCTA name={abbr} slug={courseSlug} />
+        <CourseCTA name={abbr} id={id} />
       </div>
     </div>
   );

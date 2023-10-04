@@ -7,28 +7,13 @@ interface Benefit {
   src: string;
 }
 
-interface CourseBenefitProps extends Benefit {
-  background: {
-    from: string;
-    to: string;
-  };
-}
+interface CourseBenefitProps extends Benefit {}
 
-function CourseBenefit({
-  title,
-  description,
-  src,
-  background,
-}: CourseBenefitProps) {
+function CourseBenefit({ title, description, src }: CourseBenefitProps) {
   return (
     <div className="w-full space-y-4">
       <div className="flex justify-start">
-        <div
-          className="flex items-center justify-center p-4 rounded-full"
-          style={{
-            backgroundColor: background.from,
-          }}
-        >
+        <div className="flex items-center justify-center p-4 bg-orange-100 rounded-full">
           <Image src={src} alt={title} width={24} height={24} />
         </div>
       </div>
@@ -41,16 +26,7 @@ function CourseBenefit({
   );
 }
 
-export default function CourseBenefits({
-  benefits,
-  background,
-}: {
-  benefits: Benefit[];
-  background: {
-    from: string;
-    to: string;
-  };
-}) {
+export default function CourseBenefits({ benefits }: { benefits: Benefit[] }) {
   return (
     <section id="benefits">
       <div className="container">
@@ -68,11 +44,7 @@ export default function CourseBenefits({
           </div>
           <div className="grid sm:grid-cols-2 gap-12 flex-[2]">
             {benefits.map((benefit) => (
-              <CourseBenefit
-                key={benefit.title}
-                {...benefit}
-                background={background}
-              />
+              <CourseBenefit key={benefit.title} {...benefit} />
             ))}
           </div>
         </div>

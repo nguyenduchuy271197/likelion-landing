@@ -15,7 +15,7 @@ interface CourseHeadingProps {
   techs?: string[];
   slug: string;
   thumbnail: string;
-  background?: {
+  background: {
     from: string;
     to: string;
   };
@@ -228,9 +228,7 @@ export default function CourseHeading({
     <section
       className="py-16 pb-40 bg-black text-muted clip-path-polygon-[0_0,_100%_0%,_100%_90%,_0%_100%] lg:clip-path-polygon-[0_0,_100%_0%,_100%_80%,_0%_100%] mb-10"
       style={{
-        background: `linear-gradient(to right,  ${
-          background?.from || "#000"
-        } 0%,${background?.to || "#000"} 100%)`,
+        background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
       }}
     >
       <div className="container">
