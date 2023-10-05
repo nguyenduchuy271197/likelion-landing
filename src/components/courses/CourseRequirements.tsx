@@ -13,8 +13,8 @@ function CourseRequirement({ name }: { name: string }) {
 }
 
 export default function CourseRequirements({
-  requirements,
   title,
+  requirements,
 }: {
   requirements: string[];
   title: string;

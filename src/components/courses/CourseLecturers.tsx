@@ -26,9 +26,7 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
         <div className="space-y-4 text-center md:text-left">
           <div className="space-y-1 sm:space-y-2">
             <h3 className="text-2xl font-bold capitalize">{lecturer.name}</h3>
-            <div className="text-lg text-foreground/60">
-              {lecturer.profession}
-            </div>
+            <div className="text-lg opacity-70">{lecturer.profession}</div>
           </div>
           <div>
             <p className="text-xl font-medium leading-relaxed">
@@ -56,9 +54,9 @@ export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
   if (!lecturers || lecturers.length === 0) return null;
 
   return (
-    <section id="lecturers">
+    <section id="lecturers" className="bg-foreground text-background">
       <div className="container">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 py-20 md:grid-cols-2">
           <CourseSectionHeading className="text-center md:max-w-sm md:text-left">
             Đội ngũ giảng viên chuyên nghiệp, tâm huyết
           </CourseSectionHeading>

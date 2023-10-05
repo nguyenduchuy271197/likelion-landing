@@ -15,8 +15,10 @@ function ObjectivesItem({ name }: { name: string }) {
 
 export default function CourseObjectives({
   objectives,
+  src,
 }: {
   objectives: string[];
+  src?: string;
 }) {
   return (
     <section>
@@ -25,9 +27,13 @@ export default function CourseObjectives({
           <div className="hidden md:block">
             <div className="relative w-[300px] md:w-[400px] aspect-[1/1] rounded-lg overflow-hidden">
               <Image
-                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1695783126/courses/5143541_1_c7fkvm.png"
+                src={
+                  src ||
+                  "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695783126/courses/5143541_1_c7fkvm.png"
+                }
                 alt="Bạn sẽ học được gì?"
                 fill
+                className="object-contain"
               />
             </div>
           </div>

@@ -72,6 +72,7 @@ export default function CourseDetail({
     title,
     subtitle,
     objectives,
+    objectives_src,
     features,
     trialUrl,
     price,
@@ -130,7 +131,7 @@ export default function CourseDetail({
         )}
 
         {/* What you'll learn */}
-        <CourseObjectives objectives={objectives} />
+        <CourseObjectives objectives={objectives} src={objectives_src} />
 
         {/* Requirements */}
         <CourseRequirements requirements={requirements} title={title} />
