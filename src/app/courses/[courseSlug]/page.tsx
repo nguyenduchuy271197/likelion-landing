@@ -20,6 +20,7 @@ import data from "@/data/data.json";
 import { redirect } from "next/navigation";
 import CourseFeatures from "@/components/courses/CourseFeatures";
 import CourseShowcases from "@/components/courses/CourseShowcases";
+import CourseStickyBar from "@/components/courses/CourseStickyBar";
 
 export async function generateMetadata(
   {
@@ -107,12 +108,22 @@ export default function CourseDetail({
         thumbnail={thumbnail}
         trialUrl={trialUrl}
         background={background}
+        id={id}
       />
 
       {/* Course Navigation */}
       <CourseNavigation />
 
-      <div className="py-10 space-y-24 md:py-20 sm:space-y-36">
+      <CourseStickyBar
+        title={title}
+        slug={courseSlug}
+        highlights={highlights}
+      />
+
+      <div
+        className="py-10 space-y-24 md:py-20 sm:space-y-36"
+        id="course-info-area"
+      >
         {/* <CourseInfoMobile
           discountedPrice={discountedPrice}
           price={price}
@@ -150,7 +161,11 @@ export default function CourseDetail({
         <CourseShowcases showcases={showcases} />
 
         {/* CourseCalen */}
-        <CourseOpeningSchedules calendars={calendar} thumbnail={thumbnail} />
+        <CourseOpeningSchedules
+          calendars={calendar}
+          thumbnail={thumbnail}
+          background={background}
+        />
 
         <div className="space-y-16">
           <CoursePaymentMethods

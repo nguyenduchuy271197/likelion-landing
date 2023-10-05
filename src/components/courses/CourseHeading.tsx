@@ -20,6 +20,7 @@ interface CourseHeadingProps {
     to: string;
   };
   trialUrl?: string;
+  id: string;
 }
 
 const techIcons = {
@@ -223,6 +224,7 @@ export default function CourseHeading({
   thumbnail,
   background,
   trialUrl,
+  id,
 }: CourseHeadingProps) {
   return (
     <section
@@ -254,7 +256,7 @@ export default function CourseHeading({
               <p className="sm:text-lg text-muted/90">{subtitle}</p>
             </div>
 
-            <CourseHeadingActions slug={slug} trialUrl={trialUrl} />
+            <CourseHeadingActions slug={slug} trialUrl={trialUrl} id={id} />
 
             {techs && techs.length > 0 && (
               <ul className="flex flex-wrap items-center justify-center gap-4">
@@ -292,7 +294,7 @@ export default function CourseHeading({
             )}
           </div>
           <div className="hidden lg:block">
-            <div className="relative w-[300px] lg:w-[400px] aspect-[1/1]">
+            <div className="relative w-[300px] lg:w-[400px] aspect-[1/1] bg-white/60 rounded-full">
               <Image
                 src={thumbnail}
                 alt={title}

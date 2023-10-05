@@ -72,8 +72,8 @@ export default function CourseContent({
             <div>
               {features && (
                 <ul className="flex flex-col gap-4 text-lg font-medium">
-                  {features.map((requirement) => (
-                    <CourseFeature key={requirement} name={requirement} />
+                  {features.map((feature) => (
+                    <CourseFeature key={feature} name={feature} />
                   ))}
                 </ul>
               )}

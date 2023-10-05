@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CourseSectionHeading from "./CourseSectionHeading";
+import ClientReactSVG from "../ClientReactSVG";
 
 interface Benefit {
   title: string;
@@ -13,8 +14,8 @@ function CourseBenefit({ title, description, src }: CourseBenefitProps) {
   return (
     <div className="w-full space-y-4">
       <div className="flex justify-start">
-        <div className="flex items-center justify-center p-4 bg-orange-100 rounded-full">
-          <Image src={src} alt={title} width={24} height={24} />
+        <div className="flex items-center justify-center p-4 text-orange-500 bg-orange-100 rounded-full">
+          <ClientReactSVG src={src} width={24} height={24} />
         </div>
       </div>
 

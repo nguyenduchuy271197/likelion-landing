@@ -41,15 +41,25 @@ function CourseCalendar({
 function CourseOpeningScheduleCard({
   calendar,
   thumbnail,
+  background,
 }: {
   calendar: ICalendar;
   thumbnail: string;
+  background: {
+    from: string;
+    to: string;
+  };
 }) {
   return (
     <div>
       <div className="max-w-screen-lg px-8 mx-auto">
         <div className="relative">
-          <div className="p-8 space-y-8 rounded-[3rem] sm:p-12 bg-gradient-to-r from-orange-500 to-orange-400 text-muted">
+          <div
+            className="p-8 space-y-8 rounded-[3rem] sm:p-12 text-muted"
+            style={{
+              background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
+            }}
+          >
             <CourseSectionHeading className="max-w-sm">
               Khoá Học Python Cho Data Analysis
             </CourseSectionHeading>
@@ -108,7 +118,7 @@ function CourseOpeningScheduleCard({
               </div>
             </div>
           </div>
-          <div className="border-[2.5rem] border-muted rounded-full absolute top-0 right-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] -translate-y-1/3 hidden lg:block aspect-[1/1]">
+          <div className="border-[2.5rem] border-white rounded-full absolute -top-[3rem] -right-[3rem] hidden lg:block aspect-[1/1] p-2">
             <Image
               src={thumbnail}
               alt=""
@@ -126,9 +136,14 @@ function CourseOpeningScheduleCard({
 export default function CourseOpeningSchedules({
   calendars,
   thumbnail,
+  background,
 }: {
   calendars?: ICalendar[];
   thumbnail: string;
+  background: {
+    from: string;
+    to: string;
+  };
 }) {
   if (!calendars || calendars.length === 0) return null;
 
@@ -140,6 +155,7 @@ export default function CourseOpeningSchedules({
             calendar={calendar}
             key={calendar.title}
             thumbnail={thumbnail}
+            background={background}
           />
         ))}
       </div>

@@ -8,9 +8,11 @@ import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
 export default function CourseHeadingActions({
   slug,
   trialUrl,
+  id,
 }: {
   slug: string;
   trialUrl?: string;
+  id: string;
 }) {
   const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
 
@@ -37,7 +39,7 @@ export default function CourseHeadingActions({
           asChild
           className="uppercase px-12 py-6 text-base font-bold text-black transition-all duration-500 ease-in-out transform rounded-full bg-gradient-to-r from-gray-50 to-gray-200 hover:shadow-[0_2px_8px_rgba(255,255,255,_0.7)]"
         >
-          <Link href={trialUrl} target="_blank">
+          <Link href={trialUrl} target="_blank" id={`trial-${id}`}>
             Học thử miễn phí
           </Link>
         </Button>

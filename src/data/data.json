@@ -26,7 +26,8 @@
       ],
       "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 3 tháng.",
       "abbr": "Front-end",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888907/courses/thanh-thao-lap-trinh-web-frond-end/image_8_ghyytp.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497791/courses/thanh-thao-lap-trinh-web-frond-end/FE_fhauag.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "background": {
         "from": "#22c55e",
         "to": "#16a34a"
@@ -123,13 +124,27 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "highlights": [
         "Nâng cấp giao diện web",
         "Tương tác trực tiếp với giảng viên",
         "Lộ trình bài bản, thực chiến"
       ],
       "benefits": [
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/piggy-bank_cf5h6n.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
+        },
+        {
+          "title": "Làm việc từ xa",
+          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
+        },
         {
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
@@ -154,11 +169,6 @@
           "title": "Chứng nhận tốt nghiệp",
           "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
-        },
-        {
-          "title": "Làm việc từ xa",
-          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
         }
       ],
       "techs": [
@@ -226,7 +236,8 @@
       ],
       "subtitle": "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
       "abbr": "Python Data",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888889/courses/khoa-hoc-python-cho-data-analysis/Group_pdsys1.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497527/courses/khoa-hoc-python-cho-data-analysis/Python_fnefs7.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888940/courses/khoa-hoc-python-cho-data-analysis/Python_lm3uf0_a4xsa3.png",
       "background": {
         "from": "#3b82f6",
         "to": "#2563eb"
@@ -334,7 +345,7 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888940/courses/khoa-hoc-python-cho-data-analysis/Python_lm3uf0_a4xsa3.png",
+
       "lecturers": [
         {
           "name": "Đinh Hoàng Anh",
@@ -349,6 +360,21 @@
         "Lộ trình khoa học, rõ ràng"
       ],
       "benefits": [
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/piggy-bank_cf5h6n.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
+        },
+        {
+          "title": "Làm việc từ xa",
+          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
+        },
         {
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
@@ -373,11 +399,6 @@
           "title": "Chứng nhận tốt nghiệp",
           "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
-        },
-        {
-          "title": "Làm việc từ xa",
-          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
         }
       ],
       "techs": [
@@ -417,7 +438,8 @@
       ],
       "subtitle": "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
       "abbr": "Java",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888828/courses/khoa-hoc-back-end-java/Group_1_o0ze2o.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497428/courses/khoa-hoc-back-end-java/Java_cvvufm.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
       "background": {
         "from": "#ef4444",
         "to": "#dc2626"
@@ -508,7 +530,7 @@
         "schedules": ["3 tháng", "36 buổi"],
         "status": ["Online", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
+
       "lecturers": [
         {
           "name": "Nguyễn Thu Hà",
@@ -523,6 +545,21 @@
         "Lộ trình khoa học, rõ ràng"
       ],
       "benefits": [
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/piggy-bank_cf5h6n.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
+        },
+        {
+          "title": "Làm việc từ xa",
+          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
+        },
         {
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
@@ -547,11 +584,6 @@
           "title": "Chứng nhận tốt nghiệp",
           "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
-        },
-        {
-          "title": "Làm việc từ xa",
-          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
         }
       ],
       "techs": [
@@ -595,10 +627,11 @@
         "Có hỗ trợ kết nối việc làm"
       ],
       "abbr": "Fullstack",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688113875/courses/bootcamp-lap-trinh-web-fullstack/thumbnail.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497598/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_z0tufd.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497610/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_1_ykf0pa.png",
       "background": {
-        "from": "#000",
-        "to": "#000"
+        "from": "#fb923c",
+        "to": "#f97316"
       },
       "youtubeId": "duAOTul9UNs",
       "calendar": [
@@ -732,7 +765,7 @@
         "schedules": ["3 tháng", "120 buổi"],
         "status": ["Offline", "Beginner"]
       },
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692668790/thumbnail/Thumbnail_Fullstack_nlj9gc.png",
+
       "benefits": [
         {
           "title": "Lộ trình khoa học",
