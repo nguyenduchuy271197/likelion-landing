@@ -54,7 +54,6 @@ export function RegisterForm({
   });
 
   function onSubmit(values: RegisterFormType) {
-    console.log(values);
     onRegisterForm(values);
     registerUser(values);
   }

@@ -24,12 +24,12 @@ export default function CTA() {
               </Button>
               <p>
                 Hoặc{" "}
-                <a
+                <Link
                   href="#courses"
                   className="inline underline transition underline-offset-4 hover:opacity-80"
                 >
                   xem chi tiết lộ trình{" "}
-                </a>
+                </Link>
               </p>
             </div>
           </div>

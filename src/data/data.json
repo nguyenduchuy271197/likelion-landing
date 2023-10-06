@@ -848,5 +848,37 @@
         }
       ]
     }
+  ],
+  "lecturers": [
+    {
+      "name": "Nguyễn Đức Huy",
+      "profession": "Fullstack Developer & Giảng viên",
+      "description": "Với hơn 2 năm kinh nghiệm trong ngành Data Science cùng 5 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy khóa Bootcamp, mình tin chắc là sẽ đem đến cho các bạn những buổi học đầy thú vị và chất lượng. Tham gia khóa học, các bạn sẽ được hướng dẫn cách học lập trình hiệu quả nhất cũng như góp phần hoạch định được chính xác con đường phát triển thành một lập trình viên chuyên nghiệp. Huy đang ở đây để sẵn sàng “on air” cùng bạn!",
+      "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Huy_eumn2w.png"
+    },
+    {
+      "name": "Nguyễn Văn Minh",
+      "profession": "Software Engineer & Workshop Guest",
+      "description": "Xin chào, với hơn 4 năm chinh phục nhiều dự án trong mảng tài chính - ngân hàng cho các tập đoàn lớn như Shinhan, HSBC hay UOB và trực tiếp phụ trách tuyển dụng Developer cho các dự án, mình chắc chắn rằng sẽ khiến các bạn ồ lên thích thú khi tham gia các buổi workshops ở LIKELION. Không những thế, Minh sẽ “dằn túi” cho các bạn một núi bí quyết hay ho để vượt qua vòng phỏng vấn của các nhà tuyển dụng khó tính và nhanh chóng đạt được mục tiêu “đi làm như một Dev chính hiệu!”.",
+      "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png"
+    },
+    {
+      "name": "Nguyễn Tuấn Phúc",
+      "profession": "Mentor",
+      "description": "Xin chào, mình là Phúc. Hiện đang đảm nhận vị trí mentor cho các khóa học của LIKELION. Nhờ kinh nghiệm thực chiến nhiều dự án khác nhau cùng khoảng thời gian dài đồng hành với các bạn học viên, từ sinh viên CNTT cho đến các bạn chuyển ngành, mình thấu hiểu được những khó khăn mà các bạn thường gặp phải trong quá trình học. Bởi vậy, mình sẽ luôn có mặt để hỗ trợ các bạn vượt qua mọi khó khăn trên chặng đường tiến đến thành công. Hãy đồng hành cùng nhau nhé!",
+      "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Phu%CC%81c_uuulxv.png"
+    },
+    {
+      "name": "Nguyễn Thu Hà",
+      "profession": "Java Developer | FPT Software",
+      "description": "Chào các bạn, mình là Thu Hà, chuyên ngành Kỹ thuật phần mềm tại Đại học Hà Nội và hiện đang làm việc ở FPT Software với vai trò là Java Developer, đảm nhiệm mảng Java trong các dự án team size lớn tại thị trường Châu Âu và Mỹ. Với 3 năm làm việc ở vị trí Java và kinh nghiệm triển khai các dự án CRM system, Microservice Platform trong lĩnh vực ngân hàng và healthcare, mình tự tin sẽ đem đến cho các bạn những giá trị và kiến thức bổ ích thông qua khoá học mà không dễ tìm thấy ở bất kỳ đâu.",
+      "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1693189979/lecturers/Chi%CC%A3_Ha%CC%80_1_rs38fo.png"
+    },
+    {
+      "name": "Đinh Hoàng Anh",
+      "profession": "AI Engineer | VNG-Zalo",
+      "description": "Chào các bạn! Mình là Hoàng Anh, chuyên ngành Khoa học máy tính tại Đại học Bách Khoa. Hiện mình đang làm việc ở vị trí AI Engineer tại Zalo. Với chuyên môn về AI Engineering cùng việc sử dụng thành thạo Python, SQL và ứng dụng các kỹ thuật xử lý dữ liệu trong các dự án AI, mình sẽ hướng dẫn cho các bạn cách thức hiệu quả nhất để làm chủ cơ sở dữ liệu. Từ đó rút ra những insights có giá trị cho doanh nghiệp của mình.",
+      "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692774556/lecturers/Hoa%CC%80ng_Anh_1_udvdf0.png"
+    }
   ]
 }

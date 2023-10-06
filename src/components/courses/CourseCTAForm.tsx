@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { RegisterContext } from "@/context/RegisterProvider";
 import registerFormSchema, {
   RegisterFormType,
@@ -13,17 +13,28 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
-import useRegisterUser from "../common/register/useRegisterUser";
 import { toast } from "@/hooks/useToast";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 export default function CourseCTAForm({ id }: { id: string }) {
   const { onRegisterForm } = useContext(RegisterContext);
-  const { isRegisterLoading, registerUser } = useRegisterUser();
+
+  const { isLoading, mutate: registerUser } = useMutation({
+    mutationFn: (user: RegisterFormType) => axios.post("/api/user/add", user),
+    onSuccess: () => {
+      toast({
+        title: "Đăng ký thành công!",
+        description:
+          "Bạn đã đăng kí khoá học thành công, LIKELION sẽ liên hệ tư vấn trong vòng 24h",
+      });
+      form.reset();
+    },
+  });
 
   const form = useForm<RegisterFormType>({
     resolver: zodResolver(registerFormSchema),
@@ -36,20 +47,7 @@ export default function CourseCTAForm({ id }: { id: string }) {
 
   function onSubmit(values: RegisterFormType) {
     onRegisterForm({ courseId: id, ...values });
-    registerUser(
-      { courseId: id, ...values },
-      {
-        onSuccess: () => {
-          toast({
-            title: "Đăng ký thành công!",
-            description:
-              "Bạn đã đăng kí khoá học thành công, LIKELION sẽ liên hệ tư vấn trong vòng 24h",
-          });
-
-          form.reset();
-        },
-      }
-    );
+    registerUser({ courseId: id, ...values });
   }
 
   return (
@@ -64,7 +62,7 @@ export default function CourseCTAForm({ id }: { id: string }) {
                 <Input
                   placeholder="Họ và tên"
                   className="text-lg border-transparent rounded-none border-b-muted placeholder:text-muted/70 placeholder:text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
-                  disabled={isRegisterLoading}
+                  disabled={isLoading}
                   {...field}
                 />
               </FormControl>
@@ -81,7 +79,7 @@ export default function CourseCTAForm({ id }: { id: string }) {
                 <Input
                   placeholder="Email"
                   className="text-lg border-transparent rounded-none border-b-muted placeholder:text-muted/70 placeholder:text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
-                  disabled={isRegisterLoading}
+                  disabled={isLoading}
                   {...field}
                 />
               </FormControl>
@@ -97,7 +95,7 @@ export default function CourseCTAForm({ id }: { id: string }) {
               <FormControl>
                 <Input
                   placeholder="Số điện thoại"
-                  disabled={isRegisterLoading}
+                  disabled={isLoading}
                   className="text-lg border-transparent rounded-none border-b-muted placeholder:text-muted/70 placeholder:text-lg focus-visible:ring-0 focus-visible:ring-offset-0"
                   {...field}
                 />
@@ -110,7 +108,7 @@ export default function CourseCTAForm({ id }: { id: string }) {
           type="submit"
           size="lg"
           className="w-full text-base md:max-w-xs"
-          disabled={isRegisterLoading}
+          disabled={isLoading}
         >
           Đăng ký tư vấn miễn phí
         </Button>
