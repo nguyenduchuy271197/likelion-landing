@@ -9,6 +9,7 @@ import CourseSectionHeading from "./CourseSectionHeading";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
+  slug: string;
   priority?: boolean;
   action: {
     label: string;
@@ -35,6 +36,7 @@ interface CoursePaymentMethods {
 function CoursePaymentMethodRow({
   title,
   priority = false,
+  slug,
   action,
   className,
   children,
@@ -67,7 +69,9 @@ function CoursePaymentMethodRow({
             onClick={() => setDialogOpen(true)}
             asChild
           >
-            <Link href={action.href}>{action.label}</Link>
+            <Link href={action.href} id={`payment-${option}-${slug}`}>
+              {action.label}
+            </Link>
           </Button>
         </div>
       </div>
@@ -95,6 +99,7 @@ export default function CoursePaymentMethods({
                 label: "Đăng ký",
                 href: `/register?course=${slug}`,
               }}
+              slug={slug}
               option={1}
               priority
             >
@@ -118,6 +123,7 @@ export default function CoursePaymentMethods({
             <CoursePaymentMethodRow
               option={2}
               title={`Thanh toán thành ${payment_methods.monthly.times} đợt`}
+              slug={slug}
               action={{
                 label: "Tìm hiểu thêm",
                 href: `/register?course=${slug}`,

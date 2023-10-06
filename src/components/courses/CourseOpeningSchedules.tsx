@@ -53,7 +53,7 @@ function CourseOpeningScheduleCard({
   return (
     <div>
       <div className="max-w-screen-lg px-8 mx-auto">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <div
             className="p-8 space-y-8 rounded-[3rem] sm:p-12 text-muted"
             style={{

@@ -21,7 +21,7 @@ import { toast } from "@/hooks/useToast";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
-export default function CourseCTAForm({ id }: { id: string }) {
+export default function CourseCTAForm({ id, slug }: { id: string, slug: string }) {
   const { onRegisterForm } = useContext(RegisterContext);
 
   const { isLoading, mutate: registerUser } = useMutation({
@@ -109,6 +109,7 @@ export default function CourseCTAForm({ id }: { id: string }) {
           size="lg"
           className="w-full text-base md:max-w-xs"
           disabled={isLoading}
+          id={`cta-register-${slug}`}
         >
           Đăng ký tư vấn miễn phí
         </Button>

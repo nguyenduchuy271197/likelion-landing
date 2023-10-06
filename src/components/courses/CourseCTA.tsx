@@ -3,9 +3,10 @@ import CourseCTAForm from "./CourseCTAForm";
 interface CourseCTAProps {
   id: string;
   name: string;
+  slug: string;
 }
 
-export default function CourseCTA({ name, id }: CourseCTAProps) {
+export default function CourseCTA({ name, slug, id }: CourseCTAProps) {
   return (
     <section>
       <div className="container">
@@ -23,7 +24,7 @@ export default function CourseCTA({ name, id }: CourseCTAProps) {
             </div>
           </div>
           <div className="flex-1">
-            <CourseCTAForm id={id} />
+            <CourseCTAForm id={id} slug={slug} />
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowDownRight } from "lucide-react";
-import CourseSectionHeading from "./CourseSectionHeading";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 import { useContext, useEffect, useRef, useState } from "react";
@@ -79,6 +78,7 @@ export default function CourseStickyBar({
                     pathname: "/register",
                     query: { course: slug },
                   }}
+                  id={`register-sticky-${slug}`}
                 >
                   Đăng ký ngay
                 </Link>

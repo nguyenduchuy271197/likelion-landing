@@ -189,7 +189,7 @@ export default function CourseDetail({
         )}
 
         {/* CTA */}
-        <CourseCTA name={abbr} id={id} />
+        <CourseCTA name={abbr} slug={courseSlug} id={id} />
       </div>
     </div>
   );
