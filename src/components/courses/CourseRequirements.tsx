@@ -23,8 +23,8 @@ export default function CourseRequirements({
 
   return (
     <section>
-      <div className="max-w-screen-lg px-8 mx-auto">
-        <div className="grid gap-8 md:grid-cols-2">
+      <div className="container">
+        <div className="flex flex-col gap-8 md:flex-row">
           <CourseSectionHeading className="md:max-w-sm">
             Đến với {title}
           </CourseSectionHeading>

@@ -8,13 +8,13 @@ interface CourseModuleProps extends IModule {
 
 function CourseModule({ name, lessons, projects, index }: CourseModuleProps) {
   return (
-    <li className="grid gap-8 py-16 border-b-2 border-orange-500/40 md:grid-cols-2">
+    <li className="grid gap-8 py-12 border-b-2 sm:py-16 border-orange-500/40 md:grid-cols-2">
       <div>
-        <div className="flex items-center gap-8 md:max-w-sm">
-          <p className="text-6xl font-bold text-orange-500/50">
+        <div className="flex items-center gap-4 sm:gap-8 md:max-w-sm">
+          <p className="text-3xl font-bold sm:text-6xl text-orange-500/50">
             {index + 1 >= 10 ? index + 1 : `0${index + 1}`}
           </p>
-          <h3 className="text-3xl font-bold text-orange-500 sm:text-3xl">
+          <h3 className="text-2xl font-bold text-orange-500 sm:text-3xl">
             {name}
           </h3>
         </div>

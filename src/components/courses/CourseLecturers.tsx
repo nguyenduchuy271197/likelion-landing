@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import CourseSectionHeading from "./CourseSectionHeading";
 
 interface LectureType {
@@ -10,10 +11,10 @@ interface LectureType {
 
 function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center gap-8 md:items-start">
+    <div className="max-w-4xl mx-auto">
+      <div className="flex flex-col items-center justify-center gap-8">
         <div className="flex items-center justify-center p-2 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="relative aspect-[1/1] w-28 overflow-hidden rounded-[30px] bg-orange-400">
+          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-rose-400 to-orange-300">
             <Image
               src={lecturer.avatar}
               fill
@@ -23,18 +24,18 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
           </div>
         </div>
 
-        <div className="space-y-4 text-center md:text-left">
-          <div className="space-y-1 sm:space-y-2">
-            <h3 className="text-2xl font-bold capitalize">{lecturer.name}</h3>
-            <div className="text-lg opacity-70">{lecturer.profession}</div>
+        <div className="space-y-1 text-center sm:space-y-2">
+          <h3 className="text-2xl font-bold capitalize">{lecturer.name}</h3>
+          <div className="text-lg text-foreground/60">
+            {lecturer.profession}
           </div>
-          <div>
-            <p className="text-xl font-medium leading-relaxed">
-              <span className="text-2xl">“</span>
-              {lecturer.description}
-              <span className="text-2xl">”</span>
-            </p>
-          </div>
+        </div>
+        <div>
+          <p className="text-xl font-medium leading-relaxed text-center">
+            <span className="text-2xl">“</span>
+            {lecturer.description}
+            <span className="text-2xl">”</span>
+          </p>
         </div>
       </div>
     </div>
@@ -54,11 +55,11 @@ export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
   if (!lecturers || lecturers.length === 0) return null;
 
   return (
-    <section id="lecturers" className="bg-foreground text-background">
+    <section id="lecturers">
       <div className="container">
-        <div className="grid gap-8 py-20 md:grid-cols-2">
-          <CourseSectionHeading className="text-center md:max-w-sm md:text-left">
-            Đội ngũ giảng viên chuyên nghiệp, tâm huyết
+        <div className="space-y-14 md:space-y-20">
+          <CourseSectionHeading className="text-center">
+            Đội ngũ hướng dẫn
           </CourseSectionHeading>
           <div className="space-y-16">
             {lecturers.map((lecturer) => (

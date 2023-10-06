@@ -46,7 +46,7 @@ function CoursePaymentMethodRow({
   return (
     <div
       className={cn(
-        "p-12 rounded-2xl flex-1 h-[400px] flex flex-col",
+        "p-8 sm:p-12 rounded-2xl flex-1 h-[400px] flex flex-col",
         priority ? "bg-orange-500 text-muted" : "bg-orange-100",
         className
       )}

@@ -22,7 +22,7 @@ export default function CourseObjectives({
 }) {
   return (
     <section>
-      <div className="max-w-screen-xl px-8 mx-auto">
+      <div className="container">
         <div className="flex items-center justify-between gap-8">
           <div className="hidden md:block">
             <div className="relative w-[300px] md:w-[400px] aspect-[1/1] rounded-lg overflow-hidden">
