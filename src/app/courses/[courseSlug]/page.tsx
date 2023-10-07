@@ -165,6 +165,7 @@ export default function CourseDetail({
           calendars={calendar}
           thumbnail={thumbnail}
           background={background}
+          title={title}
         />
 
         <div className="space-y-16">

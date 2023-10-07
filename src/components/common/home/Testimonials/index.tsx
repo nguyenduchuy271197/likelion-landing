@@ -55,8 +55,8 @@ export const testimonials: TestimonialType[] = [
 export default function Testimonials() {
   return (
     <section>
-      <div className="container px-4">
-        <div className="py-10 md:py-20">
+      <div className="container">
+        <div className="space-y-8 sm:space-y-16">
           <SectionHeading title="Học viên nói về LIKELION" />
 
           <TestimonialsAnimated>

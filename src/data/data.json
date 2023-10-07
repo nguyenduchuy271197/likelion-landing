@@ -8,8 +8,7 @@
       "features": [
         "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
-        "Mentor support 24/7",
-        "Giấy chứng nhận"
+        "4 projects thực tế và 1 đồ án cuối khoá "
       ],
       "objectives": [
         "Cách suy nghĩ và làm việc như một lập trình viên: xác định vấn đề, tìm kiếm giải pháp và giải quyết vấn đề",
@@ -25,8 +24,9 @@
         "LIKELION không yêu cầu kiến thức đầu vào"
       ],
       "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 3 tháng.",
+      "tagline": "Thống lĩnh giao diện người dùng, tối ưu hiệu quả web",
       "abbr": "Front-end",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497791/courses/thanh-thao-lap-trinh-web-frond-end/FE_fhauag.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606824/courses/thanh-thao-lap-trinh-web-frond-end/FE_ov8rlx.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "background": {
         "from": "#22c55e",
@@ -133,7 +133,7 @@
         {
           "title": "Cơ hội học bổng 100%",
           "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/piggy-bank_cf5h6n.svg"
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
         },
         {
           "title": "Hỗ trợ học lại",
@@ -218,8 +218,7 @@
       "features": [
         "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
-        "Mentor support 24/7",
-        "Giấy chứng nhận"
+        "3 projects thực tế và 1 đồ án cuối khoá "
       ],
       "objectives": [
         "Thành thạo lập trình Python cơ bản, hỗ trợ cho phân tích và phát triển dữ liệu",
@@ -235,8 +234,9 @@
         "LIKELION không yêu cầu kiến thức đầu vào"
       ],
       "subtitle": "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
+      "tagline": "Chinh phục Data Analysis, dẫn đầu xu thế tuyển dụng",
       "abbr": "Python Data",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497527/courses/khoa-hoc-python-cho-data-analysis/Python_fnefs7.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606879/courses/khoa-hoc-python-cho-data-analysis/Python_qmfs7m.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888940/courses/khoa-hoc-python-cho-data-analysis/Python_lm3uf0_a4xsa3.png",
       "background": {
         "from": "#3b82f6",
@@ -327,8 +327,7 @@
             "Project phân tích dự án dữ liệu Capstone (Phần 1)",
             "Project phân tích dự án dữ liệu Capstone (Phần 2)",
             "Project phân tích dự án dữ liệu Capstone (Phần 3)",
-            "Hoàn thiện dự án Capstone",
-            "Thuyết trình và tổng kết khoá học"
+            "Hoàn thiện dự án Capstone"
           ],
           "projects": []
         },
@@ -336,7 +335,8 @@
           "name": "Đồ án cuối khoá",
           "lessons": [
             "Ứng dụng thực tế và đánh giá (Phần 1)",
-            "Ứng dụng thực tế và đánh giá (Phần 2)"
+            "Ứng dụng thực tế và đánh giá (Phần 2)",
+            "Thuyết trình với giảng viên"
           ],
           "projects": []
         }
@@ -363,7 +363,7 @@
         {
           "title": "Cơ hội học bổng 100%",
           "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/piggy-bank_cf5h6n.svg"
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
         },
         {
           "title": "Hỗ trợ học lại",
@@ -420,8 +420,7 @@
       "features": [
         "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
-        "Mentor support 24/7",
-        "Giấy chứng nhận"
+        "2 projects thực tế và 1 đồ án cuối khoá "
       ],
       "objectives": [
         "Hiểu đúng bản chất của ngôn ngữ lập trình Java để ứng dụng với Spring Framework",
@@ -437,8 +436,9 @@
         "LIKELION không yêu cầu kiến thức đầu vào"
       ],
       "subtitle": "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
+      "tagline": "Thống lĩnh giao diện người dùng, tối ưu hiệu quả web",
       "abbr": "Java",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497428/courses/khoa-hoc-back-end-java/Java_cvvufm.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606907/courses/khoa-hoc-back-end-java/Java_xyfepu.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
       "background": {
         "from": "#ef4444",
@@ -533,10 +533,10 @@
 
       "lecturers": [
         {
-          "name": "Nguyễn Thu Hà",
-          "profession": "Java Developer | FPT Software",
-          "description": "Chào các bạn, mình là Thu Hà, chuyên ngành Kỹ thuật phần mềm tại Đại học Hà Nội và hiện đang làm việc ở FPT Software với vai trò là Java Developer, đảm nhiệm mảng Java trong các dự án team size lớn tại thị trường Châu Âu và Mỹ. Với 3 năm làm việc ở vị trí Java và kinh nghiệm triển khai các dự án CRM system, Microservice Platform trong lĩnh vực ngân hàng và healthcare, mình tự tin sẽ đem đến cho các bạn những giá trị và kiến thức bổ ích thông qua khoá học mà không dễ tìm thấy ở bất kỳ đâu.",
-          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1693189979/lecturers/Chi%CC%A3_Ha%CC%80_1_rs38fo.png"
+          "name": "Nguyễn Văn Minh",
+          "profession": "Java Engineer",
+          "description": "Xin chào, mình là Minh, chuyên ngành Kỹ sư phần mềm tại Đại học FPT và hiện đang đảm nhiệm vai trò là Java Engineer ở LIKELION. Mình mong muốn lan toả sự thú vị của lập trình và truyền động lực thử thách bản thân đến tất cả mọi người thông qua những tiết học sôi động và bài giảng lôi cuốn. Song song đó, với 4 năm kinh nghiệm lập trình trong mảng Back-end Java, mình sẽ giúp các bạn xây dựng nền tảng kiên cố cho con đường phát triển sự nghiệp sau này.",
+          "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png"
         }
       ],
       "highlights": [
@@ -548,7 +548,7 @@
         {
           "title": "Cơ hội học bổng 100%",
           "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/piggy-bank_cf5h6n.svg"
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
         },
         {
           "title": "Hỗ trợ học lại",
@@ -603,6 +603,7 @@
       "id": "6482a08d232bf6c1513a1111",
       "title": "Bootcamp lập trình web Fullstack",
       "subtitle": "Trở thành lập trình viên phát triển website toàn diện từ Front-end đến Back-end chỉ trong 3 tháng.",
+      "tagline": "Trở thành lập trình viên phát triển website toàn diện chỉ trong 3 tháng.",
       "slug": "khoa-hoc-lap-trinh-web-fullstack",
       "objectives": [
         "Xây dựng 6 dự án phát triển web để bổ sung vào portfolio, sẵn sàng ứng tuyển vị trí Intern/Fresher lập trình viên web Full-stack",
@@ -627,8 +628,8 @@
         "Có hỗ trợ kết nối việc làm"
       ],
       "abbr": "Fullstack",
-      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497598/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_z0tufd.png",
-      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497610/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_1_ykf0pa.png",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606727/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_cjcphm.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606742/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_1_qpclmx.png",
       "background": {
         "from": "#fb923c",
         "to": "#f97316"
@@ -852,19 +853,19 @@
   "lecturers": [
     {
       "name": "Nguyễn Đức Huy",
-      "profession": "Fullstack Developer & Giảng viên",
+      "profession": "Tech Lead & Fullstack Developer",
       "description": "Với hơn 2 năm kinh nghiệm trong ngành Data Science cùng 5 năm kinh nghiệm trong lĩnh vực phát triển website và giảng dạy khóa Bootcamp, mình tin chắc là sẽ đem đến cho các bạn những buổi học đầy thú vị và chất lượng. Tham gia khóa học, các bạn sẽ được hướng dẫn cách học lập trình hiệu quả nhất cũng như góp phần hoạch định được chính xác con đường phát triển thành một lập trình viên chuyên nghiệp. Huy đang ở đây để sẵn sàng “on air” cùng bạn!",
       "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Huy_eumn2w.png"
     },
     {
       "name": "Nguyễn Văn Minh",
-      "profession": "Software Engineer & Workshop Guest",
+      "profession": "Java Engineer & Workshop Speaker",
       "description": "Xin chào, với hơn 4 năm chinh phục nhiều dự án trong mảng tài chính - ngân hàng cho các tập đoàn lớn như Shinhan, HSBC hay UOB và trực tiếp phụ trách tuyển dụng Developer cho các dự án, mình chắc chắn rằng sẽ khiến các bạn ồ lên thích thú khi tham gia các buổi workshops ở LIKELION. Không những thế, Minh sẽ “dằn túi” cho các bạn một núi bí quyết hay ho để vượt qua vòng phỏng vấn của các nhà tuyển dụng khó tính và nhanh chóng đạt được mục tiêu “đi làm như một Dev chính hiệu!”.",
       "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png"
     },
     {
       "name": "Nguyễn Tuấn Phúc",
-      "profession": "Mentor",
+      "profession": "Sotfware Engineer & Mentor",
       "description": "Xin chào, mình là Phúc. Hiện đang đảm nhận vị trí mentor cho các khóa học của LIKELION. Nhờ kinh nghiệm thực chiến nhiều dự án khác nhau cùng khoảng thời gian dài đồng hành với các bạn học viên, từ sinh viên CNTT cho đến các bạn chuyển ngành, mình thấu hiểu được những khó khăn mà các bạn thường gặp phải trong quá trình học. Bởi vậy, mình sẽ luôn có mặt để hỗ trợ các bạn vượt qua mọi khó khăn trên chặng đường tiến đến thành công. Hãy đồng hành cùng nhau nhé!",
       "avatar": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Phu%CC%81c_uuulxv.png"
     },

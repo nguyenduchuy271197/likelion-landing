@@ -21,7 +21,13 @@ import { toast } from "@/hooks/useToast";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
-export default function CourseCTAForm({ id, slug }: { id: string, slug: string }) {
+export default function CourseCTAForm({
+  id,
+  slug,
+}: {
+  id?: string;
+  slug?: string;
+}) {
   const { onRegisterForm } = useContext(RegisterContext);
 
   const { isLoading, mutate: registerUser } = useMutation({

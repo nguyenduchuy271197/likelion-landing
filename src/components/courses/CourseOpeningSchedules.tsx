@@ -39,10 +39,12 @@ function CourseCalendar({
 }
 
 function CourseOpeningScheduleCard({
+  title,
   calendar,
   thumbnail,
   background,
 }: {
+  title: string;
   calendar: ICalendar;
   thumbnail: string;
   background: {
@@ -61,7 +63,7 @@ function CourseOpeningScheduleCard({
             }}
           >
             <CourseSectionHeading className="max-w-sm">
-              Khoá Học Python Cho Data Analysis
+              {title}
             </CourseSectionHeading>
 
             <div className="text-xl">
@@ -134,10 +136,12 @@ function CourseOpeningScheduleCard({
 }
 
 export default function CourseOpeningSchedules({
+  title,
   calendars,
   thumbnail,
   background,
 }: {
+  title: string;
   calendars?: ICalendar[];
   thumbnail: string;
   background: {
@@ -153,6 +157,7 @@ export default function CourseOpeningSchedules({
         {calendars.map((calendar) => (
           <CourseOpeningScheduleCard
             calendar={calendar}
+            title={title}
             key={calendar.title}
             thumbnail={thumbnail}
             background={background}

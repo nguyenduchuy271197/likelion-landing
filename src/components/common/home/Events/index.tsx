@@ -3,13 +3,13 @@ import EventList from "./EventList";
 import SectionHeading from "../SectionHeading";
 
 export default function Events() {
-  const blogs = getBlogsByTag("events");
+  const events = getBlogsByTag("events");
   return (
     <section>
-      <div className="container px-4">
-        <div className="py-10 md:py-20">
-          <SectionHeading title="Sự kiện" className="mb-10" />
-          <EventList blogs={blogs} />
+      <div className="container">
+        <div className="space-y-8 sm:space-y-16">
+          <SectionHeading title="Những sự kiện nổi bật" />
+          <EventList events={events} />
         </div>
       </div>
     </section>

@@ -15,7 +15,8 @@
 }
 
 .swiper-pagination-bullets {
-  display: none;
+  /* display: none; */
+  bottom: var(--swiper-pagination-bottom, 1rem) !important;
 }
 
 .swiper-pagination-bullet {

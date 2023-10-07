@@ -9,15 +9,15 @@ export default function Courses() {
   return (
     <section id="courses" className="scroll-mt-4">
       <div className="container">
-        <div className="py-6 md:py-20">
+        <div className="space-y-8 sm:space-y-16">
           <SectionHeading
-            title="Khóa học dẫn bạn đến thành công"
+            title="Khóa học của chúng tôi"
             subtitle="Người mới bắt đầu? Chưa có kinh nghiệm? Khoá học lập trình của LIKELION hỗ trợ bạn mọi lúc trên con đường học tập của mình. "
           />
 
           <CoursesAnimated>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {courses.slice(0, 3).map((course) => (
+            <div className="grid gap-8 md:grid-cols-2">
+              {courses.map((course) => (
                 <CourseCard key={course.title} {...course} />
               ))}
             </div>

@@ -37,8 +37,7 @@ export default function CourseBenefits({ benefits }: { benefits: Benefit[] }) {
               <div className="space-y-2">
                 <CourseSectionHeading>Lợi ích khoá học</CourseSectionHeading>
                 <p className="text-lg text-foreground/70">
-                  Khóa học của LIKELION cung cấp cho bạn nhiều hơn một khóa học
-                  ...
+                  Tận hưởng các giá trị đặc biệt mà LIKELION mang lại
                 </p>
               </div>
             </div>
