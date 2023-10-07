@@ -1,5 +1,6 @@
 import { ArrowUpRight, LucideProps } from "lucide-react";
 import Link from "next/link";
+import SectionHeading from "./SectionHeading";
 // Convert html to jsx
 const logos = {
   naver: (props: LucideProps) => (
@@ -1617,19 +1618,13 @@ const schoolsLogo: PartnerProps[] = [
 ];
 
 const Partner = ({ label, logo: Logo, href }: PartnerProps) => {
-  if (!href)
-    return (
-      <div className="p-4 border border-transparent rounded-md lg:p-6 h-[110px] lg:h-[130px]">
-        <Logo className="object-contain w-full h-full" />
-      </div>
-    );
-
   return (
     <Link
-      href={href}
-      className="group relative lg:p-6 p-4 border border-transparent rounded-md hover:border-border h-[110px] lg:h-[130px] transition-all"
+      href={href || "#"}
+      className="relative p-4 transition-all border border-transparent rounded-md group hover:border-border w-[200px] sm:w-[185px] aspect-[16/9]"
     >
       <Logo className="object-contain w-full h-full" />
+
       <ArrowUpRight className="absolute top-2 right-2 text-muted-foreground transition duration-500 origin-bottom-left scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]" />
     </Link>
   );
@@ -1637,41 +1632,20 @@ const Partner = ({ label, logo: Logo, href }: PartnerProps) => {
 
 export default function BusinessPartners() {
   return (
-    <section className="container py-10 md:py-20">
-      {/* TODO */}
-      <div className="lg:grid lg:grid-cols-[2fr_3fr] lg:gap-8">
-        <div className="space-y-4 text-center lg:text-left py-6 sm:max-w-[450px] sm:mx-auto">
+    <section>
+      <div className="container">
+        <div className="grid lg:grid-cols-[350px_1fr] lg:gap-8 gap-16">
           {/* Partner */}
-          <h2 className="text-3xl font-bold">Đối tác của chúng tôi</h2>
-          <p className="text-muted-foreground">
-            Hợp tác cùng các doanh nghiệp, các trường đại học danh tiếng,
-            LIKELION mong muốn đem kiến thức và giá trị đến tất cả những người
-            yêu thích lập trình.
-          </p>
-        </div>
-        <div className="text-center p-5 lg:p-8 space-y-6 bg-[#F9F9F9]">
-          {/* Companies */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-medium">Đối tác doanh nghiệp</h3>
-            <div className="grid gap-2 sm:grid-cols-2 lg:gap-4">
-              {companiesLogo.map((company) => {
-                return (
-                  <Partner
-                    key={company.label}
-                    label={company.label}
-                    href={company.href}
-                    logo={company.logo}
-                  />
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Schools */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-medium">Đối tác giáo dục</h3>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:gap-4">
-              {schoolsLogo.map((school) => {
+          <SectionHeading
+            title="Đối tác của chúng tôi"
+            subtitle="Hợp tác cùng các doanh nghiệp, các trường đại học danh tiếng,
+              LIKELION mong muốn đem kiến thức và giá trị đến tất cả những người
+              yêu thích lập trình."
+            className="space-y-2 lg:text-left"
+          />
+          <div className="space-y-6 bg-[#F9F9F9] p-4">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+              {[...companiesLogo, ...schoolsLogo].map((school) => {
                 return (
                   <Partner
                     key={school.label}

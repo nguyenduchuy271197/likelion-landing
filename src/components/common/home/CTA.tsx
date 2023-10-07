@@ -1,37 +1,23 @@
-import Icons from "@/components/Icons";
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
+import CourseCTAForm from "@/components/courses/CourseCTAForm";
 
 export default function CTA() {
   return (
-    <section className="mb-16">
+    <section>
       <div className="container">
-        <div className="relative h-80 sm:h-96 bg-gradient-to-br from-[#FF7100] to-[#FF9B52] rounded-3xl text-white text-center">
-          <Icons.analytics className="absolute -translate-y-1/2 h-44 w-36 top-1/2 left-4" />
-          <Icons.computer className="absolute hidden -translate-y-1/2 h-44 w-36 top-1/2 right-4 sm:block" />
-
-          <div className="relative z-10 flex flex-col items-center justify-center h-full gap-10 px-4 sm:px-8">
-            <h3 className="text-2xl font-medium sm:text-4xl lg:text-5xl">
-              Bạn muốn tìm khoá học cho mình?
-            </h3>
-            <div className="flex flex-col gap-3">
-              <Button
-                variant="secondary"
-                className="sm:px-12 sm:py-8 sm:text-lg text-[#FF7100] rounded-xl px-6 py-6"
-                asChild
-              >
-                <Link href="/contact">Liên hệ tư vấn 1 : 1</Link>
-              </Button>
-              <p>
-                Hoặc{" "}
-                <a
-                  href="#courses"
-                  className="inline underline transition underline-offset-4 hover:opacity-80"
-                >
-                  xem chi tiết lộ trình{" "}
-                </a>
+        <div className="flex flex-col gap-8 px-8 py-12 sm:py-16 sm:px-12 rounded-3xl bg-gradient-to-r from-orange-400 to-orange-500 text-muted md:flex-row">
+          <div className="flex-1">
+            <div className="space-y-2 md:max-w-sm">
+              <h3 className="text-3xl font-bold sm:text-4xl">
+                Bạn muốn tìm khoá học cho mình?
+              </h3>
+              <p className="text-lg">
+                Điền đầy đủ thông tin để chúng mình tư vấn, định hướng cho bạn
+                nhé!
               </p>
             </div>
+          </div>
+          <div className="flex-1">
+            <CourseCTAForm />
           </div>
         </div>
       </div>

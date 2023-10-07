@@ -60,7 +60,7 @@ export default function FAQ() {
   return (
     <section>
       <div className="container">
-        <div className="py-20">
+        <div className="space-y-8 sm:space-y-16">
           <SectionHeading title="Các câu hỏi thường gặp" />
 
           <motion.div

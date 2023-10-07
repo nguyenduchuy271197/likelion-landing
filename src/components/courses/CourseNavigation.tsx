@@ -39,9 +39,9 @@ export default function CourseNavigation() {
                   offset={-150}
                   duration={200}
                   to={item.target}
-                  className="px-4 py-4 font-medium transition duration-200 border-b-4 border-transparent cursor-pointer hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-yellow-500 hover:bg-clip-text hover:text-transparent"
+                  className="px-4 py-4 font-medium transition duration-200 border-b-4 border-transparent cursor-pointer hover:text-orange-500"
                   href={`#${item.target}`}
-                  activeClass="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent"
+                  activeClass="text-orange-500 font-bold"
                 >
                   {item.label}
                 </Link>

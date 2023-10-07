@@ -1,8 +1,6 @@
 import CourseCTA from "@/components/courses/CourseCTA";
 import CourseContent from "@/components/courses/CourseContent";
 import CourseHeading from "@/components/courses/CourseHeading";
-import CourseInfoCard from "@/components/courses/CourseInfoCard";
-import CourseInfoMobile from "@/components/courses/CourseInfoMobile";
 import CourseObjectives from "@/components/courses/CourseObjectives";
 import CoursePartnership from "@/components/courses/CoursePartnership";
 import CourseRequirements from "@/components/courses/CourseRequirements";
@@ -22,6 +20,7 @@ import data from "@/data/data.json";
 import { redirect } from "next/navigation";
 import CourseFeatures from "@/components/courses/CourseFeatures";
 import CourseShowcases from "@/components/courses/CourseShowcases";
+import CourseStickyBar from "@/components/courses/CourseStickyBar";
 
 export async function generateMetadata(
   {
@@ -74,6 +73,7 @@ export default function CourseDetail({
     title,
     subtitle,
     objectives,
+    objectives_src,
     features,
     trialUrl,
     price,
@@ -106,14 +106,24 @@ export default function CourseDetail({
         techs={techs}
         slug={courseSlug}
         thumbnail={thumbnail}
-        background={background}
         trialUrl={trialUrl}
+        background={background}
+        id={id}
       />
 
       {/* Course Navigation */}
       <CourseNavigation />
 
-      <div className="py-10 space-y-24 md:py-20 sm:space-y-36">
+      <CourseStickyBar
+        title={title}
+        slug={courseSlug}
+        highlights={highlights}
+      />
+
+      <div
+        className="py-10 space-y-24 md:py-20 sm:space-y-36 md:bg-slate-50"
+        id="course-info-area"
+      >
         {/* <CourseInfoMobile
           discountedPrice={discountedPrice}
           price={price}
@@ -132,16 +142,13 @@ export default function CourseDetail({
         )}
 
         {/* What you'll learn */}
-        <CourseObjectives objectives={objectives} />
+        <CourseObjectives objectives={objectives} src={objectives_src} />
 
         {/* Requirements */}
-        <CourseRequirements requirements={requirements} />
-
-        {/* Features */}
-        <CourseFeatures features={features} />
+        <CourseRequirements requirements={requirements} title={title} />
 
         {/* Course content */}
-        <CourseContent modules={modules} />
+        <CourseContent modules={modules} features={features} />
 
         {courseSlug === "khoa-hoc-lap-trinh-web-fullstack" && (
           <CourseWorkshops />
@@ -154,13 +161,20 @@ export default function CourseDetail({
         <CourseShowcases showcases={showcases} />
 
         {/* CourseCalen */}
-        <CourseOpeningSchedules calendars={calendar} slug={courseSlug} />
-
-        <CoursePaymentMethods
-          payment_methods={payment_methods}
-          slug={courseSlug}
+        <CourseOpeningSchedules
+          calendars={calendar}
+          thumbnail={thumbnail}
+          background={background}
+          title={title}
         />
-        <CoursePromotion promotions={promotions} />
+
+        <div className="space-y-16">
+          <CoursePaymentMethods
+            payment_methods={payment_methods}
+            slug={courseSlug}
+          />
+          <CoursePromotion promotions={promotions} />
+        </div>
 
         {/* Workspaces */}
         <CourseWorkspaces />
@@ -176,7 +190,7 @@ export default function CourseDetail({
         )}
 
         {/* CTA */}
-        <CourseCTA name={abbr} slug={courseSlug} />
+        <CourseCTA name={abbr} slug={courseSlug} id={id} />
       </div>
     </div>
   );

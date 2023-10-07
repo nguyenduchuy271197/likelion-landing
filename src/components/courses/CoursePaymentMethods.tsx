@@ -5,11 +5,11 @@ import { Button } from "../ui/Button";
 import Link from "next/link";
 import { cn, formatNumber } from "@/lib/utils";
 import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import CoursePromotion from "./CoursePromotion";
 import CourseSectionHeading from "./CourseSectionHeading";
 
 interface CourseTuitionProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
+  slug: string;
   priority?: boolean;
   action: {
     label: string;
@@ -36,6 +36,7 @@ interface CoursePaymentMethods {
 function CoursePaymentMethodRow({
   title,
   priority = false,
+  slug,
   action,
   className,
   children,
@@ -47,10 +48,8 @@ function CoursePaymentMethodRow({
   return (
     <div
       className={cn(
-        "p-12 rounded-lg flex-1 h-[400px] flex flex-col",
-        priority
-          ? "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-muted"
-          : "bg-gradient-to-r from-rose-100 to-teal-100",
+        "p-8 sm:p-12 rounded-2xl flex-1 h-[400px] flex flex-col",
+        priority ? "bg-orange-500 text-muted" : "bg-orange-100",
         className
       )}
       {...props}
@@ -70,7 +69,9 @@ function CoursePaymentMethodRow({
             onClick={() => setDialogOpen(true)}
             asChild
           >
-            <Link href={action.href}>{action.label}</Link>
+            <Link href={action.href} id={`payment-${option}-${slug}`}>
+              {action.label}
+            </Link>
           </Button>
         </div>
       </div>
@@ -85,9 +86,9 @@ export default function CoursePaymentMethods({
   if (!payment_methods) return null;
 
   return (
-    <section className="bg-[#FFD03D]" id="payment">
+    <section id="payment">
       <div className="max-w-screen-lg px-8 mx-auto">
-        <div className="space-y-16 py-14 sm:py-28">
+        <div className="space-y-16">
           <CourseSectionHeading className="text-center">
             Phương thức thanh toán
           </CourseSectionHeading>
@@ -98,6 +99,7 @@ export default function CoursePaymentMethods({
                 label: "Đăng ký",
                 href: `/register?course=${slug}`,
               }}
+              slug={slug}
               option={1}
               priority
             >
@@ -121,6 +123,7 @@ export default function CoursePaymentMethods({
             <CoursePaymentMethodRow
               option={2}
               title={`Thanh toán thành ${payment_methods.monthly.times} đợt`}
+              slug={slug}
               action={{
                 label: "Tìm hiểu thêm",
                 href: `/register?course=${slug}`,

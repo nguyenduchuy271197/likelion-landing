@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, formatNumber } from "@/lib/utils";
+import { formatNumber } from "@/lib/utils";
 import { ICalendar } from "@/types";
 import {
   Calendar,
@@ -11,14 +11,11 @@ import {
   MapPin,
   PictureInPicture2,
 } from "lucide-react";
-import { ReactNode, useContext } from "react";
-import { Button } from "../ui/Button";
-import { RegisterDialogContext } from "@/context/RegisterDialogProvider";
-import Link from "next/link";
-import Image from "next/image";
+import { ReactNode } from "react";
 import CourseSectionHeading from "./CourseSectionHeading";
+import Image from "next/image";
 
-function CourseCalendarSingle({
+function CourseCalendar({
   label,
   icon: Icon,
   children,
@@ -36,230 +33,136 @@ function CourseCalendarSingle({
         <span className="min-w-[120px] font-bold">{label}</span>
       </div>
 
-      <div className="ml-[40px] lg:ml-0 font-medium">{children}</div>
-    </div>
-  );
-}
-
-function CourseCalendarRow({
-  label,
-  icon: Icon,
-  children,
-}: {
-  label: string;
-  icon: LucideIcon;
-  children: ReactNode;
-}) {
-  return (
-    <div className="flex items-start gap-2">
-      <span className="min-w-[32px] mt-1">
-        <Icon size={20} />
-      </span>
-      <div>
-        <div className="font-bold">{label}</div>
-        <div className="">{children}</div>
-      </div>
+      <div className="ml-[40px] font-medium">{children}</div>
     </div>
   );
 }
 
 function CourseOpeningScheduleCard({
+  title,
   calendar,
-  slug,
-  layout = "single",
+  thumbnail,
+  background,
 }: {
+  title: string;
   calendar: ICalendar;
-  slug: string;
-  layout?: "single" | "double";
+  thumbnail: string;
+  background: {
+    from: string;
+    to: string;
+  };
 }) {
-  const { setOpen: setDialogOpen } = useContext(RegisterDialogContext);
-
   return (
-    <div className="relative flex flex-col p-8 space-y-8 rounded-lg sm:p-12 text-muted bg-primary">
-      {/* <h3 className="text-[#FFB37B] font-bold text-3xl">Lịch khai giảng</h3> */}
-      <CourseSectionHeading className="text-[#FFB37B]">
-        Lịch khai giảng
-      </CourseSectionHeading>
+    <div>
+      <div className="max-w-screen-lg px-8 mx-auto">
+        <div className="relative overflow-hidden">
+          <div
+            className="p-8 space-y-8 rounded-[3rem] sm:p-12 text-muted"
+            style={{
+              background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
+            }}
+          >
+            <CourseSectionHeading className="max-w-sm">
+              {title}
+            </CourseSectionHeading>
 
-      <div className="text-xl">
-        {layout === "double" ? (
-          <div className="space-y-8 grow">
-            {calendar.start_date && (
-              <CourseCalendarRow label="Khai giảng" icon={DoorOpen}>
-                {calendar.start_date}
-              </CourseCalendarRow>
-            )}
-            {calendar.duration && (
-              <CourseCalendarRow label="Lộ trình học" icon={Calendar}>
-                {calendar.duration}
-              </CourseCalendarRow>
-            )}
+            <div className="text-xl">
+              <div className="flex flex-col gap-8">
+                {calendar.start_date && (
+                  <CourseCalendar label="Khai giảng" icon={DoorOpen}>
+                    {calendar.start_date}
+                  </CourseCalendar>
+                )}
+                {calendar.duration && (
+                  <CourseCalendar label="Lộ trình học" icon={Calendar}>
+                    {calendar.duration}
+                  </CourseCalendar>
+                )}
 
-            {calendar.schedule && (
-              <CourseCalendarRow label="Lịch học" icon={Clock2}>
-                {calendar.schedule}
-              </CourseCalendarRow>
-            )}
+                {calendar.schedule && (
+                  <CourseCalendar label="Lịch học" icon={Clock2}>
+                    {calendar.schedule}
+                  </CourseCalendar>
+                )}
 
-            {calendar.location && (
-              <CourseCalendarRow label="Địa điểm" icon={MapPin}>
-                <p>{calendar.location.name}</p>
-                <p>{calendar.location.address}</p>
-              </CourseCalendarRow>
-            )}
+                {calendar.location && (
+                  <CourseCalendar label="Địa điểm" icon={MapPin}>
+                    <p>{calendar.location.name}</p>
+                    <p>{calendar.location.address}</p>
+                  </CourseCalendar>
+                )}
 
-            {calendar.platform && (
-              <CourseCalendarRow label="Platform" icon={PictureInPicture2}>
-                {calendar.platform}
-              </CourseCalendarRow>
-            )}
+                {calendar.platform && (
+                  <CourseCalendar label="Platform" icon={PictureInPicture2}>
+                    {calendar.platform}
+                  </CourseCalendar>
+                )}
 
-            {calendar.tuition && (
-              <CourseCalendarRow label="Học phí" icon={DollarSign}>
-                <p>
-                  <span className="font-medium">
-                    {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
-                  </span>
-                  <span className="text-xs">(Thanh toán trọn gói)</span>
-                </p>
-                hoặc
-                <p>
-                  <span className="font-medium">
-                    {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
-                  </span>
-                  <span className="text-xs">
-                    (Thanh toán {calendar.tuition.monthly.times} đợt)
-                  </span>{" "}
-                </p>
-              </CourseCalendarRow>
-            )}
-          </div>
-        ) : (
-          <div className="flex flex-col gap-8">
-            {calendar.start_date && (
-              <CourseCalendarSingle label="Khai giảng" icon={DoorOpen}>
-                {calendar.start_date}
-              </CourseCalendarSingle>
-            )}
-            {calendar.duration && (
-              <CourseCalendarSingle label="Lộ trình học" icon={Calendar}>
-                {calendar.duration}
-              </CourseCalendarSingle>
-            )}
-
-            {calendar.schedule && (
-              <CourseCalendarSingle label="Lịch học" icon={Clock2}>
-                {calendar.schedule}
-              </CourseCalendarSingle>
-            )}
-
-            {calendar.location && (
-              <CourseCalendarSingle label="Địa điểm" icon={MapPin}>
-                <p>{calendar.location.name}</p>
-                <p>{calendar.location.address}</p>
-              </CourseCalendarSingle>
-            )}
-
-            {calendar.platform && (
-              <CourseCalendarSingle label="Platform" icon={PictureInPicture2}>
-                {calendar.platform}
-              </CourseCalendarSingle>
-            )}
-
-            {calendar.tuition && (
-              <CourseCalendarSingle label="Học phí" icon={DollarSign}>
-                <p>
-                  <span className="font-medium">
-                    {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
-                  </span>
-                  <span className="text-xs">(Thanh toán trọn gói)</span>
-                </p>
-                hoặc
-                <p>
-                  <span className="font-medium">
-                    {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
-                  </span>
-                  <span className="text-xs">
-                    (Thanh toán {calendar.tuition.monthly.times} đợt)
-                  </span>{" "}
-                </p>
-              </CourseCalendarSingle>
-            )}
-          </div>
-        )}
-
-        {layout === "double" && (
-          <div>
-            <Button
-              variant="secondary"
-              className="w-full"
-              onClick={() => setDialogOpen(true)}
-              asChild
-            >
-              <Link href={`/register?course=${slug}`}>Đăng ký</Link>
-            </Button>
-          </div>
-        )}
-      </div>
-
-      {/* have facilities? */}
-      {/* {hasMaterials && (
-        <div className="absolute top-4 right-4">
-          <div className="group flex items-center px-4 text-xs bg-white text-primary rounded-xl max-w-[140px] w-full h-10">
-            <div className="overflow-hidden transition-all max-w-0 group-hover:max-w-[100px]">
-              <p className="mr-2 line-clamp-2">Phòng học có máy tính</p>
+                {calendar.tuition && (
+                  <CourseCalendar label="Học phí" icon={DollarSign}>
+                    <p>
+                      <span className="font-medium">
+                        {formatNumber(calendar.tuition.once.price)}đ/khoá{" "}
+                      </span>
+                      <span className="text-xs">(Thanh toán trọn gói)</span>
+                    </p>
+                    hoặc
+                    <p>
+                      <span className="font-medium">
+                        {formatNumber(calendar.tuition.monthly.price)}đ/tháng{" "}
+                      </span>
+                      <span className="text-xs">
+                        (Thanh toán {calendar.tuition.monthly.times} đợt)
+                      </span>{" "}
+                    </p>
+                  </CourseCalendar>
+                )}
+              </div>
             </div>
-
-            <div className="flex items-center shrink-0">
-              <Monitor size={18} />
-              <PcCase size={18} />
-            </div>
+          </div>
+          <div className="border-[2.5rem] border-white rounded-full absolute -top-[3rem] -right-[3rem] hidden lg:block aspect-[1/1] p-2">
+            <Image
+              src={thumbnail}
+              alt=""
+              width={250}
+              height={250}
+              className="object-cover"
+            />
           </div>
         </div>
-      )} */}
+      </div>
     </div>
   );
 }
 
 export default function CourseOpeningSchedules({
+  title,
   calendars,
-  slug,
+  thumbnail,
+  background,
 }: {
+  title: string;
   calendars?: ICalendar[];
-  slug: string;
+  thumbnail: string;
+  background: {
+    from: string;
+    to: string;
+  };
 }) {
   if (!calendars || calendars.length === 0) return null;
 
   return (
     <section id="schedules">
-      <div className="max-w-screen-xl px-8 mx-auto">
-        <div className="flex items-center">
-          <div className="hidden lg:block">
-            <div className="relative w-[300px] md:w-[400px] aspect-[16/9]">
-              <Image
-                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1695800726/courses/Calendar_vsswj7.png"
-                alt="Lịch khai giảng"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div
-            className={cn(
-              "grid gap-2 grow",
-              calendars.length === 1 ? "sm:grid-cols-1" : "sm:grid-cols-2"
-            )}
-          >
-            {calendars.map((calendar) => (
-              <CourseOpeningScheduleCard
-                calendar={calendar}
-                key={calendar.title}
-                slug={slug}
-                layout={calendars.length === 2 ? "double" : "single"}
-              />
-            ))}
-          </div>
-        </div>
+      <div>
+        {calendars.map((calendar) => (
+          <CourseOpeningScheduleCard
+            calendar={calendar}
+            title={title}
+            key={calendar.title}
+            thumbnail={thumbnail}
+            background={background}
+          />
+        ))}
       </div>
     </section>
   );

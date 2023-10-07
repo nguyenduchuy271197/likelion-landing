@@ -44,7 +44,7 @@ export default function CourseShowcases({
 
   return (
     <section id="projects">
-      <div className="container">
+      <div className="max-w-screen-lg px-8 mx-auto">
         <div className="space-y-12">
           <CourseSectionHeading className="text-center">
             Dự án cuối khoá

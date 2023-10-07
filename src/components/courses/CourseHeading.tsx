@@ -15,11 +15,12 @@ interface CourseHeadingProps {
   techs?: string[];
   slug: string;
   thumbnail: string;
-  background?: {
+  background: {
     from: string;
     to: string;
   };
   trialUrl?: string;
+  id: string;
 }
 
 const techIcons = {
@@ -223,14 +224,13 @@ export default function CourseHeading({
   thumbnail,
   background,
   trialUrl,
+  id,
 }: CourseHeadingProps) {
   return (
     <section
       className="py-16 pb-40 bg-black text-muted clip-path-polygon-[0_0,_100%_0%,_100%_90%,_0%_100%] lg:clip-path-polygon-[0_0,_100%_0%,_100%_80%,_0%_100%] mb-10"
       style={{
-        background: `linear-gradient(to right,  ${
-          background?.from || "#000"
-        } 0%,${background?.to || "#000"} 100%)`,
+        background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
       }}
     >
       <div className="container">
@@ -256,7 +256,7 @@ export default function CourseHeading({
               <p className="sm:text-lg text-muted/90">{subtitle}</p>
             </div>
 
-            <CourseHeadingActions slug={slug} trialUrl={trialUrl} />
+            <CourseHeadingActions slug={slug} trialUrl={trialUrl} id={id} />
 
             {techs && techs.length > 0 && (
               <ul className="flex flex-wrap items-center justify-center gap-4">
@@ -294,7 +294,7 @@ export default function CourseHeading({
             )}
           </div>
           <div className="hidden lg:block">
-            <div className="relative w-[300px] lg:w-[400px] aspect-[1/1]">
+            <div className="relative w-[300px] lg:w-[400px] aspect-[1/1] bg-white/60 rounded-full">
               <Image
                 src={thumbnail}
                 alt={title}

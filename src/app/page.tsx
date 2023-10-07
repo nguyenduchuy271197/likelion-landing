@@ -1,6 +1,7 @@
+import Blogs from "@/components/common/home/Blogs";
 import BusinessPartners from "@/components/common/home/BusinessPartners";
 import Events from "@/components/common/home/Events";
-import Workspaces from "@/components/common/home/Workspaces";
+import CourseWorkspaces from "@/components/courses/CourseWorkspaces";
 import siteConfig from "@/config/siteConfig";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
@@ -22,18 +23,21 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <>
       <h1 className="sr-only">{siteConfig.title}</h1>
-      <Banner />
-      <Courses />
-      <Teachers />
-      <TechStack />
-      <Testimonials />
-      <Workspaces />
-      <CTA />
-      <BusinessPartners />
-      <Events />
-      <FAQ />
-    </div>
+      <div className="pb-20 space-y-16 sm:space-y-32">
+        <Banner />
+        <Courses />
+        <Teachers />
+        <TechStack />
+        <CourseWorkspaces />
+        <BusinessPartners />
+        <CTA />
+        <Events />
+        <Testimonials />
+        <FAQ />
+        <Blogs />
+      </div>
+    </>
   );
 }

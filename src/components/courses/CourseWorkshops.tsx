@@ -56,8 +56,8 @@ function CourseWorkshopCard({ src, title, description }: CourseWorkshopType) {
 export default function CourseWorkshops() {
   return (
     <section>
-      <div className="container">
-        <div className="">
+      <div className="max-w-screen-lg px-8 mx-auto">
+        <div className="space-y-8">
           <CourseSectionHeading
             className="flex items-center gap-2"
             tags={["Mới", "Đặc biệt"]}

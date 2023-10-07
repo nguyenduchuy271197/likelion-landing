@@ -12,7 +12,7 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import { LucideIcon, LucideProps } from "lucide-react";
+import { LucideProps } from "lucide-react";
 import Icons from "@/components/Icons";
 
 type TechStackOption = {
@@ -132,37 +132,38 @@ export function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export default function TechStack() {
   return (
-    <section className="py-20 md:mb-16">
-      <div className="container">
+    <section>
+      <div className="space-y-8 sm:space-y-16">
         <SectionHeading
           title="Ngôn ngữ đào tạo"
           subtitle="Kiến thức và công nghệ mới nhất sẽ luôn được cập nhật trong lộ trình giảng dạy giúp học viên đáp ứng yêu cầu của thị trường."
+          className="container"
         />
+        <motion.div
+          className="flex flex-col gap-4 tech-stack-row"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 0.3,
+          }}
+          viewport={{ once: true }}
+        >
+          <ParallaxText baseVelocity={-2}>
+            {techStackOptions.map(({ title, icon: Icon }) => (
+              <div key={title}>
+                <Icon className="w-[90px] lg:w-[120px] aspect-[1/1] object-contain" />
+              </div>
+            ))}
+          </ParallaxText>
+        </motion.div>
       </div>
-      <motion.div
-        className="flex flex-col gap-4 mt-24 tech-stack-row"
-        initial={{
-          opacity: 0,
-          y: 40,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.4,
-          delay: 0.3,
-        }}
-        viewport={{ once: true }}
-      >
-        <ParallaxText baseVelocity={-2}>
-          {techStackOptions.map(({ title, icon: Icon }) => (
-            <div key={title}>
-              <Icon className="w-[90px] lg:w-[120px] aspect-[1/1] object-contain" />
-            </div>
-          ))}
-        </ParallaxText>
-      </motion.div>
     </section>
   );
 }

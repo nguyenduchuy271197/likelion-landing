@@ -4,12 +4,13 @@ import "@/styles/animate.css";
 
 import "highlight.js/styles/atom-one-dark.css";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "swiper/css/thumbs";
 import "react-modal-video/scss/modal-video.scss";
 import Navbar from "@/components/layouts/navbar/Navbar";
-import { Roboto, Quicksand } from "next/font/google";
+import { Roboto, Quicksand, Work_Sans, Mulish } from "next/font/google";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode } from "react";
@@ -31,9 +32,9 @@ const bodyFont = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
-const quicksandFont = Quicksand({
+const mulishFont = Mulish({
   subsets: ["vietnamese"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "800"],
 });
 
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ export default function RootLayout({
       lang="en"
       className={cn(
         "bg-white antialiased light scroll-smooth font-medium",
-        quicksandFont.className
+        mulishFont.className
       )}
     >
       <body suppressHydrationWarning={true} className="overflow-x-hidden">

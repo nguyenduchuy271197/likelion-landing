@@ -16,7 +16,7 @@ export default function SectionHeading({
   return (
     <div
       className={cn(
-        "max-w-md mx-auto mb-16 text-center lg:max-w-2xl",
+        "max-w-md mx-auto text-center lg:max-w-2xl",
         color === "white" ? "text-white" : "text-black",
         props.className
       )}
