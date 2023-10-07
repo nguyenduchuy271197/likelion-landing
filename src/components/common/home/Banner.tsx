@@ -67,7 +67,7 @@ function CourseBanner({
                   src={thumbnail}
                   alt={title}
                   fill
-                  className="object-contain opacity-80"
+                  className="object-contain opacity-80 md:opacity-100"
                 />
               </div>
             </div>
