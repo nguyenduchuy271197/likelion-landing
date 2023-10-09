@@ -36,7 +36,7 @@ function CourseBanner({
 }: CourseBannerProps) {
   return (
     <div
-      className="pb-12 bg-black text-muted md:pt-16 md:pb-20"
+      className="pb-12 bg-black text-muted md:pt-20 md:pb-24"
       style={{
         background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
       }}

@@ -228,7 +228,7 @@ export default function CourseHeading({
 }: CourseHeadingProps) {
   return (
     <section
-      className="py-16 pb-40 bg-black text-muted clip-path-polygon-[0_0,_100%_0%,_100%_90%,_0%_100%] lg:clip-path-polygon-[0_0,_100%_0%,_100%_80%,_0%_100%] mb-10"
+      className="py-16 bg-black text-muted"
       style={{
         background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
       }}

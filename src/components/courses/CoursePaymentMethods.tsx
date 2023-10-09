@@ -48,24 +48,26 @@ function CoursePaymentMethodRow({
   return (
     <div
       className={cn(
-        "p-8 sm:p-12 rounded-2xl flex-1 h-[400px] flex flex-col",
-        priority ? "bg-orange-500 text-muted" : "bg-orange-100",
+        "p-8 sm:p-12 rounded-2xl flex-1 h-[350px] flex flex-col",
+        priority
+          ? "bg-gradient-to-r from-[#FFAE6C] to-[#FF7100] text-muted"
+          : "bg-orange-100",
         className
       )}
       {...props}
     >
-      <div className="flex mb-4">
+      {/* <div className="flex mb-4">
         <div className="px-4 py-2 text-sm font-bold rounded-lg bg-primary/10">
           Lựa chọn {option}
         </div>
-      </div>
+      </div> */}
       <h5 className="mb-8 text-2xl font-bold">{title}</h5>
       <div className="flex flex-col gap-6 mt-auto">
         <div className="space-y-1">{children}</div>
         <div className="">
           <Button
             size="lg"
-            className="w-full px-12 py-8 text-base font-bold"
+            className="w-full px-10 py-6 text-base font-bold"
             onClick={() => setDialogOpen(true)}
             asChild
           >
@@ -94,7 +96,7 @@ export default function CoursePaymentMethods({
           </CourseSectionHeading>
           <div className="flex flex-col gap-8 md:flex-row">
             <CoursePaymentMethodRow
-              title="Thanh toán một lần giảm còn"
+              title="Thanh toán một lần"
               action={{
                 label: "Đăng ký",
                 href: `/register?course=${slug}`,

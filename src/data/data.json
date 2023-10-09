@@ -23,14 +23,14 @@
         "Bạn cần chuẩn bị máy tính cá nhân",
         "LIKELION không yêu cầu kiến thức đầu vào"
       ],
-      "subtitle": "Bắt đầu sự nghiệp lập trình web Front-end chỉ trong 3 tháng.",
+      "subtitle": "Thống lĩnh giao diện người dùng, tối ưu hiệu quả web.",
       "tagline": "Thống lĩnh giao diện người dùng, tối ưu hiệu quả web",
       "abbr": "Front-end",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606824/courses/thanh-thao-lap-trinh-web-frond-end/FE_ov8rlx.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695821016/courses/thanh-thao-lap-trinh-web-frond-end/FE_mlqqw7.png",
       "background": {
-        "from": "#22c55e",
-        "to": "#16a34a"
+        "from": "#37C157",
+        "to": "#9AE2A6"
       },
       "calendar": [
         {
@@ -233,14 +233,14 @@
         "Bạn cần chuẩn bị máy tính cá nhân",
         "LIKELION không yêu cầu kiến thức đầu vào"
       ],
-      "subtitle": "Thành thạo các thao tác xử lý dữ liệu và trực quan hóa dữ liệu với Python chỉ trong 3 tháng.",
+      "subtitle": "Chinh phục Data Analysis, dẫn đầu xu thế tuyển dụng.",
       "tagline": "Chinh phục Data Analysis, dẫn đầu xu thế tuyển dụng",
       "abbr": "Python Data",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606879/courses/khoa-hoc-python-cho-data-analysis/Python_qmfs7m.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695888940/courses/khoa-hoc-python-cho-data-analysis/Python_lm3uf0_a4xsa3.png",
       "background": {
-        "from": "#3b82f6",
-        "to": "#2563eb"
+        "from": "#3FA8EF",
+        "to": "#0068AF"
       },
       "calendar": [
         {
@@ -435,14 +435,14 @@
         "Bạn cần chuẩn bị máy tính cá nhân",
         "LIKELION không yêu cầu kiến thức đầu vào"
       ],
-      "subtitle": "Sử dụng thành thạo Spring Framework, Spring Boot để xây dựng web một cách nhanh chóng chỉ trong 3 tháng.",
+      "subtitle": "Làm chủ Java, xây dựng hệ thống Back-end mạnh mẽ.",
       "tagline": "Thống lĩnh giao diện người dùng, tối ưu hiệu quả web",
       "abbr": "Java",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606907/courses/khoa-hoc-back-end-java/Java_xyfepu.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695820991/courses/khoa-hoc-back-end-java/Java_u92xtx.png",
       "background": {
-        "from": "#ef4444",
-        "to": "#dc2626"
+        "from": "#FFA4A4",
+        "to": "#DD4B3C"
       },
       "calendar": [
         {
@@ -621,18 +621,14 @@
       "price": 22500000,
       "features": [
         "120 buổi học trực tiếp",
-        "30+ bài tập",
-        "6 dự án thực tế",
-        "Phụ đạo ngoài giờ miễn phí",
-        "Giấy chứng nhận",
-        "Có hỗ trợ kết nối việc làm"
+        "30+ bài tập, 6 dự án thực tế và 1 đồ án cuối khóa"
       ],
       "abbr": "Fullstack",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606727/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_cjcphm.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696606742/courses/bootcamp-lap-trinh-web-fullstack/Bootcamp_1_qpclmx.png",
       "background": {
-        "from": "#fb923c",
-        "to": "#f97316"
+        "from": "#FFAE6C",
+        "to": "#FF7100"
       },
       "youtubeId": "duAOTul9UNs",
       "calendar": [

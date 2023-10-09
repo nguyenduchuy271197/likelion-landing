@@ -96,7 +96,7 @@ export default function CourseDetail({
   } = course;
 
   return (
-    <div className="relative pb-12">
+    <div className="relative">
       {/* Title */}
       <CourseHeading
         title={title}
@@ -121,7 +121,7 @@ export default function CourseDetail({
       />
 
       <div
-        className="py-10 space-y-24 md:py-20 sm:space-y-36 md:bg-slate-50"
+        className="pt-10 space-y-24 md:pt-20 sm:space-y-36 md:bg-slate-50"
         id="course-info-area"
       >
         {/* <CourseInfoMobile

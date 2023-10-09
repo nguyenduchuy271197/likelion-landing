@@ -73,7 +73,7 @@ export default function CourseCard({
         </Link>
       </div>
 
-      <div className="relative bottom-0 right-0 md:absolute max-w-[250px] aspect-[1/1] sm:w-[250px] lg:w-[300px] mx-auto w-full">
+      <div className="relative md:bottom-0 md:right-0 lg:bottom-2 lg:right-4 md:absolute max-w-[250px] aspect-[1/1] sm:w-[250px] lg:w-[300px] mx-auto w-full">
         <Image
           src={thumbnail}
           alt={title}

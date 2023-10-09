@@ -19,7 +19,7 @@ function TeacherPortfolio({
     <div className="">
       <div className="flex flex-col items-center justify-center gap-8">
         <div className="flex items-center justify-center p-2 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-rose-400 to-orange-300">
+          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-[#FFAE6C] to-[#FF7100]">
             <Image src={avatar} fill alt={name} className="object-contain" />
           </div>
         </div>

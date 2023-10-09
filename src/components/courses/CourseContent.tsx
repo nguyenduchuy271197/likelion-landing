@@ -63,7 +63,7 @@ export default function CourseContent({
 }) {
   return (
     <section id="content">
-      <div className="bg-orange-500 text-muted">
+      <div className="text-muted bg-gradient-to-r from-[#FFAE6C] to-[#FF7100]">
         <div className="container">
           <div className="grid gap-8 py-20 md:grid-cols-2">
             <CourseSectionHeading className="md:max-w-sm">

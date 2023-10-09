@@ -25,7 +25,7 @@ export default function CourseRequirements({
     <section>
       <div className="container">
         <div className="flex flex-col gap-8 md:flex-row">
-          <CourseSectionHeading className="md:max-w-sm">
+          <CourseSectionHeading className="md:max-w-[400px]">
             Đến với {title}
           </CourseSectionHeading>
           <div>

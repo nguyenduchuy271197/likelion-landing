@@ -30,13 +30,20 @@ export default function Home() {
         <Courses />
         <Teachers />
         <TechStack />
-        <CourseWorkspaces />
-        <BusinessPartners />
-        <CTA />
-        <Events />
         <Testimonials />
-        <FAQ />
+        <div>
+          <CourseWorkspaces />
+          <CTA
+            title="Bạn muốn tìm khoá học cho mình?"
+            description="Điền đầy đủ thông tin để chúng mình tư vấn, định hướng cho bạn
+                nhé!"
+          />
+        </div>
+
+        <BusinessPartners />
+        <Events />
         <Blogs />
+        <FAQ />
       </div>
     </>
   );

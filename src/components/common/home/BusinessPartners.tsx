@@ -1621,7 +1621,7 @@ const Partner = ({ label, logo: Logo, href }: PartnerProps) => {
   return (
     <Link
       href={href || "#"}
-      className="relative p-4 transition-all border border-transparent rounded-md group hover:border-border w-[200px] sm:w-[185px] aspect-[16/9]"
+      className="relative p-4 transition-all border border-transparent rounded-md group hover:border-border w-[200px] sm:w-[160px] aspect-[16/9] basis-[50%] sm:basis-[25%]"
     >
       <Logo className="object-contain w-full h-full" />
 
@@ -1643,8 +1643,8 @@ export default function BusinessPartners() {
               yêu thích lập trình."
             className="space-y-2 lg:text-left"
           />
-          <div className="space-y-6 bg-[#F9F9F9] p-4">
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+          <div className="space-y-6">
+            <div className="flex flex-wrap items-center justify-center gap-y-2">
               {[...companiesLogo, ...schoolsLogo].map((school) => {
                 return (
                   <Partner

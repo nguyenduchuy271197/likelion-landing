@@ -57,7 +57,7 @@ function CourseOpeningScheduleCard({
       <div className="max-w-screen-lg px-8 mx-auto">
         <div className="relative overflow-hidden">
           <div
-            className="p-8 space-y-8 rounded-[3rem] sm:p-12 text-muted"
+            className="px-8 py-12 space-y-8 sm:space-y-12 rounded-[3rem] sm:px-12 sm:py-12 text-muted"
             style={{
               background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
             }}
@@ -67,7 +67,7 @@ function CourseOpeningScheduleCard({
             </CourseSectionHeading>
 
             <div className="text-xl">
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 {calendar.start_date && (
                   <CourseCalendar label="Khai giảng" icon={DoorOpen}>
                     {calendar.start_date}
@@ -120,12 +120,12 @@ function CourseOpeningScheduleCard({
               </div>
             </div>
           </div>
-          <div className="border-[2.5rem] border-white rounded-full absolute -top-[3rem] -right-[3rem] hidden lg:block aspect-[1/1] p-2">
+          <div className="rounded-full absolute top-2 right-8 hidden lg:block aspect-[1/1] p-2">
             <Image
               src={thumbnail}
               alt=""
-              width={250}
-              height={250}
+              width={300}
+              height={300}
               className="object-cover"
             />
           </div>

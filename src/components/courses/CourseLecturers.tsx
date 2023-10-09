@@ -14,7 +14,7 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
     <div className="max-w-4xl mx-auto">
       <div className="flex flex-col items-center justify-center gap-8">
         <div className="flex items-center justify-center p-2 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-rose-400 to-orange-300">
+          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-[#FFAE6C] to-[#FF7100]">
             <Image
               src={lecturer.avatar}
               fill
@@ -59,7 +59,7 @@ export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
       <div className="container">
         <div className="space-y-14 md:space-y-20">
           <CourseSectionHeading className="text-center">
-            Đội ngũ hướng dẫn
+            Đội ngũ giảng viên
           </CourseSectionHeading>
           <div className="space-y-16">
             {lecturers.map((lecturer) => (
