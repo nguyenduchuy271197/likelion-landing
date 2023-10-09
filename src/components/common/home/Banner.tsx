@@ -18,7 +18,7 @@ const container = {
     y: 0,
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.25,
     },
   },
 };
@@ -49,7 +49,8 @@ function CourseBanner({
   isActive,
 }: CourseBannerProps) {
   return (
-    <div
+    <Link
+      href={`/courses/${slug}`}
       className="pb-12 bg-black text-muted md:pt-20 md:pb-24"
       style={{
         background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
@@ -88,7 +89,7 @@ function CourseBanner({
                       show: {
                         opacity: 1,
                         transition: {
-                          delay: 1,
+                          delay: 0.5,
                         },
                       },
                     }}
@@ -120,7 +121,7 @@ function CourseBanner({
                         x: 0,
                         transition: {
                           delay: 0.5,
-                          duration: 0.7,
+                          duration: 0.5,
                         },
                       },
                     }}
@@ -141,7 +142,7 @@ function CourseBanner({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
