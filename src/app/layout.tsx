@@ -10,7 +10,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/thumbs";
 import "react-modal-video/scss/modal-video.scss";
 import Navbar from "@/components/layouts/navbar/Navbar";
-import { Roboto, Quicksand, Work_Sans, Mulish } from "next/font/google";
+import { Mulish } from "next/font/google";
 import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode } from "react";
@@ -25,12 +25,6 @@ import PhoneCall from "@/components/PhoneCall";
 import dynamic from "next/dynamic";
 
 const TrialPopup = dynamic(() => import("@/components/popups/TrialPopup"));
-
-// Load body font
-const bodyFont = Roboto({
-  subsets: ["vietnamese"],
-  weight: ["100", "300", "400", "500", "700", "900"],
-});
 
 const mulishFont = Mulish({
   subsets: ["vietnamese"],
