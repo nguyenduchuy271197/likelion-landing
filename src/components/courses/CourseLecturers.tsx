@@ -8,31 +8,27 @@ interface LectureType {
   avatar: string;
 }
 
-function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
+function CourseLecturerRow({
+  name,
+  profession,
+  description,
+  avatar,
+}: LectureType) {
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="flex flex-col items-center justify-center gap-8">
-        <div className="flex items-center justify-center p-2 bg-white rounded-[30px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-          <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-[30px] bg-gradient-to-r from-[#FFAE6C] to-[#FF7100]">
-            <Image
-              src={lecturer.avatar}
-              fill
-              alt={lecturer.name}
-              className="object-contain"
-            />
-          </div>
+    <div className="">
+      <div className="flex flex-col items-center space-y-4 md:items-start">
+        <div className="relative aspect-[1/1] w-28 bg-black overflow-hidden rounded-full bg-gradient-to-r from-[#FFAE6C] to-[#FF7100]">
+          <Image src={avatar} fill alt={name} className="object-contain" />
         </div>
 
-        <div className="space-y-1 text-center sm:space-y-2">
-          <h3 className="text-2xl font-bold capitalize">{lecturer.name}</h3>
-          <div className="text-lg text-foreground/60">
-            {lecturer.profession}
-          </div>
+        <div className="space-y-1 text-center sm:space-y-2 md:text-left">
+          <h3 className="text-2xl font-bold capitalize">{name}</h3>
+          <div className="text-lg opacity-80">{profession}</div>
         </div>
-        <div>
-          <p className="text-xl font-medium leading-relaxed text-center">
+        <div className="text-center md:text-left">
+          <p className="text-xl font-medium leading-relaxed">
             <span className="text-2xl">“</span>
-            {lecturer.description}
+            {description}
             <span className="text-2xl">”</span>
           </p>
         </div>
@@ -41,29 +37,30 @@ function CourseLecturerRow({ lecturer }: { lecturer: LectureType }) {
   );
 }
 
-interface CourseLecturersProps {
-  lecturers: {
-    name: string;
-    profession: string;
-    avatar: string;
-    description: string;
-  }[];
-}
-
-export default function CourseLecturers({ lecturers }: CourseLecturersProps) {
+export default function CourseLecturers({
+  lecturers,
+}: {
+  lecturers?: LectureType[];
+}) {
   if (!lecturers || lecturers.length === 0) return null;
-
   return (
-    <section id="lecturers">
+    <section className="bg-primary text-muted">
       <div className="container">
-        <div className="space-y-14 md:space-y-20">
-          <CourseSectionHeading className="text-center">
-            Đội ngũ giảng viên
-          </CourseSectionHeading>
-          <div className="space-y-16">
-            {lecturers.map((lecturer) => (
-              <CourseLecturerRow key={lecturer.name} lecturer={lecturer} />
-            ))}
+        <div className="flex flex-col gap-16 py-20 md:gap-8 md:flex-row">
+          <div className="shrink-0">
+            <div className="md:sticky top-[150px]">
+              <CourseSectionHeading className="md:max-w-sm md:min-h-[400px]">
+                Đội ngũ giảng viên tâm huyết, chuyên nghiệp
+              </CourseSectionHeading>
+            </div>
+          </div>
+
+          <div>
+            <ul className="flex flex-col gap-16 text-lg">
+              {lecturers.map((lecturer, index) => (
+                <CourseLecturerRow key={index} {...lecturer} />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
