@@ -103,6 +103,7 @@ export default function CheckoutBill() {
         </TableFooter>
       </Table>
 
+      {/* Coupon */}
       <CheckoutCoupon />
     </div>
   );
