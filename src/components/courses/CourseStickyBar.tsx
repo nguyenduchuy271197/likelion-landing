@@ -40,7 +40,7 @@ export default function CourseStickyBar({
   return (
     <div
       className={cn(
-        "fixed z-20 hidden w-full max-w-5xl px-8 -translate-x-1/2 bottom-8 left-1/2 md:block transition",
+        "fixed z-20 hidden w-full max-w-5xl px-8 -translate-x-1/2 bottom-4 left-1/2 md:block transition",
         isInterval ? "visible opacity-100" : "invisible opacity-0"
       )}
       ref={sbarRef}
