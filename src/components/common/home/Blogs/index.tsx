@@ -12,14 +12,14 @@ export default function Blogs() {
       <div className="container">
         <div className="space-y-16 md:pt-20">
           <SectionHeading
-            title="Blogs"
+            title="Blog Công nghệ"
             subtitle="Nâng cao kỹ năng viết code với các hướng dẫn trực quan"
             color="white"
             className="hidden sm:block"
           />
 
           <SectionHeading
-            title="Blogs"
+            title="Blog Công nghệ"
             subtitle="Nâng cao kỹ năng viết code với các hướng dẫn trực quan"
             className="block sm:hidden"
           />

@@ -61,7 +61,7 @@ export default function Reasons() {
   return (
     <section className="bg-[#ff8d3f]">
       <div className="container">
-        <div className="py-20">
+        <div className="py-20 space-y-8 sm:space-y-16">
           <SectionHeading title="Tại sao chọn LIKELION?" color="white" />
           <div className="grid gap-8 md:grid-cols-2 place-items-center">
             {reasons.map((reason) => (

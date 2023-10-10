@@ -74,7 +74,7 @@ export default function Values() {
   return (
     <section>
       <div className="container">
-        <div className="py-10 sm:py-20">
+        <div className="py-10 space-y-8 sm:space-y-16 sm:py-20">
           <SectionHeading
             title="Giá trị"
             subtitle="Những giá trị cốt lõi định hình tư tưởng, văn hoá và chiến lược của LIKELION."

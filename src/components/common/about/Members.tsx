@@ -79,7 +79,7 @@ export default function Members() {
   return (
     <section>
       <div className="container">
-        <div className="py-20">
+        <div className="py-20 space-y-8 sm:space-y-16">
           <SectionHeading
             title="Đội ngũ của chúng tôi"
             subtitle="Mỗi mảnh ghép của LIKELION đều làm việc chăm chỉ, đam mê và nhiệt huyết cống hiến cho giáo dục. Chúng tôi đều nỗ lực để phục vụ cho sứ mệnh “Mang lập trình tiếp cận mọi đối tượng”. "

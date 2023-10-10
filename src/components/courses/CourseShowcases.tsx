@@ -47,7 +47,7 @@ export default function CourseShowcases({
       <div className="max-w-screen-lg px-8 mx-auto">
         <div className="space-y-12">
           <CourseSectionHeading className="text-center">
-            Dự án cuối khoá
+            Dự án của học viên
           </CourseSectionHeading>
 
           <div className="grid gap-8 sm:grid-cols-2">

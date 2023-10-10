@@ -91,7 +91,7 @@ export default function Gallery() {
   return (
     <section>
       <div className="container">
-        <div className="py-20">
+        <div className="py-20 space-y-8 sm:space-y-16">
           <SectionHeading title="Môi trường học" />
           <div className="relative grid md:grid-cols-[1fr_300px] gap-1 auto-rows-[300px]">
             <div
