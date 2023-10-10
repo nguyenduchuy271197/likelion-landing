@@ -98,7 +98,7 @@ function CourseBanner({
                   >
                     <Button
                       variant="secondary"
-                      className="hidden md:flex uppercase px-12 py-6 text-base font-bold text-white transition-all duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 shadow-[0_2px_8px_rgba(255,255,255,_0.7)] hover:shadow-[0_3px_16px_rgba(255,255,255,_0.7)]"
+                      className="hidden md:flex uppercase px-12 py-6 text-base font-bold text-white transition-all ease-in-out transform bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 shadow-[0_2px_8px_rgba(0,0,0,_0.3)] hover:shadow-[0_3px_16px_rgba(0,0,0,_0.3)]"
                       asChild
                     >
                       <Link href={`/courses/${slug}`}>Xem khoá học</Link>

@@ -1,8 +1,10 @@
 import SectionBanner from "@/components/SectionBanner";
 import BlogListing from "@/components/blogs/BlogListing";
 import LatestBlog from "@/components/blogs/LatestBlog";
-import { getAllBlogs } from "@/services/blogService";
+import { Button } from "@/components/ui/Button";
+import { getBlogs } from "@/services/blogService";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `Blogs`,
@@ -15,7 +17,9 @@ export const metadata: Metadata = {
 };
 
 export default function Blogs() {
-  const blogs = getAllBlogs();
+  const blogs = getBlogs();
+  const events = getBlogs("events");
+  const tutorials = getBlogs("tutorial");
   return (
     <div>
       <SectionBanner
@@ -26,9 +30,11 @@ export default function Blogs() {
           lg: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1688543368/banners/blogs.png",
         }}
       />
+
       <div className="py-16 min-h-[80vh]">
         <LatestBlog {...blogs[0]} />
-        <BlogListing blogs={blogs} />
+        <BlogListing blogs={events} heading="Sự kiện" />
+        <BlogListing blogs={tutorials} heading="Kiến thức" />
       </div>
     </div>
   );
