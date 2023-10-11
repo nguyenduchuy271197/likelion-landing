@@ -33,8 +33,10 @@ export default function Blogs() {
 
       <div className="py-16 min-h-[80vh]">
         <LatestBlog {...blogs[0]} />
-        <BlogListing blogs={events} heading="Sự kiện" />
-        <BlogListing blogs={tutorials} heading="Kiến thức" />
+        <div className="space-y-8 md:space-y-16">
+          <BlogListing blogs={events} heading="Sự kiện" />
+          <BlogListing blogs={tutorials} heading="Kiến thức" />
+        </div>
       </div>
     </div>
   );

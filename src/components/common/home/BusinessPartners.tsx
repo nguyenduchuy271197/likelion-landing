@@ -1621,9 +1621,11 @@ const Partner = ({ label, logo: Logo, href }: PartnerProps) => {
   return (
     <Link
       href={href || "#"}
-      className="relative p-4 transition-all border border-transparent rounded-md group hover:border-border w-[200px] sm:w-[160px] aspect-[16/9] basis-[50%] sm:basis-[25%]"
+      className="relative p-4 transition-all border border-transparent rounded-md group hover:border-border h-[100px] aspect-[16/9] basis-[50%] sm:basis-[25%] flex items-center justify-center"
     >
-      <Logo className="object-contain w-full h-full" />
+      <div className="h-[50px]">
+        <Logo className="object-contain w-full h-full" />
+      </div>
 
       <ArrowUpRight className="absolute top-2 right-2 text-muted-foreground transition duration-500 origin-bottom-left scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 w-[18px] h-[18px] lg:w-[24px] lg:h-[24px]" />
     </Link>

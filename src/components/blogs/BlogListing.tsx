@@ -62,11 +62,11 @@ export default function BlogListing({
   }, [searchParams, pagination]);
 
   return (
-    <div className="md:mt-16">
+    <div>
       <div className="container">
         <div className="space-y-12">
           <div className="flex gap-2">
-            <h2 className="text-2xl font-medium shrink-0 sm:text-3xl">
+            <h2 className="text-3xl font-bold shrink-0 sm:text-4xl">
               {heading}
             </h2>
             <span className="w-full border-b-4 border-orange-200 grow"></span>
