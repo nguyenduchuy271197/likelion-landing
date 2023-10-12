@@ -44,7 +44,7 @@ export default function CourseLecturers({
 }) {
   if (!lecturers || lecturers.length === 0) return null;
   return (
-    <section className="bg-primary text-muted">
+    <section className="bg-primary text-muted" id="lecturers">
       <div className="container">
         <div className="flex flex-col gap-16 py-20 md:gap-8 md:flex-row">
           <div className="shrink-0">
