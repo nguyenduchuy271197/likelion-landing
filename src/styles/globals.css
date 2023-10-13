@@ -127,6 +127,10 @@
     @apply text-justify;
   }
 
+  .prose p code {
+    @apply px-2 py-1 rounded-md bg-[] font-bold bg-orange-100/70 before:hidden after:hidden;
+  }
+
   /* .prose h2,
   h3 {
     scroll-margin-top: calc(var(--navbar-height) + 1.5em);
