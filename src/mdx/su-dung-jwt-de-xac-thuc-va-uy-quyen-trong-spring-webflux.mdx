@@ -1,0 +1,613 @@
+---
+title: Sử dụng JWT để xác thực và ủy quyền trong chức năng security trên Spring Webflux
+slug: su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux
+excerpt: Cách tích hợp JWT vào Spring WebFlux để xác thực và ủy quyền cho người dùng, một giải pháp bảo mật cho ứng dụng phản ứng (reactive).
+thumbnail: https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186197/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/BLog_Thumbnail_xir25j.png
+thumbnail_desktop: https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186196/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/BLog_Desktop_zo0e1v.png
+thumbnail_mobile: https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186197/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/BLog_Mobile_fuxlcb.png
+thumbnail_og: https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186197/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/BLog_Thumbnail_Social_yaodz5.png
+tags: tutorial
+publishOn: 1697186787
+---
+
+Bảo mật là điều rất quan trọng trong ứng dụng. Đặc biệt ứng dụng của bạn có triển khai API. Hoặc các ứng dụng hướng tới việc chạy trên nhiều thiết bị.
+
+JWT là một trong những cách để bảo mật ứng dụng của bạn như là xác thực và phân quyền.
+
+> JSON Web Token (JWT) là một chuẩn mở dựa trên JSON (RFC 7519) để tạo ra các mã thông báo truy cập khẳng định một số quyền.
+
+Trong bài viết này, tôi sẽ chia sẻ cách bảo mật ứng dụng **[Spring Webflux](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html)** sử dụng **[Security JWT](https://tools.ietf.org/html/rfc7519)**.
+
+<Callout>Các bước thực hiện</Callout>
+
+## 1. Tạo dự án
+
+Thiết lập một số cấu hình cho dự án.
+
+- Java 17
+- Spring boot 3
+
+Thêm thêm một số phụ thuộc cần thiết vào dự án Spring Webflux của bạn.
+
+- spring-boot-starter-security
+- spring-boot-starter-webflux
+- jwt (from io.jsonwebtoken)
+- lombok
+
+Nếu bạn sử dụng maven, tham khảo code phía dưới:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+    </dependency>
+
+    <!-- Webflux -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+    <!-- JWT dependencies -->
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.2</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.2</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>0.11.2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.projectreactor</groupId>
+        <artifactId>reactor-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+```
+
+## 2. Model
+
+Đầu tiên, tạo một `Enum` để chứa các quyền trong ứng dụng.
+
+Nếu bạn có sử dụng `hasRole` tại `@PreAuthorize`, thì mặc định bạn phải thêm `ROLE_` phía trước tên quyền, tham khảo thêm tại [Spring Doc](https://docs.spring.io/autorepo/docs/spring-security/5.3.1.RELEASE/reference/html5/#el-access).
+
+```java
+public enum Role {
+    ROLE_USER, ROLE_ADMIN
+}
+```
+
+Tiếp theo, hãy tạo lớp `AppUser` triển khai interface `UserDetails`
+
+```java
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class AppUser implements UserDetails {
+    private static final long serialVersionUID = 1L;
+    private String username;
+    private String password;
+
+    @Getter
+    @Setter
+    private Boolean enabled;
+
+    @Getter @Setter
+    private List<Role> roles;
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return this.enabled;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.roles.stream().map(authority -> new SimpleGrantedAuthority(authority.name())).collect(Collectors.toList());
+    }
+
+    @JsonIgnore
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @JsonProperty
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+}
+```
+
+Tiếp theo, tạo 2 dto để truyền dữ liệu giữa front-end và back-end.
+
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class  AuthRequest {
+    private String username;
+    private String password;
+}
+```
+
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class AuthResponse {
+    private String token;
+}
+```
+
+và một lớp để chứa nội dung.
+
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Message {
+    private String content;
+}
+```
+
+## 3. Password Encoder
+
+Tiếp theo, hãy tạo bộ mã hóa mật khẩu tùy chỉnh của bạn (để mô phỏng mật khẩu người dùng), đừng quên thêm một số thuộc tính bí mật của bạn trong `application.properties`
+
+```yaml
+springbootwebfluxjjwt.password.encoder.secret=thisissecret
+springbootwebfluxjjwt.password.encoder.iteration=33
+springbootwebfluxjjwt.password.encoder.keylength=256
+```
+
+```java
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
+
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Base64;
+
+@Component
+public class PBKDF2Encoder implements PasswordEncoder {
+
+    @Value("${springbootwebfluxjjwt.password.encoder.secret}")
+    private String secret;
+
+    @Value("${springbootwebfluxjjwt.password.encoder.iteration}")
+    private Integer iteration;
+
+    @Value("${springbootwebfluxjjwt.password.encoder.keylength}")
+    private Integer keylength;
+
+    @Override
+    public String encode(CharSequence cs) {
+        try {
+            byte[] result = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512")
+                    .generateSecret(new PBEKeySpec(cs.toString().toCharArray(), secret.getBytes(), iteration, keylength))
+                    .getEncoded();
+            return Base64.getEncoder().encodeToString(result);
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    @Override
+    public boolean matches(CharSequence cs, String string) {
+        return encode(cs).equals(string);
+    }
+}
+```
+
+## 4. Viết xử lí cho user
+
+Tiếp theo, tạo `UserService`, đây chỉ là một ví dụ, bạn có thể tải người dùng từ cơ sở dữ liệu (từ repository)
+
+```java
+@Service
+public class UserService {
+    private Map<String, AppUser> data;
+
+    @PostConstruct
+    public void init() {
+        data = new HashMap<>();
+
+        //username:passwowrd -> user:user
+        data.put("user", new AppUser("user", "31+l0BSLwH50RGNTlXO1/OFFCDj28WgBr3WCk8v2Q/Y=", true, Arrays.asList(Role.ROLE_USER)));
+
+        //username:passwowrd -> admin:admin
+        data.put("admin", new AppUser("admin", "+f4i1iURW6nUyGK60vfJaWYTWHUi4S88Ef2szj3N16U=", true, Arrays.asList(Role.ROLE_ADMIN)));
+    }
+
+    public Mono<AppUser> findByUsername(String username) {
+        return Mono.justOrEmpty(data.get(username));
+    }
+}
+```
+
+## 5. JWT Util
+
+Tiếp theo, hãy tạo `JWTUtil`, đừng quên thêm một số thuộc tính cho mã bí mật JWT và thời gian hết hạn JWT trong `application.properties`
+
+```yaml
+springbootwebfluxjjwt.jjwt.secret=ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave65ByteLength
+springbootwebfluxjjwt.jjwt.expiration=28800
+```
+
+```java
+import com.vn.securitywebflux.entity.AppUser;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import java.security.Key;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+public class JWTUtil {
+
+    @Value("${springbootwebfluxjjwt.jjwt.secret}")
+    private String secret;
+
+    @Value("${springbootwebfluxjjwt.jjwt.expiration}")
+    private String expirationTime;
+
+    private Key key;
+
+    @PostConstruct
+    public void init() {
+        this.key = Keys.hmacShaKeyFor(secret.getBytes());
+    }
+
+    public Claims getAllClaimsFromToken(String token) {
+        return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+    }
+
+    public String getUsernameFromToken(String token) {
+        return getAllClaimsFromToken(token).getSubject();
+    }
+
+    public Date getExpirationDateFromToken(String token) {
+        return getAllClaimsFromToken(token).getExpiration();
+    }
+
+    private Boolean isTokenExpired(String token) {
+        final Date expiration = getExpirationDateFromToken(token);
+        return expiration.before(new Date());
+    }
+
+    public String generateToken(AppUser user) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", user.getRoles());
+        return doGenerateToken(claims, user.getUsername());
+    }
+
+    private String doGenerateToken(Map<String, Object> claims, String username) {
+        Long expirationTimeLong = Long.parseLong(expirationTime); //in second
+        final Date createdDate = new Date();
+        final Date expirationDate = new Date(createdDate.getTime() + expirationTimeLong * 1000);
+
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(username)
+                .setIssuedAt(createdDate)
+                .setExpiration(expirationDate)
+                .signWith(key)
+                .compact();
+    }
+
+    public Boolean validateToken(String token) {
+        return !isTokenExpired(token);
+    }
+
+}
+```
+
+## 6. Security Configuration
+
+Tạo `AuthenticationManager` để triển khai `ReactiveAuthenticationManager` cho việc xác thực token và quyền.
+
+```java
+import io.jsonwebtoken.Claims;
+import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.ReactiveAuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.stereotype.Component;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Component
+@AllArgsConstructor
+public class AuthenticationManager implements ReactiveAuthenticationManager {
+
+    private JWTUtil jwtUtil;
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public Mono<Authentication> authenticate(Authentication authentication) {
+        String authToken = authentication.getCredentials().toString();
+        String username = jwtUtil.getUsernameFromToken(authToken);
+        return Mono.just(jwtUtil.validateToken(authToken))
+                .filter(valid -> valid)
+                .switchIfEmpty(Mono.empty())
+                .map(valid -> {
+                    Claims claims = jwtUtil.getAllClaimsFromToken(authToken);
+                    List<String> rolesMap = claims.get("role", List.class);
+                    return new UsernamePasswordAuthenticationToken(
+                            username,
+                            null,
+                            rolesMap.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())
+                    );
+                });
+    }
+}
+```
+
+Tiếp theo, tạo `SecurityContextRepository` để triển khai `ServerSecurityContextRepository` cho việc lấy token và chuyển tiếp đến `AuthenticationManager`.
+
+```java
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextImpl;
+import org.springframework.security.web.server.context.ServerSecurityContextRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
+
+@AllArgsConstructor
+@Component
+public class SecurityContextRepository implements ServerSecurityContextRepository {
+
+    private AuthenticationManager authenticationManager;
+
+    @Override
+    public Mono<Void> save(ServerWebExchange swe, SecurityContext sc) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Mono<SecurityContext> load(ServerWebExchange swe) {
+        return Mono.justOrEmpty(swe.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION))
+                .filter(authHeader -> authHeader.startsWith("Bearer "))
+                .flatMap(authHeader -> {
+                    String authToken = authHeader.substring(7);
+                    Authentication auth = new UsernamePasswordAuthenticationToken(authToken, authToken);
+                    return this.authenticationManager.authenticate(auth).map(SecurityContextImpl::new);
+                });
+    }
+}
+```
+
+Tiếp theo, tạo `WebSecurityConfig` và thêm `EnableWebFluxSecurity` và `EnableReactiveMethodSecurty`, trong thành phần này bạn có thể cấu hình tất cả các yêu cầu bảo mật của mình, như `authenticationManager` và `securityContextRepository`, trong đó url nào được cho phép (trong trường hợp này `/login`), vân vân.
+
+```java
+import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+import reactor.core.publisher.Mono;
+
+@AllArgsConstructor
+@EnableWebFluxSecurity
+@EnableReactiveMethodSecurity
+@Configuration
+public class WebSecurityConfig {
+
+    private AuthenticationManager authenticationManager;
+    private SecurityContextRepository securityContextRepository;
+
+    @Bean
+    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
+        http
+            .httpBasic(httpBasic -> httpBasic.disable())
+            .formLogin(formLogin -> formLogin.disable())
+            .csrf(csrf -> csrf.disable())
+            .logout(logout -> logout.disable());
+
+        http
+            .exceptionHandling(exceptionHandlingSpec ->
+                    exceptionHandlingSpec.authenticationEntryPoint((swe, e) ->
+                    Mono.fromRunnable(() -> swe.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED))
+            ).accessDeniedHandler((swe, e) ->
+                    Mono.fromRunnable(() -> swe.getResponse().setStatusCode(HttpStatus.FORBIDDEN))
+            ))
+            .authenticationManager(authenticationManager)
+            .securityContextRepository(securityContextRepository)
+            .authorizeExchange(authorizeExchangeSpec ->
+                    authorizeExchangeSpec.pathMatchers(HttpMethod.OPTIONS).permitAll()
+                    .pathMatchers("/login").permitAll()
+                    .pathMatchers("/**").permitAll()
+                    .anyExchange().authenticated());
+
+        return http.build();
+    }
+}
+```
+
+Và một lớp tuỳ chọn cho việc CORS.
+
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.config.CorsRegistry;
+import org.springframework.web.reactive.config.EnableWebFlux;
+import org.springframework.web.reactive.config.WebFluxConfigurer;
+
+@Configuration
+@EnableWebFlux
+public class CustomWebConfig implements WebFluxConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedOrigins("*").allowedMethods("*").allowedHeaders("*");
+    }
+}
+```
+
+# 7. Tạo API
+
+Tiếp theo, tạo các endpoint cho đăng nhập (tạo token). Bạn có thể thay đổi là `/auth` hoặc bất kì url nào bạn muốn.
+
+```java
+import com.vn.securitywebflux.security.JWTUtil;
+import com.vn.securitywebflux.security.PBKDF2Encoder;
+import com.vn.securitywebflux.security.payload.AuthRequest;
+import com.vn.securitywebflux.security.payload.AuthResponse;
+import com.vn.securitywebflux.service.UserService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+@AllArgsConstructor
+@RestController
+public class AuthenticationREST {
+
+    private JWTUtil jwtUtil;
+    private PBKDF2Encoder passwordEncoder;
+    private UserService userService;
+
+    @PostMapping("/login")
+    public Mono<ResponseEntity<AuthResponse>> login(@RequestBody AuthRequest ar) {
+        return userService.findByUsername(ar.getUsername())
+                .filter(userDetails -> passwordEncoder.encode(ar.getPassword()).equals(userDetails.getPassword()))
+                .map(userDetails -> ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(userDetails))))
+                .switchIfEmpty(Mono.just(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build()));
+    }
+}
+```
+
+và ví dụ về các endpoint được bảo mật.
+
+```java
+import com.vn.securitywebflux.security.payload.Message;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+@RestController
+public class ResourceREST {
+
+    @GetMapping("/resource/user")
+    @PreAuthorize("hasRole('USER')")
+    public Mono<ResponseEntity<Message>> user() {
+        return Mono.just(ResponseEntity.ok(new Message("Content for user")));
+    }
+
+    @GetMapping("/resource/admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public Mono<ResponseEntity<Message>> admin() {
+        return Mono.just(ResponseEntity.ok(new Message("Content for admin")));
+    }
+
+    @GetMapping("/resource/user-or-admin")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public Mono<ResponseEntity<Message>> userOrAdmin() {
+        return Mono.just(ResponseEntity.ok(new Message("Content for user or admin")));
+    }
+}
+```
+
+<Callout>Xong rồi, sử dụng Postman test thôi!!</Callout>
+
+Test case 1: Truy cập API chưa login (không có token).
+
+![Truy cập API chưa login](https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186196/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/1_dotnsz.png)
+
+Test case 2: Đăng nhập và lấy token.
+
+![Đăng nhập và lấy token](https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186196/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/2_yh5pwf.png)
+
+Test case 3: Truy cập API với token (Key: Authorization, Value: Bearer token)
+
+![Truy cập API với token](https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186196/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/3_xnlrdn.png)
+
+Test case 4: Truy cập API của admin với role là của user.
+
+![Truy cập API của admin với role là của user](https://res.cloudinary.com/dbscqlwl7/image/upload/v1697186196/blogs/su-dung-jwt-de-xac-thuc-va-uy-quyen-trong-spring-webflux/4_fhk3e3.png)
+
+## Kết luận
+
+Bài viết trên đã giới thiệu cơ bản về cách tích hợp JWT vào Spring WebFlux, một giải pháp bảo mật cho ứng dụng phản ứng (reactive) của bạn.
+
+Thông qua tính năng bảo mật bằng JWT, chúng ta có thể nâng cao khả năng xác thực và uỷ quyền người dùng, đồng thời tận dụng sức mạnh và tính linh hoạt của Spring WebFlux.
+
+Bằng những ví dụ mã nguồn cụ thể, hy vọng rằng bài viết sẽ giúp các bạn kết hợp nhanh chóng hai công nghệ này để tạo ra một hệ thống bảo mật trong ứng dụng tương tác cao.
+
+> Full source code, Github: [Source Code](https://github.com/minhjavapc/blogs/tree/master/Security-JWT-in-Spring-Webflux)
