@@ -35,15 +35,29 @@
       "calendar": [
         {
           "title": "Khoá Front-end",
-          "start_date": "23/10/2023",
+          "start_date": "27/12/2023 (Dự kiến)",
           "duration": "12 tuần / 36 buổi",
           "schedule": "Thứ 2 - 4 - 6 / 18:30 - 21:30",
           "platform": "Google Meet"
         }
       ],
       "promotions": [
-        "Học theo nhóm <strong>giảm thêm 200.000đ</strong>",
-        "Cựu học viên <strong>giảm thêm 300.000đ</strong>"
+        {
+          "prefix": "Early Bird",
+          "value": "-10%",
+          "postfix": "khi đăng ký từ 13/11 - 27/11",
+          "note": "cho HSSV và hình thức đóng trọn gói"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "200.000VND",
+          "postfix": "khi đăng ký học theo nhóm"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "300.000VND",
+          "postfix": "cho cựu học viên"
+        }
       ],
       "payment_methods": {
         "once": {
@@ -131,16 +145,6 @@
       ],
       "benefits": [
         {
-          "title": "Cơ hội học bổng 100%",
-          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
-        },
-        {
-          "title": "Hỗ trợ học lại",
-          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
-        },
-        {
           "title": "Làm việc từ xa",
           "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
@@ -149,6 +153,16 @@
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
+        },
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
         },
         {
           "title": "Project thực tế",
@@ -208,8 +222,7 @@
           "title": "Florist - Flower Shop Website",
           "tags": ["JavaScript", "ReactJS", "Supabase", "PostgreSQL"]
         }
-      ],
-      "trialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
+      ]
     },
     {
       "id": "64df3889ac99f03faac99cee",
@@ -245,15 +258,29 @@
       "calendar": [
         {
           "title": "Python cho Data Analysis",
-          "start_date": "23/10/2023",
+          "start_date": "04/11/2023 (Dự kiến)",
           "duration": "12 tuần / 36 buổi",
           "schedule": "Thứ 2 - 4 - 6 / 18:30 - 21:30",
           "platform": "Google Meet"
         }
       ],
       "promotions": [
-        "Học theo nhóm <strong>giảm thêm 200.000đ</strong>",
-        "Cựu học viên <strong>giảm thêm 300.000đ</strong>"
+        {
+          "prefix": "Early Bird",
+          "value": "-10%",
+          "postfix": "khi đăng ký từ 13/11 - 27/11",
+          "note": "cho HSSV và hình thức đóng trọn gói"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "200.000VND",
+          "postfix": "khi đăng ký học theo nhóm"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "300.000VND",
+          "postfix": "cho cựu học viên"
+        }
       ],
       "payment_methods": {
         "once": {
@@ -361,16 +388,6 @@
       ],
       "benefits": [
         {
-          "title": "Cơ hội học bổng 100%",
-          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
-        },
-        {
-          "title": "Hỗ trợ học lại",
-          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
-        },
-        {
           "title": "Làm việc từ xa",
           "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
@@ -379,6 +396,16 @@
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
+        },
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
         },
         {
           "title": "Project thực tế",
@@ -410,13 +437,12 @@
         "seaborn",
         "plotly"
       ],
-      "excerpt": "Nắm vững Python, ứng dụng vào xử lý và trực quan hoá dữ liệu sau 3 tháng.",
-      "trialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
+      "excerpt": "Nắm vững Python, ứng dụng vào xử lý và trực quan hoá dữ liệu sau 3 tháng."
     },
     {
       "id": "64df41785404ec4d4345fe3a",
-      "title": "Khoá học Back-end Java",
-      "slug": "khoa-hoc-back-end-java",
+      "title": "Thành Thạo Back-end Java",
+      "slug": "thanh-thao-back-end-java",
       "features": [
         "36 buổi học qua Google Meet",
         "Slide bài giảng chi tiết, tài liệu tham khảo",
@@ -447,15 +473,29 @@
       "calendar": [
         {
           "title": "Back-end Java",
-          "start_date": "23/10/2023",
+          "start_date": "04/11/2023 (Dự kiến)",
           "duration": "12 tuần / 36 buổi",
           "schedule": "Thứ 2 - 4 - 6 / 18:30 - 21:30",
           "platform": "Google Meet"
         }
       ],
       "promotions": [
-        "Học theo nhóm <strong>giảm thêm 200.000đ</strong>",
-        "Cựu học viên <strong>giảm thêm 300.000đ</strong>"
+        {
+          "prefix": "Early Bird",
+          "value": "-10%",
+          "postfix": "khi đăng ký từ 13/11 - 27/11",
+          "note": "cho HSSV và hình thức đóng trọn gói"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "200.000VND",
+          "postfix": "khi đăng ký học theo nhóm"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "300.000VND",
+          "postfix": "cho cựu học viên"
+        }
       ],
       "payment_methods": {
         "once": {
@@ -546,16 +586,6 @@
       ],
       "benefits": [
         {
-          "title": "Cơ hội học bổng 100%",
-          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
-        },
-        {
-          "title": "Hỗ trợ học lại",
-          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
-        },
-        {
           "title": "Làm việc từ xa",
           "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
@@ -564,6 +594,16 @@
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
+        },
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
         },
         {
           "title": "Project thực tế",
@@ -596,8 +636,196 @@
         "junit",
         "mockito"
       ],
-      "excerpt": "Sử dụng thành thạo Spring Boot, dựng web nhanh chóng sau 3 tháng.",
-      "trialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeI0D0GgctKe_5dF0Abq2LJkMb18QlvUBAjNqkDmPm18LjZMg/viewform"
+      "excerpt": "Sử dụng thành thạo Spring Boot, dựng web nhanh chóng sau 3 tháng."
+    },
+    {
+      "id": "64df41785404ec4d4345fe3a",
+      "title": "Khoá học Back-end Java Advanced",
+      "slug": "khoa-hoc-back-end-java-advanced",
+      "abbr": "Java",
+      "excerpt": "Trở thành key member, mạnh dạn đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
+      "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1698740883/courses/khoa-hoc-back-end-java-advanced/Asset_16_vnrcqv.png",
+      "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1698741017/courses/khoa-hoc-back-end-java-advanced/Java_Advanced_1_pcn0nd.png",
+      "tags": {
+        "schedules": ["3 tháng", "36 buổi"],
+        "status": ["Online", "Advanced"]
+      },
+      "background": {
+        "from": "#b63426",
+        "to": "#5f0404"
+      },
+      "subtitle": "Trở thành key member, mạnh dạn đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
+      "tagline": "Trở thành key member, mạnh dạn đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
+      "techs": [
+        "java",
+        "springboot",
+        "springdata",
+        "docker",
+        "kubernetes",
+        "restapi"
+      ],
+      "highlights": [
+        "Xây dựng ứng dụng phân tán với Spring Boot, Microservices",
+        "Triển khai dự án lên các nền tảng Docker và Kubernetes,…",
+        "Tăng cơ hội thực hiện feature quan trọng, cốt lõi"
+      ],
+      "benefits": [
+        {
+          "title": "Làm việc từ xa",
+          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
+        },
+        {
+          "title": "Lộ trình khoa học",
+          "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
+        },
+        {
+          "title": "Cơ hội học bổng 100%",
+          "description": "Cơ hội nhận được học bổng toàn phần sau khi hoàn thành khoá học, hoàn 100% học phí cho học viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696690307/courses/assets/dollar-sign_l5mymm.svg"
+        },
+        {
+          "title": "Hỗ trợ học lại",
+          "description": "Hỗ trợ học lại toàn bộ khoá học một lần duy nhất cho các bạn cần củng cố và ôn lại kiến thức.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1696497230/courses/assets/repeat-2_kbenyh.svg"
+        },
+        {
+          "title": "Project thực tế",
+          "description": "Học viên được thực hành và mài giũa kỹ năng liên tục thông qua các bài tập và dự án đa dạng, từ dễ đến khó.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/folder-git-2_rkngkw.svg"
+        },
+        {
+          "title": "Thời gian linh hoạt",
+          "description": "Thời gian học vào buổi tối, dễ dàng sắp xếp công việc. Hình thức học online và tương tác trực tiếp với giảng viên.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/calendar-check_r83jcs.svg"
+        },
+        {
+          "title": "Hỗ trợ 24/7",
+          "description": "Đội ngũ mentor tận tâm và nhiệt tình, luôn có mặt để giúp đỡ và giải đáp thắc mắc cho học viên 24/7.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/phone-incoming_byz9gp.svg"
+        },
+        {
+          "title": "Chứng nhận tốt nghiệp",
+          "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
+        }
+      ],
+      "objectives_src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1698741002/courses/khoa-hoc-back-end-java-advanced/Java_Advanced_rx1id3.png",
+      "objectives": [
+        "Cách thiết kế và phát triển các dịch vụ web RESTful với Spring Boot",
+        "Cách thiết kế và phát triển Microservices với Spring Cloud",
+        "Xây dựng các container cho Microservices với Docker",
+        "Điều phối Microservices với Kubernetes",
+        "Trở thành lập trình viên Java Web bằng Spring Boot chỉ sau 3 tháng học"
+      ],
+      "requirements": [
+        "Bạn cần chuẩn bị máy tính cá nhân",
+        "Có kiến thức cơ bản với Java",
+        "Không yêu cầu kinh nghiệm với Microservices, Docker, Kubernetes",
+        "Tinh thần học hết sức, chơi hết mình"
+      ],
+      "features": [
+        "36 buổi học qua Google Meet",
+        "Slide bài giảng chi tiết, tài liệu tham khảo",
+        "Thực hành sau mỗi học phần, project thực tế và đồ án cuối khoá"
+      ],
+      "modules": [
+        {
+          "name": "Khởi Đầu với Phát Triển Web",
+          "lessons": [
+            "Giới thiệu khoá học và thiết lập môi trường",
+            "Tìm hiểu về Website, mô hình Client-Server, giao thức HTTP và các phương thức",
+            "Giới thiệu về Spring Framework và Spring Boot",
+            "Thực hành cơ bản với Spring Boot"
+          ],
+          "projects": []
+        },
+        {
+          "name": "Cấu trúc và Mô hình Phần mềm",
+          "lessons": [
+            "Các nguyên lý thiết kế phần mềm và các nguyên lý cốt lõi của Spring",
+            "Xây dựng ứng dụng theo mô hình và kiến trúc định sẵn để tối ưu hóa sự linh hoạt và dễ dàng bảo trì",
+            "Kiến trúc ba tầng, mô hình MVC và sử dụng Annotations trong Spring Boot",
+            "Thực hành và áp dụng các nguyên lý trên thông qua bài tập cụ thể"
+          ],
+          "projects": []
+        },
+        {
+          "name": "Quản lý Dữ liệu và API",
+          "lessons": [
+            "Phát triển Rest API, cách tạo và quản lý các dịch vụ web cho phép tương tác dữ liệu thông qua các giao thức web chuẩn",
+            "Các kỹ thuật và thư viện tương tác với cơ sở dữ liệu",
+            "Sự khác biệt và cách dùng truy vấn của mỗi cơ sở dữ liệu như Oracle, PostgreSQL,…",
+            "Thực hành thông qua việc xây dựng và tối ưu hóa các Rest API"
+          ],
+          "projects": []
+        },
+        {
+          "name": "An toàn và Chất lượng Phần mềm",
+          "lessons": [
+            "Kiểm tra và đảm bảo chất lượng phần mềm thông qua các phương pháp kiểm thử thủ công hoặc automation testing",
+            "Sử dụng công cụ template engine để phát triển giao diện web thuận tiện và dễ dàng",
+            "Sử dụng các tiện ích hỗ trợ dự án một cách tự động",
+            "Sử dụng các công cụ giám sát, thống kê ứng dụng",
+            "Các phương pháp đảm bảo an toàn thông tin trong ứng dụng và quy trình xác thực người dùng với phương pháp trong Spring Security",
+            "Thực hành xây dựng và bảo mật dự án thực tế"
+          ],
+          "projects": []
+        },
+        {
+          "name": "Microservices, Middleware và Containerization",
+          "lessons": [
+            "Các Middleware phổ biến và cách ứng dụng chúng trong các giải pháp cho các hệ thống phân tán",
+            "Giới thiệu Docker và các ứng dụng của nó trong việc container hóa các ứng dụng. ",
+            "Cách đóng gói và triển khai ứng dụng một cách linh hoạt và hiệu quả thông qua container",
+            "Các kỹ thuật để xây dựng và quản lý các ứng dụng phức tạp với nhiều thành phần có khả năng giao tiếp và làm việc độc lập",
+            "Tối ưu và mở rộng khả năng của ứng dụng bằng cách sử dụng các dịch vụ đám mây và triển khai mô hình microservices bằng Spring Cloud",
+            "Tìm hiểu và triển khai ứng dụng Spring Boot trên Kubernetes"
+          ],
+          "projects": [
+            "Dự án thực hành cuối khoá để củng cố kiến thức và kỹ năng đã học"
+          ]
+        }
+      ],
+      "calendar": [
+        {
+          "title": "Back-end Java Advanced",
+          "start_date": "27/12/2023",
+          "duration": "12 tuần / 36 buổi",
+          "schedule": "Thứ 2 - 4 - 6 / 18:30 - 21:30",
+          "platform": "Google Meet"
+        }
+      ],
+      "price": 8000000,
+      "payment_methods": {
+        "once": {
+          "origin": 10500000,
+          "discounted": 8000000
+        },
+        "monthly": {
+          "times": 3,
+          "origin": 3500000
+        }
+      },
+      "promotions": [
+        {
+          "prefix": "Early Bird",
+          "value": "-10%",
+          "postfix": "khi đăng ký từ 13/11 - 27/11",
+          "note": "cho HSSV và hình thức đóng trọn gói"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "200.000VND",
+          "postfix": "khi đăng ký học theo nhóm"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "300.000VND",
+          "postfix": "cho cựu học viên"
+        }
+      ]
     },
     {
       "id": "6482a08d232bf6c1513a1111",
@@ -613,6 +841,7 @@
         "Kiểm soát cơ sở dữ liệu (MongoDB) sử dụng JavaScript",
         "Seminar chia sẻ kinh nghiệm từ lập trình viên các tập đoàn lớn"
       ],
+      "objectives_src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1698732508/courses/bootcamp-lap-trinh-web-fullstack/Fullstack_vipyen.png",
       "requirements": [
         "Không yêu cầu Bạn cần chuẩn bị máy tính cá nhân",
         "LIKELION không yêu cầu kiến thức đầu vào"
@@ -634,7 +863,7 @@
       "calendar": [
         {
           "title": "Bootcamp 6",
-          "start_date": "25/09/2023",
+          "start_date": "Dự kiến mở lớp khi đủ số lượng",
           "duration": "3 tháng / 120 buổi học",
           "schedule": "Thứ 2 đến Thứ 6 / 9:00 - 17:00",
           "location": {
@@ -644,8 +873,22 @@
         }
       ],
       "promotions": [
-        "Học theo nhóm <strong>giảm thêm 500.000đ</strong>",
-        "Cựu học viên <strong>giảm thêm 500.000đ</strong>"
+        {
+          "prefix": "Early Bird",
+          "value": "-10%",
+          "postfix": "khi đăng ký từ 08/12 - 22/12",
+          "note": "cho HSSV và hình thức đóng trọn gói"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "500.000VND",
+          "postfix": "khi đăng ký học theo nhóm"
+        },
+        {
+          "prefix": "Giảm thêm",
+          "value": "500.000VND",
+          "postfix": "cho cựu học viên"
+        }
       ],
       "payment_methods": {
         "once": {
@@ -765,6 +1008,11 @@
 
       "benefits": [
         {
+          "title": "Làm việc từ xa",
+          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
+          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
+        },
+        {
           "title": "Lộ trình khoa học",
           "description": "Được đúc kết và biên soạn bởi đội ngũ giảng viên chuyên nghiệp đến từ các đoàn lớn: Zalo - VNG Group, FPT software,…",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/book-open-check_gg842d.svg"
@@ -788,11 +1036,6 @@
           "title": "Chứng nhận tốt nghiệp",
           "description": "Sau khoá học, LIKELION sẽ cấp giấy chứng nhận hoàn thành khoá học cho các học viên đáp ứng đủ yêu cầu.",
           "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/graduation-cap_kfiuyr.svg"
-        },
-        {
-          "title": "Làm việc từ xa",
-          "description": "Cơ hội làm việc từ xa cho các công ty công nghệ hàng đầu tại Hàn Quốc dành cho học viên xuất sắc.",
-          "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1695807919/courses/assets/wifi_dm36sf.svg"
         }
       ],
       "highlights": [

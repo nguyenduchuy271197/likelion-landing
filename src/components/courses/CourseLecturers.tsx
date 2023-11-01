@@ -48,7 +48,7 @@ export default function CourseLecturers({
       <div className="container">
         <div className="flex flex-col gap-16 py-20 md:gap-8 md:flex-row">
           <div className="shrink-0">
-            <div className="md:sticky top-[150px]">
+            <div className="md:sticky top-[200px]">
               <CourseSectionHeading className="md:max-w-sm md:min-h-[400px]">
                 Đội ngũ giảng viên tâm huyết, chuyên nghiệp
               </CourseSectionHeading>

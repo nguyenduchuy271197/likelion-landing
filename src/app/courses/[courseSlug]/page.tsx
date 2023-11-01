@@ -75,7 +75,6 @@ export default function CourseDetail({
     objectives,
     objectives_src,
     features,
-    trialUrl,
     price,
     discountedPrice,
     modules,
@@ -106,7 +105,6 @@ export default function CourseDetail({
         techs={techs}
         slug={courseSlug}
         thumbnail={thumbnail}
-        trialUrl={trialUrl}
         background={background}
         id={id}
       />
@@ -173,7 +171,7 @@ export default function CourseDetail({
             payment_methods={payment_methods}
             slug={courseSlug}
           />
-          <CoursePromotion promotions={promotions} />
+          <CoursePromotion promotions={promotions} slug={courseSlug} />
         </div>
 
         {/* Workspaces */}
