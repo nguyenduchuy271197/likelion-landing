@@ -8,7 +8,7 @@ export default function Courses() {
 
   return (
     <section id="courses" className="scroll-mt-4">
-      <div className="container">
+      <div className="max-w-screen-lg px-8 mx-auto">
         <div className="space-y-8 sm:space-y-16">
           <SectionHeading
             title="Khóa học của chúng tôi"
