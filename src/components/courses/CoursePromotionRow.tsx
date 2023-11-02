@@ -70,7 +70,7 @@ export default function CoursePromotionRow({
           </svg>
         </div>
 
-        <div className="space-y-1 font-bold grow">
+        <div className="space-y-1 grow">
           <div className="flex items-center justify-between gap-8">
             <p>{promotion.prefix}</p>
             <Link
