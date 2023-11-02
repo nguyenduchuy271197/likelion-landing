@@ -30,9 +30,9 @@ export default function CourseCard({
   return (
     <Link
       href={`/courses/${slug}`}
-      className="relative p-8 md:p-12 transition duration-300 border rounded-xl group text-muted min-h-[400px] sm:min-h-[450px]"
+      className="relative p-8 lg:p-10 transition duration-300 border rounded-xl group text-muted min-h-[400px] sm:min-h-[420px]"
       style={{
-        background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%)`,
+        background: `linear-gradient(to right,  ${background.from} 0%,${background.to} 100%) `,
       }}
     >
       <div className="flex flex-col items-center gap-4 md:items-start">
@@ -73,12 +73,12 @@ export default function CourseCard({
         </Link>
       </div>
 
-      <div className="relative md:bottom-0 md:right-0 lg:bottom-2 lg:right-4 md:absolute max-w-[250px] aspect-[1/1] sm:w-[250px] lg:w-[300px] mx-auto w-full">
+      <div className="relative md:bottom-0 md:right-0 lg:bottom-0 lg:right-12 md:absolute max-w-[280px] aspect-[1/1] sm:w-[250px] lg:w-[300px] mx-auto w-full">
         <Image
           src={thumbnail}
           alt={title}
           fill
-          className="object-contain opacity-80"
+          className="object-contain object-bottom opacity-80"
         />
       </div>
     </Link>

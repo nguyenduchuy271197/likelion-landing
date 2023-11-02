@@ -45,8 +45,7 @@
         {
           "prefix": "Early Bird",
           "value": "-10%",
-          "postfix": "khi đăng ký từ 13/11 - 27/11",
-          "note": "cho HSSV và hình thức đóng trọn gói"
+          "postfix": "HSSV đăng ký từ 8/12 - 22/12"
         },
         {
           "prefix": "Giảm thêm",
@@ -56,7 +55,7 @@
         {
           "prefix": "Giảm thêm",
           "value": "300.000VND",
-          "postfix": "cho cựu học viên"
+          "postfix": "áp dụng cho cựu học viên"
         }
       ],
       "payment_methods": {
@@ -268,8 +267,7 @@
         {
           "prefix": "Early Bird",
           "value": "-10%",
-          "postfix": "khi đăng ký từ 13/11 - 27/11",
-          "note": "cho HSSV và hình thức đóng trọn gói"
+          "postfix": "HSSV đăng ký từ 13/11 - 27/11"
         },
         {
           "prefix": "Giảm thêm",
@@ -279,7 +277,7 @@
         {
           "prefix": "Giảm thêm",
           "value": "300.000VND",
-          "postfix": "cho cựu học viên"
+          "postfix": "áp dụng cho cựu học viên"
         }
       ],
       "payment_methods": {
@@ -483,8 +481,7 @@
         {
           "prefix": "Early Bird",
           "value": "-10%",
-          "postfix": "khi đăng ký từ 13/11 - 27/11",
-          "note": "cho HSSV và hình thức đóng trọn gói"
+          "postfix": "HSSV khi đăng ký từ 13/11 - 27/11"
         },
         {
           "prefix": "Giảm thêm",
@@ -494,7 +491,7 @@
         {
           "prefix": "Giảm thêm",
           "value": "300.000VND",
-          "postfix": "cho cựu học viên"
+          "postfix": "Áp dụng cho cựu học viên"
         }
       ],
       "payment_methods": {
@@ -642,8 +639,8 @@
       "id": "64df41785404ec4d4345fe3b",
       "title": "Khoá học Back-end Java Advanced",
       "slug": "khoa-hoc-back-end-java-advanced",
-      "abbr": "Java",
-      "excerpt": "Trở thành key member, mạnh dạn đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
+      "abbr": "Java Advanced",
+      "excerpt": "Trở thành key member đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
       "thumbnail": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1698740883/courses/khoa-hoc-back-end-java-advanced/Asset_16_vnrcqv.png",
       "thumbnail_og": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1698741017/courses/khoa-hoc-back-end-java-advanced/Java_Advanced_1_pcn0nd.png",
       "tags": {
@@ -654,8 +651,8 @@
         "from": "#b63426",
         "to": "#5f0404"
       },
-      "subtitle": "Trở thành key member, mạnh dạn đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
-      "tagline": "Trở thành key member, mạnh dạn đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
+      "subtitle": "Trở thành key member đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
+      "tagline": "Trở thành key member đảm nhiệm phần việc cốt lõi trong các dự án quan trọng.",
       "techs": [
         "java",
         "springboot",
@@ -716,8 +713,7 @@
         "Cách thiết kế và phát triển các dịch vụ web RESTful với Spring Boot",
         "Cách thiết kế và phát triển Microservices với Spring Cloud",
         "Xây dựng các container cho Microservices với Docker",
-        "Điều phối Microservices với Kubernetes",
-        "Trở thành lập trình viên Java Web bằng Spring Boot chỉ sau 3 tháng học"
+        "Điều phối Microservices với Kubernetes"
       ],
       "requirements": [
         "Bạn cần chuẩn bị máy tính cá nhân",
@@ -732,7 +728,7 @@
       ],
       "modules": [
         {
-          "name": "Khởi Đầu với Phát Triển Web",
+          "name": "Khởi đầu với phát triển Web",
           "lessons": [
             "Giới thiệu khoá học và thiết lập môi trường",
             "Tìm hiểu về Website, mô hình Client-Server, giao thức HTTP và các phương thức",
@@ -742,7 +738,7 @@
           "projects": []
         },
         {
-          "name": "Cấu trúc và Mô hình Phần mềm",
+          "name": "Cấu trúc và mô hình phần mềm",
           "lessons": [
             "Các nguyên lý thiết kế phần mềm và các nguyên lý cốt lõi của Spring",
             "Xây dựng ứng dụng theo mô hình và kiến trúc định sẵn để tối ưu hóa sự linh hoạt và dễ dàng bảo trì",
@@ -752,7 +748,7 @@
           "projects": []
         },
         {
-          "name": "Quản lý Dữ liệu và API",
+          "name": "Quản lý dữ liệu và API",
           "lessons": [
             "Phát triển Rest API, cách tạo và quản lý các dịch vụ web cho phép tương tác dữ liệu thông qua các giao thức web chuẩn",
             "Các kỹ thuật và thư viện tương tác với cơ sở dữ liệu",
@@ -762,7 +758,7 @@
           "projects": []
         },
         {
-          "name": "An toàn và Chất lượng Phần mềm",
+          "name": "An toàn và chất lượng phần mềm",
           "lessons": [
             "Kiểm tra và đảm bảo chất lượng phần mềm thông qua các phương pháp kiểm thử thủ công hoặc automation testing",
             "Sử dụng công cụ template engine để phát triển giao diện web thuận tiện và dễ dàng",
@@ -812,8 +808,7 @@
         {
           "prefix": "Early Bird",
           "value": "-10%",
-          "postfix": "khi đăng ký từ 13/11 - 27/11",
-          "note": "cho HSSV và hình thức đóng trọn gói"
+          "postfix": "khi đăng ký từ 8/12 - 22/12"
         },
         {
           "prefix": "Giảm thêm",
@@ -823,7 +818,7 @@
         {
           "prefix": "Giảm thêm",
           "value": "300.000VND",
-          "postfix": "cho cựu học viên"
+          "postfix": "áp dụng cho cựu học viên"
         }
       ]
     },
@@ -874,12 +869,6 @@
       ],
       "promotions": [
         {
-          "prefix": "Early Bird",
-          "value": "-10%",
-          "postfix": "khi đăng ký từ 08/12 - 22/12",
-          "note": "cho HSSV và hình thức đóng trọn gói"
-        },
-        {
           "prefix": "Giảm thêm",
           "value": "500.000VND",
           "postfix": "khi đăng ký học theo nhóm"
@@ -887,7 +876,7 @@
         {
           "prefix": "Giảm thêm",
           "value": "500.000VND",
-          "postfix": "cho cựu học viên"
+          "postfix": "áp dụng cho cựu học viên"
         }
       ],
       "payment_methods": {

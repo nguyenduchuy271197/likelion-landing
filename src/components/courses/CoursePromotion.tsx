@@ -5,7 +5,6 @@ export interface Promotion {
   prefix: string;
   value: string;
   postfix: string;
-  note?: string;
 }
 
 export default function CoursePromotion({
@@ -24,7 +23,7 @@ export default function CoursePromotion({
           <CourseSectionHeading className="text-center text-orange-500">
             Các chương trình ưu đãi hấp dẫn
           </CourseSectionHeading>
-          <ul className="grid gap-8 lg:grid-cols-2 auto-rows-fr">
+          <ul className="grid gap-8 lg:grid-cols-2 lg:auto-rows-fr">
             {promotions.map((promotion, index) => (
               <CoursePromotionRow
                 key={index}

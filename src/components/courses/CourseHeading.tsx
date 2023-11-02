@@ -212,6 +212,14 @@ const techIcons = {
     title: "Shopify",
     src: "/assets/techs/shopify.svg",
   },
+  kubernetes: {
+    title: "Kubernetes",
+    src: "/assets/techs/kubernetes.svg",
+  },
+  restapi: {
+    title: "REST API",
+    src: "/assets/techs/restapi.svg",
+  },
 };
 
 export default function CourseHeading({
