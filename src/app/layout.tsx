@@ -79,16 +79,9 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning={true} className="overflow-x-hidden">
         <Providers>
-          <div className="flex flex-col min-h-screen antialiased pt-body-top">
-            <Navbar />
-            <main className="grow">
-              {children}
-              {dialog}
-              <Analytics />
-            </main>
-            <Footer />
-          </div>
+          {children}
           <Toaster />
+          <Analytics />
           <PhoneCall />
           {/* <TrialPopup /> */}
         </Providers>
