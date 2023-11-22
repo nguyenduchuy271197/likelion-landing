@@ -64,8 +64,8 @@ export async function POST(request: Request) {
   try {
     const response = await notion.pages.create(newRow);
 
-    return Response.json("OK");
+    return new Response("OK");
   } catch (error) {
-    return Response.json({ error: error, status: 500 });
+    return new Response("Something Went Wrong", { status: 500 });
   }
 }
