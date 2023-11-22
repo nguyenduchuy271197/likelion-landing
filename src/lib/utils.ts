@@ -12,12 +12,3 @@ export function generateNumberSequence(n: number) {
 export function formatNumber(number: number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-export function formatNotionDate(date: Date) {
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
-
-  const formatted = `${year}-${month}-${day}`;
-  return formatted;
-}

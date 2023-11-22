@@ -7,12 +7,14 @@ export default function Page() {
       <Image
         src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1700555210/forms/notion-webinar/Key_Element_q3iitc.png"
         alt=""
-        height={800}
-        width={800}
-        className="absolute left-0 object-contain bottom-0 lg:top-[10%]"
+        height={1000}
+        width={1000}
+        priority
+        quality={100}
+        className="absolute bottom-0 left-0 object-contain"
       />
       <div className="container">
-        <div className="flex justify-end py-[10vh]">
+        <div className="flex justify-end py-[3vh]">
           <RegistrationForm />
         </div>
       </div>

@@ -1,9 +1,7 @@
 import notion from "@/lib/notion";
-import { formatNotionDate } from "@/lib/utils";
 
 export async function POST(request: Request) {
   const user = await request.json();
-  console.log(user);
 
   const newRow = {
     parent: {

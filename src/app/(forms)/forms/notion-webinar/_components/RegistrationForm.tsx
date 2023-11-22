@@ -16,7 +16,6 @@ import { Input } from "@/components/ui/Input";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/Textarea";
 import { ArrowRightCircle } from "lucide-react";
-import notion from "@/lib/notion";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
@@ -65,23 +64,23 @@ export default function RegistrationForm() {
   }
 
   return (
-    <div className="relative z-10 w-full max-w-2xl p-12 space-y-8 bg-white rounded-lg">
-      <div className="space-y-2 text-center">
-        <p className="text-xl lg:text-3xl">Tham gia Webinar</p>
-        <h1 className="text-4xl font-bold lg:text-6xl text-[#ff7100]">
+    <div className="relative z-10 w-full max-w-2xl px-8 py-8 bg-white rounded-lg lg:px-12">
+      <div className="mb-6 space-y-2 text-center">
+        <p className="text-xl lg:text-2xl">Tham gia Webinar</p>
+        <h1 className="text-4xl font-bold lg:text-5xl text-[#ff7100]">
           Notion Hack
         </h1>
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid gap-2">
+          <div className="grid gap-4 lg:gap-2">
             {/* Name */}
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
+                <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
+                  <FormLabel className="w-32 shrink-0">
                     Họ và Tên
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -98,8 +97,8 @@ export default function RegistrationForm() {
               control={form.control}
               name="phone"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
+                <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
+                  <FormLabel className="w-32 shrink-0">
                     Số điện thoại
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -116,8 +115,8 @@ export default function RegistrationForm() {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
+                <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
+                  <FormLabel className="w-32 shrink-0">
                     Email
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -134,8 +133,8 @@ export default function RegistrationForm() {
               control={form.control}
               name="company"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
+                <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
+                  <FormLabel className="w-32 shrink-0">
                     Trường/Công ty
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -152,8 +151,8 @@ export default function RegistrationForm() {
               control={form.control}
               name="field"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
+                <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
+                  <FormLabel className="w-32 shrink-0">
                     Lĩnh vực
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -171,11 +170,13 @@ export default function RegistrationForm() {
               name="content"
               render={({ field }) => (
                 <FormItem className="col-span-full">
-                  <FormLabel>Câu hỏi dành cho diễn giả</FormLabel>
+                  <FormLabel className="w-32 shrink-0">
+                    Câu hỏi dành cho diễn giả
+                  </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Viết một cái gì đó..."
-                      className="resize-none h-44"
+                      className="h-32 resize-none"
                       {...field}
                     />
                   </FormControl>
@@ -191,7 +192,7 @@ export default function RegistrationForm() {
             className="flex items-center w-full gap-2 uppercase group"
           >
             Đăng ký ngay
-            <ArrowRightCircle className="group-hover:translate-x-1" />
+            <ArrowRightCircle className="transition group-hover:translate-x-1" />
           </Button>
         </form>
       </Form>
