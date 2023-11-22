@@ -1,5 +1,11 @@
 import Image from "next/image";
 import RegistrationForm from "./_components/RegistrationForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Notion Webinar | LIKELION",
+  description: "",
+};
 
 export default function Page() {
   return (
