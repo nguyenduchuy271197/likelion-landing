@@ -17,6 +17,9 @@ import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/Textarea";
 import { ArrowRightCircle } from "lucide-react";
 import notion from "@/lib/notion";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { toast } from "sonner";
 
 export const registrationFormSchema = z.object({
   name: z.string().min(2, {
@@ -50,31 +53,17 @@ export default function RegistrationForm() {
     },
   });
 
+  const { mutate: mutateRegister, isLoading: isRegistering } = useMutation({
+    mutationFn: (user: z.infer<typeof registrationFormSchema>) =>
+      axios.post("/api/form/notion", user),
+    onMutate: () => {
+      toast.success("Bạn đã đăng ký thành công!");
+      form.reset();
+    },
+  });
+
   async function onSubmit(data: z.infer<typeof registrationFormSchema>) {
-    console.log(data);
-    const newRow = {
-      parent: {
-        database_id: "fa2f399562e943ff92e2cfeb3ea79dac",
-      },
-      properties: {
-        Name: {
-          title: [
-            {
-              text: {
-                content: "Huy",
-              },
-            },
-          ],
-        },
-        Email: {
-          email: "huynguyen@gmail.com",
-        },
-      },
-    };
-
-    await notion.pages.create(newRow);
-
-    console.log("Success");
+    mutateRegister(data);
   }
 
   return (
