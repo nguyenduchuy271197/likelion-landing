@@ -35,9 +35,7 @@ export const registrationFormSchema = z.object({
   field: z.string().min(2, {
     message: "Company must be at least 2 characters.",
   }),
-  content: z.string().max(160, {
-    message: "Message must not be longer than 30 characters.",
-  }),
+  content: z.string().optional(),
 });
 
 export default function RegistrationForm() {
@@ -173,10 +171,7 @@ export default function RegistrationForm() {
               name="content"
               render={({ field }) => (
                 <FormItem className="col-span-full">
-                  <FormLabel>
-                    Câu hỏi dành cho diễn giả
-                    <span className="text-[#ff7100]"> *</span>
-                  </FormLabel>
+                  <FormLabel>Câu hỏi dành cho diễn giả</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Viết một cái gì đó..."
