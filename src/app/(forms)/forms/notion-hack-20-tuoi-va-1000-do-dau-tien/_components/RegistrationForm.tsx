@@ -154,7 +154,7 @@ export default function RegistrationForm() {
               control={form.control}
               name="content"
               render={({ field }) => (
-                <FormItem className="col-span-full">
+                <FormItem className="mt-2 col-span-full">
                   <FormLabel className="w-32 shrink-0">
                     Câu hỏi dành cho diễn giả
                   </FormLabel>

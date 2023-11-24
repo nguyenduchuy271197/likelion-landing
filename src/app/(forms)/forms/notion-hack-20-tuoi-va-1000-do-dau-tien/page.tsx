@@ -15,8 +15,8 @@ export default function Page() {
         <Image
           src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796019/forms/notion-webinar/Key_Info_fupvlg.png"
           alt=""
-          height={800}
-          width={800}
+          height={850}
+          width={850}
           priority
           quality={100}
           className="absolute bottom-0 left-0 hidden object-contain lg:block"
@@ -28,8 +28,8 @@ export default function Page() {
           <Image
             src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796019/forms/notion-webinar/Key_Info_Mobile_iib8sr.png"
             alt=""
-            height={500}
-            width={500}
+            height={600}
+            width={600}
             priority
             quality={100}
             className="absolute bottom-0 left-0 object-contain lg:hidden"
