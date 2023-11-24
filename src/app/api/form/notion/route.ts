@@ -38,15 +38,6 @@ export async function POST(request: Request) {
           },
         ],
       },
-      Field: {
-        rich_text: [
-          {
-            text: {
-              content: user.field,
-            },
-          },
-        ],
-      },
       Content: {
         rich_text: [
           {
