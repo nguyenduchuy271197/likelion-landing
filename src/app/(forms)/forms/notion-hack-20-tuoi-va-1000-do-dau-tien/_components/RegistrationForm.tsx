@@ -160,7 +160,7 @@ export default function RegistrationForm() {
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Viết một cái gì đó..."
+                      placeholder="Đặt câu hỏi của bạn tại đây..."
                       className="h-32 resize-none"
                       {...field}
                     />
