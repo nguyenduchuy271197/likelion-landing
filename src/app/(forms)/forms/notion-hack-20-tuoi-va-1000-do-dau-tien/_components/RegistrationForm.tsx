@@ -61,7 +61,7 @@ export default function RegistrationForm() {
   return (
     <div className="relative z-10 w-full max-w-xl px-8 py-[5vh] bg-white rounded-lg lg:px-12">
       <Image
-        src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796018/forms/notion-webinar/Date_Time_d3tgl7.png"
+        src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701053833/forms/notion-webinar/Date_Time_04_11_aakgmj.png"
         alt=""
         height={150}
         width={150}
