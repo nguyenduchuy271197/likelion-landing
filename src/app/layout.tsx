@@ -9,14 +9,13 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "swiper/css/thumbs";
 import "react-modal-video/scss/modal-video.scss";
-import Navbar from "@/components/layouts/navbar/Navbar";
 import { Mulish } from "next/font/google";
-import Footer from "@/components/layouts/footer/Footer";
 import Providers from "@/context/Providers";
 import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/Toaster";
+import { Toaster as SonnerToaster } from "sonner";
 import Script from "next/script";
 import Image from "next/image";
 import siteConfig from "@/config/siteConfig";
@@ -79,16 +78,10 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning={true} className="overflow-x-hidden">
         <Providers>
-          <div className="flex flex-col min-h-screen antialiased pt-body-top">
-            <Navbar />
-            <main className="grow">
-              {children}
-              {dialog}
-              <Analytics />
-            </main>
-            <Footer />
-          </div>
+          {children}
           <Toaster />
+          <SonnerToaster position="top-center" />
+          <Analytics />
           <PhoneCall />
           {/* <TrialPopup /> */}
         </Providers>
