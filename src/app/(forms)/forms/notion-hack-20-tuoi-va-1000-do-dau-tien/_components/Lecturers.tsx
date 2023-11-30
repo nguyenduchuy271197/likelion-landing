@@ -4,10 +4,20 @@ import Image from "next/image";
 import Heading from "./Heading";
 import teachers from "./data/teachers.json";
 import { ITeacher } from "./types";
+import { motion } from "framer-motion";
 
 function Lecture({ name, roles, src, description }: ITeacher) {
   return (
-    <div className="flex flex-col items-center justify-between gap-8 lg:even:flex-row-reverse lg:flex-row">
+    <motion.div
+      className="flex flex-col items-center justify-between gap-8 lg:even:flex-row-reverse lg:flex-row"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 0.2,
+        duration: 0.5,
+      }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-[350px] w-full shrink-0 space-y-10">
         <div className="relative">
           <div className="relative flex items-end justify-center overflow-hidden aspect-[1/1]">
@@ -29,7 +39,7 @@ function Lecture({ name, roles, src, description }: ITeacher) {
       <div>
         <p className="max-w-xl text-xl description">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

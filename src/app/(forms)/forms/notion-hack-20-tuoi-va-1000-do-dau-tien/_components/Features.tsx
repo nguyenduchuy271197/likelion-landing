@@ -51,6 +51,7 @@ export default function Features() {
                 initial="initial"
                 whileInView="animate"
                 custom={index}
+                viewport={{ once: true }}
               >
                 <div className="relative h-[200px]">
                   <Image

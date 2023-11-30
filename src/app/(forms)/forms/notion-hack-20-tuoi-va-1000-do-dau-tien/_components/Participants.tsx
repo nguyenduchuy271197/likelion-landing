@@ -41,6 +41,7 @@ export default function Participants() {
                   delay: 0.2,
                   duration: 0.5,
                 }}
+                viewport={{ once: true }}
               >
                 <div
                   className={cn(
