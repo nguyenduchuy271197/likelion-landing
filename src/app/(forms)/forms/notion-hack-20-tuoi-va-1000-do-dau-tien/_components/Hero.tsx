@@ -3,30 +3,11 @@ import Image from "next/image";
 import HeroCountDown from "./HeroCountDown";
 import { LucideProps } from "lucide-react";
 import Link from "next/link";
+import { ITeacher } from "./types";
+import teachers from "./data/teachers.json";
+import ButtonWrapper from "./ButtonWrapper";
 
-const teachers = [
-  {
-    name: "Mr. Minh",
-    description: "<ul><li>Software Engineer</li><li>LIKELION Vietnam</li></ul>",
-    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png",
-  },
-  {
-    name: "Mr. Quang Delta Lê",
-    description:
-      "<ul><li>Head of Marketing | LIKELION Vietnam</li><li>Head of Marketing | Hahalolo LLC</li><li>Former Head of Digital Marketing | Long Beach Group</li></ul>",
-    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png",
-  },
-];
-
-function Teacher({
-  name,
-  description,
-  src,
-}: {
-  name: string;
-  description: string;
-  src: string;
-}) {
+function Teacher({ name, roles, src }: ITeacher) {
   return (
     <div className="bg-[#C5ECFF] p-2 pr-4 lg:pr-8 rounded-[4rem] lg:rounded-[8rem] flex items-center gap-4">
       <div className="relative aspect-[1/1] h-20 lg:h-32 rounded-full bg-white overflow-hidden shrink-0">
@@ -39,11 +20,11 @@ function Teacher({
       </div>
       <div>
         <h5 className="text-lg font-bold">{name}</h5>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: description,
-          }}
-        />
+        <ul>
+          {roles.map((role) => (
+            <li key={role}>{role}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -98,6 +79,7 @@ export default function Hero() {
                   type="submit"
                   size="lg"
                   className="mx-auto uppercase bg-[#FF7100] text-white font-bold h-14  w-full hover:bg-[#FF7100]/80 text-base"
+                  asChild
                 >
                   <Link href="#form">Đăng ký ngay</Link>
                 </Button>

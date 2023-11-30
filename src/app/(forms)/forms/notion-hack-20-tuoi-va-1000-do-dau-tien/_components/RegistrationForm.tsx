@@ -20,6 +20,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
 import Image from "next/image";
+import ButtonWrapper from "./ButtonWrapper";
 
 export const registrationFormSchema = z.object({
   name: z.string().min(2, {
@@ -60,15 +61,6 @@ export default function RegistrationForm() {
 
   return (
     <div className="relative z-10 w-full max-w-xl px-8 py-[5vh] bg-white rounded-lg lg:px-12">
-      <Image
-        src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701053833/forms/notion-webinar/Date_Time_04_11_aakgmj.png"
-        alt=""
-        height={150}
-        width={150}
-        priority
-        quality={100}
-        className="absolute hidden object-contain -rotate-[10deg] -top-4 -left-28 lg:block"
-      />
       <div className="mb-6 space-y-2 text-center">
         <p className="text-xl lg:text-2xl">Tham gia Master Class</p>
         <h1 className="text-4xl font-bold lg:text-5xl text-[#ff7100]">

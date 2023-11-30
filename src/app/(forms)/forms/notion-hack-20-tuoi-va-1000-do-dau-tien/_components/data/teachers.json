@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mr. Minh",
+    "roles": ["Software Engineer | LIKELION Vietnam"],
+    "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1692603569/lecturers/Anh_Minh_aayl0j.png",
+    "description": "Anh Minh là một chuyên gia trong lĩnh vực công nghệ và trí tuệ nhân tạo (AI) có kinh nghiệm nghiên cứu, thiết kế và tích hợp sâu nhiều ứng dụng AI, bao gồm Fine-tuning, text-to-speech (TTS), speech-to-text (STT),... Anh đã chinh chiến nhiều năm trong lĩnh vực tài chính ngân hàng, làm việc với các ngân hàng quốc tế như HSBC, Shinhan, Cathay,…; đào tạo công nghệ cho nhân sự của các doanh nghiệp lớn như Naver, ShinhanDS,…"
+  },
+  {
+    "name": "Mr. Quang Delta Lê",
+    "roles": [
+      "Head of Marketing | LIKELION Vietnam",
+      "Former Marketing Director | Hahalolo LLC & Long Beach Pearl"
+    ],
+    "src": "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701314460/forms/notion-webinar/Anh_Quang_mudyxj.png",
+    "description": "Anh Quang là một chuyên gia tiên phong trong lĩnh vực Marketing ngành công nghệ với kinh nghiệm thực chiến hơn 10 năm. Với tinh thần khởi nghiệp và niềm tin vào công nghệ, anh Quang đã dẫn dắt hàng loạt tập đoàn, doanh nghiệp đạt được sự phát triển chóng mặt - tăng trưởng liên tục hai chữ số % về doanh thu."
+  }
+]

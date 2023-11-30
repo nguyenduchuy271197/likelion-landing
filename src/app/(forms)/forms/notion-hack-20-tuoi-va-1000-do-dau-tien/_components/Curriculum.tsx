@@ -2,7 +2,8 @@
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
-import curriculum from "./curriculum.json";
+import curriculum from "./data/curriculum.json";
+import Heading from "./Heading";
 
 function CurriculumCard({
   title,
@@ -52,9 +53,7 @@ export default function Curriculum() {
     <section>
       <div className="container">
         <div className="space-y-20">
-          <h2 className="text-4xl font-bold text-center">
-            LỊCH TRÌNH KHÓA HỌC
-          </h2>
+          <Heading>LỘ TRÌNH KHÓA HỌC</Heading>
           <motion.div
             className="relative grid items-start gap-8 sm:grid-cols-2 lg:gap-0"
             ref={containerRef}
