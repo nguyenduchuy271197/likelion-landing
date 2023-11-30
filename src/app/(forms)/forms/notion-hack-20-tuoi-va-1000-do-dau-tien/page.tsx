@@ -10,6 +10,9 @@ import Hero from "./_components/Hero";
 import Lecturers from "./_components/Lecturers";
 import FixedButton from "./_components/FixedButton";
 import ButtonWrapper from "./_components/ButtonWrapper";
+import Benefits from "./_components/Benefits";
+import Participants from "./_components/Participants";
+import Events from "@/components/common/home/Events";
 const mulishFont = Mulish({
   subsets: ["vietnamese"],
   weight: ["400", "500", "800"],
@@ -48,6 +51,9 @@ export default function Page() {
         <Features />
         <Curriculum />
         <Lecturers />
+        <Benefits />
+        <Participants />
+        <Events />
       </div>
       <Footer />
       <FixedButton />

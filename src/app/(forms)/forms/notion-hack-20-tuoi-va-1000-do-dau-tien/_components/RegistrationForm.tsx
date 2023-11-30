@@ -76,7 +76,7 @@ export default function RegistrationForm() {
               name="name"
               render={({ field }) => (
                 <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
-                  <FormLabel className="w-32 shrink-0">
+                  <FormLabel className="w-32 text-base shrink-0">
                     Họ và Tên
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -94,7 +94,7 @@ export default function RegistrationForm() {
               name="phone"
               render={({ field }) => (
                 <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
-                  <FormLabel className="w-32 shrink-0">
+                  <FormLabel className="w-32 text-base shrink-0">
                     Số điện thoại
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -112,7 +112,7 @@ export default function RegistrationForm() {
               name="email"
               render={({ field }) => (
                 <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
-                  <FormLabel className="w-32 shrink-0">
+                  <FormLabel className="w-32 text-base shrink-0">
                     Email
                     <span className="text-[#ff7100]"> *</span>
                   </FormLabel>
@@ -130,7 +130,7 @@ export default function RegistrationForm() {
               name="company"
               render={({ field }) => (
                 <FormItem className="flex flex-col lg:gap-4 lg:items-center lg:flex-row">
-                  <FormLabel className="w-32 shrink-0">
+                  <FormLabel className="w-32 text-base shrink-0">
                     Trường/Công ty
                   </FormLabel>
                   <FormControl>
@@ -147,12 +147,12 @@ export default function RegistrationForm() {
               name="content"
               render={({ field }) => (
                 <FormItem className="mt-2 col-span-full">
-                  <FormLabel className="w-32 shrink-0">
+                  <FormLabel className="w-32 text-base shrink-0">
                     Câu hỏi dành cho diễn giả
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Viết một cái gì đó..."
+                      placeholder="Đặt câu hỏi của bạn tại đây..."
                       className="h-32 resize-none"
                       {...field}
                     />
