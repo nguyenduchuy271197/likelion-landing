@@ -6,6 +6,9 @@ import { Mulish } from "next/font/google";
 import Curriculum from "./_components/Curriculum";
 import { cn } from "@/lib/utils";
 import Features from "./_components/Features";
+import Benefits from "./_components/Benefits";
+import Participants from "./_components/Participants";
+import Events from "@/components/common/home/Events";
 const mulishFont = Mulish({
   subsets: ["vietnamese"],
   weight: ["400", "500", "800"],
@@ -47,6 +50,9 @@ export default function Page() {
       <div className="pb-20 space-y-32">
         <Features />
         <Curriculum />
+        <Benefits />
+        <Participants />
+        <Events />
       </div>
       <Footer />
     </div>
