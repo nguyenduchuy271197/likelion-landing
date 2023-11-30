@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Heading from "./Heading";
 
 const participants = [
   {
@@ -27,15 +28,13 @@ export default function Participants() {
     <section>
       <div className="max-w-screen-md mx-auto px-8">
         <div className="space-y-16">
-          <h2 className="text-4xl font-bold text-center uppercase">
-            ĐỐI TƯỢNG THAM GIA
-          </h2>
+          <Heading>ĐỐI TƯỢNG THAM GIA</Heading>
 
           <div className="grid gap-8">
             {participants.map((participant, index) => (
               <motion.div
                 key={index}
-                className="relative p-12 rounded-[4rem] bg-[#AFDFFD] mt-20"
+                className="relative p-12 rounded-[4rem] bg-[#AFDFFD] lg:mt-20 space-y-4"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -44,17 +43,20 @@ export default function Participants() {
                 }}
               >
                 <div
-                  className={cn("w-3/5 text-xl", index % 2 === 1 && "ml-auto")}
-                >
-                  {participant.content}
-                </div>
-                <div
                   className={cn(
-                    "absolute aspect-[1/1] w-[280px] bottom-0",
+                    "relative lg:absolute aspect-[1/1] w-[280px] bottom-0 mx-auto",
                     index % 2 === 1 ? "left-0" : "right-0"
                   )}
                 >
                   <Image src={participant.src} alt="" fill />
+                </div>
+                <div
+                  className={cn(
+                    "lg:w-3/5 text-xl",
+                    index % 2 === 1 && "ml-auto"
+                  )}
+                >
+                  {participant.content}
                 </div>
               </motion.div>
             ))}

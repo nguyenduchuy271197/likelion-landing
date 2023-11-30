@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { slideInAnimationVariants } from "./animations";
+import Heading from "./Heading";
 
 const benefits = [
   {
@@ -27,9 +28,7 @@ export default function Benefits() {
     <section>
       <div className="container">
         <div className="space-y-20">
-          <h2 className="text-4xl font-bold text-center">
-            14H CÙNG NOTION HACK CÓ GÌ?
-          </h2>
+          <Heading>14H CÙNG NOTION HACK CÓ GÌ?</Heading>
           <motion.div className="grid gap-8 sm:grid-cols-3">
             {benefits.map((benefit, index) => (
               <motion.div
