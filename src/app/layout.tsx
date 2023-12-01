@@ -83,7 +83,6 @@ export default function RootLayout({
           <SonnerToaster position="top-center" />
           <Analytics />
           <PhoneCall />
-          {/* <TrialPopup /> */}
         </Providers>
 
         {/* <!-- Meta Pixel Code --> */}

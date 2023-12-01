@@ -14,12 +14,9 @@ import {
 import { Input } from "@/components/ui/Input";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/Textarea";
-import { ArrowRightCircle } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
-import Image from "next/image";
-import ButtonWrapper from "./ButtonWrapper";
 import { Button } from "./Button";
 
 export const registrationFormSchema = z.object({
