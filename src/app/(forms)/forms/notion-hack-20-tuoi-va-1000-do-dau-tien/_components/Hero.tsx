@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import HeroCountDown from "./HeroCountDown";
 import { LucideProps } from "lucide-react";
 import Link from "next/link";
 import { ITeacher } from "./types";
 import teachers from "./data/teachers.json";
+import { Button } from "./Button";
 
 function Teacher({ name, roles, src }: ITeacher) {
   return (
@@ -77,12 +77,7 @@ export default function Hero() {
             {/* Button */}
             <div className="hidden lg:block relative max-w-md mx-auto !my-28">
               <div className="flex justify-center">
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="mx-auto uppercase bg-[#FF7100] text-white font-bold h-14  w-full hover:bg-[#FF7100]/80 text-base"
-                  asChild
-                >
+                <Button className="w-full" asChild>
                   <Link href="#form">Đăng ký ngay</Link>
                 </Button>
               </div>
@@ -105,11 +100,7 @@ export default function Hero() {
 
             {/* Button mobile */}
             <div className="flex justify-center max-w-md mx-auto lg:hidden">
-              <Button
-                type="submit"
-                size="lg"
-                className="mx-auto uppercase bg-[#FF7100] text-white font-bold h-14  w-full hover:bg-[#FF7100]/80 text-base"
-              >
+              <Button className="w-full" asChild>
                 <Link href="#form">Đăng ký ngay</Link>
               </Button>
             </div>

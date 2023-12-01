@@ -1,3 +1,5 @@
+import "./style.css";
+
 import Image from "next/image";
 import RegistrationForm from "./_components/RegistrationForm";
 import { Metadata } from "next";
@@ -14,6 +16,7 @@ import Benefits from "./_components/Benefits";
 import Participants from "./_components/Participants";
 import Events from "@/components/common/home/Events";
 import FAQs from "./_components/FAQs";
+import { Button } from "./_components/Button";
 const mulishFont = Mulish({
   subsets: ["vietnamese"],
   weight: ["400", "500", "800"],

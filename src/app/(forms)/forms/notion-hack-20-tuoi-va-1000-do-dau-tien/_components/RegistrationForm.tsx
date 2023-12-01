@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-import { Button } from "@/components/ui/Button";
 import {
   Form,
   FormControl,
@@ -21,6 +20,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import Image from "next/image";
 import ButtonWrapper from "./ButtonWrapper";
+import { Button } from "./Button";
 
 export const registrationFormSchema = z.object({
   name: z.string().min(2, {
@@ -83,7 +83,6 @@ export default function RegistrationForm() {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -101,7 +100,6 @@ export default function RegistrationForm() {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -119,7 +117,6 @@ export default function RegistrationForm() {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
-                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -167,14 +164,7 @@ export default function RegistrationForm() {
             </p>
           </div>
 
-          <Button
-            type="submit"
-            size="lg"
-            className="flex items-center w-full gap-2 uppercase group"
-          >
-            Đăng ký ngay
-            <ArrowRightCircle className="transition group-hover:translate-x-1" />
-          </Button>
+          <Button className="w-full">Đăng ký ngay</Button>
         </form>
       </Form>
     </div>
