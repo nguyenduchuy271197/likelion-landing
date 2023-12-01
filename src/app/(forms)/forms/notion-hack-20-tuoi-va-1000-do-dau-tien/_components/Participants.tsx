@@ -8,7 +8,7 @@ import Heading from "./Heading";
 const participants = [
   {
     content:
-      "Những bạn trẻ có mục tiêu xây dựng nội dung có tầm ảnh hưởng trên những nền tảng video như Youtube, Tiktok, Reels,…",
+      "Những bạn trẻ có mục tiêu và yêu thích quản lý thời gian, sắp xếp công việc, sáng tạo nội dung",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193795/forms/notion-webinar/Who_1_woekrf.png",
   },
   {
@@ -18,7 +18,7 @@ const participants = [
   },
   {
     content:
-      "Học sinh, sinh viên muốn tìm hiểu về Notion để ứng dụng vào đời sống hàng ngày",
+      "Học sinh, sinh viên, người đi làm muốn tìm hiểu về Notion để ứng dụng vào đời sống hàng ngày",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193794/forms/notion-webinar/Who_3_dkcf6y.png",
   },
 ];
@@ -26,7 +26,7 @@ const participants = [
 export default function Participants() {
   return (
     <section>
-      <div className="max-w-screen-md mx-auto px-8">
+      <div className="max-w-screen-md px-8 mx-auto">
         <div className="space-y-16">
           <Heading>ĐỐI TƯỢNG THAM GIA</Heading>
 

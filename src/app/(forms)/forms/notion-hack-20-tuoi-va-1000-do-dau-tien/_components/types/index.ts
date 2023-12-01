@@ -1,6 +1,9 @@
 export interface ITeacher {
   name: string;
-  roles: string[];
+  roles: {
+    position: string;
+    company: string;
+  }[];
   src: string;
   description: string;
 }

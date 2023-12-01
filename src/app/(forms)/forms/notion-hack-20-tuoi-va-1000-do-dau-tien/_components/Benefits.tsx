@@ -7,17 +7,18 @@ import Heading from "./Heading";
 
 const benefits = [
   {
-    title: "THỰC HÀNH TẠI CHỖ",
-    description: "Bài tập thực tế có thể áp dụng ngay lập tức",
+    title: "Thực Hành Tại Chỗ",
+    description: "Bài tập thực tế có thể áp dụng ngay lập tức.",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193149/forms/notion-webinar/Benefit_1_vbpr58.png",
   },
   {
-    title: "CỘNG ĐỒNG KẾT NỐI",
-    description: "Cơ hội kết nối và học hỏi từ cộng đồng người dùng Notion",
+    title: "Cộng đồng kết nối",
+    description:
+      "Gặp gỡ các chuyên gia và học hỏi từ cộng đồng người dùng Notion.",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193148/forms/notion-webinar/Benefit_2_hyyhz1.png",
   },
   {
-    title: "TÀI NGUYÊN TRUY CẬP",
+    title: "Tài Liệu Miễn Phí",
     description: "Các buổi học sẽ được ghi lại và gửi bạn tham khảo.",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193148/forms/notion-webinar/Benefit_3_v1nnnh.png",
   },

@@ -38,10 +38,10 @@ export default function Page() {
             alt=""
             height={850}
             width={850}
-            className="absolute bottom-0 left-0 object-contain"
+            className="absolute bottom-0 left-0 object-contain w-[90%] sm:w-[60%] lg:w-[40%]"
           />
           <div className="container">
-            <div className="flex items-center justify-end py-8 lg:min-h-screen">
+            <div className="flex items-center justify-center py-8 lg:justify-end lg:min-h-screen">
               <RegistrationForm />
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function Page() {
         <Benefits />
         <Participants />
         <Events />
-        <FAQs />
+        {/* <FAQs /> */}
       </div>
       <Footer />
       <FixedButton />

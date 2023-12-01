@@ -5,11 +5,10 @@ import { LucideProps } from "lucide-react";
 import Link from "next/link";
 import { ITeacher } from "./types";
 import teachers from "./data/teachers.json";
-import ButtonWrapper from "./ButtonWrapper";
 
 function Teacher({ name, roles, src }: ITeacher) {
   return (
-    <div className="bg-[#C5ECFF] p-2 pr-4 lg:pr-8 rounded-[4rem] lg:rounded-[8rem] flex items-center gap-4">
+    <div className="bg-[#C5ECFF] p-2 pr-4 lg:pr-8 rounded-[4rem] lg:rounded-[8rem] flex items-center gap-4 lg:min-w-[450px]">
       <div className="relative aspect-[1/1] h-20 lg:h-32 rounded-full bg-white overflow-hidden shrink-0">
         <Image
           className="object-contain object-bottom"
@@ -18,11 +17,14 @@ function Teacher({ name, roles, src }: ITeacher) {
           fill
         />
       </div>
-      <div>
-        <h5 className="text-lg font-bold">{name}</h5>
-        <ul>
-          {roles.map((role) => (
-            <li key={role}>{role}</li>
+      <div className="space-y-1">
+        <h5 className="text-xl font-bold">{name}</h5>
+        <ul className="space-y-2">
+          {roles.map((role, index) => (
+            <li key={index}>
+              <h4 className="font-bold">{role.position}</h4>
+              <p className="text-sm">{role.company}</p>
+            </li>
           ))}
         </ul>
       </div>
@@ -32,7 +34,7 @@ function Teacher({ name, roles, src }: ITeacher) {
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#AFDFFD] pb-20">
+    <section className="relative sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_D_kuwso2.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_M_bz3rai.png')] bg-cover bg-center pb-32">
       <div className="min-h-screen space-y-8">
         <div className="relative aspect-[3.5/1] sm:aspect-[1920/348] max-w-screen-2xl mx-auto">
           <Image
@@ -44,7 +46,7 @@ export default function Hero() {
           />
         </div>
         <div className="container">
-          <div className="space-y-8">
+          <div className="space-y-10">
             {/* Banner */}
             <div className="relative aspect-[1000/347] max-w-lg mx-auto">
               <Image
@@ -63,9 +65,9 @@ export default function Hero() {
             </div>
 
             {/* Free Attention */}
-            <div className="lg:hidden relative aspect-[1000/493] max-w-sm mx-auto">
+            <div className="lg:hidden relative aspect-[1000/493] mx-auto max-w-[250px]">
               <Image
-                className=""
+                className="rotate-12"
                 src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701160148/forms/notion-webinar/Free_Tag_1_feoeic.png"
                 alt=""
                 fill

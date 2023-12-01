@@ -30,14 +30,22 @@ function Lecture({ name, roles, src, description }: ITeacher) {
             {name}
           </h4>
         </div>
-        <ul className="text-lg font-bold text-center">
-          {roles.map((role) => (
-            <li key={role}>{role}</li>
+        <ul className="space-y-2 text-center">
+          {roles.map((role, index) => (
+            <li key={index}>
+              <h4 className="text-xl font-bold">{role.position}</h4>
+              <p className="text-lg">{role.company}</p>
+            </li>
           ))}
         </ul>
       </div>
       <div>
-        <p className="max-w-xl text-xl description">{description}</p>
+        <div
+          className="max-w-2xl space-y-6 text-xl description"
+          dangerouslySetInnerHTML={{
+            __html: description,
+          }}
+        />
       </div>
     </motion.div>
   );
@@ -56,7 +64,7 @@ export default function Lecturers() {
           />
         </div>
         <div className="absolute top-0 -translate-x-1/2 -translate-y-1/2 sm:top-1/2 left-1/2">
-          <Heading>SPEAKER</Heading>
+          <Heading>THÔNG TIN DIỄN GIẢ</Heading>
         </div>
       </div>
       <div className="container">
