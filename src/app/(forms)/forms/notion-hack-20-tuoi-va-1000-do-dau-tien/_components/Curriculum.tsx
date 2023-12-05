@@ -50,7 +50,7 @@ export default function Curriculum() {
   });
 
   return (
-    <section>
+    <section id="lo-trinh">
       <div className="container">
         <div className="space-y-20">
           <Heading>LỘ TRÌNH KHÓA HỌC</Heading>

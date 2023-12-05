@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ITeacher } from "./types";
 import teachers from "./data/teachers.json";
 import { Button } from "./Button";
+import FixedButton from "./FixedButton";
+import ShareButton from "./ShareButton";
 
 function Teacher({ name, roles, src }: ITeacher) {
   return (
@@ -48,13 +50,16 @@ export default function Hero() {
         <div className="container">
           <div className="space-y-10">
             {/* Banner */}
-            <div className="relative aspect-[1000/347] max-w-lg mx-auto">
-              <Image
-                className=""
-                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701744445/forms/notion-webinar/Typo_Date_time_iwwbsa.png"
-                alt=""
-                fill
-              />
+            <div className="flex items-center justify-center max-w-xl gap-12 mx-auto">
+              <div className="relative aspect-[1000/347] w-full">
+                <Image
+                  className=""
+                  src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701744445/forms/notion-webinar/Typo_Date_time_iwwbsa.png"
+                  alt=""
+                  fill
+                />
+              </div>
+              <ShareButton />
             </div>
 
             {/* Teachers */}

@@ -1,5 +1,4 @@
-import { LucideProps } from "lucide-react";
-import Image from "next/image";
+import Image from "next/image"
 
 const SocialIcons = {
   instagram: (

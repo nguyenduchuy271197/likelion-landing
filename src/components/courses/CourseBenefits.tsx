@@ -1,4 +1,3 @@
-import Image from "next/image";
 import CourseSectionHeading from "./CourseSectionHeading";
 import ClientReactSVG from "../ClientReactSVG";
 

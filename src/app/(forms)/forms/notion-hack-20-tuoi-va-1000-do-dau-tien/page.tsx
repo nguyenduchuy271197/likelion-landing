@@ -15,21 +15,16 @@ import ButtonWrapper from "./_components/ButtonWrapper";
 import Benefits from "./_components/Benefits";
 import Participants from "./_components/Participants";
 import Events from "@/components/common/home/Events";
-import FAQs from "./_components/FAQs";
-import { Button } from "./_components/Button";
+import Navbar from "./_components/Navbar";
 const mulishFont = Mulish({
   subsets: ["vietnamese"],
   weight: ["400", "500", "800"],
 });
 
-export const metadata: Metadata = {
-  title: "Notion Hack | LIKELION",
-  description: "",
-};
-
 export default function Page() {
   return (
-    <div className={cn(mulishFont.className)}>
+    <div className={(cn(mulishFont.className), "mt-20")}>
+      <Navbar />
       <ButtonWrapper>
         <Hero />
         <section
@@ -41,7 +36,7 @@ export default function Page() {
             alt=""
             height={850}
             width={850}
-            className="absolute bottom-0 left-0 object-contain w-[90%] sm:w-[60%] lg:w-[40%]"
+            className="absolute bottom-0 left-0 object-contain w-[90%] sm:w-[60%] lg:w-[45%]"
           />
           <div className="container">
             <div className="flex items-center justify-center py-8 lg:justify-end lg:min-h-screen">

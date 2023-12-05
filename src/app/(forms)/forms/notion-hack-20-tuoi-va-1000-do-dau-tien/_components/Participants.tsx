@@ -25,7 +25,7 @@ const participants = [
 
 export default function Participants() {
   return (
-    <section>
+    <section id="doi-tuong">
       <div className="max-w-screen-md px-8 mx-auto">
         <div className="space-y-16">
           <Heading>ĐỐI TƯỢNG THAM GIA</Heading>

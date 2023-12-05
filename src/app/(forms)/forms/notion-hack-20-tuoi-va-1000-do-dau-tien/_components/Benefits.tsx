@@ -26,7 +26,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section>
+    <section className="loi-ich">
       <div className="container">
         <div className="space-y-20">
           <Heading>14H CÙNG NOTION HACK CÓ GÌ?</Heading>

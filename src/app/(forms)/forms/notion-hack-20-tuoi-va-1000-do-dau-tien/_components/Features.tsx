@@ -30,7 +30,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="space-y-12">
+    <section id="tong-quan">
       <div className="relative aspect-[3.5/1] sm:aspect-[1920/394]">
         <Image
           src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701413367/forms/notion-webinar/Banner_Info_gzivfg.png"

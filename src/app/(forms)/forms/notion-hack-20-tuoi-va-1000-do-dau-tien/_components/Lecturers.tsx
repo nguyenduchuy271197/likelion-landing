@@ -53,7 +53,10 @@ function Lecture({ name, roles, src, description }: ITeacher) {
 
 export default function Lecturers() {
   return (
-    <section className="relative sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796018/forms/notion-webinar/BG_D_s6zofb.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796019/forms/notion-webinar/BG_M_tnrqsm.png')] bg-cover bg-center pb-20">
+    <section
+      className="relative sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796018/forms/notion-webinar/BG_D_s6zofb.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796019/forms/notion-webinar/BG_M_tnrqsm.png')] bg-cover bg-center pb-20"
+      id="dien-gia"
+    >
       <div className="relative z-10 flex items-center justify-center">
         <div className="relative aspect-[1394/196] w-full">
           <Image
