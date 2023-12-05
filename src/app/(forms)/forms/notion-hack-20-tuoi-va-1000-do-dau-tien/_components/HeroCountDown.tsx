@@ -29,7 +29,7 @@ const renderer = ({
     return null;
   } else {
     return (
-      <div className="max-w-md p-6 mx-auto space-y-4 bg-white rounded-lg">
+      <div className="max-w-md p-6 mx-auto space-y-4 bg-white border-4 border-black rounded-lg shadow-[0.5rem_0.5rem_#000]">
         <p className="text-lg text-center">Thời gian đăng ký còn</p>
         <div className="grid grid-cols-4 gap-4">
           <TimeCard value={zeroPad(days)} label="Ngày" />
@@ -45,7 +45,7 @@ const renderer = ({
 export default function HeroCountDown() {
   return (
     <Countdown
-      date={moment("2023-12-04 18:00:00").toDate()}
+      date={moment("2023-12-11 18:00:00").toDate()}
       renderer={renderer}
     />
   );

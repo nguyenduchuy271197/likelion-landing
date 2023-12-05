@@ -1,4 +1,4 @@
-import { LucideProps, Phone, PhoneCallIcon } from "lucide-react";
+import { Phone } from "lucide-react";
 
 //  #ff7100
 export default function PhoneCall() {

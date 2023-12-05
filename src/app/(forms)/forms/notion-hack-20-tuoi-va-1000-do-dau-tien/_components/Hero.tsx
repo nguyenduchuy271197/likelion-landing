@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section className="relative sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_D_kuwso2.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_M_bz3rai.png')] bg-cover bg-center pb-32">
       <div className="min-h-screen space-y-8">
-        <div className="relative aspect-[3.5/1] sm:aspect-[1920/348] max-w-screen-2xl mx-auto">
+        <div className="relative aspect-[3.5/1] sm:aspect-[1920/348] max-w-screen-xl mx-auto">
           <Image
             src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701160397/forms/notion-webinar/Banner_Hero_ro6oaj.png"
             alt=""
@@ -51,7 +51,7 @@ export default function Hero() {
             <div className="relative aspect-[1000/347] max-w-lg mx-auto">
               <Image
                 className=""
-                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701160148/forms/notion-webinar/Typo_Date_time_byr2m6.png"
+                src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701744445/forms/notion-webinar/Typo_Date_time_iwwbsa.png"
                 alt=""
                 fill
               />
@@ -94,7 +94,7 @@ export default function Hero() {
                 <div className="-rotate-12">
                   <HeroCountDown />
                 </div>
-                <Arrow className="absolute top-0 left-0 w-24 rotate-180 -translate-x-full" />
+                <Arrow className="absolute top-0 w-24 rotate-180 -translate-x-full -left-2" />
               </div>
             </div>
 

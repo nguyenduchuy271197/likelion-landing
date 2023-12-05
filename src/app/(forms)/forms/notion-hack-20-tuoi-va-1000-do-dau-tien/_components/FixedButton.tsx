@@ -10,8 +10,8 @@ export default function FixedButton() {
   if (!isShowed) return null;
 
   return (
-    <div className="fixed z-50 w-full max-w-sm mx-auto -translate-x-1/2 left-1/2 bottom-8 px-8">
-      <Button className="w-full" asChild>
+    <div className="fixed z-50 w-full max-w-sm px-8 mx-auto -translate-x-1/2 left-1/2 bottom-8">
+      <Button className="w-full pulse-button" asChild>
         <Link href="#form">Đăng ký ngay</Link>
       </Button>
     </div>
