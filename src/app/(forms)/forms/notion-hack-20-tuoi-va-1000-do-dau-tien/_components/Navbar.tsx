@@ -18,9 +18,11 @@ export default function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-2">
             {/* <ImageViewer /> */}
-            <div className="hidden sm:block">
+            <div>
               <Button className="w-full" size="sm" asChild>
-                <Link href="#form">Đăng ký ngay</Link>
+                <Link href="#form">
+                  Đăng ký <span className="hidden ml-1 sm:inline">ngay</span>
+                </Link>
               </Button>
             </div>
           </div>
