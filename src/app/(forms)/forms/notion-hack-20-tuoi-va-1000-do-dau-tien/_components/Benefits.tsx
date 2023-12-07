@@ -23,9 +23,9 @@ const benefits = [
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193148/forms/notion-webinar/Benefit_3_v1nnnh.png",
   },
   {
-    title: "Chứng nhận từ LIKELION Hàn Quốc",
+    title: "Chứng nhận LIKELION",
     description:
-      "Hoàn thành khoá học và đạt chứng nhận bởi tập đoàn Công nghệ TOP đầu Hàn Quốc.",
+      "Hoàn thành khoá học và đạt chứng nhận từ tập đoàn Công nghệ TOP đầu Hàn Quốc.",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701922687/forms/notion-webinar/Benefit_4_tyrrtd.png",
   },
 ];
@@ -56,7 +56,7 @@ export default function Benefits() {
                   />
                 </div>
                 <div className="space-y-4">
-                  <h4 className="text-2xl font-bold uppercase">
+                  <h4 className="text-xl font-bold uppercase">
                     {benefit.title}
                   </h4>
                   <p className="text-lg max-w-[250px]">{benefit.description}</p>
