@@ -6,9 +6,9 @@ import NavList from "./NavList";
 
 export default function Navbar() {
   return (
-    <nav className="fixed inset-x-0 top-0 z-40 min-h-navbar backdrop-blur-sm h-fit shadow-navbar bg-background/90 ">
+    <nav className="fixed inset-x-0 top-0 z-40 backdrop-blur-sm shadow-navbar bg-background/90">
       <div className="container">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Logo />
 

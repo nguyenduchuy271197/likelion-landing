@@ -41,7 +41,7 @@ function Lecture({ name, roles, src, description }: ITeacher) {
       </div>
       <div>
         <div
-          className="max-w-2xl space-y-6 text-xl description"
+          className="max-w-2xl space-y-6 text-lg sm:text-xl description"
           dangerouslySetInnerHTML={{
             __html: description,
           }}

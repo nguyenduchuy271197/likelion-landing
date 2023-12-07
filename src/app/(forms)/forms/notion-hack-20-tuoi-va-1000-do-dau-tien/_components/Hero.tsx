@@ -36,9 +36,9 @@ function Teacher({ name, roles, src }: ITeacher) {
 
 export default function Hero() {
   return (
-    <section className="relative sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_D_kuwso2.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_M_bz3rai.png')] bg-cover bg-center pb-32">
-      <div className="min-h-screen space-y-8">
-        <div className="relative aspect-[3.5/1] sm:aspect-[1920/348] max-w-screen-xl mx-auto">
+    <section className="relative sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_D_kuwso2.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1701414716/forms/notion-webinar/BG_M_bz3rai.png')] bg-cover bg-center pb-36 lg:max-h-[880px]">
+      <div className="min-h-screen space-y-4">
+        <div className="relative aspect-[3.5/1] sm:aspect-[1920/348] max-w-4xl mx-auto">
           <Image
             src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701160397/forms/notion-webinar/Banner_Hero_ro6oaj.png"
             alt=""
@@ -48,9 +48,9 @@ export default function Hero() {
           />
         </div>
         <div className="container">
-          <div className="space-y-10">
+          <div className="space-y-2">
             {/* Banner */}
-            <div className="flex items-center justify-center max-w-xl gap-12 mx-auto">
+            <div className="flex flex-col items-center justify-center max-w-2xl gap-2 mx-auto sm:gap-12 sm:flex-row">
               <div className="relative aspect-[1000/347] w-full">
                 <Image
                   className=""
@@ -70,7 +70,7 @@ export default function Hero() {
             </div>
 
             {/* Free Attention */}
-            <div className="lg:hidden relative aspect-[1000/493] mx-auto max-w-[250px]">
+            <div className="lg:hidden relative aspect-[1000/493] mx-auto max-w-[250px] !my-10">
               <Image
                 className="rotate-12"
                 src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701160148/forms/notion-webinar/Free_Tag_1_feoeic.png"
@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
 
             {/* Button */}
-            <div className="hidden lg:block relative max-w-md mx-auto !my-28">
+            <div className="hidden lg:block relative max-w-md mx-auto !my-20">
               <div className="flex justify-center">
                 <Button className="w-full" asChild>
                   <Link href="#form">Đăng ký ngay</Link>

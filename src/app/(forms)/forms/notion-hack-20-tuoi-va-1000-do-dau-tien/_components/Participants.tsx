@@ -34,7 +34,7 @@ export default function Participants() {
             {participants.map((participant, index) => (
               <motion.div
                 key={index}
-                className="relative p-12 rounded-[4rem] bg-[#AFDFFD] lg:mt-20 space-y-4"
+                className="relative sm:p-12 rounded-[4rem] bg-[#AFDFFD] lg:mt-20 space-y-4 p-8"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -45,7 +45,7 @@ export default function Participants() {
               >
                 <div
                   className={cn(
-                    "relative lg:absolute aspect-[1/1] w-[280px] bottom-0 mx-auto",
+                    "relative lg:absolute aspect-[1/1] w-[200px] lg:w-[280px] bottom-0 mx-auto",
                     index % 2 === 1 ? "left-0" : "right-0"
                   )}
                 >

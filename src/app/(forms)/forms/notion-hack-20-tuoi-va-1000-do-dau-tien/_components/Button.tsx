@@ -8,7 +8,7 @@ const buttonVariants = cva("btn", {
   variants: {
     size: {
       default: "",
-      sm: "text-base",
+      sm: "text-sm",
     },
   },
   defaultVariants: {

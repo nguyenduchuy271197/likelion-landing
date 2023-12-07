@@ -5,13 +5,13 @@ import { ROUTES } from "./constants";
 
 export default function NavList() {
   return (
-    <ul className="flex items-center gap-8">
+    <ul className="items-center hidden gap-8 lg:flex">
       {ROUTES.map((item) => (
         <li key={item.label}>
           <Link
             smooth
             spy
-            offset={-80}
+            offset={-64}
             duration={200}
             to={item.target}
             className="font-medium transition duration-200 border-b-4 border-transparent cursor-pointer hover:text-orange-500"

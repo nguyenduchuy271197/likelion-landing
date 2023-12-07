@@ -55,7 +55,7 @@ export default function Curriculum() {
         <div className="space-y-20">
           <Heading>LỘ TRÌNH KHÓA HỌC</Heading>
           <motion.div
-            className="relative grid items-start gap-8 sm:grid-cols-2 lg:gap-0"
+            className="relative grid gap-8 sm:grid-cols-2 lg:gap-0 lg:items-start"
             ref={containerRef}
           >
             {curriculum.map((c, index) => (

@@ -23,13 +23,13 @@ const mulishFont = Mulish({
 
 export default function Page() {
   return (
-    <div className={(cn(mulishFont.className), "mt-20")}>
+    <div className={(cn(mulishFont.className), "mt-16")}>
       <Navbar />
       <ButtonWrapper>
         <Hero />
         <section
           id="form"
-          className="relative min-h-screen sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796018/forms/notion-webinar/BG_D_s6zofb.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796019/forms/notion-webinar/BG_M_tnrqsm.png')] bg-cover bg-center pb-[450px] lg:pb-0 scroll-mt-20"
+          className="relative min-h-screen sm:bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796018/forms/notion-webinar/BG_D_s6zofb.png')] bg-[url('https://res.cloudinary.com/dbscqlwl7/image/upload/v1700796019/forms/notion-webinar/BG_M_tnrqsm.png')] bg-cover bg-center pb-[450px] lg:pb-0 scroll-mt-16"
         >
           <Image
             src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701325554/forms/notion-webinar/Key_Mobile_fhkckh.png"
