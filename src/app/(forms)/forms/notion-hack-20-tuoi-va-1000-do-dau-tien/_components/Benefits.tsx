@@ -22,6 +22,12 @@ const benefits = [
     description: "Các buổi học sẽ được ghi lại và gửi bạn tham khảo.",
     src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701193148/forms/notion-webinar/Benefit_3_v1nnnh.png",
   },
+  {
+    title: "Chứng nhận từ LIKELION Hàn Quốc",
+    description:
+      "Hoàn thành khoá học và đạt chứng nhận bởi tập đoàn Công nghệ TOP đầu Hàn Quốc.",
+    src: "https://res.cloudinary.com/dbscqlwl7/image/upload/v1701922687/forms/notion-webinar/Benefit_4_tyrrtd.png",
+  },
 ];
 
 export default function Benefits() {
@@ -30,7 +36,7 @@ export default function Benefits() {
       <div className="container">
         <div className="space-y-20">
           <Heading>14H CÙNG NOTION HACK CÓ GÌ?</Heading>
-          <motion.div className="grid gap-8 sm:grid-cols-3">
+          <motion.div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {benefits.map((benefit, index) => (
               <motion.div
                 className="max-w-sm mx-auto space-y-8 text-center"
