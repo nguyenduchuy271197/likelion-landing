@@ -54,7 +54,7 @@ export default function Hero() {
               <div className="relative aspect-[1000/347] w-full">
                 <Image
                   className=""
-                  src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1701744445/forms/notion-webinar/Typo_Date_time_iwwbsa.png"
+                  src="https://res.cloudinary.com/dbscqlwl7/image/upload/v1702007974/forms/notion-webinar/Typo_Date_time_2_bx3stg.png"
                   alt=""
                   fill
                 />

@@ -2,7 +2,6 @@ import "./style.css";
 
 import Image from "next/image";
 import RegistrationForm from "./_components/RegistrationForm";
-import { Metadata } from "next";
 import Footer from "@/components/layouts/footer/Footer";
 import { Mulish } from "next/font/google";
 import Curriculum from "./_components/Curriculum";
@@ -14,8 +13,9 @@ import FixedButton from "./_components/FixedButton";
 import ButtonWrapper from "./_components/ButtonWrapper";
 import Benefits from "./_components/Benefits";
 import Participants from "./_components/Participants";
-import Events from "@/components/common/home/Events";
 import Navbar from "./_components/Navbar";
+import FAQs from "./_components/FAQs";
+import Events from "./_components/Events";
 const mulishFont = Mulish({
   subsets: ["vietnamese"],
   weight: ["400", "500", "800"],
@@ -53,7 +53,7 @@ export default function Page() {
         <Benefits />
         <Participants />
         <Events />
-        {/* <FAQs /> */}
+        <FAQs />
       </div>
       <Footer />
       <FixedButton />

@@ -1,16 +1,10 @@
 "use client";
 
-import { Share2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/Dialog";
-import Link from "next/link";
 import UrlClipboard from "@/components/UrlClipboard";
-import {
-  FacebookIcon,
-  FacebookMessengerIcon,
-  FacebookMessengerShareButton,
-  FacebookShareButton,
-} from "react-share";
+import { FacebookMessengerShareButton, FacebookShareButton } from "react-share";
 import { ReactSVG } from "react-svg";
+import { ShareIcon } from "./icons";
 export default function ShareButton() {
   const shareUrl =
     "https://www.likelion.edu.vn/forms/notion-hack-20-tuoi-va-1000-do-dau-tien";
@@ -18,7 +12,7 @@ export default function ShareButton() {
     <Dialog>
       <DialogTrigger>
         <button className="flex items-center justify-center w-16 h-16 transition bg-white border rounded-full shadow-lg hover:opacity-90">
-          <Share2 className="w-6 h-6" />
+          <ShareIcon className="w-6 h-6" />
         </button>
       </DialogTrigger>
       <DialogContent className="space-y-2">
