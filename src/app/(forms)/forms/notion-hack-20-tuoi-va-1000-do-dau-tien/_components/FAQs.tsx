@@ -41,6 +41,18 @@ const faqList = [
     answer:
       "Có, Notion bao gồm khả năng tích hợp nhiều ứng dụng, làm việc nhóm, quản lý dự án theo nhiều hình thức: sprint, board, project, task,… và tự động hóa cho các cài đặt làm việc từ xa, giúp tăng hiệu quả phối hợp nhóm.",
   },
+  {
+    question:
+      "Học sinh, sinh viên có thể dùng Notion để cải thiện kết quả học tập?",
+    answer:
+      "Notion Hack cung cấp các công cụ quan trọng để giúp bạn tổ chức tài liệu học, quản lý quá trình ôn tập và theo dõi tiến độ. Đến với Notion Hack, bạn sẽ học được cách tạo một trung tâm học thuật để tối ưu cho kế hoạch cá nhân.",
+  },
+  {
+    question:
+      "Liệu tôi có thể tích hợp các kỹ thuật Notion vào luồng làm việc và công cụ hiện tại của mình không?",
+    answer:
+      "Có, sau mỗi buổi học, bạn sẽ học được cách ứng dụng và lồng ghép các kỹ thuật vào công việc hiện tại và tuỳ chỉnh lại theo nhu cầu sử dụng.",
+  },
 ];
 
 const container = {
