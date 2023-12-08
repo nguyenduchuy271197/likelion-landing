@@ -13,26 +13,33 @@ import Heading from "./Heading";
 const faqList = [
   {
     question:
-      "Tôi chưa từng tiếp xúc với code, liệu tôi có thể học lập trình không?",
+      "Notion Hack có phù hợp cho người mới bắt đầu, không có kinh nghiệm trước đây với Notion không?",
     answer:
-      "Chắc chắn là có thể. LIKELION mở đa dạng các khoá học lập trình phù hợp với nhiều đối tượng khác nhau, kể cả người mới. Chúng tôi giúp bạn gia nhập ngành lập trình từ con số 0.",
+      "Có, khóa học bắt đầu với các chủ đề cơ bản, giới thiệu tổng quan về Notion. Bạn sẽ được hướng dẫn cụ thể và từ từ tiến triển đến các tính năng phức tạp và tự động hóa.",
   },
   {
     question:
-      "Vì sao tôi luôn gặp khó khăn với việc tự học và nghiên cứu các tài liệu về lập trình?",
+      "Notion Hack có thể giúp tôi tối ưu hóa quá trình tạo nội dung không?",
     answer:
-      "Việc này có thể bởi vì bạn đang theo một lộ trình không khoa học. Với khoá học lập trình tại LIKELION, chúng tôi cam kết một chương trình học đi từ căn bản, dễ hiểu và đầy đủ kiến thức. Sau đó, bạn có thể tự học hoặc nghiên cứu thêm để hoàn thiện bản thân.",
+      "Chắc chắn rồi! Notion là công cụ tuyệt vời để lập kế hoạch content, lên ý tưởng và quản lý dự án. Các template và tính năng tự động hóa sẽ làm cho quy trình làm việc của bạn hiệu quả hơn.",
   },
   {
     question:
-      "LIKELION có hỗ trợ gì khi tôi gặp khó khăn trong việc thanh toán học phí?",
+      "Tôi là đang tìm cách nâng cao năng suất công việc hàng ngày. Notion Hack có thể giúp tôi như thế nào?",
     answer:
-      "Ngoài các đợt giảm giá khoá học, LIKELION có hỗ trợ chia thành nhiều đợt thanh toán. Để biết chính xác các gói thanh toán và ưu đãi hiện tại, hãy liên hệ với LIKELION để nhận tự vấn.",
+      "Với khả năng tự động hóa của Notion, bạn có thể quản lý các nhiệm vụ hàng ngày và tùy chỉnh cơ sở dữ liệu để phù hợp với nhu cầu kinh doanh. Ngoài ra, Notion được thiết kế để giúp bạn tăng cường hiệu suất và tổ chức hiệu quả trong các hoạt động hàng ngày.",
   },
   {
-    question: "LIKELION có hỗ trợ tìm kiếm việc làm không?",
+    question:
+      "Notion Hack có thể giúp tôi, một YouTuber, tối ưu hóa quá trình tạo nội dung không?",
     answer:
-      "Có. Chúng tôi hỗ trợ bạn ngay từ bước chuẩn bị CV và portfolio để thành công ứng tuyển trong môi trường việc làm cạnh tranh ngày nay. Ngoài ra, chúng tôi còn liên kết giới thiệu bạn ứng tuyển tại các công ty lập trình hàng đầu trong mạng lưới đối tác của LIKELION.",
+      "Chắc chắn! Notion AI là một trợ lý ảo thông minh giúp bạn sáng tạo ý tưởng cho các kịch bản video, bài viết social, quản lý lịch đăng và nhắc nhở tự động. Đây chắc chắn là công cụ giúp bạn x3 tốc độ sản xuất và hiện thực các ý tưởng.",
+  },
+  {
+    question:
+      "Notion Hack có phù hợp cho những người làm việc từ xa hoặc quản lý nhóm phân tán không?",
+    answer:
+      "Có, Notion bao gồm khả năng tích hợp nhiều ứng dụng, làm việc nhóm, quản lý dự án theo nhiều hình thức: sprint, board, project, task,… và tự động hóa cho các cài đặt làm việc từ xa, giúp tăng hiệu quả phối hợp nhóm.",
   },
 ];
 
