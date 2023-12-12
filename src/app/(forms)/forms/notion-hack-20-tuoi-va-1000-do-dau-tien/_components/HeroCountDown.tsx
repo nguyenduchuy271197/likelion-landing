@@ -45,7 +45,7 @@ const renderer = ({
 export default function HeroCountDown() {
   return (
     <Countdown
-      date={moment("2023-12-11 18:00:00").toDate()}
+      date={moment("2023-12-18 19:00:00").toDate()}
       renderer={renderer}
     />
   );
