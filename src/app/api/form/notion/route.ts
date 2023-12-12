@@ -29,7 +29,7 @@ export async function POST(request: Request) {
           },
         ],
       },
-      Company: {
+      "Trường / Công ty": {
         rich_text: [
           {
             text: {
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
           },
         ],
       },
-      Content: {
+      "Câu hỏi cho diễn giả": {
         rich_text: [
           {
             text: {
