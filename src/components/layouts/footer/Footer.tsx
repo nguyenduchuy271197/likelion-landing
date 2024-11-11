@@ -40,11 +40,11 @@ export default function Footer() {
                 <div className="flex items-start gap-4">
                   <MapPin className="shrink-0" />
                   <a
-                    href="https://goo.gl/maps/b3Xq5DVnbKoHoxfb6"
+                    href="https://g.co/kgs/aXuQ3mB"
                     target="_blank"
                   >
-                    Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường Bến
-                    Nghé, Quận 1, TP. HCM
+                    Tầng 11, Tòa nhà Cobi Tower II
+2-4 Đường số 8, Phường Tân Phú, Quận 7, TP.HCM
                   </a>
                 </div>
               </div>
