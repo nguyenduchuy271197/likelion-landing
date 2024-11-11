@@ -90,8 +90,8 @@ const contacts: Contact[] = [
     ),
     label: "Office",
     value:
-      "Tầng 25, Tòa nhà Lim Tower, 9 - 11 Tôn Đức Thắng, Phường Bến Nghé, Quận 1, TP. HCM",
-    href: "https://goo.gl/maps/b3Xq5DVnbKoHoxfb6",
+      "Tầng 11, Tòa nhà Cobi Tower II 2-4 Đường số 8, Phường Tân Phú, Quận 7, TP.HCM",
+    href: "https://g.co/kgs/aXuQ3mB",
   },
   {
     icon: (props: LucideProps) => (
